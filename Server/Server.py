@@ -66,6 +66,9 @@ class TankServer(SocketServer.BaseRequestHandler):
     Bullets = []
     toDespawn = []
     NextBulletId = 0
+
+    def giveDatabaseConnection(self, cur):
+        self.cur = cur
     def handle(self):
         while 1:
             #Get the data from the socket
@@ -96,9 +99,9 @@ class TankServer(SocketServer.BaseRequestHandler):
         
     def doHandshake(self,  name):
         self.newId = len(TankServer.Players)
-        conn = sqlite3.Connection("TankStats.db")
-        cur  = conn.cursor()
-        TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  cur.execute("SELECT HP FROM Tanks WHERE Name=?;",  [name]).fetchone()[0]))
+        conn = sqlite3.Connection("LoginDatabase")
+        cur = conn.cursor()
+        TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  self.cur.execute("SELECT HP FROM Tanks WHERE Name=?;",  [name]).fetchone()[0]))
         print "Connected: "+name
         conn.close()
         return [self.newId,  self.convertToListHandShake()]
