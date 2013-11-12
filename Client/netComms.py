@@ -1,5 +1,6 @@
 import socket
 import pickle
+
 class networkComms():
     def __init__(self, ip,  port):
         self.ip = ip

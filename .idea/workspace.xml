@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/messages.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/IMAGEBASE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/Lev0DFD.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/Lev1DFD.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/bullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/conn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/finishedtanks.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/nebula.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/test_turret.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client/yellow.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankStats.db" afterPath="$PROJECT_DIR$/Client/TankStats.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/TankStats.db" afterPath="$PROJECT_DIR$/Server/TankStats.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/netComms.py" afterPath="$PROJECT_DIR$/Client/netComms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -42,7 +29,7 @@
       <file leaf-file-name="ServerSetupForm.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="8" selection-start="2269" selection-end="2687" vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1245">
+            <state line="66" column="38" selection-start="2260" selection-end="2260" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -51,7 +38,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="70" selection-start="5408" selection-end="5408" vertical-scroll-proportion="0.0" vertical-offset="1889" max-vertical-offset="2250">
+            <state line="146" column="70" selection-start="5408" selection-end="5408" vertical-scroll-proportion="0.0" vertical-offset="2190" max-vertical-offset="2355">
               <folding />
             </state>
           </provider>
@@ -60,7 +47,7 @@
       <file leaf-file-name="SelectATank.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="88" selection-start="1476" selection-end="1476" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="765">
+            <state line="35" column="81" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -75,32 +62,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1605">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10941476" vertical-offset="43" max-vertical-offset="1605">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/messages.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginServer.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Login/loginServer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="86" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.30588236" vertical-offset="328" max-vertical-offset="1230">
-              <folding>
-                <element signature="e#22#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,11 +81,6 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Harrry Ward &lt;Harry.ward9001@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -150,10 +112,6 @@
         <option value="$PROJECT_DIR$/Client/game_calcs.py" />
         <option value="$PROJECT_DIR$/Server/Server.py" />
         <option value="$PROJECT_DIR$/Login/login.py" />
-        <option value="$PROJECT_DIR$/Client/messages.py" />
-        <option value="$PROJECT_DIR$/Client/netComms.py" />
-        <option value="$PROJECT_DIR$/Client/login.py" />
-        <option value="$PROJECT_DIR$/Login/loginServer.py" />
       </list>
     </option>
   </component>
@@ -168,11 +126,11 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="1" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -187,6 +145,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,7 +208,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,7 +224,7 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.loginServer">
+  <component name="RunManager" selected="Python.SelectATank">
     <configuration default="false" name="ServerSetupForm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -303,6 +261,24 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="TankClient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ArmouredWarfareSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Client/TankClient.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="false" name="Server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,42 +292,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ArmouredWarfareSimulator" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Server/Server.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="loginServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Login" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ArmouredWarfareSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Login/loginServer.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="login" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Client" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ArmouredWarfareSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Client/login.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -478,20 +418,18 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.ServerSetupForm" />
       <item index="1" class="java.lang.String" itemvalue="Python.SelectATank" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Server" />
-      <item index="3" class="java.lang.String" itemvalue="Python.loginServer" />
-      <item index="4" class="java.lang.String" itemvalue="Python.login" />
+      <item index="2" class="java.lang.String" itemvalue="Python.TankClient" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Server" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.loginServer" />
-        <item index="1" class="java.lang.String" itemvalue="Python.login" />
-        <item index="2" class="java.lang.String" itemvalue="Python.SelectATank" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ServerSetupForm" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Server" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.SelectATank" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ServerSetupForm" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Server" />
+        <item index="3" class="java.lang.String" itemvalue="Python.TankClient" />
       </list>
     </recent_temporary>
   </component>
@@ -519,32 +457,26 @@
       <created>1383081715290</created>
       <updated>1383081715290</updated>
     </task>
-    <task id="LOCAL-00001" summary="Restructure and conf added">
-      <created>1384189770184</created>
-      <updated>1384189770184</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="736" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="736" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24816984" sideWeight="0.6800643" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24780059" sideWeight="0.6807131" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31993568" sideWeight="0.3579795" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31993568" sideWeight="0.6420205" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31928688" sideWeight="0.3579795" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31928688" sideWeight="0.6420205" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -564,6 +496,43 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Client/login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="29" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="339" column="113" selection-start="14810" selection-end="14810" vertical-scroll-proportion="0.0" vertical-offset="5085" max-vertical-offset="5460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="34" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="1335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="810">
@@ -588,35 +557,28 @@
         <state line="660" column="36" selection-start="21059" selection-end="21066" vertical-scroll-proportion="0.33150685" vertical-offset="9779" max-vertical-offset="13605" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="70" selection-start="5408" selection-end="5408" vertical-scroll-proportion="0.0" vertical-offset="1860" max-vertical-offset="2355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.34848484" vertical-offset="537" max-vertical-offset="1140" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="38" selection-start="2260" selection-end="2260" vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="70" selection-start="841" selection-end="841" vertical-scroll-proportion="0.9040404" vertical-offset="122" max-vertical-offset="1140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="88" selection-start="1476" selection-end="1476" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="8" selection-start="2269" selection-end="2687" vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/SocketServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="0" selection-start="10504" selection-end="10504" vertical-scroll-proportion="0.3315508" vertical-offset="4226" max-vertical-offset="10995">
           <folding />
         </state>
       </provider>
@@ -628,48 +590,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/socket.py">
+    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="0" selection-start="7712" selection-end="7712" vertical-scroll-proportion="0.3315508" vertical-offset="3176" max-vertical-offset="8640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="70" selection-start="5408" selection-end="5408" vertical-scroll-proportion="0.0" vertical-offset="1860" max-vertical-offset="2355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/messages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/netComms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="51" selection-start="282" selection-end="282" vertical-scroll-proportion="0.32085562" vertical-offset="0" max-vertical-offset="374">
+        <state line="35" column="81" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1605">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10941476" vertical-offset="43" max-vertical-offset="1605">
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/loginServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="86" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.30588236" vertical-offset="328" max-vertical-offset="1230">
-          <folding>
-            <element signature="e#22#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
