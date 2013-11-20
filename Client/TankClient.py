@@ -13,19 +13,27 @@ games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
 class Player(games.Sprite):
     """ The main player class. """
-    def __init__(self, x, y,  angle,  name,  hp):
+    def __init__(self, x, y,  angle,  name,  hp, username, turret):
         """ Initialize player sprite. """
         image = games.load_image("res/"+name+"_body.png")
         super(Player, self).__init__(image = image, x = x, y = y, angle = angle)
         self.name = name
-        self.hp = hp
-        self.nametag = games.Text(value = name+ " "+str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
+        self.username = username
+        self.hp = int(hp)
+        self.nametag = games.Text(value = name+" "+str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
         games.screen.add(self.nametag)
+        self.maxHp = hp
+        self.state = 0
+        self.turret = turret
         print "NAME: "+self.name
         print "HP: "+str(self.hp)
     def update(self):
         self.nametag.value = self.name + " "+str(self.hp)
-        
+        if int(self.hp) < int(self.maxHp) / 2 and self.state == 0:
+            self.image = games.load_image("res/"+name+"_body_damaged.png")
+            self.turret.image = games.load_image("res/"+name+"_turret_damaged.png")
+            self.state = 1
+
 class Turret(games.Sprite):
     def __init__(self, x, y,  angle,  name):
         image = games.load_image("res/"+name+"_turret.png")
@@ -53,7 +61,7 @@ class Bullet(games.Sprite):
         return Vector(x1,y1,x2,y2)
 
 class LocalPlayer(games.Sprite):
-    def __init__(self, x, y,  angle,  turret,  speed,  hull_traverse,  hp,  reload,  armour,  name,  id,  damage, penetration):
+    def __init__(self, x, y,  angle,  turret,  speed,  hull_traverse,  hp,  reload,  armour,  name,  id,  damage, penetration, username):
         image  =games.load_image("res/"+str(name)+"_body.png")
         super(LocalPlayer,  self).__init__(image=image, x=x, y=y, angle=angle)
         self.name = name
@@ -61,16 +69,18 @@ class LocalPlayer(games.Sprite):
         self.penetration = penetration
         self.bullets = []
         self.newBullets = None
+        self.username = username
         self.reload = reload
         self.damage = damage
         self.id = id
         self.va = []
         self.speed = speed
         self.hull_traverse = hull_traverse
-        self.hp = hp
+        self.hp = int(hp)
+        self.maxHp = self.hp
         self.reload_counter = self.reload
         self.armour = armour
-        self.nametag = games.Text(value = name+ " "+str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
+        self.nametag = games.Text(value = str(self.name) + " " + str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.nametag)
@@ -102,20 +112,27 @@ class LocalPlayer(games.Sprite):
             if self.reload_counter == 0:
                 self.newBullets = Bullet(self.x + self.getBulletOffsetX(),  self.y + self.getBulletOffsetY(),  self.turret.angle,  self.id,  self.damage,  -1, self.penetration)
                 self.reload_counter = self.reload
-                
+        self.reload_counter = int(self.reload_counter)
         if self.reload_counter > 0:
+            #print "RELOAD: "+str(self.reload_counter)
             self.reload_counter -= 1
             
         self.nametag.x = self.x
         self.nametag.y = self.y-70
         self.nametag.value = self.name + " "+str(self.hp)
-            
+
+        if self.hp < self.maxHp / 2:
+            self.image = games.load_image("res/"+name+"_body_damaged.png")
+            self.turret.image = games.load_image("res/"+name+"_turret_damaged.png")
+
     def getBulletValues(self):
         try:
+            #print "bullets: "+str(self.newBullets)
             self.va =[self.newBullets.x,  self.newBullets.y,  self.newBullets.angle,  self.newBullets.ownerId,  self.newBullets.damage, self.penetration]
             self.newBullets = None
             return self.va
-        except Exception:
+        except Exception as e:
+            #print e
             return []
             
     def getBulletOffsetX(self):
@@ -139,14 +156,15 @@ class LocalTurret(games.Sprite):
             
 
 class GameController(games.Sprite):
-    """This is the main class-  it will control all network comms and update the players as required"""
-    image = games.load_image("conn.jpg")
+    """This is the main class-  it will col all network comms and update the players as required"""
+    image = games.load_image("res/conn.jpg")
     
-    def __init__(self,  stats,  host,  port):
+    def __init__(self,  stats,  host,  port, username):
         super(GameController,  self).__init__(image=GameController.image,  x=0,  y=0,  angle=0)
         #Create a connection
         self.connection = netComms.networkComms(host,  int(port))
         self.stats =stats
+        self.username = username
         #These will check for buggy bullets
         self.despawnToServer = []
         name = self.stats[0]
@@ -163,18 +181,18 @@ class GameController(games.Sprite):
         self.bulletType = Bullet(0, 0, 0, 0, 0, 0, 0)
         #Create local instances of player and turret
         #First we have to handshake
-        self.connection.send("handshake "+name)
-        
+        self.connection.send(["handshake", name, hp, self.username])
         #This will return us the currently connected players and our ID
+        #print "RECV: "+str(self.connection.recieved)
         self.id = self.connection.recieved[0]
         self.serverPlayers = self.connection.recieved[1]
-        print "RECV: "+str(self.connection.recieved)
+
         #Create these players, excluding us, as our movement is handled locally
         #Add us
         #We will get the data in the form [x,y,angle,turret angle]
         self.clientTurret = LocalTurret(self.serverPlayers[self.id][0], self.serverPlayers[self.id][1],self.serverPlayers[self.id][3],  turret_trav,  name)
         self.client = LocalPlayer(self.serverPlayers[self.id][0], self.serverPlayers[self.id][1], self.serverPlayers[self.id][2],  self.clientTurret,  speed,
-                                  hull_traverse,  hp,  reload,  armour,  name,  self.id,  damage, penetration)
+                                  hull_traverse,  hp,  reload,  armour,  name,  self.id,  damage, penetration, self.username)
         
         #Add us to the screen
         games.screen.add(self.client)
@@ -189,10 +207,10 @@ class GameController(games.Sprite):
         self.toRebound = []
         #Add everyone
         for p in self.serverPlayers:
-            #Add a new player instance
-            self.serverInstances.append(Player(p[0], p[1], p[2], p[4],  p[5]))
             #Add a new turret instance
             self.serverInstancesTurret.append(Turret(p[0], p[1], p[3], p[4]))
+            #Add a new player instance
+            self.serverInstances.append(Player(p[0], p[1], p[2], p[4],  p[5], p[6], self.serverInstancesTurret[-1]))
             #add them
             games.screen.add(self.serverInstances[-1])
             games.screen.add(self.serverInstancesTurret[-1])
@@ -223,13 +241,15 @@ class GameController(games.Sprite):
         while len(self.recvPlayers) > len(self.serverInstances):
             try:
                 self.newAdd = self.recvPlayers[-1]
-                self.serverInstances.append(Player(self.newAdd[0],  self.newAdd[1],  self.newAdd[2],  self.newAdd[4],  self.newAdd[5]))
                 self.serverInstancesTurret.append(Turret(self.newAdd[0],  self.newAdd[1],  self.newAdd[3],  self.newAdd[4]))
+                self.serverInstances.append(Player(self.newAdd[0],  self.newAdd[1],  self.newAdd[2],  self.newAdd[4],  self.newAdd[5], self.newAdd[6], self.serverInstancesTurret[-1]))
                 games.screen.add(self.serverInstances[-1])
                 games.screen.add(self.serverInstancesTurret[-1])
                 self.recvPlayers.pop(-1)
-            except Exception:
-                None
+            except Exception as ex:
+                print ex
+                sys.exit()
+
         #Now update everyone
         self.recvPlayers = self.recvCopy
         for i in range(len(self.serverInstances)):
@@ -327,7 +347,7 @@ class GameController(games.Sprite):
                         Vector(corner2X, corner2Y, corner4X, corner4Y)]
 
     def doesPenetrate(self, angle, bullet):
-        if angle < 40:
+        if angle < 50:
             return False
         armourValue = self.client.armour
         effectiveArmour = armourValue / math.sin(math.radians(angle))
@@ -336,12 +356,15 @@ class GameController(games.Sprite):
         else:
             return False
 
-def main(TankStats,  host,  port):
+def main(instance):
     #This will be called from a new file with the stats, [speed, hull traverse, turret traverse, hp, name]
-    stats = TankStats
+    username = instance[0]
+    stats = instance[1]
+    host = instance[2]
+    port = instance[3]
     # establish background
     back = games.load_image("res/background.png")
-    fat_controller = GameController(TankStats,  host,  port)
+    fat_controller = GameController(stats,  host,  port, username)
     games.screen.add(fat_controller)
     games.screen.background = back
     games.screen.mainloop()

@@ -9,10 +9,11 @@ from game_calcs import *
 
 #Create a class to make things easier
 class Player():
-    def __init__(self,  x,  y,  id,  name,  hp):
+    def __init__(self,  x,  y,  id,  name,  hp, username):
         self.x = x
         self.y = y
         self.id = id
+        self.username = username
         self.name = name
         self.hp = hp
         if self.id % 2 == 0:
@@ -22,7 +23,7 @@ class Player():
             
         self.turret_angle = self.angle
     def returnValues(self):
-        return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name,   self.hp]
+        return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name, self.hp, self.username]
     
     def set(self,  data):
         self.x = data[0]
@@ -72,18 +73,21 @@ class TankServer(SocketServer.BaseRequestHandler):
     def handle(self):
         while 1:
             #Get the data from the socket
-            self.data = pickle.loads(self.request.recv(1024))
-            #Check what sort of request it is
-            if type(self.data) == type(u"TopKek"):
-                self.toSend = self.stringRequest(self.data)
-            else:
-                self.toSend = self.listRequest(self.data)
-            
-            self.request.sendall(pickle.dumps(self.toSend))
+            try:
+                recv = self.request.recv(1024)
+                self.data = pickle.loads(recv)
+                #Check what sort of request it is
+                if type(self.data[0]) == type("TopKek"):
+                    self.toSend = self.stringRequest(self.data)
+                else:
+                    self.toSend = self.listRequest(self.data)
+                self.request.sendall(pickle.dumps(self.toSend))
+            except Exception as e:
+                pass
             
     def stringRequest(self,  req):
-        if "handshake" in req:
-            return self.doHandshake(req.split(" ")[1])
+        if "handshake" in req[0]:
+            return self.doHandshake(req[1], req[2], req[3])
         else:
             return "InvalidCommand"
             
@@ -97,13 +101,10 @@ class TankServer(SocketServer.BaseRequestHandler):
         self.v.append([y.returnValues() for y in TankServer.Bullets])
         return self.v
         
-    def doHandshake(self,  name):
+    def doHandshake(self,  name, hp, username):
         self.newId = len(TankServer.Players)
-        conn = sqlite3.Connection("LoginDatabase")
-        cur = conn.cursor()
-        TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  self.cur.execute("SELECT HP FROM Tanks WHERE Name=?;",  [name]).fetchone()[0]))
+        TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  hp, username))
         print "Connected: "+name
-        conn.close()
         return [self.newId,  self.convertToListHandShake()]
         
     def convertToListHandShake(self):
@@ -112,7 +113,6 @@ class TankServer(SocketServer.BaseRequestHandler):
     def get(self, req):
         TankServer.Players[req[0]].set(req[1]) 
         #Update the bullets if ID 0 is connected
-        print TankServer.Bullets
         for i in req[3]:
             for b in TankServer.Bullets:
                 if b.bulletID == i:
@@ -134,8 +134,14 @@ class TankServer(SocketServer.BaseRequestHandler):
             for bid in req[4]:
                 id = bid[0]
                 angleOfImpact = bid[1]
-                angleToNormal = 90-bid[1]
                 angleOfNormal = bid[2]
+                angleToNormal = angleOfNormal - angleOfImpact
+                if angleToNormal > 180:
+                    angleToNormal = 360 - angleToNormal
+                print "AngleOfImpact: "+str(angleOfImpact)
+                print "AngleOfNormal: "+str(angleOfNormal)
+                if angleOfNormal < 0:
+                    angleOfNormal = 360 + angleOfNormal
                 x1,y1,x2,y2 = bid[3], bid[4], bid[5], bid[6]
                 x3,y3,x4,y4 = bid[7], bid[8], bid[9], bid[10]
                 mod90 = angleOfNormal % 90

@@ -26,8 +26,7 @@ class serverForm(ServerGui.Mainframe):
             print("GUI failed __init__")
         self.interfaceChoice.Clear()
         self.opSys = self.getOperatingSystem()
-        LoginThread = threading.Thread(target=self.loginThread)
-        LoginThread.start()
+        self.loginThread()
 
     def loginThread(self):
         loginServer.main()
@@ -78,9 +77,6 @@ class serverForm(ServerGui.Mainframe):
             thread_server = threading.Thread(self.server.serve_forever())
             thread_server.daemon = True
             thread_server.start()
-            conn = sqlite3.Connection("LoginDatabase")
-            cur = conn.cursor()
-            Server.TankServer.giveDatabaseConnection(cur)
         except Exception as ex:
             print ("Port is not free")
             print ("Technical information: "+str(ex))

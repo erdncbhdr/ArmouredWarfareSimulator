@@ -5,6 +5,7 @@ import selectGui
 import sqlite3
 import os
 import messages
+import sys
 import pickle
 import netComms
 
@@ -12,17 +13,75 @@ def getConfiguration(conf, keyword):
     for a in conf:
         if keyword in a and "#" not in a:
             toRet = a.split("=")
-            print toRet
             return toRet[1]
 
 class Buy(selectGui.TankBuy):
-    def __init__(self, parent):
+    def __init__(self, parent, username, xp, alltanks, owner):
         selectGui.TankBuy.__init__(self, parent)
+        self.username = username
+        self.alltanks = alltanks
+        self.xp = xp
+        self.populate()
+        self.parent = parent
+        self.owner = owner
+
+    def populate(self):
+        self.xpBox.SetValue("Select a tank to see XP")
+        self.TankBox.SetValue("Select a tank")
+        r = open("login.conf", "r")
+        config = r.read().split("\n")
+        self.ipAddr  = getConfiguration(config, "ip_address")
+        self.port = getConfiguration(config, "port")
+        r.close()
+        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn.send(["OWNED", self.username])
+        owned = conn.recieved
+        conn.close()
+        relaventOwned = owned[1:-2]
+        dataconn = sqlite3.Connection("TankStats.db")
+        cursor = dataconn.cursor()
+        tankname = cursor.execute("SELECT name FROM Tanks;").fetchall()
+        tankname = [x[0] for x in tankname]
+        dataconn.close()
+        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn.send(["COSTS"])
+        self.costs = conn.recieved
+        conn.close()
+        self.TankBox.Clear()
+        for i in range(len(tankname)):
+            if relaventOwned[i] == 0:
+                self.TankBox.Append(str(tankname[i]))
+
+    def changeTankPrice( self, event ):
+        self.name = self.TankBox.GetValue()
+        tankvalue = self.alltanks.index(self.name)
+        self.xpBox.SetValue(str(self.xp[tankvalue-1]))
+        self.priceBox.SetValue(str(self.costs[tankvalue]))
+
+    def buyTank( self, event ):
+        if int(self.xpBox.Value) >= int(self.priceBox.Value):
+            try:
+                 # buy the tank
+                assert(self.TankBox.GetSelection() >= 0)
+                conn = netComms.networkComms(self.ipAddr, self.port)
+                pastTank = self.alltanks[self.alltanks.index(self.name)-1]
+                conn.send(["BUY", self.name, self.username, pastTank])
+                a = conn.recieved
+                conn.close()
+                if a == "DONE":
+                    messages.Info(self.parent, "Tank purchased!")
+                    self.owner.refresh(self.owner.username)
+            except AssertionError:
+                messages.Warn("Please select a tank first")
+        else:
+            messages.Warn(self.parent, "You do not have the XP to purchase this tank")
+
 
 class Upgrade(selectGui.UpgradeForm):
-    def __init__(self, parent, tank, xp, username):
+    def __init__(self, parent, tank, xp, username, form):
         selectGui.UpgradeForm.__init__(self, parent)
         #For reference
+        self.form = form
         self.username = username
         self.parent = parent
         self.name = tank[0]
@@ -98,6 +157,18 @@ class Upgrade(selectGui.UpgradeForm):
             self.speed += 0.1
             self.populateBoxes()
 
+    def convertToString(self, lst):
+        a = ""
+        for b in lst:
+            a += str(b) + ":"
+        return a
+
+    def getNewStats(self):
+        statList = [self.name, self.hp, self.damage, self.penetration, self.reload,
+                    self.armour, self.hullTraverse, self.turretTraverse, self.speed]
+        a = self.convertToString(statList)
+        return a
+
     def confirmEdit( self, event ):
         r = open("login.conf", "r")
         config = r.read().split("\n")
@@ -106,10 +177,10 @@ class Upgrade(selectGui.UpgradeForm):
         r.close()
         conn = netComms.networkComms(self.ipAddr, self.port)
         toSend = ["Update", self.username]
-        toSend.append(self.tank)
+        toSend.append(self.getNewStats())
         toSend.append(self.xp)
         if messages.YesNo(self.parent, "Confirm changes?"):
-            conn.send(pickle.dumps(toSend))
+            conn.send(toSend)
             messages.Info(self.parent, "Changes sent.")
             self.Show(False)
         else:
@@ -127,24 +198,47 @@ class Main(selectGui.MainFrame):
         #Variables passed from the login form
         self.username = username
         self.progress = xp
+        self.parent = parent
         self.owned = owned
+
+        #Set up config
+        r = open("login.conf", "r")
+        config = r.read().split("\n")
+        self.ipAddr  = getConfiguration(config, "ip_address")
+        self.port = getConfiguration(config, "port")
+        r.close()
         #Pull up all known tanks
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
         #We only want the tanks that we own
-        print "TANKS: "+str(self.tanks)
-        print "OWNED: "+str(self.owned)
         for i in range(len(owned)-1, 0, -1):
             if owned[i] == 0:
-                print i
                 self.tanks.pop(i)
 
         self.conn.close()
         self.tankChoice.Clear()
         for i in range(len(self.tanks)):
             self.tankChoice.Append(self.tanks[i][0])
+
+    def toInt(self, lst):
+        for i in range(len(lst)):
+            try:
+                lst[i] = float(lst[i])
+            except Exception:
+                pass
+        return lst
+
     def goToBattle(self,  event):
         import TankClient
-        inst = TankClient.main(self.tank,  self.host,  self.port)
+        try:
+            assert(self.AddressBox.GetValue() != u"")
+            assert(self.tankChoice.GetSelection() >= 0)
+            instance = [self.username, self.toInt(self.stats), self.host, self.port]
+            TankClient.main(instance)
+        except AssertionError:
+            messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
+        #except Exception as e:
+        #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
+        #    sys.exit()
         
     def setHost(self,  event):
         try:
@@ -155,14 +249,11 @@ class Main(selectGui.MainFrame):
             pass
 
     def getStats(self, username, tankName):
-        r = open("login.conf", "r")
-        config = r.read().split("\n")
-        self.ipAddr  = getConfiguration(config, "ip_address")
-        self.port = getConfiguration(config, "port")
-        r.close()
         conn = netComms.networkComms(self.ipAddr, self.port)
-        conn.send(pickle.dumps(["GET", username, tankName]))
-        return pickle.loads(conn.recieved).split("/")[:-1]
+        conn.send(["GET", username, tankName])
+        a= (conn.recieved)
+        return a.split(":")
+
 
     def doStats(self,  event):
         self.sel = self.tankChoice.GetCurrentSelection()
@@ -178,17 +269,51 @@ class Main(selectGui.MainFrame):
                                             "\nSpeed: "+str(self.stats[8]))
         self.name = self.tanks[self.sel][1]
 
+    def getAllTanks(self):
+        self.conn = sqlite3.Connection("TankStats.db")
+        self.cur = self.conn.cursor()
+        a = self.cur.execute("SELECT name FROM Tanks").fetchall()
+        a = [x[0] for x in a]
+        return a
+
     def doBuy( self, event ):
         buyApp = wx.App(False)
-        buyFrame = Buy(None)
+        buyFrame = Buy(None, self.username, self.getAllXP(), self.getAllTanks(), self)
         buyFrame.Show(True)
         buyApp.MainLoop()
 
+    def getAllXP(self):
+        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn.send(["ALLXP", self.username])
+        return conn.recieved
+
+    def getXP(self, name):
+        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn.send(["XP",str(self.username),str(name)])
+        return conn.recieved
+
     def doUpgrade( self, event ):
         upApp = wx.App(False)
-        upFrame = Upgrade(None, self.tank, self.progress[self.tankChoice.GetSelection()], self.username)
+        upFrame = Upgrade(None, self.tank, self.getXP(self.tank[0]), self.username, self)
         upFrame.Show(True)
         upApp.MainLoop()
+
+    def refresh(self, username):
+        #modify the client
+        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn.send(["OWNED", self.username])
+        self.owned = conn.recieved
+        dataconn = sqlite3.Connection("TankStats.db")
+        cur = dataconn.cursor()
+        self.names = cur.execute("SELECT name FROM Tanks").fetchall()
+        self.names = [x[0] for x in self.owned]
+        self.tankChoice.Clear()
+        for x in range(len(self.owned)-1, 0, -1):
+            if self.owned[x] == 0:
+                self.names.pop(x)
+
+        for i in self.owned:
+            self.tankChoice.Append(i)
 
         
 def main(username, xp, owned):

@@ -117,7 +117,7 @@ class TankBuy ( wx.Frame ):
 		self.m_staticText16.Wrap( -1 )
 		fgSizer3.Add( self.m_staticText16, 0, wx.ALL, 5 )
 		
-		self.xpBox = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 160,-1 ), wx.TE_READONLY )
+		self.xpBox = wx.TextCtrl( self, wx.ID_ANY, u"SELECT A TANK", wx.DefaultPosition, wx.Size( 160,-1 ), wx.TE_READONLY )
 		fgSizer3.Add( self.xpBox, 0, wx.ALL, 5 )
 		
 		self.toBuy = wx.StaticText( self, wx.ID_ANY, u"Tank to buy:", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -148,6 +148,7 @@ class TankBuy ( wx.Frame ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
+		self.TankBox.Bind( wx.EVT_COMBOBOX, self.changeTankPrice )
 		self.buyB.Bind( wx.EVT_BUTTON, self.buyTank )
 		self.m_button18.Bind( wx.EVT_BUTTON, self.cancel )
 	
@@ -156,6 +157,9 @@ class TankBuy ( wx.Frame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def changeTankPrice( self, event ):
+		event.Skip()
+	
 	def buyTank( self, event ):
 		event.Skip()
 	
