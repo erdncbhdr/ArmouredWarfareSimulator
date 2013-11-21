@@ -4,8 +4,10 @@ import sqlite3
 import json
 import pickle
 import math
+import threading
 from netifaces import interfaces, ifaddresses, AF_INET
 from game_calcs import *
+import time
 
 #Create a class to make things easier
 class Player():
@@ -18,12 +20,13 @@ class Player():
         self.hp = hp
         if self.id % 2 == 0:
             self.angle = 90
+            self.team = 0
         else:
             self.angle = 270
-            
+            self.team = 1
         self.turret_angle = self.angle
     def returnValues(self):
-        return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name, self.hp, self.username]
+        return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name, self.hp, self.username, self.team]
     
     def set(self,  data):
         self.x = data[0]
@@ -61,12 +64,13 @@ class TankServer(SocketServer.BaseRequestHandler):
         responds with data or confirmation"""
     #Temporary starting positions
     allow_reuse_address=True
-    Start_x = [200 for x in range(8)]
-    Start_y = [200 for x in range(8)]
+    Start_x = [item for sublist in [[x,x] for x in range(200, 801,200)] for item in sublist]
+    Start_y = [100, 700, 100, 700, 100, 700, 100, 700]
     Players = []
     Bullets = []
     toDespawn = []
     NextBulletId = 0
+    Countdown = -1
 
     def giveDatabaseConnection(self, cur):
         self.cur = cur
@@ -105,8 +109,16 @@ class TankServer(SocketServer.BaseRequestHandler):
         self.newId = len(TankServer.Players)
         TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  hp, username))
         print "Connected: "+name
-        return [self.newId,  self.convertToListHandShake()]
-        
+        if len(TankServer.Players) == 1:
+            TankServer.Countdown = 30
+            self.countdownThread = threading.Thread(target=self.countdown)
+            self.countdownThread.start()
+        return [self.newId,  self.convertToListHandShake(), TankServer.Countdown]
+
+    def countdown(self):
+        while TankServer.Countdown > 0:
+            time.sleep(1)
+            TankServer.Countdown -= 1
     def convertToListHandShake(self):
         return [x.returnValues() for x in TankServer.Players]
         
@@ -135,11 +147,14 @@ class TankServer(SocketServer.BaseRequestHandler):
                 id = bid[0]
                 angleOfImpact = bid[1]
                 angleOfNormal = bid[2]
+
+                #print "AngleOfImpacta: "+str(angleOfImpact)
+                #print "AngleOfNormala: "+str(angleOfNormal)
+                if angleOfNormal < 0:
+                    angleOfNormal = 360 - angleToNormal
                 angleToNormal = angleOfNormal - angleOfImpact
-                if angleToNormal > 180:
-                    angleToNormal = 360 - angleToNormal
-                print "AngleOfImpact: "+str(angleOfImpact)
-                print "AngleOfNormal: "+str(angleOfNormal)
+                #print "AngleOfImpactb: "+str(angleOfImpact)
+                #print "AngleOfNormalb: "+str(angleOfNormal)
                 if angleOfNormal < 0:
                     angleOfNormal = 360 + angleOfNormal
                 x1,y1,x2,y2 = bid[3], bid[4], bid[5], bid[6]

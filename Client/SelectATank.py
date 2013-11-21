@@ -8,6 +8,7 @@ import messages
 import sys
 import pickle
 import netComms
+from livewires import games
 
 def getConfiguration(conf, keyword):
     for a in conf:
@@ -193,6 +194,8 @@ class Upgrade(selectGui.UpgradeForm):
 class Main(selectGui.MainFrame):
     def __init__(self, parent, username, xp, owned):
         selectGui.MainFrame.__init__(self, parent)
+        self.a = games.load_sound("res/Sounds/WoT-Garage.wav")
+        self.a.play()
         self.conn = sqlite3.Connection("TankStats.db")
         self.cur = self.conn.cursor()
         #Variables passed from the login form
@@ -228,6 +231,7 @@ class Main(selectGui.MainFrame):
         return lst
 
     def goToBattle(self,  event):
+        self.a.stop()
         import TankClient
         try:
             assert(self.AddressBox.GetValue() != u"")
@@ -252,6 +256,7 @@ class Main(selectGui.MainFrame):
         conn = netComms.networkComms(self.ipAddr, self.port)
         conn.send(["GET", username, tankName])
         a= (conn.recieved)
+        #print self.tankChoice.GetSelection()
         return a.split(":")
 
 

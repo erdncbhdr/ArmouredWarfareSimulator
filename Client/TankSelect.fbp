@@ -414,7 +414,7 @@
                                 <property name="resize">Resizable</property>
                                 <property name="show">1</property>
                                 <property name="size">200,150</property>
-                                <property name="style">wxTE_MULTILINE</property>
+                                <property name="style">wxTE_MULTILINE|wxTE_READONLY</property>
                                 <property name="subclass"></property>
                                 <property name="toolbar_pane">0</property>
                                 <property name="tooltip"></property>
@@ -623,7 +623,7 @@
                                 <event name="OnSetFocus"></event>
                                 <event name="OnSize"></event>
                                 <event name="OnText">setHost</event>
-                                <event name="OnTextEnter"></event>
+                                <event name="OnTextEnter">goToBattle</event>
                                 <event name="OnTextMaxLen"></event>
                                 <event name="OnTextURL"></event>
                                 <event name="OnUpdateUI"></event>

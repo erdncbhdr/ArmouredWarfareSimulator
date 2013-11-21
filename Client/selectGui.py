@@ -39,7 +39,7 @@ class MainFrame ( wx.Frame ):
 		self.statsLablab.Wrap( -1 )
 		fgSizer1.Add( self.statsLablab, 0, wx.ALL, 5 )
 		
-		self.statsBox = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,150 ), wx.TE_MULTILINE )
+		self.statsBox = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,150 ), wx.TE_MULTILINE|wx.TE_READONLY )
 		fgSizer1.Add( self.statsBox, 0, wx.ALL, 5 )
 		
 		self.serveLab = wx.StaticText( self, wx.ID_ANY, u"Server Address:Port:", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -73,6 +73,7 @@ class MainFrame ( wx.Frame ):
 		# Connect Events
 		self.tankChoice.Bind( wx.EVT_COMBOBOX, self.doStats )
 		self.AddressBox.Bind( wx.EVT_TEXT, self.setHost )
+		self.AddressBox.Bind( wx.EVT_TEXT_ENTER, self.goToBattle )
 		self.goButton.Bind( wx.EVT_BUTTON, self.goToBattle )
 		self.upgradeButton.Bind( wx.EVT_BUTTON, self.doUpgrade )
 		self.m_button16.Bind( wx.EVT_BUTTON, self.doBuy )
@@ -90,6 +91,7 @@ class MainFrame ( wx.Frame ):
 	
 	def goToBattle( self, event ):
 		event.Skip()
+	
 	
 	def doUpgrade( self, event ):
 		event.Skip()
@@ -125,7 +127,7 @@ class TankBuy ( wx.Frame ):
 		fgSizer3.Add( self.toBuy, 0, wx.ALL, 5 )
 		
 		TankBoxChoices = []
-		self.TankBox = wx.ComboBox( self, wx.ID_ANY, u"Combo!", wx.DefaultPosition, wx.DefaultSize, TankBoxChoices, 0 )
+		self.TankBox = wx.ComboBox( self, wx.ID_ANY, u"Select a tank", wx.DefaultPosition, wx.DefaultSize, TankBoxChoices, 0 )
 		fgSizer3.Add( self.TankBox, 0, wx.ALL, 5 )
 		
 		self.m_staticText18 = wx.StaticText( self, wx.ID_ANY, u"Price:", wx.DefaultPosition, wx.DefaultSize, 0 )

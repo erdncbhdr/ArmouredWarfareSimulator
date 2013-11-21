@@ -49,10 +49,11 @@ def getAngleOfIntersection(vecA, vecB):
     #a dot b / mag(a) mag(b)
     num = vecA.dotProduct(vecB)
     denom = vecA.getMagnitude() * vecB.getMagnitude()
-    ang =  math.degrees(math.acos(num/denom)) % 180
-    if ang > 90:
-        diff = ang - 90
-        ang = 90 - diff
+    ang =  math.degrees(math.acos(num/denom))
+    print ang
+    #if ang > 90:
+    #    diff = ang - 90
+    #    ang = 90 - diff
     return ang
 
 def getPoints(x1, y1, x2, y2):
