@@ -96,9 +96,9 @@ class LocalPlayer(games.Sprite):
         self.damage = damage
         self.id = id
         self.va = []
-        self.fire = games.music.load("res/Sounds/ms-1-45mm.wav")
-        self.idle = games.music.load("res/Sounds/marder-idle.wav")
-        self.moving = games.music.load("res/Sounds/marder-moving.wav")
+        self.fire = games.load_sound("res/Sounds/ms-1-45mm.wav")
+        self.idle = games.load_sound("res/Sounds/idle.wav")
+        self.moving = games.load_sound("res/Sounds/moving.wav")
         self.canMove = False
         self.speed = speed
         self.hull_traverse = hull_traverse
@@ -136,7 +136,10 @@ class LocalPlayer(games.Sprite):
                 self.idle.stop()
                 self.moving.play(loops=-1)
             else:
-                self.moving.stop()
+                try:
+                    self.moving.stop()
+                except Exception:
+                    pass
                 self.idle.play(loops=-1)
 
             if games.keyboard.is_pressed(games.K_a):
@@ -151,6 +154,7 @@ class LocalPlayer(games.Sprite):
                 if self.reload_counter == 0:
                     self.newBullets = Bullet(self.x + self.getBulletOffsetX(),  self.y + self.getBulletOffsetY(),  self.turret.angle,  self.id,  self.damage,  -1, self.penetration)
                     self.reload_counter = self.reload
+                    self.fire.play()
             self.reload_counter = int(self.reload_counter)
             if self.reload_counter > 0:
                 #print "RELOAD: "+str(self.reload_counter)
@@ -203,7 +207,7 @@ class Building(games.Sprite):
             image = games.load_image("res/singleBuilding.png")
         elif size == 2:
             image = games.load_image("res/doubleBuilding.png")
-        super(Building, self).__init__(self, image=image, x = x, y = y)
+        super(Building, self).__init__(image=image, x = x, y = y)
         self.setBounds(x,y,size)
 
     def setBounds(self, x, y, size):
@@ -233,9 +237,17 @@ class GameController(games.Sprite):
         self.stats =stats
         self.username = username
         #Open resources
-        self.fire = games.music.load("res/Sounds/ms-1-45mm.wav")
-        self.idle = games.music.load("res/Sounds/marder-idle.wav")
-        self.moving = games.music.load("res/Sounds/marder-moving.wav")
+        self.fire = games.load_sound("res/Sounds/ms-1-45mm.wav")
+        self.idle = games.load_sound("res/Sounds/marder-idle.wav")
+        self.moving = games.load_sound("res/Sounds/marder-moving.wav")
+        self.loadingSongs = [games.load_sound("res/Sounds/WoT-Opening-1.wav"),
+                             games.load_sound("res/Sounds/WoT-Opening-2.wav"),
+                             games.load_sound("res/Sounds/WoT-Opening-3.wav")]
+        self.battleSongs = [games.load_sound("res/Sounds/WoT-Battle-1.wav"),
+                            games.load_sound("res/Sounds/WoT-Battle-2.wav"),
+                            games.load_sound("res/Sounds/WoT-Battle-3.wav"),
+                            games.load_sound("res/Sounds/WoT-Battle-4.wav"),
+                            games.load_sound("res/Sounds/WoT-Battle-5.wav")]
         #These will check for buggy bullets
         self.despawnToServer = []
         name = self.stats[0]
@@ -256,13 +268,15 @@ class GameController(games.Sprite):
         #This will return us the currently connected players and our ID
         #print "RECV: "+str(self.connection.recieved)
         self.id = self.connection.recieved[0]
-        if self.id%2 == 0:
+        if int(self.id)%2 == 0:
             self.team = 0
         else:
             self.team = 1
         self.serverPlayers = self.connection.recieved[1]
         #Start countdown to the game
         self.countdown = self.connection.recieved[2]
+        if self.countdown == 0:
+            self.close()
         #Set the map
         self.map = self.connection.recieved[3]
         self.drawMap(self.map)
@@ -308,16 +322,21 @@ class GameController(games.Sprite):
         print "MAP: "+str(map)
         width = games.screen.get_width()
         height = games.screen.get_height()
+        print "Width:"+str(width)
+        print "Height:"+str(height)
         #Split the screen into 50px blocks
         toplefts_x = [x for x in range(0, width+1, 100)]
         toplefts_y = [x for x in range(150, (height+1)-150, 100)]
         self.buildings = []
         for block in map:
-            newBuilding = Building(toplefts_x[block[0]], toplefts_y[block[0]], block[1])
+            newBuilding = Building(toplefts_x[block[0]], toplefts_y[block[1]], block[2])
             self.buildings.append(newBuilding)
             games.screen.add(self.buildings[-1])
         return None
     def countingDown(self):
+        import random
+        toPlay = random.choice(self.loadingSongs)
+        toPlay.play()
         while self.countdown > 0:
             time.sleep(1)
             self.countdown -= 1
@@ -325,6 +344,10 @@ class GameController(games.Sprite):
         games.screen.remove(self.timerMain)
         games.screen.remove(self.timerTop)
         self.client.canMove = True
+
+    def close(self):
+        games.screen.quit()
+        raise NameError("Game in progress")
 
     def update(self):
         if games.keyboard.is_pressed(games.K_ESCAPE):
@@ -466,17 +489,20 @@ class GameController(games.Sprite):
             return False
 
 def main(instance):
-    #This will be called from a new file with the stats, [speed, hull traverse, turret traverse, hp, name]
-    username = instance[0]
-    stats = instance[1]
-    host = instance[2]
-    port = instance[3]
-    # establish background
-    back = games.load_image("res/background.png")
-    fat_controller = GameController(stats,  host,  port, username)
-    games.screen.add(fat_controller)
-    games.screen.background = back
-    games.screen.mainloop()
+    try:
+        #This will be called from a new file with the stats, [speed, hull traverse, turret traverse, hp, name]
+        username = instance[0]
+        stats = instance[1]
+        host = instance[2]
+        port = instance[3]
+        # establish background
+        back = games.load_image("res/background.png")
+        fat_controller = GameController(stats,  host,  port, username)
+        games.screen.add(fat_controller)
+        games.screen.background = back
+        games.screen.mainloop()
+    except NameError as message:
+        return message
 
 
 

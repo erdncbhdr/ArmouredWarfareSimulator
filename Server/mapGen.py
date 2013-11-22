@@ -9,7 +9,8 @@ def generateMap(width, height):
     #Split the screen into 50px blocks
     toplefts_x = [x for x in range(0, width+1, 100)]
     toplefts_y = [x for x in range(150, (height+1)-150, 100)]
-
+    numX = len(toplefts_x)
+    numY = len(toplefts_y)
     #Initialise map array
     Map = []
 
@@ -25,9 +26,11 @@ def generateMap(width, height):
         toSpawn = random.randint(0,60)
         #Add a single building
         if toSpawn > 50:
-            Map.append([i, 1])
+            xPos = i % numX
+            yPos = i % numY
+            Map.append([xPos, yPos, 1])
         #Add a 2x2
         elif toSpawn == 30:
-            Map.append([i, 2])
+            Map.append([xPos, yPos, 2])
     return Map
 

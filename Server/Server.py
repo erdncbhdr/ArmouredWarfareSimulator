@@ -92,8 +92,10 @@ class TankServer(SocketServer.BaseRequestHandler):
                 pass
             
     def stringRequest(self,  req):
-        if "handshake" in req[0]:
+        if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
             return self.doHandshake(req[1], req[2], req[3])
+        elif TankServer.Countdown == 0:
+            return [-1, -1, 0, -1]
         else:
             return "InvalidCommand"
             

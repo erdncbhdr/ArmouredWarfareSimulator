@@ -237,7 +237,8 @@ class Main(selectGui.MainFrame):
             assert(self.AddressBox.GetValue() != u"")
             assert(self.tankChoice.GetSelection() >= 0)
             instance = [self.username, self.toInt(self.stats), self.host, self.port]
-            TankClient.main(instance)
+            a = TankClient.main(instance)
+            messages.Warn(self.parent, "Error: "+str(a))
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
         #except Exception as e:
