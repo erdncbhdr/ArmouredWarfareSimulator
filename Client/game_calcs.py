@@ -45,6 +45,20 @@ class Vector():
     def dotProduct(self, vector):
         return self.getDx()*vector.getDx() + self.getDy()*vector.getDy()
 
+class Rectangle():
+    def __init__(self, TopLeft, BottomLeft, BottomRight, TopRight):
+        TopSide = Vector(TopLeft[0], TopLeft[1], TopRight[0], TopRight[1])
+        LeftSide = Vector(TopLeft[0], TopLeft[1], BottomLeft[0], BottomLeft[1])
+        BottomSide = Vector(BottomLeft[0], BottomLeft[1], BottomRight[0], BottomRight[1])
+        RightSide = Vector(TopRight[0], TopRight[1], BottomRight[0], BottomRight[1])
+        self.myVectors = [TopSide, LeftSide, RightSide, BottomSide]
+
+    def collides(self, vector):
+        for v in self.myVectors:
+            if intersect(v, vector):
+                return True
+        return False
+
 def getAngleOfIntersection(vecA, vecB):
     #a dot b / mag(a) mag(b)
     num = vecA.dotProduct(vecB)

@@ -8,6 +8,7 @@ import threading
 from netifaces import interfaces, ifaddresses, AF_INET
 from game_calcs import *
 import time
+import mapGen
 
 #Create a class to make things easier
 class Player():
@@ -71,6 +72,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     toDespawn = []
     NextBulletId = 0
     Countdown = -1
+    Map = mapGen.generateMap(1024, 768)
 
     def giveDatabaseConnection(self, cur):
         self.cur = cur
@@ -113,7 +115,7 @@ class TankServer(SocketServer.BaseRequestHandler):
             TankServer.Countdown = 30
             self.countdownThread = threading.Thread(target=self.countdown)
             self.countdownThread.start()
-        return [self.newId,  self.convertToListHandShake(), TankServer.Countdown]
+        return [self.newId,  self.convertToListHandShake(), TankServer.Countdown, TankServer.Map]
 
     def countdown(self):
         while TankServer.Countdown > 0:

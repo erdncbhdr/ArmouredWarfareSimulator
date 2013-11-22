@@ -4,27 +4,42 @@ from threading import Thread
 import netComms
 import sys
 from game_calcs import *
-from numpy import *
 from pygame import *
-from pygame import mask
 import time
 
 games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
+class superSquare(games.Sprite):
+    def __init__(self, enemy, x, y):
+        if enemy:
+            image = games.load_image("res/Enemy.png")
+        else:
+            image = games.load_image("res/Friendly.png")
+        super(superSquare, self).__init__(image=image, x=x, y=y)
+    def updatePos(self, x, y):
+        self.x = x
+        self.y = y
 
 class Player(games.Sprite):
     """ The main player class. """
-    def __init__(self, x, y,  angle,  name,  hp, username, turret, team):
+    def __init__(self, x, y,  angle,  name,  hp, username, turret, team, clientteam):
         """ Initialize player sprite. """
         image = games.load_image("res/"+name+"_body.png")
         super(Player, self).__init__(image = image, x = x, y = y, angle = angle)
         self.name = name
         self.username = username
-        self.hp = int(hp)
         self.team = team
+        self.clientTeam = clientteam
+        if self.team == self.clientTeam:
+            self.square = superSquare(False, self.x, self.y-80)
+        else:
+            self.square = superSquare(True, self.x, self.y-80)
+
+        self.hp = int(hp)
         self.userTag = games.Text(value = self.username, x=x, y=y-90, color=colour.black, size=20)
         self.nametag = games.Text(value = name+" "+str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
         games.screen.add(self.nametag)
+        games.screen.add(self.square)
         games.screen.add(self.userTag)
         self.maxHp = hp
         self.state = 0
@@ -37,6 +52,8 @@ class Player(games.Sprite):
             self.image = games.load_image("res/"+self.name+"_body_damaged.png")
             self.turret.image = games.load_image("res/"+self.name+"_turret_damaged.png")
             self.state = 1
+        self.square.x = self.x
+        self.square.y = self.y-80
 
 class Turret(games.Sprite):
     def __init__(self, x, y,  angle,  name):
@@ -79,6 +96,9 @@ class LocalPlayer(games.Sprite):
         self.damage = damage
         self.id = id
         self.va = []
+        self.fire = games.music.load("res/Sounds/ms-1-45mm.wav")
+        self.idle = games.music.load("res/Sounds/marder-idle.wav")
+        self.moving = games.music.load("res/Sounds/marder-moving.wav")
         self.canMove = False
         self.speed = speed
         self.hull_traverse = hull_traverse
@@ -102,12 +122,22 @@ class LocalPlayer(games.Sprite):
                 self.y += self.speed * math.sin(math.radians(self.angle))
                 self.turret.x += self.speed * math.cos(math.radians(self.angle))
                 self.turret.y+= self.speed * math.sin(math.radians(self.angle))
+                try:
+                    self.idle.stop()
+                except Exception:
+                    pass
+                self.moving.play(loops=-1)
 
             elif games.keyboard.is_pressed(games.K_s):
                 self.x -= self.speed * math.cos(math.radians(self.angle))
                 self.y -= self.speed * math.sin(math.radians(self.angle))
                 self.turret.x -= self.speed * math.cos(math.radians(self.angle))
                 self.turret.y -= self.speed * math.sin(math.radians(self.angle))
+                self.idle.stop()
+                self.moving.play(loops=-1)
+            else:
+                self.moving.stop()
+                self.idle.play(loops=-1)
 
             if games.keyboard.is_pressed(games.K_a):
                 self.angle -= self.hull_traverse
@@ -134,6 +164,9 @@ class LocalPlayer(games.Sprite):
         if self.hp < self.maxHp / 2:
             self.image = games.load_image("res/"+self.name+"_body_damaged.png")
             self.turret.image = games.load_image("res/"+self.name+"_turret_damaged.png")
+        if self.hp <= 0:
+            self.hp = 0
+            self.canMove = False
 
     def getBulletValues(self):
         try:
@@ -163,7 +196,31 @@ class LocalTurret(games.Sprite):
         
         elif games.keyboard.is_pressed(games.K_RIGHT):
             self.angle += self.turret_traverse
-            
+
+class Building(games.Sprite):
+    def __init__(self, x, y, size):
+        if size == 1:
+            image = games.load_image("res/singleBuilding.png")
+        elif size == 2:
+            image = games.load_image("res/doubleBuilding.png")
+        super(Building, self).__init__(self, image=image, x = x, y = y)
+        self.setBounds(x,y,size)
+
+    def setBounds(self, x, y, size):
+        if size == 1:
+            offset = 100
+        else:
+            offset = 200
+        TopLeft = [self.x, self.y]
+        TopRight = [self.x + offset, self.y]
+        BottomLeft = [self.x, self.y + offset]
+        BottomRight = [self.x + offset, self.y + offset]
+        TopSide = Vector(TopLeft[0], TopLeft[1], TopRight[0], TopRight[1])
+        LeftSide = Vector(TopLeft[0], TopLeft[1], BottomLeft[0], BottomLeft[1])
+        BottomSide = Vector(BottomLeft[0], BottomLeft[1], BottomRight[0], BottomRight[1])
+        RightSide = Vector(TopRight[0], TopRight[1], BottomRight[0], BottomRight[1])
+        self.myVectors = [TopSide, LeftSide, RightSide, BottomSide]
+
 
 class GameController(games.Sprite):
     """This is the main class-  it will col all network comms and update the players as required"""
@@ -175,6 +232,10 @@ class GameController(games.Sprite):
         self.connection = netComms.networkComms(host,  int(port))
         self.stats =stats
         self.username = username
+        #Open resources
+        self.fire = games.music.load("res/Sounds/ms-1-45mm.wav")
+        self.idle = games.music.load("res/Sounds/marder-idle.wav")
+        self.moving = games.music.load("res/Sounds/marder-moving.wav")
         #These will check for buggy bullets
         self.despawnToServer = []
         name = self.stats[0]
@@ -202,6 +263,9 @@ class GameController(games.Sprite):
         self.serverPlayers = self.connection.recieved[1]
         #Start countdown to the game
         self.countdown = self.connection.recieved[2]
+        #Set the map
+        self.map = self.connection.recieved[3]
+        self.drawMap(self.map)
         self.countdownThread = Thread(target=self.countingDown)
         self.countdownThread.start()
         #Add a timer
@@ -232,7 +296,7 @@ class GameController(games.Sprite):
             #Add a new turret instance
             self.serverInstancesTurret.append(Turret(p[0], p[1], p[3], p[4]))
             #Add a new player instance
-            self.serverInstances.append(Player(p[0], p[1], p[2], p[4],  p[5], p[6], self.serverInstancesTurret[-1], p[7]))
+            self.serverInstances.append(Player(p[0], p[1], p[2], p[4],  p[5], p[6], self.serverInstancesTurret[-1], p[7], self.client.team))
             #add them
             games.screen.add(self.serverInstances[-1])
             games.screen.add(self.serverInstancesTurret[-1])
@@ -240,6 +304,19 @@ class GameController(games.Sprite):
             
         #Ok we cool
 
+    def drawMap(self, map):
+        print "MAP: "+str(map)
+        width = games.screen.get_width()
+        height = games.screen.get_height()
+        #Split the screen into 50px blocks
+        toplefts_x = [x for x in range(0, width+1, 100)]
+        toplefts_y = [x for x in range(150, (height+1)-150, 100)]
+        self.buildings = []
+        for block in map:
+            newBuilding = Building(toplefts_x[block[0]], toplefts_y[block[0]], block[1])
+            self.buildings.append(newBuilding)
+            games.screen.add(self.buildings[-1])
+        return None
     def countingDown(self):
         while self.countdown > 0:
             time.sleep(1)
@@ -273,7 +350,7 @@ class GameController(games.Sprite):
             try:
                 self.newAdd = self.recvPlayers[-1]
                 self.serverInstancesTurret.append(Turret(self.newAdd[0],  self.newAdd[1],  self.newAdd[3],  self.newAdd[4]))
-                self.serverInstances.append(Player(self.newAdd[0],  self.newAdd[1],  self.newAdd[2],  self.newAdd[4],  self.newAdd[5], self.newAdd[6], self.serverInstancesTurret[-1], self.newAdd[7]))
+                self.serverInstances.append(Player(self.newAdd[0],  self.newAdd[1],  self.newAdd[2],  self.newAdd[4],  self.newAdd[5], self.newAdd[6], self.serverInstancesTurret[-1], self.newAdd[7], self.client.team))
                 games.screen.add(self.serverInstances[-1])
                 games.screen.add(self.serverInstancesTurret[-1])
                 self.recvPlayers.pop(-1)
@@ -315,7 +392,7 @@ class GameController(games.Sprite):
         #Add new bullets
         for bullet in server:
             if bullet[6] not in currentIDs:
-                print "ID:"+str(bullet)
+                self.fire.play()
                 self.bullets.append(Bullet(bullet[0],  bullet[1],  bullet[2],  bullet[3],  bullet[4],  bullet[6], bullet[7]))
                 games.screen.add(self.bullets[-1])
                 
@@ -378,7 +455,6 @@ class GameController(games.Sprite):
                         Vector(corner1X, corner1Y, corner4X, corner4Y),
                         Vector(corner2X, corner2Y, corner3X, corner3Y),
                         Vector(corner2X, corner2Y, corner4X, corner4Y)]
-
     def doesPenetrate(self, angle, bullet):
         if angle < 50:
             return False
