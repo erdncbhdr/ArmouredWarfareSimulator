@@ -19,6 +19,10 @@ except Exception:
     f = open("wx.pth", "w")
     f.write("wx-2.8-gtk2-unicode")
     f.close()
+f = open("wx.pth","r")
+wxPath = f.read()
+sys.path.append("/lib/"+str(wxPath))
+f.close()
 
 if __name__ == "__main__":
     login.startLogin()

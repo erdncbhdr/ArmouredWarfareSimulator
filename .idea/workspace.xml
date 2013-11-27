@@ -1,53 +1,1134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Churchill_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Churchill_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Crusader_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Crusader_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Enemy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Friendly.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_body.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_turret.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/M4Sherman_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/M4Sherman_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/PanzerIV_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/PanzerIV_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/T34_body.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/T34_turret.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-1.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-2.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-3.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-4.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-5.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Draw.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Garage.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Main-Theme.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-1.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-2.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-3.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/conn.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/critical-chime.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/critical-chime2.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/doubleBuilding.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/enemy-vehicle-destroyed.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/firing.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/idle.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-75mm-pak40.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-idle.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-moving.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/maus_body_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/maus_turret_damaged.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/media.io.1448111792.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/moving.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-45mm.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-idle.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-moving.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ready-to-fire.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/singleBuilding.png" />
+    <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="Added wx">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.5.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.6.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.7.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/DownButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/DynamicSashWindow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/EditableListBox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/Editra.icns" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/ca_ES@valencia/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/cs_CZ/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/da_DK/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/de_DE/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/en_US/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/es_ES/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/fr_FR/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/gl_ES/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/hr_HR/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/hu_HU/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/it_IT/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/ja_JP/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/lv_LV/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/nl_NL/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/nn_NO/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/pl_PL/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/pt_BR/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/ru_RU/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/sk_SK/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/sl_SI/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/sr_RS/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/sv_SE/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/tr_TR/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/uk_UA/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/zh_CN/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/locale/zh_TW/LC_MESSAGES/Editra.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/FileBrowser-1.6-py2.5.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/FileBrowser-1.6-py2.6.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/FileBrowser-1.6-py2.7.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/LEDNumberCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/Launch-1.11-py2.5.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/Launch-1.11-py2.6.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/Launch-1.11-py2.7.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/Py.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyCrust.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyCrust_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyCrust_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/PyShell-0.8-py2.5.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/PyShell-0.8-py2.6.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/plugins/PyShell-0.8-py2.7.egg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PySlices.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PySlices_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PySlices_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/TreeListCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/UpButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/XRCed_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/XRCed_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_activex.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_animate.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_animate.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_aui.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_aui.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_calendar.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_calendar.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_combo.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_combo.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_controls_.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_controls_.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_core_.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_core_.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_gdi_.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_gdi_.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_gizmos.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_gizmos.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_glcanvas.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_glcanvas.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_grid.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_grid.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_html.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_html.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_media.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_misc_.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_misc_.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_richtext.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_richtext.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_stc.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_stc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_webkit.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_webkit.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_windows_.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_windows_.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_wizard.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_wizard.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_xrc.pyd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-gtk2-unicode/wx/_xrc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/about.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/advanced.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/advanced.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/attribute.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/backward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/backward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/bin_file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/bmark_add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/bmark_next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/bmark_pre.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/boo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/cdrom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/computer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/css.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/cut.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/cut.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/other/doc_props.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/doc_props.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra256.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra64.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra_doc.icns" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra_doc.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/editra_doc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/element.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/find.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/find.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/findr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/findr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/floppy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/folder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/font.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/function.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/gdiplus.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/harddisk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/html.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/html_gen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/indent.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/java.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/log.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/mail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/method.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/myole4ax.tlb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/newwin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/outdent.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/package.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/paste.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/paste.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/php.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/plugin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/pref.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/pref.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/print.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/print.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/printpre.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/property.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/pyshell.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/python.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/quit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/readonly.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/redo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/redo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/refresh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/remove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/rtf_gen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/ruby.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/save.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/save.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/saveas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/selectall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/separator.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/shell.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/sizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/spacer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/splashwarn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/stop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/style_edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/tex_gen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/mime/text.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/theme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/tool.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/undo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/undo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/unins000.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/unins000.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/usb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/variable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/menu/web.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/toolbar/web.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxBitmapButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxBoxSizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxCheckBox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxChoice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxChoicebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxComboBox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxDialog.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxFilePickerCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxFlexGridSizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxFrame.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxGauge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxGrid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxGridBagSizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxGridSizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxGrid_bad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxHyperlinkCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxListBox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxListCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxListbook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxMenu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxMenuBar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxMenuItem.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxNotebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxRadioButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxScrollBar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxScrolledWindow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxSlider.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxSpinButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxSpinCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxSplitterWindow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStaticBitmap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStaticBox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStaticBoxSizer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStaticLine.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStaticText.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxStatusBar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxTextCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxToggleButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxToolBar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxTreeCtrl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/bitmaps/wxTreebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxbase28uh_net_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxbase28uh_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxbase28uh_xml_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_adv_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_aui_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_core_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_gizmos_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_gizmos_xrc_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_gl_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_html_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_media_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_qa_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_richtext_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_stc_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wxmsw28uh_xrc_vc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/af/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/ca/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/cs/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/da/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/de/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/el/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/es/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/eu/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/fi/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/fr/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/gl_ES/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/hi/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/hu/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/id/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/it/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/ja/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/lv/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/ms/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/nb/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/nl/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/pl/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/pt/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/pt_BR/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/ru/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/sk/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/sl/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/sq/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/sv/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/tr/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/uk/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/vi/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/zh_CN/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/locale/zh_TW/LC_MESSAGES/wxstd.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/xrced.htb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/xrced.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/68k_assembly.68k" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/AUTHORS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/AUTHORS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/AttributePanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Utilities/BBox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Utilities/BBoxTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/BlackBoard.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/BlueMonday.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/CDate.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/CDate.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/CHANGELOG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/CHANGES.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/CHANGES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/CHANGES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/CHANGES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/COPYING" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Tango/COPYING" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ClickableHtmlWindow.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/ClickableHtmlWindow.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Utilities/Colors.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/Cream.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/Dessert.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/Editra.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/Editra" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/ErrorDialogs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/ErrorDialogs_wdr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/FAQ" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/FloatCanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Utilities/GUI.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/GUIMode.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/Guepardo.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/dexml/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/MigrationGuide.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/MigrationGuide.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/Mocha.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/NEWS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/NavCanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyAlaCarte.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyAlaMode.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyAlaModeTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyCrust.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyFilling.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyShell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PySlices.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PySlicesShell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/PyWrap.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/PythonBitmaps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/editor/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/README.win32.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/pixmaps/theme/Default/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Resources.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/ScreenShot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/THANKS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/TODO.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/TODO" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/TestWin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/XMLTree.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/XMLTreeMenu.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/Xtext.xtext" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/build/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/persist/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/lib_setup/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/art/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/editor/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatcanvas/Utilities/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/dexml/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/filters/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/editor/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mixins/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/__version__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_actionscript.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_ada.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_apache.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_asm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_asm68k.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_asybuiltins.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_basic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_batch.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/_bitmaps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_bmpshape.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_boo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_caml.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_canvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_clbuiltins.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_cobra.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_composit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_controls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_controls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_core.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_core.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_cpp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_css.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_d.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_diagram.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_diff.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_divided.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_django.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_dot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_drawn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_editra_ss.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_edje.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_eiffel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_erlang.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_ferite.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_flagship.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_forth.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_fortran.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_gdi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_gdi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_groovy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_gui4cli.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_haskell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_haxe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_html.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_inno.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_issuelist.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_java.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_javascript.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_kix.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_latex.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_lines.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_lisp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_lout.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_lua.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_luabuiltins.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_make.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_mako.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/_mapping.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_mapping.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_masm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_matlab.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_misc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_misc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_mssql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_nasm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_nonmem.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_nsis.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ogl/_oglmisc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_ooc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_pascal.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_perl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_php.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_phpbuiltins.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_pike.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_postscript.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_progress.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_props.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_python.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_ruby.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_s.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_sh.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_smalltalk.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_sql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_squirrel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_stata.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_tcl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/_threads.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/_trash.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/dexml/_util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_vbscript.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_verilog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_vhdl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/_vimbuiltins.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_visualbasic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/_windows.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_windows.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/_winrecycle.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/_wx.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_xml.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_xtext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/_yaml.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/actionscript.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/activex.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/activex.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/activex.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/activexwrapper.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/activexwrapper.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/ada.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/advancedsplash.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/agile.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/analogclock.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/analogclock.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/anchors.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/anchors.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/animate.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/animate.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/apache_conf.conf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aquabutton.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/art.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/art_aui.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/art_default.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/art_internal.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/art_msw.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/artmanager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/asm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/attribute.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/aui.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/aui_constants.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/aui_constants.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/aui_switcherdialog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/aui_switcherdialog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/aui_utilities.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/aui_utilities.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/auibar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/auibar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/auibook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/auibook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/auinavi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/autocomp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/autosetuppubsubv1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/autumn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/backupmgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/balloontip.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/bar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/bash_shell_script.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/bbcode.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/blue.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/boo.boo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/borland.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/buffer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/build/build_options.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/buttonbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/buttonpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/buttonpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/buttons.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/buttons.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/lib_setup/buttontreectrlpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/bw.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/c-shell_script.csh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/c.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/calendar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/calendar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/calendar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/calendar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/callables.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/calllock.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/caml.ml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/canvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/canvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/cascading_style_sheet.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/choicedlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/cilk.cilk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/clipboard.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/cmdline.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/cmenumgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/cobra.cobra" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/coldfusion.cfm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/colorful.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/colorsetter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourdb.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourdb.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourselect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/lib_setup/colourselect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourselect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourutils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/combo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/combobox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/combotreebox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/compiled.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/completer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/component.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/build/config.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/console.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/control.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/controls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/core.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/cpp.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/crust.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/crustslices.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/csharp.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/csscomp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/ctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/ctrlbox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/cubecolourdialog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/customtreectrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/customtreectrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/d.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/datamsg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/dbg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/dbg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/decorlib.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/default.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/default.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/delayedresult.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/dev_tool.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/dialogs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/dialogs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/diff_file.diff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/dispatcher.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/django.django" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/dockart.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/dockart.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/doctools.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/document.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/docview.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/dos_batch_script.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/dot.dot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/dotnet.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/dragscroller.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/dsp56k_assembly.56k" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/e_weblib.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/ecbasewin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/eclutil.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/ecpickers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_art.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_basestc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_basewin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_book.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_bookmark.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_cmdbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_crypt.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_editv.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_event.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_glob.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_i18n.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_ipc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_keyh.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_log.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_main.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_marker.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_mdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_menu.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_mpane.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_msg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_pages.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_print.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_search.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_shelf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_statbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_stc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_style.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_tab.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_theme.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_thread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_toolbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_txt.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_vim.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ed_xml.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/edimage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/editor/editor.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/editor.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/editor/editor.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/editra_style_sheet.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/docs/editra_style_sheets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/editwindow.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/edje.edc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/efilehist.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/eiffel.e" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/elistctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/elistmix.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/emacs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/embeddedimage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/embeddedimage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/encdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/encode_bitmaps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/erlang.erl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/errdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/eventStack.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/events.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/eventwatcher.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/evtmgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/evtmgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/exchandling.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/expando.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/ez_setup.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/fancytext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/fancytext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/fchecker.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/ferite.fe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/dexml/fields.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/filebrowsebutton.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/filebrowsebutton.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/fileimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/filemgrdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/fileutil.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/filling.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/filter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/filterdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/finddlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/art/flagart.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/flagship.prg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/flashwin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/flashwin_old.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/flatmenu.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/flatnotebook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/flatnotebook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/flatnotebook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/floatbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/floatbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/floatcanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/floatspin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/fmcustomizedlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/fmresources.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/foldmenu.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/foldmenu.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/foldpanelbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/foldpanelbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/lib_setup/fontselect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/forth.4th" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/fortran_77.for" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/fortran_95.f95" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/fourwaysplitter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/frame.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/framemanager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/framemanager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/friendly.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/fruity.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/functional.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/gallery.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/genaxmodule.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/generate.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/generator.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/genericmessagedialog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/gestures.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/gizmos.crx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/gizmos.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/gizmos.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/glcanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/glcanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/globals.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/globalsettings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/gradientbutton.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/graphics.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/grid.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/grid.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/grid.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mixins/grid.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/gridlabelrenderer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/gridmovers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/gridmovers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/grids.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/grids.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/groovy.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/gui4cli.gui" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/haskell.hs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/haxe.hx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/hdl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/help.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/helpers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/helpviewer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/helpviewer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/histcache.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/html.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/html.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/html.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/html.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/htmlcomp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/htmlhelp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/hyperlink.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/hyperlink.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/hypertreelist.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/iewin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/iewin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/iewin_old.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/iface.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/imagebrowser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/imagebrowser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/imagelist.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mixins/imagelist.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/editor/images.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/images.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/images.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/editor/images.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/images_32x32.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/imageutils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/imageutils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/img.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/img2img.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/img2img.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/img2png.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/img2png.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/img2py.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/img2py.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/art/img2pyartprov.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/img2xpm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/tools/img2xpm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/info.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/infodlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/infoframe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/infoframe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/inno_setup_script.iss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/inspection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/inspection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/intctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/intctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/interpreter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/intl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/intl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/introspect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/ipaddrctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/issuelist.isl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/itemspicker.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/java.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/javascript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/kix.kix" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/knobctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/korn_shell_script.ksh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/labelbook.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/langlistctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/latex.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/latex.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/launcher.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/layoutf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/layoutf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/licence/lgpl.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/licence/licence.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/licence/licendoc.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/lisp.lisp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/listctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mixins/listctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/listener.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/listener.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/listenerbase.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/listenerimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/listenerimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/logfile.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/lout.lt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/lua.lua" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/magic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/makefile.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/mako.mako" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/manni.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/maskedctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/maskededit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/maskededit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/maskednumctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/masm.masm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/math.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/matlab.matlab" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/media.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/media.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/meta.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/microsoft_sql.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/styles/midnight.ess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/misc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/miscutil.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/model.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/monokai.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/msgpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/multidirdialog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/multisash.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/multisash.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/murphy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mvctree.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mvctree.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/myole4ax.idl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/native.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/netwide_assembler.nasm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/newevent.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/newevent.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/newlisp.lsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/nonmem_control_stream.ctl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/notification.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/notificationmgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/notificationmgr_old.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/nullsoft_installer_script.nsi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/numctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/objective_c.mm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/octave.oct" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/ooc.ooc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/osutil.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/other.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/other.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/outbuff.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/page.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/panel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/panelbox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/params.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/parse.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/parsers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/pascal.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/pastie.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/path.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pdfwin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pdfwin_old.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/peakmeter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/perl.pl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/perldoc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/persist/persist_constants.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/persist/persist_handlers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/persist/persistencemanager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/perspective.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/php.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/piectrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/pike.pike" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pkg_resources.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/pl_sql.plsql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/plain_text.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/platebtn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/platebtn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/plot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/plot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/plugdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/plugin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/plugin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/policies.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/popupctl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/popupctl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/postscript.ps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/docs/licence/preamble.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/prefdlg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/presenter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/printout.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/printout.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/profiler.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/progress_4gl.4gl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/properties.ini" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/pseudo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/pstatbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pub.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pubsub1/pub.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pubsub2/pub.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/publisher.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/publisher.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/publisherbase.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/publishermixin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/publishermixin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pubsub.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/pubsub.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pubsubconf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/pybusyinfo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/pycollapsiblepane.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/pycolourbox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/pycolourbox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/pycolourchooser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/pycolourchooser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/pycolourslider.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/pycolourslider.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/pycomp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pydocview.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/pygauge.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/colourchooser/pypalette.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/colourchooser/pypalette.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/pyprogress.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pyshell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/pyshell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/python.python" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/pywxrc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/r.r" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/rcsizer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/rcsizer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/resizewidget.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/richtext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/rightalign.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/rightalign.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/rpcMixin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/rtf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/rubberband.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/mixins/rubberband.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/ruby.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/rulerctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/s.s" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/sawfishrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/scanner.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/scheme.scm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/scrolledpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/scrolledpanel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/searcheng.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/segmentbk.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/editor/selection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/editor/selection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/setup.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/setuparg1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/setupkwargs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/setupv1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/setupv2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/shapedbutton.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/sheet.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/sheet.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/shell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/shell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/shell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/autocomp/simplecomp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/sized_controls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/sliceshell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/smalltalk.st" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/special.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/speedmeter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/splashscreen.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/splashscreen.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/splitter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/sql.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/squirrel.nut" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/stata.do" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/statbmp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/stattext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/stattext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/stc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/stc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/stcprint.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/stcspellcheck.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/style.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/style_editor.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/analogclock/styles.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/supertooltip.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/svg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/svg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/syndata.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/synextreg.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/synglob.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/syntax.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/syntax/synxml.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/system_verilog.sv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/tabart.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/tabart.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/aui/tabmdi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/aui/tabmdi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/tango.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/tcl_tk.tcl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/templates.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/terminal.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/formatters/terminal256.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/tests/test_interpreter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/tests/test_introspect.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/tests/test_pseudo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/tests/test_version.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/tests/testall.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/text.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/textctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/throbber.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/throbber.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/thumbnailctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ticker.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/ticker_xrc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/masked/timectrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/timectrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/toasterbox.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/token.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ribbon/toolbar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/tools.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicargspec.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/topicargspecimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/topicargspecimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicdefnprovider.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicexc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicmgr.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/arg1/topicmgrimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/kwargs/topicmgrimpl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicobj.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/topictreeprinter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topictreetraverser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/utils/topictreevisitor.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/topicutils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/trac.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/treeconfig.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/mixins/treemixin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/eclib/txtentry.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/ebmlib/txtutil.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/ultimatelistctrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/undo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/unicode_text.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/unistring.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/updater.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pubsub1/utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/pubsub2/utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/vala.vala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/validatedefnargs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/vbscript.vbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/verilog.v" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/py/version.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/vertedit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/vhdl.vhdl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/view.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/vim.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/visual_basic.vb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/styles/vs.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/pubsub/core/weakmethod.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/extern/pygments/lexers/web.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/webkit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/webkit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/wizard.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/wizard.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/wordwrap.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/wxPlotCanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/wxPlotCanvas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/wxcairo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/src/wxcompat.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/wxlib.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/wxpTag.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/lib/wxpTag.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/xh_gizmos.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/plugins/xh_wxlib.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/xml.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/xrc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wxPython/xrc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/xrced.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/xrced.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/XRCed/xrced.xrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/tools/Editra/tests/syntax/yaml.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/lib/wx-2.8-msw-unicode/wx/lib/agw/zoombar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/main.py" afterPath="$PROJECT_DIR$/Client/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
@@ -125,10 +1206,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.3272727" vertical-offset="1320" max-vertical-offset="2100">
+            <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2100">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -136,10 +1217,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="435">
+            <state line="24" column="9" selection-start="423" selection-end="423" vertical-scroll-proportion="0.6272727" vertical-offset="0" max-vertical-offset="550">
               <folding />
             </state>
           </provider>
@@ -200,8 +1281,8 @@
         <option value="$PROJECT_DIR$/Client/netComms.py" />
         <option value="$PROJECT_DIR$/Client/TankClient.py" />
         <option value="$PROJECT_DIR$/Client/README" />
-        <option value="$PROJECT_DIR$/Client/main.py" />
         <option value="$PROJECT_DIR$/Client/login.py" />
+        <option value="$PROJECT_DIR$/Client/main.py" />
       </list>
     </option>
   </component>
@@ -279,24 +1360,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -623,7 +1686,11 @@
       <created>1385586324479</created>
       <updated>1385586324479</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added more stuff">
+      <created>1385586563852</created>
+      <updated>1385586563852</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -648,13 +1715,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="736" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.5759599" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.5759599" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.42404008" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.35871157" order="7" side_tool="true" content_ui="tabs" />
@@ -664,7 +1732,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -710,7 +1777,9 @@
     <MESSAGE value="Small edit on python path" />
     <MESSAGE value="Print a line" />
     <MESSAGE value="Added things that weren't syncing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added things that weren't syncing" />
+    <MESSAGE value="Added more stuff" />
+    <MESSAGE value="Added wx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added wx" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -808,19 +1877,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.3272727" vertical-offset="1320" max-vertical-offset="2100">
+        <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2100">
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="9" selection-start="423" selection-end="423" vertical-scroll-proportion="0.6272727" vertical-offset="0" max-vertical-offset="550">
+          <folding />
         </state>
       </provider>
     </entry>
