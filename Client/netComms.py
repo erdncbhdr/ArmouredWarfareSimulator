@@ -6,7 +6,12 @@ class networkComms():
     def __init__(self, ip,  port):
         self.ip = ip
         self.port = port
-        self.sock = socket.create_connection((self.ip, self.port))
+
+        try:
+            self.sock = socket.create_connection((self.ip, self.port))
+        except Exception:
+            raise NoConnectionException()
+
         self.retries = 0
 
     def send(self, message):

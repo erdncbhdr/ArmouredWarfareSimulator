@@ -2,6 +2,7 @@
 
 import wx
 import sqlite3
+
 import selectGui
 import messages
 import netComms

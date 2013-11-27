@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/Errors.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Errors.py" afterPath="$PROJECT_DIR$/Client/Errors.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ServerSetupForm.py" afterPath="$PROJECT_DIR$/Server/ServerSetupForm.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/mapGen.py" afterPath="$PROJECT_DIR$/Server/mapGen.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/netComms.py" afterPath="$PROJECT_DIR$/Client/netComms.py" />
@@ -34,7 +35,7 @@
       <file leaf-file-name="ServerSetupForm.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1320">
+            <state line="35" column="27" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1320">
               <folding />
             </state>
           </provider>
@@ -43,7 +44,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="1484" max-vertical-offset="2700">
+            <state line="20" column="25" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2730">
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -51,16 +52,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SelectATank.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SelectATank.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="0" selection-start="11075" selection-end="11075" vertical-scroll-proportion="0.45833334" vertical-offset="0" max-vertical-offset="360">
+            <state line="2" column="9" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="405">
               <folding>
-                <element signature="e#152#269#0" expanded="false" />
-                <element signature="e#305#2724#0" expanded="false" />
-                <element signature="e#2768#6129#0" expanded="false" />
-                <element signature="e#6168#11074#0" expanded="false" />
-                <element signature="e#11111#11214#0" expanded="false" />
+                <element signature="e#154#271#0" expanded="false" />
+                <element signature="e#307#2726#0" expanded="false" />
+                <element signature="e#2770#6131#0" expanded="false" />
+                <element signature="e#6170#11076#0" expanded="false" />
+                <element signature="e#11113#11216#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -69,10 +70,8 @@
       <file leaf-file-name="netComms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/netComms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-              <folding>
-                <element signature="e#76#793#0" expanded="false" />
-              </folding>
+            <state line="8" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,17 +79,17 @@
       <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="203" selection-end="203" vertical-scroll-proportion="-1.1538461" vertical-offset="0" max-vertical-offset="435">
+            <state line="12" column="16" selection-start="195" selection-end="195" vertical-scroll-proportion="-1.1538461" vertical-offset="150" max-vertical-offset="585">
               <folding>
-                <element signature="e#305#614#0" expanded="false" />
-                <element signature="e#648#2154#0" expanded="false" />
-                <element signature="e#2188#2391#0" expanded="false" />
-                <element signature="e#2441#3208#0" expanded="false" />
-                <element signature="e#3247#8105#0" expanded="false" />
-                <element signature="e#8156#8658#0" expanded="false" />
-                <element signature="e#8694#9702#0" expanded="false" />
-                <element signature="e#9744#23484#0" expanded="false" />
-                <element signature="e#23510#24249#0" expanded="false" />
+                <element signature="e#297#606#0" expanded="false" />
+                <element signature="e#640#2146#0" expanded="false" />
+                <element signature="e#2180#2383#0" expanded="false" />
+                <element signature="e#2433#3200#0" expanded="false" />
+                <element signature="e#3239#8097#0" expanded="false" />
+                <element signature="e#8148#8650#0" expanded="false" />
+                <element signature="e#8686#9694#0" expanded="false" />
+                <element signature="e#9736#23476#0" expanded="false" />
+                <element signature="e#23502#24241#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,25 +98,27 @@
       <file leaf-file-name="Errors.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/Errors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="58" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="13" column="51" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapGen.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="27" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="25" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+            <state line="36" column="17" selection-start="990" selection-end="990" vertical-scroll-proportion="0.6916168" vertical-offset="309" max-vertical-offset="1995">
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/schema.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding />
             </state>
           </provider>
@@ -127,15 +128,6 @@
         <entry file="file://$PROJECT_DIR$/Client/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="22" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -177,17 +169,17 @@
         <option value="$PROJECT_DIR$/Login/login.py" />
         <option value="$PROJECT_DIR$/Client/main.py" />
         <option value="$PROJECT_DIR$/Login/loginServer.py" />
-        <option value="$PROJECT_DIR$/Server/ServerSetupForm.py" />
-        <option value="$PROJECT_DIR$/Client/login.py" />
         <option value="$PROJECT_DIR$/Server/loginServer.py" />
         <option value="$PROJECT_DIR$/Client/game_calcs.py" />
         <option value="$PROJECT_DIR$/Server/game_calcs.py" />
         <option value="$PROJECT_DIR$/Server/Server.py" />
         <option value="$PROJECT_DIR$/Server/mapGen.py" />
-        <option value="$PROJECT_DIR$/Client/Errors.py" />
-        <option value="$PROJECT_DIR$/Client/netComms.py" />
         <option value="$PROJECT_DIR$/Client/TankClient.py" />
         <option value="$PROJECT_DIR$/Client/SelectATank.py" />
+        <option value="$PROJECT_DIR$/Server/ServerSetupForm.py" />
+        <option value="$PROJECT_DIR$/Client/Errors.py" />
+        <option value="$PROJECT_DIR$/Client/netComms.py" />
+        <option value="$PROJECT_DIR$/Client/login.py" />
       </list>
     </option>
   </component>
@@ -287,7 +279,7 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.login">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -564,7 +556,11 @@
       <created>1385141291667</created>
       <updated>1385141291667</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added exception classes, refactored code to&#10;mostly comply with PEP8. Refactored some variables.">
+      <created>1385560740191</created>
+      <updated>1385560740191</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -591,13 +587,14 @@
     <frame x="-1" y="0" width="1368" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25018615" sideWeight="0.6828047" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25018615" sideWeight="0.39398998" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25018615" sideWeight="0.2888147" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.35871157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31719533" sideWeight="0.64128846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -605,7 +602,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -644,7 +640,9 @@
     <MESSAGE value="Added start of game timer. Added team support. Separated teams at the beginning of games." />
     <MESSAGE value="Map gen and stuff" />
     <MESSAGE value="Setup maybe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup maybe" />
+    <MESSAGE value="Added exception classes, refactored code to&#10;mostly comply with PEP8. Refactored some variables." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added exception classes, refactored code to&#10;mostly comply with PEP8. Refactored some variables." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -655,16 +653,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode/wx/_misc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2386" column="0" selection-start="88805" selection-end="88805" vertical-scroll-proportion="0.3443526" vertical-offset="35650" max-vertical-offset="100545" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/loginServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="24" selection-start="4794" selection-end="4794" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2820" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="20" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1365" />
@@ -694,25 +682,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server.py">
+    <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="1484" max-vertical-offset="2700">
+        <state line="32" column="27" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="630">
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1385561019988" expanded="false" signature="-1:-1" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="195" selection-end="195" vertical-scroll-proportion="-1.1538461" vertical-offset="150" max-vertical-offset="585">
+          <folding>
+            <element signature="e#297#606#0" expanded="false" />
+            <element signature="e#640#2146#0" expanded="false" />
+            <element signature="e#2180#2383#0" expanded="false" />
+            <element signature="e#2433#3200#0" expanded="false" />
+            <element signature="e#3239#8097#0" expanded="false" />
+            <element signature="e#8148#8650#0" expanded="false" />
+            <element signature="e#8686#9694#0" expanded="false" />
+            <element signature="e#9736#23476#0" expanded="false" />
+            <element signature="e#23502#24241#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1320">
+        <state line="35" column="27" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
+    <entry file="file://$PROJECT_DIR$/Server/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="27" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="645">
+        <state line="20" column="25" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2730">
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="9" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="390">
+          <folding>
+            <element signature="e#154#271#0" expanded="false" />
+            <element signature="e#307#2726#0" expanded="false" />
+            <element signature="e#2770#6131#0" expanded="false" />
+            <element signature="e#6170#11076#0" expanded="false" />
+            <element signature="e#11113#11216#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/schema.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="51" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/netComms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <folding />
         </state>
       </provider>
@@ -724,55 +765,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/messages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="25" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/Errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="203" selection-end="203" vertical-scroll-proportion="-1.1538461" vertical-offset="0" max-vertical-offset="435">
+        <state line="36" column="17" selection-start="990" selection-end="990" vertical-scroll-proportion="0.6916168" vertical-offset="309" max-vertical-offset="1995">
           <folding>
-            <element signature="e#305#614#0" expanded="false" />
-            <element signature="e#648#2154#0" expanded="false" />
-            <element signature="e#2188#2391#0" expanded="false" />
-            <element signature="e#2441#3208#0" expanded="false" />
-            <element signature="e#3247#8105#0" expanded="false" />
-            <element signature="e#8156#8658#0" expanded="false" />
-            <element signature="e#8694#9702#0" expanded="false" />
-            <element signature="e#9744#23484#0" expanded="false" />
-            <element signature="e#23510#24249#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/netComms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-          <folding>
-            <element signature="e#76#793#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="0" selection-start="11075" selection-end="11075" vertical-scroll-proportion="0.45833334" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#152#269#0" expanded="false" />
-            <element signature="e#305#2724#0" expanded="false" />
-            <element signature="e#2768#6129#0" expanded="false" />
-            <element signature="e#6168#11074#0" expanded="false" />
-            <element signature="e#11111#11214#0" expanded="false" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

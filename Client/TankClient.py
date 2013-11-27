@@ -1,7 +1,9 @@
 from threading import Thread
 from pygame import *
 import time
+
 from livewires import color as colour
+
 import games
 import netComms
 from game_calcs import *
