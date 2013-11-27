@@ -28,7 +28,7 @@ class Player(games.Sprite):
     """ The main player class. """
     def __init__(self, x, y,  angle,  name,  hp, username, turret, team, clientteam):
         """ Initialize player sprite. """
-        image = games.load_image("res/"+name+"_body.png")
+        image = games.load_image("res/" + name + "_body.png")
         super(Player, self).__init__(image = image, x = x, y = y, angle = angle)
         self.name = name
         self.username = username
@@ -51,9 +51,9 @@ class Player(games.Sprite):
         print "NAME: "+self.name
         print "HP: "+str(self.hp)
     def update(self):
-        self.nametag.value = self.name + " "+str(self.hp)
+        self.nametag.value = self.name + " " + str(self.hp)
         if int(self.hp) < int(self.maxHp) / 2 and self.state == 0:
-            self.image = games.load_image("res/"+self.name+"_body_damaged.png")
+            self.image = games.load_image("res/" + self.name + "_body_damaged.png")
             self.turret.image = games.load_image("res/"+self.name+"_turret_damaged.png")
             self.state = 1
         self.square.x = self.x
@@ -62,13 +62,13 @@ class Player(games.Sprite):
 class Turret(games.Sprite):
     def __init__(self, x, y,  angle,  name):
         image = games.load_image("res/"+name+"_turret.png")
-        super(Turret,  self).__init__(image=image,  x=x,  y=y ,  angle=angle)
+        super(Turret,  self).__init__(image=image, x = x, y = y , angle = angle)
         self.name = name
                 
 class Bullet(games.Sprite):
     image = games.load_image("res/Bullet_Sprite.png")
     def __init__(self,  x,  y,  angle,  ownerId,  damage,  bulletID, penetration):
-        super(Bullet,  self).__init__(image = Bullet.image,  x=x,  y=y,  angle=angle)
+        super(Bullet,  self).__init__(image = Bullet.image, x = x, y = y, angle = angle)
         self.ownerId = ownerId
         self.damage = damage
         self.bulletID = bulletID
