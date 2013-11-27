@@ -1,6 +1,8 @@
 __author__ = 'harry'
 import os
+import sys
 
+sys.path.append(os.getcwd())
 import login
 
 
