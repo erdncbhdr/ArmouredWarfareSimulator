@@ -1,14 +1,10 @@
 import SocketServer
-import socket
-import sqlite3
-import json
 import pickle
-import math
 import threading
-from netifaces import interfaces, ifaddresses, AF_INET
-from game_calcs import *
 import time
+from game_calcs import *
 import mapGen
+
 
 #Create a class to make things easier
 class Player():

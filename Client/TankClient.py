@@ -1,12 +1,14 @@
-from livewires import color as colour
-import games
 from threading import Thread
-import netComms
-import sys
-from game_calcs import *
 from pygame import *
 import time
+from livewires import color as colour
+import games
+import netComms
+from game_calcs import *
+from Errors import *
 
+
+#Open the screen
 games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
 class superSquare(games.Sprite):
@@ -107,13 +109,19 @@ class LocalPlayer(games.Sprite):
         self.reload_counter = self.reload
         self.armour = armour
         self.userTag = games.Text(value = self.username, x=x, y=y-90, color=colour.black, size=20)
-        self.nametag = games.Text(value = str(self.name) + " " + str(self.hp), x = x,  y = y-70,  color=colour.black,  size=20)
+        self.nametag = games.Text(value = str(self.name) + " " + str(self.hp),
+                                  x = x,
+                                  y = y-70,
+                                  color=colour.black,
+                                  size=20)
+
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.userTag)
         games.screen.add(self.nametag)
-        print "NAME: "+self.name
-        print "HP: "+str(self.hp)
+        print "NAME: " + self.name
+        print "HP: " + str(self.hp)
+
     def update(self):
         #Check for keyboard input
         if self.canMove:
@@ -121,7 +129,7 @@ class LocalPlayer(games.Sprite):
                 self.x += self.speed * math.cos(math.radians(self.angle))
                 self.y += self.speed * math.sin(math.radians(self.angle))
                 self.turret.x += self.speed * math.cos(math.radians(self.angle))
-                self.turret.y+= self.speed * math.sin(math.radians(self.angle))
+                self.turret.y += self.speed * math.sin(math.radians(self.angle))
                 try:
                     self.idle.stop()
                 except Exception:
@@ -224,7 +232,6 @@ class Building(games.Sprite):
         BottomSide = Vector(BottomLeft[0], BottomLeft[1], BottomRight[0], BottomRight[1])
         RightSide = Vector(TopRight[0], TopRight[1], BottomRight[0], BottomRight[1])
         self.myVectors = [TopSide, LeftSide, RightSide, BottomSide]
-
 
 class GameController(games.Sprite):
     """This is the main class-  it will col all network comms and update the players as required"""
@@ -333,6 +340,7 @@ class GameController(games.Sprite):
             self.buildings.append(newBuilding)
             games.screen.add(self.buildings[-1])
         return None
+
     def countingDown(self):
         import random
         toPlay = random.choice(self.loadingSongs)
@@ -345,9 +353,9 @@ class GameController(games.Sprite):
         games.screen.remove(self.timerTop)
         self.client.canMove = True
 
-    def close(self):
+    def close(self, exception):
         games.screen.quit()
-        raise NameError("Game in progress")
+        raise exception
 
     def update(self):
         if games.keyboard.is_pressed(games.K_ESCAPE):
@@ -360,13 +368,20 @@ class GameController(games.Sprite):
     def doUpdating(self):
         #This occurs on every gameloop, gonna update the local client and send some data 
         #Give the server my position
-        self.connection.send([self.id, [self.client.x,  self.client.y,  self.client.angle,  self.client.turret.angle,  self.client.hp],  self.client.getBulletValues(),  self.despawnToServer, self.toRebound])
+        try:
+            self.connection.send([self.id, [self.client.x,  self.client.y,  self.client.angle,  self.client.turret.angle,  self.client.hp],  self.client.getBulletValues(),  self.despawnToServer, self.toRebound])
+
+        except HostDisconnectedException as e:
+            self.close(e)
+
         #it'll give me the positions of all connected players, including me, we don't want that
         self.recvPlayers = self.connection.recieved[0]
         self.recvBullets = self.connection.recieved[1]
+
         #Ok. Pop us.
         self.recvPlayers.pop(self.id)
         self.recvCopy = self.recvPlayers
+
         #Now add the new players. if the list of connected is [p1, p2, p3, p4] and the new list is [p1,p2,p3,p4,p5], the new players are old players [len(old):]
         #For each in new players, create a new server instance and add it
         while len(self.recvPlayers) > len(self.serverInstances):
@@ -377,7 +392,9 @@ class GameController(games.Sprite):
                 games.screen.add(self.serverInstances[-1])
                 games.screen.add(self.serverInstancesTurret[-1])
                 self.recvPlayers.pop(-1)
+
             except Exception as ex:
+                #Network communication error - now not needed, all net errors are caught on receive.
                 print ex
                 sys.exit()
 
@@ -408,15 +425,21 @@ class GameController(games.Sprite):
 
     def doBulletSpawnDespawn(self,  server):
         """Main method to make the local bullets equal the server bullets"""
+
+        #Init the arrays we'll use to store data
         self.despawnToServer = []
         self.toRebound = []
+
+        #These are the bullets currently spawned by the server and their IDS
         currentIDs = [b.bulletID for b in self.bullets]
         serverIDs = [b[6] for b in server]
+
         #Add new bullets
         for bullet in server:
             if bullet[6] not in currentIDs:
                 self.fire.play()
-                self.bullets.append(Bullet(bullet[0],  bullet[1],  bullet[2],  bullet[3],  bullet[4],  bullet[6], bullet[7]))
+                self.bullets.append(Bullet(bullet[0],  bullet[1],  bullet[2],  bullet[3],
+                                           bullet[4],  bullet[6], bullet[7]))
                 games.screen.add(self.bullets[-1])
                 
         for b in self.bullets:
@@ -434,7 +457,12 @@ class GameController(games.Sprite):
         return xComp + yComp
 
     def checkBulletCollisions(self):
+        """A generic bullet collision method. Calls about a million other things"""
+
+        #Update the client's vectors
         self.setVectors()
+
+        #Iterate through all the bullets, checks them
         for bullet in self.bullets:
             angle = math.radians(bullet.angle)
             if bullet.ownerId != self.client.id:
@@ -442,30 +470,41 @@ class GameController(games.Sprite):
                     pass
 
     def is_collided(self, bullet):
+        """Checks for collision, will test for overlap between the vectors of the tank and the bullet"""
+
+        #Repeat for all 4 side of the tank
         for v in self.vectors:
-            draw.line(games.screen._display, colour.red, (v.x1, v.y1), (v.x2, v.y2))
             if self.vectorsIntersect(v, bullet.getVector()):
+                noVectorIntersects = False
                 angle = getAngleOfIntersection(bullet.getVector(), v)
                 if self.doesPenetrate(angle, bullet):
+
+                    #Damage tank accordingly and despawn the bullet
                     self.client.hp -= bullet.damage
                     self.despawnToServer.append(bullet.bulletID)
                 else:
                     b = bullet.getVector()
                     self.toRebound.append([bullet.bulletID,angle,v.angle - 90, b.x1, b.y1, b.x2, b.y2, v.x1, v.y1, v.x2, v.y2])
+            noVectorIntersects = True
 
-                #draw.line(games.screen._display, colour.yellow, (v.x1, v.y1), (v.x2, v.y2))
-                #vec = bullet.getVector()
-                #draw.line(games.screen._display, colour.purple, (vec.x1, vec.y1), (vec.x2, vec.y2))
+        #BUG: Occasionally the bullet will just fly through the vector, this WILL penetrate as it needs to be at a very low angle
+        overlaps =  self.client.get_overlapping_sprites()
+        if bullet in overlaps and not noVectorIntersects:
+            #This means that the bullet is within the tank without colliding
+            #We'll give it penetration
+            self.client.hp -= bullet.damage
+            self.despawnToServer.append(bullet.bulletID)
 
     def vectorsIntersect(self, vecA, vecB):
-        draw.line(games.screen._display, colour.red, (vecA.x1, vecA.y1), (vecA.x2, vecA.y2))
-        draw.line(games.screen._display, colour.red, (vecB.x1, vecB.y1), (vecB.x2, vecB.y2))
+        """Checks if 2 vectors intersect, calls game_calcs"""
+
         if intersect(vecA, vecB):
-            #print "We have intersection"
             return True
         return False
 
     def setVectors(self):
+        #This sets vectors around the edge of the image
+        ###DO NOT EDIT, MAGIC BE HERE###
         angle = math.radians(self.client.angle + 45)
         rect = self.client._rect
         center = rect.center
@@ -478,33 +517,45 @@ class GameController(games.Sprite):
                         Vector(corner1X, corner1Y, corner4X, corner4Y),
                         Vector(corner2X, corner2Y, corner3X, corner3Y),
                         Vector(corner2X, corner2Y, corner4X, corner4Y)]
+
     def doesPenetrate(self, angle, bullet):
+        """Returns true if the bullet has enough penetration, false otherwise"""
+
+        #This is the critical angle at which any bullet will auto-bounce
         if angle < 50:
             return False
+
+        #Calculate effective armour via trigonometry.
         armourValue = self.client.armour
         effectiveArmour = armourValue / math.sin(math.radians(angle))
+
+        #Check if the bullet has enough penetration and return
         if bullet.penetration > effectiveArmour:
             return True
         else:
             return False
 
 def main(instance):
+    """Called to run the client, requires data for the tank and the host/port"""
     try:
-        #This will be called from a new file with the stats, [speed, hull traverse, turret traverse, hp, name]
+        #This sets the initial conditions for the client
         username = instance[0]
         stats = instance[1]
         host = instance[2]
         port = instance[3]
-        # establish background
+
+        #Establish background
         back = games.load_image("res/background.png")
+        games.screen.background = back
+
+        #Set up the game controller and feed it the conditions
         fat_controller = GameController(stats,  host,  port, username)
         games.screen.add(fat_controller)
-        games.screen.background = back
+
+        #Start the game
         games.screen.mainloop()
-    except NameError as message:
+
+    #Exceptions - can communicate with the login client
+    except GameInProgressException as message:
         return message
-
-
-
-#main()
 

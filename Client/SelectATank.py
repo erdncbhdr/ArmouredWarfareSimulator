@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 
 import wx
-import selectGui
 import sqlite3
-import os
+import selectGui
 import messages
-import sys
-import pickle
 import netComms
-from livewires import games
+import games
+
 
 def getConfiguration(conf, keyword):
     for a in conf:
@@ -76,7 +74,6 @@ class Buy(selectGui.TankBuy):
                 messages.Warn("Please select a tank first")
         else:
             messages.Warn(self.parent, "You do not have the XP to purchase this tank")
-
 
 class Upgrade(selectGui.UpgradeForm):
     def __init__(self, parent, tank, xp, username, form):
@@ -189,7 +186,6 @@ class Upgrade(selectGui.UpgradeForm):
 
     def cancelEdit( self, event ):
         self.Show(False)
-
 
 class Main(selectGui.MainFrame):
     def __init__(self, parent, username, xp, owned):
@@ -321,7 +317,6 @@ class Main(selectGui.MainFrame):
         for i in self.owned:
             self.tankChoice.Append(i)
 
-        
 def main(username, xp, owned):
     app = wx.App(False)
     frame = Main(None, username, xp, owned)

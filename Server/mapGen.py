@@ -1,7 +1,6 @@
 __author__ = 'harry'
 
 
-import game_calcs
 import random
 
 
@@ -31,6 +30,8 @@ def generateMap(width, height):
             Map.append([xPos, yPos, 1])
         #Add a 2x2
         elif toSpawn == 30:
+            xPos = i % numX
+            yPos = i % numY
             Map.append([xPos, yPos, 2])
     return Map
 

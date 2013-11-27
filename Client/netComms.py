@@ -1,24 +1,28 @@
 import socket
 import pickle
+from Errors import *
 
 class networkComms():
     def __init__(self, ip,  port):
         self.ip = ip
         self.port = port
         self.sock = socket.create_connection((self.ip, self.port))
+        self.retries = 0
 
-    def send(self, messaege):
-        #print "SEND: "+str(messaege)
-        self.toSend = pickle.dumps(messaege)
+    def send(self, message):
+        self.toSend = pickle.dumps(message)
         try:
             self.sock.sendall(self.toSend)
-            #print "SENT"
             self.recieved = pickle.loads(self.sock.recv(2048))
-            #print "RECV: "+str(self.recieved)
+            self.retries = 0
+
         except Exception as e:
-            print "ERROR: "+str(e)
             del self.sock
             self.sock = socket.create_connection((self.ip, self.port))
+            self.retries += 1
+
+            if self.retries == 5:
+                raise HostDisconnectedException()
 
     def close(self):
         print "CLOSING CONNECTION"
