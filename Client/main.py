@@ -3,6 +3,7 @@ import os
 import sys
 
 sys.path.append(os.getcwd())
+print sys.path
 import login
 
 
@@ -13,7 +14,7 @@ try:
     f.write("wx-2.8-msw-unicode")
     f.close()
 
-except AssertionError:
+except Exception:
     os = "unix"
     f = open("wx.pth", "w")
     f.write("wx-2.8-gtk2-unicode")
