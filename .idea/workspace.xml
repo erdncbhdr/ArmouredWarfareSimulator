@@ -2,16 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LoginDatabase" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/LoginDatabase" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/LoginFrame.fbp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/login.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/login.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/login.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/loginGui.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/loginServer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/schema.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/wx.pth" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Churchill_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Churchill_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Crusader_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Crusader_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Enemy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Friendly.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_body.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_turret.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/KV1_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/M4Sherman_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/M4Sherman_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/PanzerIV_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/PanzerIV_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/T34_body.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/T34_turret.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-1.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-2.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-3.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-4.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Battle-5.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Draw.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Garage.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Main-Theme.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-1.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-2.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/WoT-Opening-3.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/conn.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/critical-chime.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/critical-chime2.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/doubleBuilding.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/enemy-vehicle-destroyed.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/firing.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/idle.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-75mm-pak40.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-idle.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/marder-moving.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/maus_body_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/maus_turret_damaged.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/media.io.1448111792.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/moving.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-45mm.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-idle.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ms-1-moving.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/Sounds/ready-to-fire.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/res/singleBuilding.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
@@ -92,8 +128,10 @@
       <file leaf-file-name="login.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="29" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.3272727" vertical-offset="1140" max-vertical-offset="1920">
-              <folding />
+            <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.3272727" vertical-offset="1320" max-vertical-offset="2100">
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,10 +139,8 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-              <folding>
-                <element signature="e#21#30#0" expanded="true" />
-              </folding>
+            <state line="20" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="435">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,6 +235,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,19 +282,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ArmouredWarfareSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ArmouredWarfareSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.idesettings.debugger.python" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -565,7 +619,11 @@
       <created>1385585871577</created>
       <updated>1385585871577</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added things that weren't syncing">
+      <created>1385586324479</created>
+      <updated>1385586324479</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -596,9 +654,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25018615" sideWeight="0.5759599" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.5759599" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25018615" sideWeight="0.42404008" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.42404008" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.35871157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31719533" sideWeight="0.64128846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -627,9 +685,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24743778" sideWeight="0.68327975" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.64128846" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.64128846" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -651,7 +709,8 @@
     <MESSAGE value="Added README" />
     <MESSAGE value="Small edit on python path" />
     <MESSAGE value="Print a line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print a line" />
+    <MESSAGE value="Added things that weren't syncing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added things that weren't syncing" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -752,16 +811,16 @@
     <entry file="file://$PROJECT_DIR$/Client/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding>
-            <element signature="e#21#30#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="29" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.3272727" vertical-offset="1140" max-vertical-offset="1920">
-          <folding />
+        <state line="100" column="29" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.3272727" vertical-offset="1320" max-vertical-offset="2100">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
