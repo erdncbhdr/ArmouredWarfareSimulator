@@ -1,17 +1,22 @@
 import wx
 import threading
-import netifaces
 import SocketServer
 import sys
 import ServerGui
 import Server
 import loginServer
+import os
+import sys
 
+sys.path.append(os.getcwd())
 try:
     import wmi
 except ImportError:
     #Unix system
-    None
+    try:
+        import netifaces
+    except ImportError:
+        None
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):

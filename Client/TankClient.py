@@ -2,8 +2,7 @@ from threading import Thread
 from pygame import *
 import time
 
-from livewires import color as colour
-
+import color as colour
 import games
 import netComms
 from game_calcs import *
@@ -277,13 +276,21 @@ class GameController(games.Sprite):
         #This will return us the currently connected players and our ID
         #print "RECV: "+str(self.connection.recieved)
         self.id = self.connection.recieved[0]
+
         if int(self.id)%2 == 0:
             self.team = 0
         else:
             self.team = 1
+
         self.serverPlayers = self.connection.recieved[1]
+
         #Start countdown to the game
         self.countdown = self.connection.recieved[2]
+
+        #Add a timer
+        self.timerTop = games.Text(value= "Game will start in:", x=400, y=300, size=50, color=colour.white)
+        self.timerMain = games.Text(value= str(self.countdown), x=400, y=400, size= 50, color=colour.white)
+
         if self.countdown == 0:
             self.close()
         #Set the map
@@ -291,9 +298,7 @@ class GameController(games.Sprite):
         self.drawMap(self.map)
         self.countdownThread = Thread(target=self.countingDown)
         self.countdownThread.start()
-        #Add a timer
-        self.timerTop = games.Text(value= "Game will start in:", x=400, y=300, size=50, color=colour.white)
-        self.timerMain = games.Text(value= str(self.countdown), x=400, y=400, size= 50, color=colour.white)
+
         #Create these players, excluding us, as our movement is handled locally
         #Add us
         #We will get the data in the form [x,y,angle,turret angle]
@@ -348,9 +353,9 @@ class GameController(games.Sprite):
         toPlay = random.choice(self.loadingSongs)
         toPlay.play()
         while self.countdown > 0:
-            time.sleep(1)
+            time.sleep(0.01)
             self.countdown -= 1
-            self.timerMain.value = str(self.countdown)
+            self.timerMain.value = str(int(self.countdown)/100)
         games.screen.remove(self.timerMain)
         games.screen.remove(self.timerTop)
         self.client.canMove = True
@@ -365,8 +370,9 @@ class GameController(games.Sprite):
             games.screen.quit()
             sys.exit([0])
         #Let's thread it
-        Thread(target=self.doUpdating).start()
-        #games.screen.set_background(self.bg)
+        #Thread(target=self.doUpdating).start()
+        self.doUpdating()
+
     def doUpdating(self):
         #This occurs on every gameloop, gonna update the local client and send some data 
         #Give the server my position
@@ -395,10 +401,8 @@ class GameController(games.Sprite):
                 games.screen.add(self.serverInstancesTurret[-1])
                 self.recvPlayers.pop(-1)
 
-            except Exception as ex:
-                #Network communication error - now not needed, all net errors are caught on receive.
-                print ex
-                sys.exit()
+            except IndexError as ex:
+                self.resyncClient()
 
         #Now update everyone
         self.recvPlayers = self.recvCopy
@@ -417,8 +421,8 @@ class GameController(games.Sprite):
                 self.serverInstances[i].nametag.y  = self.serverInstances[i].y-70
                 self.serverInstances[i].userTag.x = self.serverInstances[i].x
                 self.serverInstances[i].userTag.y = self.serverInstances[i].y - 90
-            except Exception:
-                pass
+            except Exception as ex:
+                print "Exception in update: " + str(ex)
         
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions() 
@@ -486,7 +490,7 @@ class GameController(games.Sprite):
                     self.despawnToServer.append(bullet.bulletID)
                 else:
                     b = bullet.getVector()
-                    self.toRebound.append([bullet.bulletID,angle,v.angle - 90, b.x1, b.y1, b.x2, b.y2, v.x1, v.y1, v.x2, v.y2])
+                    self.toRebound.append([bullet.bulletID,angle,v.angle - 90, b.x1, b.y1, b.x2, b.y2, v.x1, v.y1, v.x2, v.y2, bullet.angle])
             noVectorIntersects = True
 
         #BUG: Occasionally the bullet will just fly through the vector, this WILL penetrate as it needs to be at a very low angle
@@ -536,6 +540,20 @@ class GameController(games.Sprite):
             return True
         else:
             return False
+
+    def resyncClient(self):
+        games.screen.clear()
+        games.screen.add(self.client)
+        games.screen.add(self.clientTurret)
+        self.doBulletSpawnDespawn()
+        for p in self.serverPlayers:
+            #Add a new turret instance
+            self.serverInstancesTurret.append(Turret(p[0], p[1], p[3], p[4]))
+            #Add a new player instance
+            self.serverInstances.append(Player(p[0], p[1], p[2], p[4],  p[5], p[6], self.serverInstancesTurret[-1], p[7], self.client.team))
+            #add them
+            games.screen.add(self.serverInstances[-1])
+            games.screen.add(self.serverInstancesTurret[-1])
 
 def main(instance):
     """Called to run the client, requires data for the tank and the host/port"""

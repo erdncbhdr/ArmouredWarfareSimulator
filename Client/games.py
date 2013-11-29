@@ -61,7 +61,7 @@
 import pygame, pygame.image, pygame.mixer, pygame.font, pygame.transform 
 import pygame.draw 
 from pygame.locals import * 
-from livewires import color
+import color
 pygame.init() 
  
  

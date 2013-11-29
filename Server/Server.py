@@ -86,7 +86,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                     self.toSend = self.listRequest(self.data)
                 self.request.sendall(pickle.dumps(self.toSend))
             except Exception as e:
-                pass
+                print e
             
     def stringRequest(self,  req):
         if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
@@ -111,14 +111,14 @@ class TankServer(SocketServer.BaseRequestHandler):
         TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  hp, username))
         print "Connected: "+name
         if len(TankServer.Players) == 1:
-            TankServer.Countdown = 30
+            TankServer.Countdown = 3000
             self.countdownThread = threading.Thread(target=self.countdown)
             self.countdownThread.start()
         return [self.newId,  self.convertToListHandShake(), TankServer.Countdown, TankServer.Map]
 
     def countdown(self):
         while TankServer.Countdown > 0:
-            time.sleep(1)
+            time.sleep(0.01)
             TankServer.Countdown -= 1
     def convertToListHandShake(self):
         return [x.returnValues() for x in TankServer.Players]
@@ -145,32 +145,18 @@ class TankServer(SocketServer.BaseRequestHandler):
         #If bullets don't pen, they should rebound
         if len(req[4]) > 0:
             for bid in req[4]:
+                print "BID " + str(bid)
                 id = bid[0]
                 angleOfImpact = bid[1]
                 angleOfNormal = bid[2]
-
-                #print "AngleOfImpacta: "+str(angleOfImpact)
-                #print "AngleOfNormala: "+str(angleOfNormal)
-                if angleOfNormal < 0:
-                    angleOfNormal = 360 - angleToNormal
-                angleToNormal = angleOfNormal - angleOfImpact
-                #print "AngleOfImpactb: "+str(angleOfImpact)
-                #print "AngleOfNormalb: "+str(angleOfNormal)
-                if angleOfNormal < 0:
-                    angleOfNormal = 360 + angleOfNormal
-                x1,y1,x2,y2 = bid[3], bid[4], bid[5], bid[6]
-                x3,y3,x4,y4 = bid[7], bid[8], bid[9], bid[10]
-                mod90 = angleOfNormal % 90
+                angleOfBullet = bid[11]
+                anglePointingAway = (angleOfBullet + 180) % 360
+                angleToNormal = angleOfNormal - angleOfBullet
+                newAngle = angleOfNormal - angleToNormal
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b
-                v = Vector(x1,x2,y1,y2)
-                n = Vector(0,0,0,0)
-                n.useAngle(x3, y3, angleOfNormal, 10)
-                umult = (v.dotProduct(n) / n.dotProduct(n))
-                u = Vector(n.x1 - umult*n.getMagnitude(), n.y1 - umult*n.getMagnitude(), n.x1, n.y1)
-                w = v.add(Vector(u.x1, u.y1, u.x1 - u.getDx(),u.y1 - u.getDy()))
-                newVel = w.add(Vector(u.x1, u.y1, u.x1 - u.getDx(),u.y1 - u.getDy()))
-                toEdit.angle = newVel.angle
+                        toEdit.angle = newAngle
+        
                 
         return self.convertToList()

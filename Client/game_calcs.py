@@ -60,27 +60,38 @@ class Rectangle():
         return False
 
 def getAngleOfIntersection(vecA, vecB):
-    #a dot b / mag(a) mag(b)
-    num = vecA.dotProduct(vecB)
-    denom = vecA.getMagnitude() * vecB.getMagnitude()
-    ang =  math.degrees(math.acos(num/denom))
-    print ang
-    #if ang > 90:
-    #    diff = ang - 90
-    #    ang = 90 - diff
-    return ang
+    """a dot b / mag(a) mag(b)"""
+    try:
+        #Set numerator and denom
+        num = vecA.dotProduct(vecB)
+        denom = vecA.getMagnitude() * vecB.getMagnitude()
+
+        #Angle is cos-1(A,B / |A||B|)
+        ang =  math.degrees(math.acos(num/denom))
+        if ang > 90:
+            diff = ang - 90
+            ang = 90 - diff
+        return ang
+    except Exception as ex:
+        print "Exception in getangleofintersection: " + str(ex)
 
 def getPoints(x1, y1, x2, y2):
-    angle = math.atan2(y2-y1, x2-x1)
-    values = []
-    for x in range(1,int(math.sqrt((y2-y1)**2 + (x2-x1)**2))+2):
-        values.append([math.floor(x1 + x*math.cos(angle)), math.floor(y1 + x*math.sin(angle))])
-    return values
+    try:
+        angle = math.atan2(y2-y1, x2-x1)
+        values = []
+        for x in range(1,int(math.sqrt((y2-y1)**2 + (x2-x1)**2))+2):
+            values.append([math.floor(x1 + x*math.cos(angle)), math.floor(y1 + x*math.sin(angle))])
+        return values
+    except Exception as ex:
+        print "Exception in getpoints: " + str(ex)
 
 def intersect(vectorA, vectorB):
-    a = getPoints(vectorA.x1, vectorA.y1, vectorA.x2, vectorA.y2)
-    b = getPoints(vectorB.x1, vectorB.y1, vectorB.x2, vectorB.y2)
-    for c in a:
-        if c in b:
-            return True
-    return False
+    try:
+        a = getPoints(vectorA.x1, vectorA.y1, vectorA.x2, vectorA.y2)
+        b = getPoints(vectorB.x1, vectorB.y1, vectorB.x2, vectorB.y2)
+        for c in a:
+            if c in b:
+                return True
+        return False
+    except Exception as ex:
+        print "Exception in intersect: " + str(ex)
