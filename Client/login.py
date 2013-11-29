@@ -3,7 +3,7 @@ import wx
 import os
 import sys
 
-from livewires import games
+import games
 
 import loginGui
 import netComms

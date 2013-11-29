@@ -369,7 +369,7 @@ class GameController(games.Sprite):
             self.connection.send("Disconnect")
             games.screen.quit()
             sys.exit([0])
-        #Let's thread it
+        #Let's thread it ##Or not, that creates race conditions
         #Thread(target=self.doUpdating).start()
         self.doUpdating()
 
@@ -456,6 +456,7 @@ class GameController(games.Sprite):
         for i in range(0,  len(server)):
             self.bullets[i].x = server[i][0]
             self.bullets[i].y = server[i][1]
+            self.bullets[i].angle = server[i][2]
             
     def dotProduct(self,  vA,  vB):
         xComp = vA[0] * vB[0]

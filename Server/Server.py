@@ -62,7 +62,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         responds with data or confirmation"""
     #Temporary starting positions
     allow_reuse_address=True
-    Start_x = [item for sublist in [[x,x] for x in range(200, 801,200)] for item in sublist]
+    Start_x = [item for sublist in [[x,x] for x in range(200, 801, 200)] for item in sublist]
     Start_y = [100, 700, 100, 700, 100, 700, 100, 700]
     Players = []
     Bullets = []
@@ -74,6 +74,8 @@ class TankServer(SocketServer.BaseRequestHandler):
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
+        """Do something with the request"""
+
         while 1:
             #Get the data from the socket
             try:
@@ -89,6 +91,8 @@ class TankServer(SocketServer.BaseRequestHandler):
                 print e
             
     def stringRequest(self,  req):
+        """Takes a string and outputs accordingly"""
+
         if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
             return self.doHandshake(req[1], req[2], req[3])
         elif TankServer.Countdown == 0:
@@ -97,33 +101,44 @@ class TankServer(SocketServer.BaseRequestHandler):
             return "InvalidCommand"
             
     def listRequest(self,  req):
-        #This will be 2 lists, one of the client, and the other of the bullets spawned since the last tick (max 1)
-        #I will get [id, x, y, angle, turret angle]
+        """Redirect method for requests in the form of a list"""
+
         return self.get(req)
+
     def convertToList(self):
         """This will take Player objects and shove the x,y,angle,turret angle data into a list"""
+
         self.v = [[x.returnValues() for x in TankServer.Players]]
         self.v.append([y.returnValues() for y in TankServer.Bullets])
         return self.v
         
     def doHandshake(self,  name, hp, username):
+        """Add the new player to arrays and get going"""
+
         self.newId = len(TankServer.Players)
         TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  hp, username))
         print "Connected: "+name
         if len(TankServer.Players) == 1:
-            TankServer.Countdown = 3000
+            TankServer.Countdown = 30
             self.countdownThread = threading.Thread(target=self.countdown)
             self.countdownThread.start()
         return [self.newId,  self.convertToListHandShake(), TankServer.Countdown, TankServer.Map]
 
     def countdown(self):
-        while TankServer.Countdown > 0:
-            time.sleep(0.01)
+        """Create a 30 second timer at the start of the game"""
+
+        while TankServer.ToGo > 0:
+            time.sleep(1)
             TankServer.Countdown -= 1
+
     def convertToListHandShake(self):
+        """Initial return value"""
+
         return [x.returnValues() for x in TankServer.Players]
         
     def get(self, req):
+        """Acts as a 'getter', returns every other player's information and sends it in a handy list"""
+
         TankServer.Players[req[0]].set(req[1]) 
         #Update the bullets if ID 0 is connected
         for i in req[3]:
@@ -133,7 +148,10 @@ class TankServer(SocketServer.BaseRequestHandler):
         
         if req[0] == 0:
             for b in TankServer.Bullets:
-                b.update()
+                if self.isCollidedWithMap(b):
+                    b.ded = True
+                else:
+                    b.update()
                 if b.ded:
                     TankServer.Bullets.remove(b)
        
@@ -160,3 +178,14 @@ class TankServer(SocketServer.BaseRequestHandler):
         
                 
         return self.convertToList()
+
+    def isCollidedWithMap(self, b):
+        """Self-explanatory, returns true if the bullet is collided with terrain"""
+
+        xPos = b.x
+        yPos = b.y
+        for item in TankServer.Map:
+            if b.x > item[0]*100 and b.x < (item[0]*100)+100:
+                if b.y > item[1]*100 and b.y < (item[1]*100) + 100:
+                    return True
+        return False
