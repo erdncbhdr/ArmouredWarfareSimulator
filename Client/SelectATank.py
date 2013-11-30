@@ -191,7 +191,7 @@ class Upgrade(selectGui.UpgradeForm):
 class Main(selectGui.MainFrame):
     def __init__(self, parent, username, xp, owned):
         selectGui.MainFrame.__init__(self, parent)
-        self.a = games.load_sound("res/Sounds/WoT-Garage.wav")
+        self.a = games.load_sound("res/Sounds/WoT-Garage.ogg")
         self.a.play()
         self.conn = sqlite3.Connection("TankStats.db")
         self.cur = self.conn.cursor()

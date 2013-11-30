@@ -66,7 +66,7 @@ class LoginForm(loginGui.MainFrame):
         loginGui.MainFrame.__init__(self,parent)
         self.parent = parent
         self.readConfig()
-        self.a = games.load_sound("res/Sounds/WoT-Main-Theme.wav")
+        self.a = games.load_sound("res/Sounds/WoT-Main-Theme.ogg")
         self.a.play()
 
     def readConfig(self):

@@ -1,7 +1,6 @@
 from threading import Thread
 from pygame import *
 import time
-
 import color as colour
 import games
 import netComms
@@ -99,9 +98,9 @@ class LocalPlayer(games.Sprite):
         self.damage = damage
         self.id = id
         self.va = []
-        self.fire = games.load_sound("res/Sounds/ms-1-45mm.wav")
-        self.idle = games.load_sound("res/Sounds/idle.wav")
-        self.moving = games.load_sound("res/Sounds/moving.wav")
+        self.fire = games.load_sound("res/Sounds/ms-1-45mm.ogg")
+        self.idle = games.load_sound("res/Sounds/idle.ogg")
+        self.moving = games.load_sound("res/Sounds/moving.ogg")
         self.canMove = False
         self.speed = speed
         self.hull_traverse = hull_traverse
@@ -135,7 +134,7 @@ class LocalPlayer(games.Sprite):
                     self.idle.stop()
                 except Exception:
                     pass
-                self.moving.play(loops=-1)
+                #self.moving.play(loops=-1)
 
             elif games.keyboard.is_pressed(games.K_s):
                 self.x -= self.speed * math.cos(math.radians(self.angle))
@@ -143,13 +142,13 @@ class LocalPlayer(games.Sprite):
                 self.turret.x -= self.speed * math.cos(math.radians(self.angle))
                 self.turret.y -= self.speed * math.sin(math.radians(self.angle))
                 self.idle.stop()
-                self.moving.play(loops=-1)
+                #self.moving.play(loops=-1)
             else:
                 try:
                     self.moving.stop()
                 except Exception:
                     pass
-                self.idle.play(loops=-1)
+                #self.idle.play(loops=-1)
 
             if games.keyboard.is_pressed(games.K_a):
                 self.angle -= self.hull_traverse
@@ -245,17 +244,17 @@ class GameController(games.Sprite):
         self.stats =stats
         self.username = username
         #Open resources
-        self.fire = games.load_sound("res/Sounds/ms-1-45mm.wav")
-        self.idle = games.load_sound("res/Sounds/marder-idle.wav")
-        self.moving = games.load_sound("res/Sounds/marder-moving.wav")
-        self.loadingSongs = [games.load_sound("res/Sounds/WoT-Opening-1.wav"),
-                             games.load_sound("res/Sounds/WoT-Opening-2.wav"),
-                             games.load_sound("res/Sounds/WoT-Opening-3.wav")]
-        self.battleSongs = [games.load_sound("res/Sounds/WoT-Battle-1.wav"),
-                            games.load_sound("res/Sounds/WoT-Battle-2.wav"),
-                            games.load_sound("res/Sounds/WoT-Battle-3.wav"),
-                            games.load_sound("res/Sounds/WoT-Battle-4.wav"),
-                            games.load_sound("res/Sounds/WoT-Battle-5.wav")]
+        self.fire = games.load_sound("res/Sounds/ms-1-45mm.ogg")
+        self.idle = games.load_sound("res/Sounds/marder-idle.ogg")
+        self.moving = games.load_sound("res/Sounds/marder-moving.ogg")
+        self.loadingSongs = [games.load_sound("res/Sounds/WoT-Opening-1.ogg"),
+                             games.load_sound("res/Sounds/WoT-Opening-2.ogg"),
+                             games.load_sound("res/Sounds/WoT-Opening-3.ogg")]
+        self.battleSongs = [games.load_sound("res/Sounds/WoT-Battle-1.ogg"),
+                            games.load_sound("res/Sounds/WoT-Battle-2.ogg"),
+                            games.load_sound("res/Sounds/WoT-Battle-3.ogg"),
+                            games.load_sound("res/Sounds/WoT-Battle-4.ogg"),
+                            games.load_sound("res/Sounds/WoT-Battle-5.ogg")]
         #These will check for buggy bullets
         self.despawnToServer = []
         name = self.stats[0]
@@ -353,9 +352,9 @@ class GameController(games.Sprite):
         toPlay = random.choice(self.loadingSongs)
         toPlay.play()
         while self.countdown > 0:
-            time.sleep(0.01)
+            time.sleep(1)
             self.countdown -= 1
-            self.timerMain.value = str(int(self.countdown)/100)
+            self.timerMain.set_value(str(self.countdown))
         games.screen.remove(self.timerMain)
         games.screen.remove(self.timerTop)
         self.client.canMove = True
