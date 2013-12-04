@@ -127,7 +127,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     def countdown(self):
         """Create a 30 second timer at the start of the game"""
 
-        while TankServer.ToGo > 0:
+        while TankServer.Countdown > 0:
             time.sleep(1)
             TankServer.Countdown -= 1
 

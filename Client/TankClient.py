@@ -269,11 +269,15 @@ class GameController(games.Sprite):
         self.bg = games.load_image("background.png")
         self.update_ticks = 100
         self.bulletType = Bullet(0, 0, 0, 0, 0, 0, 0)
+
         #Create local instances of player and turret
         #First we have to handshake
+
         self.connection.send(["handshake", name, hp, self.username])
+
         #This will return us the currently connected players and our ID
         #print "RECV: "+str(self.connection.recieved)
+
         self.id = self.connection.recieved[0]
 
         if int(self.id)%2 == 0:
