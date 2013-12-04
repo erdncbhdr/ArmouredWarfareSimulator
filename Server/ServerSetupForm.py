@@ -19,6 +19,7 @@ except ImportError:
         None
 from Errors import *
 import messages
+import sqlite3
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -84,15 +85,25 @@ class serverForm(ServerGui.Mainframe):
             thread_server = threading.Thread(self.server.serve_forever())
             thread_server.daemon = True
             thread_server.start()
-        except EndOfGame:
+        except EndOfGame as ex:
             self.server.shutdown()
             messages.Info(self.parent, "Game has finished")
             self.statusLab.SetLabel("No game instance running")
+            self.processEndOfGame(ex)
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
-            
+
+    def processEndOfGame(self, stats):
+        conn = sqlite3.Connection("LoginDatabase")
+        cur = conn.cursor()
+        for player in stats:
+            username = stats[-1]
+            tankName = stats[-2]
+            playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()[0]
+            currentXp = cur.execute()
+        conn.close()
 app = wx.App(False)
 
 frame = serverForm(None)

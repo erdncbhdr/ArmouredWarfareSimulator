@@ -103,7 +103,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[1]))
                 self.request.sendall(pickle.dumps(["EndGame"].append(TankServer.EndGameMessage[recv[0]])))
                 if len(TankServer.EndGameIds) == 0:
-                    raise EndOfGame("End")
+                    raise EndOfGame(TankServer.EndGameMessage)
 
     def getVictor(self):
         team0 = 0
@@ -248,5 +248,5 @@ class TankServer(SocketServer.BaseRequestHandler):
             if p.id == victor:
                 p.xpGained *= 1.5
                 p.isOnWinning = True
-        TankServer.EndGameMessage = [[p.isOnWinning, p.xpGained, p.damage, p.kills] for p in TankServer.Players]
+        TankServer.EndGameMessage = [[p.isOnWinning, p.xpGained, p.damage, p.kills, p.name, p.username] for p in TankServer.Players]
         TankServer.GameInProgress = False

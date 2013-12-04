@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/Errors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/messages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Errors.py" afterPath="$PROJECT_DIR$/Client/Errors.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ServerSetupForm.py" afterPath="$PROJECT_DIR$/Server/ServerSetupForm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
@@ -35,7 +30,7 @@
       <file leaf-file-name="ServerSetupForm.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="57" selection-start="2938" selection-end="2938" vertical-scroll-proportion="0.613079" vertical-offset="975" max-vertical-offset="1500">
+            <state line="103" column="110" selection-start="3577" selection-end="3577" vertical-scroll-proportion="0.6294278" vertical-offset="1194" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
@@ -44,7 +39,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="40" selection-start="3491" selection-end="3491" vertical-scroll-proportion="0.0" vertical-offset="1346" max-vertical-offset="3855">
+            <state line="250" column="92" selection-start="8929" selection-end="8929" vertical-scroll-proportion="0.0" vertical-offset="3488" max-vertical-offset="3855">
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -598,7 +593,11 @@
       <created>1386153200380</created>
       <updated>1386153200380</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Client end of game support potentially implemented.">
+      <created>1386155075995</created>
+      <updated>1386155075995</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -690,7 +689,8 @@
     <MESSAGE value="Server comments added, bouncing now edits the client angles." />
     <MESSAGE value="Fixed countdowns" />
     <MESSAGE value="Added reload timer, added endgame stats (Not yet handled by client)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added reload timer, added endgame stats (Not yet handled by client)" />
+    <MESSAGE value="Client end of game support potentially implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Client end of game support potentially implemented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -795,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="40" selection-start="3491" selection-end="3491" vertical-scroll-proportion="0.0" vertical-offset="1346" max-vertical-offset="3855">
+        <state line="250" column="92" selection-start="8929" selection-end="8929" vertical-scroll-proportion="0.0" vertical-offset="3488" max-vertical-offset="3855">
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -804,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="57" selection-start="2938" selection-end="2938" vertical-scroll-proportion="0.613079" vertical-offset="975" max-vertical-offset="1500">
+        <state line="103" column="110" selection-start="3577" selection-end="3577" vertical-scroll-proportion="0.6294278" vertical-offset="1194" max-vertical-offset="1665">
           <folding />
         </state>
       </provider>
