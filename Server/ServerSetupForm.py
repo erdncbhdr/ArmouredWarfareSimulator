@@ -17,6 +17,8 @@ except ImportError:
         import netifaces
     except ImportError:
         None
+from Errors import *
+import messages
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -30,6 +32,7 @@ class serverForm(ServerGui.Mainframe):
         except:
             print("GUI failed __init__")
         self.interfaceChoice.Clear()
+        self.parent = parent
         self.opSys = self.getOperatingSystem()
         self.loginThread()
 
@@ -81,6 +84,10 @@ class serverForm(ServerGui.Mainframe):
             thread_server = threading.Thread(self.server.serve_forever())
             thread_server.daemon = True
             thread_server.start()
+        except EndOfGame:
+            self.server.shutdown()
+            messages.Info(self.parent, "Game has finished")
+            self.statusLab.SetLabel("No game instance running")
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")

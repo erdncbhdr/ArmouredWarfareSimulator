@@ -7,6 +7,7 @@ import selectGui
 import messages
 import netComms
 import games
+from Errors import *
 
 
 def getConfiguration(conf, keyword):
@@ -234,10 +235,24 @@ class Main(selectGui.MainFrame):
             assert(self.AddressBox.GetValue() != u"")
             assert(self.tankChoice.GetSelection() >= 0)
             instance = [self.username, self.toInt(self.stats), self.host, self.port]
+            self.Show(False)
             a = TankClient.main(instance)
             messages.Warn(self.parent, "Error: "+str(a))
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
+
+        except EndOfGame as ex:
+            self.Show(True)
+            win = ex[0]
+            xp = ex[1]
+            damage = ex[2]
+            kills = ex[3]
+            if win:
+                messages.Info(self.parent, "You have won!\nYou recieved: "+str(xp)+" xp\nDamage dealt: "+str(damage)+" Kills: "+str(kills),
+                              "VICTORY")
+            else:
+               messages.Info(self.parent, "You have been defeated...\nYou recieved: "+str(xp)+" xp\nDamage dealt: "+str(damage)+" Kills: "+str(kills),
+                              "DEFEAT")
         #except Exception as e:
         #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
         #    sys.exit()

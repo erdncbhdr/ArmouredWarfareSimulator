@@ -4,6 +4,7 @@ import threading
 import time
 
 from game_calcs import *
+from Errors import *
 import mapGen
 
 
@@ -16,6 +17,7 @@ class Player():
         self.username = username
         self.name = name
         self.hp = hp
+        self.isOnWinning = False
         self.xpGained = 100
         self.damage = 0
         self.kills = 0
@@ -76,27 +78,46 @@ class TankServer(SocketServer.BaseRequestHandler):
     GameInProgress = True
     EndGameMessage = []
     Map = mapGen.generateMap(1024, 768)
-
+    EndGameIds = []
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
         """Do something with the request"""
 
-        while TankServer.GameInProgress:
-            #Get the data from the socket
-            try:
+        while 1:
+            if TankServer.GameInProgress:
+                #Get the data from the socket
+                try:
+                    recv = self.request.recv(1024)
+                    self.data = pickle.loads(recv)
+                    #Check what sort of request it is
+                    if type(self.data[0]) == type("TopKek"):
+                        self.toSend = self.stringRequest(self.data)
+                    else:
+                        self.toSend = self.listRequest(self.data)
+                    self.request.sendall(pickle.dumps(self.toSend))
+                except Exception as e:
+                    print e
+            else:
                 recv = self.request.recv(1024)
-                self.data = pickle.loads(recv)
-                #Check what sort of request it is
-                if type(self.data[0]) == type("TopKek"):
-                    self.toSend = self.stringRequest(self.data)
-                else:
-                    self.toSend = self.listRequest(self.data)
-                self.request.sendall(pickle.dumps(self.toSend))
-            except Exception as e:
-                print e
-        self.request.sendall(pickle.dumps(TankServer.EndGameMessage[recv[0]]))
-            
+                TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[1]))
+                self.request.sendall(pickle.dumps(["EndGame"].append(TankServer.EndGameMessage[recv[0]])))
+                if len(TankServer.EndGameIds) == 0:
+                    raise EndOfGame("End")
+
+    def getVictor(self):
+        team0 = 0
+        team1 = 0
+        for p in TankServer.Players:
+            if p.team == 0 and p.hp == 0:
+                team0 += 1
+            elif p.team == 1 and p.hp == 0:
+                team1 += 1
+        if team0 > team1:
+            return 0
+        else:
+            return 1
+
     def stringRequest(self,  req):
         """Takes a string and outputs accordingly"""
 
@@ -105,9 +126,12 @@ class TankServer(SocketServer.BaseRequestHandler):
         elif TankServer.Countdown == 0:
             return [-1, -1, 0, -1]
         elif "Disconnect" in req[0]:
-            TankServer.Players[req[1]].hp = 0
-            TankServer.Players[req[1]].username = "Disconnected"
+            for p in TankServer.Players:
+                if p.id == req[1]:
+                    p.hp = 0
+                    p.username = "Disconnected"
             self.DeadPlayers += 1
+            TankServer.EndGameIds.pop(TankServer.EndGameIds.index(req[1]))
         else:
             return "InvalidCommand"
             
@@ -218,6 +242,11 @@ class TankServer(SocketServer.BaseRequestHandler):
         return False
 
     def endGame(self):
-        TankServer.EndGameMessage = [[p.xpGained, p.damage, p.kills] for p in TankServer.Players]
+        victor = self.getVictor()
+        #Get a 1.5x XP boost if you win
+        for p in TankServer.Players:
+            if p.id == victor:
+                p.xpGained *= 1.5
+                p.isOnWinning = True
+        TankServer.EndGameMessage = [[p.isOnWinning, p.xpGained, p.damage, p.kills] for p in TankServer.Players]
         TankServer.GameInProgress = False
-        pass

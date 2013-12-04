@@ -115,13 +115,11 @@ class LocalPlayer(games.Sprite):
                                   y = y-70,
                                   color=colour.black,
                                   size=20)
-        self.reloadText = games.Text(value = "Reload in: " + str(self.reload_counter), x = 0, y = 0, colour = colour.red, size = 30)
+        self.reloadText = games.Text(value = "Reload in: " + str(self.reload_counter), x = 0, y = 0, color = colour.red, size = 30)
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.userTag)
         games.screen.add(self.nametag)
-        print "NAME: " + self.name
-        print "HP: " + str(self.hp)
 
     def update(self):
         #Check for keyboard input
@@ -410,6 +408,8 @@ class GameController(games.Sprite):
 
         except HostDisconnectedException as e:
             self.close(e)
+        if self.connection.recieved[0] == "EndGame":
+            self.endGame(self.connection.recieved[1])
 
         #it'll give me the positions of all connected players, including me, we don't want that
         self.recvPlayers = self.connection.recieved[0]
@@ -589,6 +589,9 @@ class GameController(games.Sprite):
             games.screen.add(self.serverInstances[-1])
             games.screen.add(self.serverInstancesTurret[-1])
 
+    def endGame(self, stats):
+        raise EndOfGame(stats)
+
 def main(instance):
     """Called to run the client, requires data for the tank and the host/port"""
     try:
@@ -616,6 +619,7 @@ def main(instance):
     except HostDisconnectedException as message:
         return message
 
-    except Exception:
+    except Exception as ex:
+        print "ERROR: " + str(ex)
         fat_controller.connection.send(["Disconnect", fat_controller.id])
 
