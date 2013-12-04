@@ -49,7 +49,7 @@ class Player(games.Sprite):
         print "NAME: "+self.name
         print "HP: "+str(self.hp)
     def update(self):
-        self.nametag.value = self.name + " " + str(self.hp)
+        self.nametag.value = self.name + " " + str(int(self.hp))
         if int(self.hp) < int(self.maxHp) / 2 and self.state == 0:
             self.image = games.load_image("res/" + self.name + "_body_damaged.png")
             self.turret.image = games.load_image("res/"+self.name+"_turret_damaged.png")
@@ -102,6 +102,7 @@ class LocalPlayer(games.Sprite):
         self.idle = games.load_sound("res/Sounds/idle.ogg")
         self.moving = games.load_sound("res/Sounds/moving.ogg")
         self.canMove = False
+        self.turret.canMove = False
         self.speed = speed
         self.hull_traverse = hull_traverse
         self.hp = int(hp)
@@ -114,7 +115,7 @@ class LocalPlayer(games.Sprite):
                                   y = y-70,
                                   color=colour.black,
                                   size=20)
-
+        self.reloadText = games.Text(value = "Reload in: " + str(self.reload_counter), x = 0, y = 0, colour = colour.red, size = 30)
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.userTag)
@@ -167,10 +168,17 @@ class LocalPlayer(games.Sprite):
             if self.reload_counter > 0:
                 #print "RELOAD: "+str(self.reload_counter)
                 self.reload_counter -= 1
+                self.reloadText.set_value("Reload in: " + str(self.reload_counter))
+
+            if self.reload_counter == 0:
+                self.reloadText.set_value("Ready to fire!")
+                self.reloadText.set_color(colour.black)
+            else:
+                self.reloadText.set_color(colour.red)
             
         self.nametag.x = self.x
         self.nametag.y = self.y-70
-        self.nametag.value = self.name + " "+str(self.hp)
+        self.nametag.value = self.name + " "+str(int(self.hp))
         self.userTag.x = self.x
         self.userTag.y = self.y - 90
         if self.hp < self.maxHp / 2:
@@ -179,6 +187,7 @@ class LocalPlayer(games.Sprite):
         if self.hp <= 0:
             self.hp = 0
             self.canMove = False
+            self.turret.canMove = False
 
     def getBulletValues(self):
         try:
@@ -201,13 +210,15 @@ class LocalTurret(games.Sprite):
         image = games.load_image("res/"+name+"_turret.png")
         super(LocalTurret,  self).__init__(image=image, x=x, y=y, angle=angle)
         self.name = name
+        self.canMove = False
         self.turret_traverse  = turret_traverse
     def update(self):
-        if games.keyboard.is_pressed(games.K_LEFT):
-            self.angle -= self.turret_traverse
-        
-        elif games.keyboard.is_pressed(games.K_RIGHT):
-            self.angle += self.turret_traverse
+        if self.canMove:
+            if games.keyboard.is_pressed(games.K_LEFT):
+                self.angle -= self.turret_traverse
+
+            elif games.keyboard.is_pressed(games.K_RIGHT):
+                self.angle += self.turret_traverse
 
 class Building(games.Sprite):
     def __init__(self, x, y, size):
@@ -216,32 +227,36 @@ class Building(games.Sprite):
         elif size == 2:
             image = games.load_image("res/doubleBuilding.png")
         super(Building, self).__init__(image=image, x = x, y = y)
-        self.setBounds(x,y,size)
+        self.setBounds(x, y, self.get_width(), self.get_height())
 
-    def setBounds(self, x, y, size):
-        if size == 1:
-            offset = 100
-        else:
-            offset = 200
+    def setBounds(self, x, y, width, height):
         TopLeft = [self.x, self.y]
-        TopRight = [self.x + offset, self.y]
-        BottomLeft = [self.x, self.y + offset]
-        BottomRight = [self.x + offset, self.y + offset]
+        TopRight = [self.x + width, self.y]
+        BottomLeft = [self.x, self.y + height]
+        BottomRight = [self.x + width, self.y + height]
         TopSide = Vector(TopLeft[0], TopLeft[1], TopRight[0], TopRight[1])
         LeftSide = Vector(TopLeft[0], TopLeft[1], BottomLeft[0], BottomLeft[1])
         BottomSide = Vector(BottomLeft[0], BottomLeft[1], BottomRight[0], BottomRight[1])
         RightSide = Vector(TopRight[0], TopRight[1], BottomRight[0], BottomRight[1])
         self.myVectors = [TopSide, LeftSide, RightSide, BottomSide]
 
+    def isCollided(self, b):
+        vec = b.getVector()
+        for v in self.myVectors:
+            if intersect(v, vec):
+                return True
+        return False
+
 class GameController(games.Sprite):
     """This is the main class-  it will col all network comms and update the players as required"""
+
     image = games.load_image("res/conn.jpg")
     
     def __init__(self,  stats,  host,  port, username):
         super(GameController,  self).__init__(image=GameController.image,  x=0,  y=0,  angle=0)
         #Create a connection
         self.connection = netComms.networkComms(host,  int(port))
-        self.stats =stats
+        self.stats = stats
         self.username = username
         #Open resources
         self.fire = games.load_sound("res/Sounds/ms-1-45mm.ogg")
@@ -255,8 +270,9 @@ class GameController(games.Sprite):
                             games.load_sound("res/Sounds/WoT-Battle-3.ogg"),
                             games.load_sound("res/Sounds/WoT-Battle-4.ogg"),
                             games.load_sound("res/Sounds/WoT-Battle-5.ogg")]
-        #These will check for buggy bullets
+
         self.despawnToServer = []
+        self.damageDone = []
         name = self.stats[0]
         hp = self.stats[1]
         damage = self.stats[2]
@@ -362,6 +378,7 @@ class GameController(games.Sprite):
         games.screen.remove(self.timerMain)
         games.screen.remove(self.timerTop)
         self.client.canMove = True
+        self.client.turret.canMove = True
 
     def close(self, exception):
         games.screen.quit()
@@ -380,7 +397,16 @@ class GameController(games.Sprite):
         #This occurs on every gameloop, gonna update the local client and send some data 
         #Give the server my position
         try:
-            self.connection.send([self.id, [self.client.x,  self.client.y,  self.client.angle,  self.client.turret.angle,  self.client.hp],  self.client.getBulletValues(),  self.despawnToServer, self.toRebound])
+            self.connection.send([self.id,
+                                 [self.client.x,
+                                  self.client.y,
+                                  self.client.angle,
+                                  self.client.turret.angle,
+                                  self.client.hp],
+                                 self.client.getBulletValues(),
+                                 self.despawnToServer,
+                                 self.toRebound,
+                                 self.damageDone])
 
         except HostDisconnectedException as e:
             self.close(e)
@@ -388,7 +414,7 @@ class GameController(games.Sprite):
         #it'll give me the positions of all connected players, including me, we don't want that
         self.recvPlayers = self.connection.recieved[0]
         self.recvBullets = self.connection.recieved[1]
-
+        self.damageDone = []
         #Ok. Pop us.
         self.recvPlayers.pop(self.id)
         self.recvCopy = self.recvPlayers
@@ -455,6 +481,10 @@ class GameController(games.Sprite):
             if b.bulletID not in serverIDs:
                 games.screen.remove(b)
                 self.bullets.remove(b)
+            for c in self.buildings:
+                if c.isCollided(b):
+                    self.despawnToServer.append(b.bulletID)
+
                 
         for i in range(0,  len(server)):
             self.bullets[i].x = server[i][0]
@@ -477,7 +507,7 @@ class GameController(games.Sprite):
             angle = math.radians(bullet.angle)
             if bullet.ownerId != self.client.id:
                 if self.is_collided(bullet):
-                    pass
+                    self.damageDone.append([bullet.damage, bullet.ownerId])
 
     def is_collided(self, bullet):
         """Checks for collision, will test for overlap between the vectors of the tank and the bullet"""
@@ -582,4 +612,10 @@ def main(instance):
     #Exceptions - can communicate with the login client
     except GameInProgressException as message:
         return message
+
+    except HostDisconnectedException as message:
+        return message
+
+    except Exception:
+        fat_controller.connection.send(["Disconnect", fat_controller.id])
 

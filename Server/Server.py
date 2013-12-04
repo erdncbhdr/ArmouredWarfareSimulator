@@ -16,6 +16,9 @@ class Player():
         self.username = username
         self.name = name
         self.hp = hp
+        self.xpGained = 100
+        self.damage = 0
+        self.kills = 0
         if self.id % 2 == 0:
             self.angle = 90
             self.team = 0
@@ -69,6 +72,9 @@ class TankServer(SocketServer.BaseRequestHandler):
     toDespawn = []
     NextBulletId = 0
     Countdown = -1
+    DeadPlayers = 0
+    GameInProgress = True
+    EndGameMessage = []
     Map = mapGen.generateMap(1024, 768)
 
     def giveDatabaseConnection(self, cur):
@@ -76,7 +82,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     def handle(self):
         """Do something with the request"""
 
-        while 1:
+        while TankServer.GameInProgress:
             #Get the data from the socket
             try:
                 recv = self.request.recv(1024)
@@ -89,6 +95,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 self.request.sendall(pickle.dumps(self.toSend))
             except Exception as e:
                 print e
+        self.request.sendall(pickle.dumps(TankServer.EndGameMessage[recv[0]]))
             
     def stringRequest(self,  req):
         """Takes a string and outputs accordingly"""
@@ -97,6 +104,10 @@ class TankServer(SocketServer.BaseRequestHandler):
             return self.doHandshake(req[1], req[2], req[3])
         elif TankServer.Countdown == 0:
             return [-1, -1, 0, -1]
+        elif "Disconnect" in req[0]:
+            TankServer.Players[req[1]].hp = 0
+            TankServer.Players[req[1]].username = "Disconnected"
+            self.DeadPlayers += 1
         else:
             return "InvalidCommand"
             
@@ -107,7 +118,6 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def convertToList(self):
         """This will take Player objects and shove the x,y,angle,turret angle data into a list"""
-
         self.v = [[x.returnValues() for x in TankServer.Players]]
         self.v.append([y.returnValues() for y in TankServer.Bullets])
         return self.v
@@ -139,7 +149,12 @@ class TankServer(SocketServer.BaseRequestHandler):
     def get(self, req):
         """Acts as a 'getter', returns every other player's information and sends it in a handy list"""
 
-        TankServer.Players[req[0]].set(req[1]) 
+        TankServer.Players[req[0]].set(req[1])
+        #Check if the player is dead
+        if TankServer.Players[req[0]].hp == 0:
+            TankServer.DeadPlayers += 1
+            if TankServer.DeadPlayers == len(TankServer.Players):
+                self.endGame()
         #Update the bullets if ID 0 is connected
         for i in req[3]:
             for b in TankServer.Bullets:
@@ -149,7 +164,8 @@ class TankServer(SocketServer.BaseRequestHandler):
         if req[0] == 0:
             for b in TankServer.Bullets:
                 if self.isCollidedWithMap(b):
-                    b.ded = True
+                    #b.ded = True
+                    None
                 else:
                     b.update()
                 if b.ded:
@@ -163,7 +179,6 @@ class TankServer(SocketServer.BaseRequestHandler):
         #If bullets don't pen, they should rebound
         if len(req[4]) > 0:
             for bid in req[4]:
-                print "BID " + str(bid)
                 id = bid[0]
                 angleOfImpact = bid[1]
                 angleOfNormal = bid[2]
@@ -175,6 +190,18 @@ class TankServer(SocketServer.BaseRequestHandler):
                     if b.bulletID == id:
                         toEdit = b
                         toEdit.angle = newAngle
+
+        if len(req[5]) > 0:
+            for item in req[5]:
+                newHp = req[0][4]
+                ownerId = item[1]
+                for player in TankServer.Players:
+                    if player.id == ownerId:
+                        player.damage += item[0]
+                        player.xpGained += 20
+                        if newHp <= 0:
+                            player.kills += 1
+                            player.xpGained += 200
         
                 
         return self.convertToList()
@@ -189,3 +216,8 @@ class TankServer(SocketServer.BaseRequestHandler):
                 if b.y > item[1]*100 and b.y < (item[1]*100) + 100:
                     return True
         return False
+
+    def endGame(self):
+        TankServer.EndGameMessage = [[p.xpGained, p.damage, p.kills] for p in TankServer.Players]
+        TankServer.GameInProgress = False
+        pass
