@@ -15,4 +15,4 @@ class NoConnectionException(Exception):
 
 class EndOfGame(Exception):
     def __init__(self, message):
-        self.message = message
+        self.message = str(message)

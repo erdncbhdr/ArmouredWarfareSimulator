@@ -99,11 +99,18 @@ class TankServer(SocketServer.BaseRequestHandler):
                 except Exception as e:
                     print e
             else:
-                recv = self.request.recv(1024)
-                TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[1]))
-                self.request.sendall(pickle.dumps(["EndGame"].append(TankServer.EndGameMessage[recv[0]])))
-                if len(TankServer.EndGameIds) == 0:
-                    raise EndOfGame(TankServer.EndGameMessage)
+                try:
+                    recv = pickle.loads(self.request.recv(1024))
+                    print str(recv)
+                    TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
+                    a = ["EndGame"]
+                    a.append(TankServer.EndGameMessage[recv[0]])
+                    print "END OF GAME: "+str(a)
+                    self.request.sendall(pickle.dumps(a))
+                    if len(TankServer.EndGameIds) == 0:
+                        raise EndOfGame(TankServer.EndGameMessage)
+                except Exception as ex:
+                    print ex
 
     def getVictor(self):
         team0 = 0
@@ -132,6 +139,8 @@ class TankServer(SocketServer.BaseRequestHandler):
                     p.username = "Disconnected"
             self.DeadPlayers += 1
             TankServer.EndGameIds.pop(TankServer.EndGameIds.index(req[1]))
+            if self.isEndOfGame():
+                self.endGame()
         else:
             return "InvalidCommand"
             
@@ -139,6 +148,24 @@ class TankServer(SocketServer.BaseRequestHandler):
         """Redirect method for requests in the form of a list"""
 
         return self.get(req)
+
+    def isEndOfGame(self):
+        team1Alive = 0
+        team2Alive = 0
+        for p in TankServer.Players:
+            if p.hp > 0:
+                if p.team == 0:
+                    team1Alive += 1
+                else:
+                    team2Alive += 1
+        if team1Alive == 0:
+            self.victor = 1
+            return  True
+        if team2Alive == 0:
+            self.victor =  0
+            return True
+        return False
+
 
     def convertToList(self):
         """This will take Player objects and shove the x,y,angle,turret angle data into a list"""
@@ -151,6 +178,7 @@ class TankServer(SocketServer.BaseRequestHandler):
 
         self.newId = len(TankServer.Players)
         TankServer.Players.append(Player(TankServer.Start_x[self.newId],  TankServer.Start_y[self.newId],  self.newId,  name,  hp, username))
+        TankServer.EndGameIds.append(self.newId)
         print "Connected: "+name
         if len(TankServer.Players) == 1:
             TankServer.Countdown = 30
@@ -177,7 +205,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         #Check if the player is dead
         if TankServer.Players[req[0]].hp == 0:
             TankServer.DeadPlayers += 1
-            if TankServer.DeadPlayers == len(TankServer.Players):
+            if self.isEndOfGame():
                 self.endGame()
         #Update the bullets if ID 0 is connected
         for i in req[3]:
@@ -242,7 +270,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         return False
 
     def endGame(self):
-        victor = self.getVictor()
+        victor = self.victor
         #Get a 1.5x XP boost if you win
         for p in TankServer.Players:
             if p.id == victor:

@@ -590,7 +590,11 @@ class GameController(games.Sprite):
             games.screen.add(self.serverInstancesTurret[-1])
 
     def endGame(self, stats):
-        raise EndOfGame(stats)
+        self.connection.close()
+        games.screen.clear()
+        games.screen.quit()
+        quit()
+        raise EndOfGame(str(stats))
 
 def main(instance):
     """Called to run the client, requires data for the tank and the host/port"""
@@ -619,7 +623,7 @@ def main(instance):
     except HostDisconnectedException as message:
         return message
 
-    except Exception as ex:
-        print "ERROR: " + str(ex)
-        fat_controller.connection.send(["Disconnect", fat_controller.id])
+    #except Exception as ex:
+    #    print "ERROR: " + str(ex)
+    #    fat_controller.connection.send(["Disconnect", fat_controller.id])
 

@@ -242,6 +242,8 @@ class Main(selectGui.MainFrame):
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 
         except EndOfGame as ex:
+            print "EX:"+str(ex.message)
+            ex = eval(ex.message)
             self.Show(True)
             win = ex[0]
             xp = ex[1]
