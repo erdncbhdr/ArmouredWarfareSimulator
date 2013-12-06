@@ -571,6 +571,7 @@ class GameController(games.Sprite):
 
         #Check if the bullet has enough penetration and return
         if bullet.penetration > effectiveArmour:
+            self.damageDone.append([bullet.damage, bullet.ownerId])
             return True
         else:
             return False

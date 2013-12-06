@@ -246,10 +246,10 @@ class TankServer(SocketServer.BaseRequestHandler):
         if len(req[5]) > 0:
             for item in req[5]:
                 newHp = req[0][4]
-                ownerId = item[1]
+                ownerId = int(item[1])
                 for player in TankServer.Players:
                     if player.id == ownerId:
-                        player.damage += item[0]
+                        player.damage += int(item[0])
                         player.xpGained += 20
                         if newHp <= 0:
                             player.kills += 1
