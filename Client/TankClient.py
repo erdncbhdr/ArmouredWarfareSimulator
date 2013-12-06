@@ -593,7 +593,6 @@ class GameController(games.Sprite):
         self.connection.close()
         games.screen.clear()
         games.screen.quit()
-        quit()
         raise EndOfGame(str(stats))
 
 def main(instance):

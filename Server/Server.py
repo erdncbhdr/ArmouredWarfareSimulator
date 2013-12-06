@@ -260,13 +260,6 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def isCollidedWithMap(self, b):
         """Self-explanatory, returns true if the bullet is collided with terrain"""
-
-        xPos = b.x
-        yPos = b.y
-        for item in TankServer.Map:
-            if b.x > item[0]*100 and b.x < (item[0]*100)+100:
-                if b.y > item[1]*100 and b.y < (item[1]*100) + 100:
-                    return True
         return False
 
     def endGame(self):

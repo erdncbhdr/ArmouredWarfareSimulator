@@ -82,9 +82,7 @@ class serverForm(ServerGui.Mainframe):
         try:
             self.server = ThreadedTCPServer((HOST,PORT), Server.TankServer)
             print ("Server running on "+str(HOST)+":"+str(PORT))
-            thread_server = threading.Thread(self.server.serve_forever())
-            thread_server.daemon = True
-            thread_server.start()
+            self.server.serve_forever()
         except EndOfGame as ex:
             self.server.shutdown()
             messages.Info(self.parent, "Game has finished")
