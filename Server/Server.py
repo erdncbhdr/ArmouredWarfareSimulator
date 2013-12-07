@@ -87,21 +87,22 @@ class TankServer(SocketServer.BaseRequestHandler):
         while 1:
             if TankServer.GameInProgress:
                 #Get the data from the socket
-                try:
-                    recv = self.request.recv(1024)
-                    self.data = pickle.loads(recv)
-                    #Check what sort of request it is
-                    if type(self.data[0]) == type("TopKek"):
-                        self.toSend = self.stringRequest(self.data)
-                    else:
-                        self.toSend = self.listRequest(self.data)
-                    self.request.sendall(pickle.dumps(self.toSend))
-                except Exception as e:
-                    print e
+                recv = self.request.recv(1024)
+                self.data = pickle.loads(recv)
+                if recv == "" or self.data == "":
+                    break
+                #Check what sort of request it is
+                if type(self.data[0]) == type("TopKek"):
+                    self.toSend = self.stringRequest(self.data)
+                else:
+                    self.toSend = self.listRequest(self.data)
+                self.request.sendall(pickle.dumps(self.toSend))
+
             else:
                 try:
                     recv = pickle.loads(self.request.recv(1024))
-                    print str(recv)
+                    if recv == "":
+                        break
                     TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
                     a = ["EndGame"]
                     a.append(TankServer.EndGameMessage[recv[0]])
@@ -109,8 +110,15 @@ class TankServer(SocketServer.BaseRequestHandler):
                     self.request.sendall(pickle.dumps(a))
                     if len(TankServer.EndGameIds) == 0:
                         raise EndOfGame(TankServer.EndGameMessage)
+                    if TankServer.Countdown == 0:
+                        raise EndOfGame(TankServer.EndGameMessage)
+                        break
                 except Exception as ex:
                     print ex
+                    if TankServer.Countdown == 0:
+                        raise  EndOfGame(TankServer.EndGameMessage)
+                        break
+        self.finish()
 
     def getVictor(self):
         team0 = 0
@@ -245,7 +253,7 @@ class TankServer(SocketServer.BaseRequestHandler):
 
         if len(req[5]) > 0:
             for item in req[5]:
-                newHp = req[0][4]
+                newHp = req[1][4]
                 ownerId = int(item[1])
                 for player in TankServer.Players:
                     if player.id == ownerId:
@@ -263,6 +271,8 @@ class TankServer(SocketServer.BaseRequestHandler):
         return False
 
     def endGame(self):
+        TankServer.Countdown = 3
+        self.countdownThread = threading.Thread(target=self.countdown)
         victor = self.victor
         #Get a 1.5x XP boost if you win
         for p in TankServer.Players:

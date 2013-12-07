@@ -100,7 +100,7 @@ class serverForm(ServerGui.Mainframe):
             username = stats[-1]
             tankName = stats[-2]
             playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()[0]
-            currentXp = cur.execute()
+            currentXp = cur.execute("SELECT "+tankName+" UserProgress WHERE UserId  = ?", [player])
         conn.close()
 app = wx.App(False)
 

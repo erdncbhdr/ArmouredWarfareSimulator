@@ -452,6 +452,7 @@ class GameController(games.Sprite):
                 self.serverInstances[i].userTag.y = self.serverInstances[i].y - 90
             except Exception as ex:
                 print "Exception in update: " + str(ex)
+                #self.resyncClient()
         
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions() 
@@ -507,7 +508,8 @@ class GameController(games.Sprite):
             angle = math.radians(bullet.angle)
             if bullet.ownerId != self.client.id:
                 if self.is_collided(bullet):
-                    self.damageDone.append([bullet.damage, bullet.ownerId])
+                    #self.damageDone.append([bullet.damage, bullet.ownerId])
+                    pass
 
     def is_collided(self, bullet):
         """Checks for collision, will test for overlap between the vectors of the tank and the bullet"""
@@ -580,7 +582,7 @@ class GameController(games.Sprite):
         games.screen.clear()
         games.screen.add(self.client)
         games.screen.add(self.clientTurret)
-        self.doBulletSpawnDespawn()
+        self.doBulletSpawnDespawn(self.recvBullets)
         for p in self.serverPlayers:
             #Add a new turret instance
             self.serverInstancesTurret.append(Turret(p[0], p[1], p[3], p[4]))
