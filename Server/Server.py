@@ -77,8 +77,10 @@ class TankServer(SocketServer.BaseRequestHandler):
     DeadPlayers = 0
     GameInProgress = True
     EndGameMessage = []
+    toClose = False
     Map = mapGen.generateMap(1024, 768)
     EndGameIds = []
+    saidGoodbye = 0
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
@@ -116,10 +118,17 @@ class TankServer(SocketServer.BaseRequestHandler):
                 except Exception as ex:
                     print ex
                     if TankServer.Countdown == 0:
-                        raise  EndOfGame(TankServer.EndGameMessage)
+                        TankServer.toClose = True
                         break
-        self.finish()
 
+    def finish(self):
+        print "Ending connection"
+        TankServer.saidGoodbye += 1
+        if TankServer.saidGoodbye == len(TankServer.EndGameIds):
+            f = open("Stats.dat", "w")
+            pickle.dump(TankServer.EndGameMessage, f)
+            f.close()
+            raise NoConnectionException()
     def getVictor(self):
         team0 = 0
         team1 = 0
@@ -177,6 +186,7 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def convertToList(self):
         """This will take Player objects and shove the x,y,angle,turret angle data into a list"""
+
         self.v = [[x.returnValues() for x in TankServer.Players]]
         self.v.append([y.returnValues() for y in TankServer.Bullets])
         return self.v
@@ -273,6 +283,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     def endGame(self):
         TankServer.Countdown = 3
         self.countdownThread = threading.Thread(target=self.countdown)
+        self.countdownThread.start()
         victor = self.victor
         #Get a 1.5x XP boost if you win
         for p in TankServer.Players:

@@ -39,5 +39,6 @@ class networkComms():
                 raise HostDisconnectedException()
 
     def close(self):
-        #print "CLOSING CONNECTION"
+        print "CLOSING CONNECTION"
         self.sock.close()
+        del self.sock

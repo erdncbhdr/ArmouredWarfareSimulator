@@ -20,6 +20,7 @@ except ImportError:
 from Errors import *
 import messages
 import sqlite3
+import pickle
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -65,15 +66,15 @@ class serverForm(ServerGui.Mainframe):
             self.ipBox.Value = ints[self.interfaceChoice.GetCurrentSelection()].IPAddress[0]
     def startServer(self,event):
         self.statusLab.SetLabel("Game instance is running")
-        thread = threading.Thread(target=self.startServerThread)
-        thread.start()
+        th = threading.Thread(target=self.startServerThread)
+        th.start()
         
     def stopServer(self,event):
         self.statusLab.SetLabel("No game instance running")
         try:
             self.server.shutdown()
             print("Server shutdown")
-        except:
+        except Exception:
             print ("Server not running")
         
     def startServerThread(self):
@@ -83,15 +84,22 @@ class serverForm(ServerGui.Mainframe):
             self.server = ThreadedTCPServer((HOST,PORT), Server.TankServer)
             print ("Server running on "+str(HOST)+":"+str(PORT))
             self.server.serve_forever()
-        except EndOfGame as ex:
-            self.server.shutdown()
-            messages.Info(self.parent, "Game has finished")
-            self.statusLab.SetLabel("No game instance running")
-            self.processEndOfGame(ex)
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
+        except NoConnectionException:
+            pass
+        f = open("Stats.dat", "r")
+        ex = pickle.load(f)
+        self.server.shutdown()
+        messages.Info(self.parent, "Game has finished")
+        self.statusLab.SetLabel("No game instance running")
+        try:
+            self.processEndOfGame(ex)
+        except Exception:
+            #No stats to process
+            pass
 
     def processEndOfGame(self, stats):
         conn = sqlite3.Connection("LoginDatabase")

@@ -379,7 +379,9 @@ class GameController(games.Sprite):
         self.client.turret.canMove = True
 
     def close(self, exception):
+        games.screen.clear()
         games.screen.quit()
+        quit()
         raise exception
 
     def update(self):
@@ -596,6 +598,7 @@ class GameController(games.Sprite):
         self.connection.close()
         games.screen.clear()
         games.screen.quit()
+        quit()
         raise EndOfGame(str(stats))
 
 def main(instance):
