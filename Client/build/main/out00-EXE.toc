@@ -1,0 +1,9 @@
+('C:\\Users\\Harry\\Documents\\GitHub\\ArmouredWarfareSimulator\\Client\\dist\\main.exe',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1386879243L)
