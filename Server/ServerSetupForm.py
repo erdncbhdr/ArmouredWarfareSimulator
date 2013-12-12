@@ -66,31 +66,7 @@ class serverForm(ServerGui.Mainframe):
             self.ipBox.Value = ints[self.interfaceChoice.GetCurrentSelection()].IPAddress[0]
     def startServer(self,event):
         self.statusLab.SetLabel("Game instance is running")
-        th = threading.Thread(target=self.startServerThread)
-        th.start()
-        
-    def stopServer(self,event):
-        self.statusLab.SetLabel("No game instance running")
-        try:
-            self.server.shutdown()
-            print("Server shutdown")
-        except Exception:
-            print ("Server not running")
-        
-    def startServerThread(self):
-        HOST = self.ipBox.Value
-        PORT = int(self.portBox.Value)
-        lel = True
-        try:
-            self.server = ThreadedTCPServer((HOST,PORT), Server.TankServer)
-            print ("Server running on "+str(HOST)+":"+str(PORT))
-            self.server.serve_forever()
-        except NoConnectionException:
-            pass
-        except Exception as ex:
-            #This is literally the only error that appears here
-            print ("Port is not free")
-            print ("Technical information: "+str(ex))
+        self.startServerThread()
         f = open("Stats.dat", "r")
         ex = pickle.load(f)
         messages.Info(self.parent, "Game has finished")
@@ -100,6 +76,40 @@ class serverForm(ServerGui.Mainframe):
         except Exception:
             #No stats to process
             pass
+        
+    def stopServer(self,event):
+        self.statusLab.SetLabel("No game instance running")
+        try:
+            self.server.shutdown()
+            print("Server shutdown")
+        except Exception:
+            print ("Server not running")
+
+    def beginTheSatanHailing(self):
+        while True:
+                a =self.server.handle_request()
+                #All glory to overlord satan
+                print str(a)
+        
+    def startServerThread(self):
+        HOST = self.ipBox.Value
+        PORT = int(self.portBox.Value)
+        try:
+            self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
+            self.endEvent = threading.Event()
+            Server.TankServer.Event = self.endEvent
+            #monitorThread = threading.Thread(target=self.monitorTheServer)
+            #monitorThread.start()
+            print ("Server running on "+str(HOST)+":"+str(PORT))
+            serverThread = threading.Thread(target=self.beginTheSatanHailing)
+            serverThread.setDaemon(True)
+            serverThread.start()
+            while not Server.TankServer.toClose:
+                pass
+        except Exception as ex:
+            #This is literally the only error that appears here
+            print ("Port is not free")
+            print ("Technical information: "+str(ex))
 
     def processEndOfGame(self, stats):
         conn = sqlite3.Connection("LoginDatabase")
@@ -107,8 +117,13 @@ class serverForm(ServerGui.Mainframe):
         for player in stats:
             username = stats[-1]
             tankName = stats[-2]
+            xpGained = stats[2]
             playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()[0]
-            currentXp = cur.execute("SELECT "+tankName+" UserProgress WHERE UserId  = ?", [player])
+            currentXp = int(cur.execute("SELECT "+tankName+" UserProgress WHERE UserId  = ?", [player]).fetchone()[0])
+            currentXp += xpGained
+            cur.execute("UPDATE UserProgress SET "+tankName+" = ? WHERE UserId = ?", [currentXp, playerId])
+            print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
+        conn.commit()
         conn.close()
 app = wx.App(False)
 

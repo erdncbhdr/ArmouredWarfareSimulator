@@ -2,6 +2,7 @@ import SocketServer
 import pickle
 import threading
 import time
+import os
 
 from game_calcs import *
 from Errors import *
@@ -67,6 +68,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         responds with data or confirmation"""
     #Temporary starting positions
     allow_reuse_address=True
+    Event = None
     Start_x = [item for sublist in [[x,x] for x in range(200, 801, 200)] for item in sublist]
     Start_y = [100, 700, 100, 700, 100, 700, 100, 700]
     Players = []
@@ -111,18 +113,24 @@ class TankServer(SocketServer.BaseRequestHandler):
             print "END OF GAME: "+str(a)
             self.request.sendall(pickle.dumps(a))
             TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
+            self.request.close()
             if len(TankServer.EndGameIds) == 0:
                 print "Writing file"
                 f = open("Stats.dat", "w")
                 pickle.dump(TankServer.EndGameMessage, f)
                 f.close()
-                return "TOPLEL"
+                print "FILE WRITTEN"
+                TankServer.toClose = True
+                a=threading.currentThread()
+                a._Thread__stop()
         except Exception as ex:
             print str(ex)
 
 
     def finish(self):
-        pass
+        print "FINISH"
+
+        return "TOPLEL"
 
     def getVictor(self):
         team0 = 0

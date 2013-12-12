@@ -7,6 +7,7 @@ import messages
 import netComms
 from pygame import *
 import games
+import threading
 from Errors import *
 
 
@@ -228,6 +229,12 @@ class Main(selectGui.MainFrame):
                 pass
         return lst
 
+    def battleThread(self, instance):
+        import TankClient
+        #TankClient.setupEnv()
+        a = TankClient.mainGame(instance)
+        return a
+
     def goToBattle(self,  event):
         try:
             self.a.stop()
@@ -238,17 +245,13 @@ class Main(selectGui.MainFrame):
             assert(self.tankChoice.GetSelection() >= 0)
             instance = [self.username, self.toInt(self.stats), self.host, self.port]
             self.Show(False)
-            import TankClient
             try:
-                a = TankClient.main(instance)
-            except error:
-                TankClient.setupEnv()
-                a = TankClient.main(instance)
-                messages.Warn(self.parent, "Error: "+str(a))
+                a = self.battleThread(instance)
+            except error as e:
+                #TankClient.setupEnv()
+                print str(e)
             except games.GamesError:
                 games.screen.quit()
-                TankClient.setupEnv()
-                a = TankClient.main()
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 

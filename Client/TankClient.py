@@ -7,7 +7,13 @@ import netComms
 from game_calcs import *
 from Errors import *
 
-games.init(screen_width = 1024, screen_height = 768, fps = 30)
+try:
+    games.init(screen_width = 1024, screen_height = 768, fps = 30)
+except Exception:
+    games.screen.quit()
+    quit()
+    games.init(screen_width = 1024, screen_height = 768, fps = 30)
+
 def setupEnv():
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
@@ -619,7 +625,7 @@ class GameController(games.Sprite):
         quit()
         raise EndOfGame(str(stats))
 
-def main(instance):
+def mainGame(instance):
     """Called to run the client, requires data for the tank and the host/port"""
 
     #Open the screen
