@@ -7,9 +7,9 @@ import netComms
 from game_calcs import *
 from Errors import *
 
-
-#Open the screen
 games.init(screen_width = 1024, screen_height = 768, fps = 30)
+def setupEnv():
+    games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
 class superSquare(games.Sprite):
     def __init__(self, enemy, x, y):
@@ -259,6 +259,7 @@ class GameController(games.Sprite):
         #Open resources
         self.fire = games.load_sound("res/Sounds/ms-1-45mm.ogg")
         self.idle = games.load_sound("res/Sounds/marder-idle.ogg")
+        self.moskau = games.load_sound("res/Sounds/Moskau.ogg")
         self.moving = games.load_sound("res/Sounds/marder-moving.ogg")
         self.loadingSongs = [games.load_sound("res/Sounds/WoT-Opening-1.ogg"),
                              games.load_sound("res/Sounds/WoT-Opening-2.ogg"),
@@ -313,8 +314,7 @@ class GameController(games.Sprite):
         #Set the map
         self.map = self.connection.recieved[3]
         self.drawMap(self.map)
-        self.countdownThread = Thread(target=self.countingDown)
-        self.countdownThread.start()
+
 
         #Create these players, excluding us, as our movement is handled locally
         #Add us
@@ -322,7 +322,11 @@ class GameController(games.Sprite):
         self.clientTurret = LocalTurret(self.serverPlayers[self.id][0], self.serverPlayers[self.id][1],self.serverPlayers[self.id][3],  turret_trav,  name)
         self.client = LocalPlayer(self.serverPlayers[self.id][0], self.serverPlayers[self.id][1], self.serverPlayers[self.id][2],  self.clientTurret,  speed,
                                   hull_traverse,  hp,  reload,  armour,  name,  self.id,  damage, penetration, self.username, self.team)
-        
+
+        #Start the countdown
+        self.countdownThread = Thread(target=self.countingDown)
+        self.countdownThread.start()
+
         #Add us to the screen
         games.screen.add(self.client)
         games.screen.add(self.clientTurret)
@@ -367,7 +371,10 @@ class GameController(games.Sprite):
 
     def countingDown(self):
         import random
-        toPlay = random.choice(self.loadingSongs)
+        if self.client.name == "KV1" or self.client.name == "T34":
+            toPlay = self.moskau
+        else:
+            toPlay = random.choice(self.loadingSongs)
         toPlay.play()
         while self.countdown > 0:
             time.sleep(1)
@@ -468,6 +475,9 @@ class GameController(games.Sprite):
         self.despawnToServer = []
         self.toRebound = []
 
+        #Check for building collisions
+        self.checkBuildings(self.bullets)
+
         #These are the bullets currently spawned by the server and their IDS
         currentIDs = [b.bulletID for b in self.bullets]
         serverIDs = [b[6] for b in server]
@@ -536,8 +546,10 @@ class GameController(games.Sprite):
         if bullet in overlaps and not noVectorIntersects:
             #This means that the bullet is within the tank without colliding
             #We'll give it penetration
-            self.client.hp -= bullet.damage
-            self.despawnToServer.append(bullet.bulletID)
+            #self.client.hp -= bullet.damage
+            #self.despawnToServer.append(bullet.bulletID)
+            #self.damageDone.append([bullet.damage, bullet.ownerId])
+            pass
 
     def vectorsIntersect(self, vecA, vecB):
         """Checks if 2 vectors intersect, calls game_calcs"""
@@ -594,6 +606,12 @@ class GameController(games.Sprite):
             games.screen.add(self.serverInstances[-1])
             games.screen.add(self.serverInstancesTurret[-1])
 
+    def checkBuildings(self, bul):
+        for b in bul:
+            for a in self.buildings:
+                if a.overlaps(b):
+                    self.despawnToServer.append(b.bulletID)
+
     def endGame(self, stats):
         self.connection.close()
         games.screen.clear()
@@ -603,6 +621,9 @@ class GameController(games.Sprite):
 
 def main(instance):
     """Called to run the client, requires data for the tank and the host/port"""
+
+    #Open the screen
+
     try:
         #This sets the initial conditions for the client
         username = instance[0]

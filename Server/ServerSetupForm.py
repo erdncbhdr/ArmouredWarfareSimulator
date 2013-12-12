@@ -80,19 +80,19 @@ class serverForm(ServerGui.Mainframe):
     def startServerThread(self):
         HOST = self.ipBox.Value
         PORT = int(self.portBox.Value)
+        lel = True
         try:
             self.server = ThreadedTCPServer((HOST,PORT), Server.TankServer)
             print ("Server running on "+str(HOST)+":"+str(PORT))
             self.server.serve_forever()
+        except NoConnectionException:
+            pass
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
-        except NoConnectionException:
-            pass
         f = open("Stats.dat", "r")
         ex = pickle.load(f)
-        self.server.shutdown()
         messages.Info(self.parent, "Game has finished")
         self.statusLab.SetLabel("No game instance running")
         try:

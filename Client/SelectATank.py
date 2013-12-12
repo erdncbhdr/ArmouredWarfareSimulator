@@ -2,10 +2,10 @@
 
 import wx
 import sqlite3
-
 import selectGui
 import messages
 import netComms
+from pygame import *
 import games
 from Errors import *
 
@@ -229,15 +229,26 @@ class Main(selectGui.MainFrame):
         return lst
 
     def goToBattle(self,  event):
-        self.a.stop()
-        import TankClient
+        try:
+            self.a.stop()
+        except Exception:
+            pass
         try:
             assert(self.AddressBox.GetValue() != u"")
             assert(self.tankChoice.GetSelection() >= 0)
             instance = [self.username, self.toInt(self.stats), self.host, self.port]
             self.Show(False)
-            a = TankClient.main(instance)
-            messages.Warn(self.parent, "Error: "+str(a))
+            import TankClient
+            try:
+                a = TankClient.main(instance)
+            except error:
+                TankClient.setupEnv()
+                a = TankClient.main(instance)
+                messages.Warn(self.parent, "Error: "+str(a))
+            except games.GamesError:
+                games.screen.quit()
+                TankClient.setupEnv()
+                a = TankClient.main()
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 

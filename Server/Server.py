@@ -50,8 +50,8 @@ class Bullet():
         self.bulletID = bulletID
         self.penetration = penetration
     def update(self):
-        self.x += 5*math.cos(math.radians(self.angle))
-        self.y += 5*math.sin(math.radians(self.angle))
+        self.x += 6*math.cos(math.radians(self.angle))
+        self.y += 6*math.sin(math.radians(self.angle))
         if (self.x < -100 or
             self.y < -100 or
             self.x > 1124 or
@@ -85,50 +85,45 @@ class TankServer(SocketServer.BaseRequestHandler):
         self.cur = cur
     def handle(self):
         """Do something with the request"""
-
-        while 1:
-            if TankServer.GameInProgress:
-                #Get the data from the socket
-                recv = self.request.recv(1024)
-                self.data = pickle.loads(recv)
-                if recv == "" or self.data == "":
-                    break
-                #Check what sort of request it is
-                if type(self.data[0]) == type("TopKek"):
-                    self.toSend = self.stringRequest(self.data)
-                else:
-                    self.toSend = self.listRequest(self.data)
-                self.request.sendall(pickle.dumps(self.toSend))
-
+        print "REQUEST RECIEVED"
+        while TankServer.GameInProgress:
+            #print "HANDLING"
+            #Get the data from the socket
+            recv = self.request.recv(1024)
+            self.data = pickle.loads(recv)
+            if recv == "" or self.data == "":
+                break
+            #Check what sort of request it is
+            if type(self.data[0]) == type("TopKek"):
+                self.toSend = self.stringRequest(self.data)
             else:
-                try:
-                    recv = pickle.loads(self.request.recv(1024))
-                    if recv == "":
-                        break
-                    TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
-                    a = ["EndGame"]
-                    a.append(TankServer.EndGameMessage[recv[0]])
-                    print "END OF GAME: "+str(a)
-                    self.request.sendall(pickle.dumps(a))
-                    if len(TankServer.EndGameIds) == 0:
-                        raise EndOfGame(TankServer.EndGameMessage)
-                    if TankServer.Countdown == 0:
-                        raise EndOfGame(TankServer.EndGameMessage)
-                        break
-                except Exception as ex:
-                    print ex
-                    if TankServer.Countdown == 0:
-                        TankServer.toClose = True
-                        break
+                self.toSend = self.listRequest(self.data)
+            self.request.sendall(pickle.dumps(self.toSend))
+
+        print "HANDLING"
+        try:
+            recv = pickle.loads(self.request.recv(1024))
+            print "RECV: "+str(recv)
+            if recv == "":
+                pass
+            a = ["EndGame"]
+            a.append(TankServer.EndGameMessage[recv[0]])
+            print "END OF GAME: "+str(a)
+            self.request.sendall(pickle.dumps(a))
+            TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
+            if len(TankServer.EndGameIds) == 0:
+                print "Writing file"
+                f = open("Stats.dat", "w")
+                pickle.dump(TankServer.EndGameMessage, f)
+                f.close()
+                return "TOPLEL"
+        except Exception as ex:
+            print str(ex)
+
 
     def finish(self):
-        print "Ending connection"
-        TankServer.saidGoodbye += 1
-        if TankServer.saidGoodbye == len(TankServer.EndGameIds):
-            f = open("Stats.dat", "w")
-            pickle.dump(TankServer.EndGameMessage, f)
-            f.close()
-            raise NoConnectionException()
+        pass
+
     def getVictor(self):
         team0 = 0
         team1 = 0
