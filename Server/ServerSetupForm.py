@@ -114,7 +114,9 @@ class serverForm(ServerGui.Mainframe):
     def processEndOfGame(self, stats):
         conn = sqlite3.Connection("LoginDatabase")
         cur = conn.cursor()
+        print "Running update on data: " + str(stats)
         for player in stats:
+            print "Update info: " + str(player)
             username = stats[-1]
             tankName = stats[-2]
             xpGained = stats[2]

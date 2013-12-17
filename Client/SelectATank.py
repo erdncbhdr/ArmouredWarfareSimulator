@@ -322,7 +322,7 @@ class Main(selectGui.MainFrame):
         return conn.recieved
 
     def getXP(self, name):
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["XP",str(self.username),str(name)])
         return conn.recieved
 

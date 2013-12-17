@@ -257,12 +257,13 @@ class TankServer(SocketServer.BaseRequestHandler):
                 angleOfNormal = bid[2]
                 angleOfBullet = bid[11]
                 anglePointingAway = (angleOfBullet + 180) % 360
-                angleToNormal = angleOfNormal - angleOfBullet
-                newAngle = (angleOfNormal + angleToNormal + 180) % 360
+                angleToNormal = (angleOfNormal - anglePointingAway) % 360
+                newAngle = (angleOfNormal + angleToNormal) % 360
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b
                         toEdit.angle = newAngle
+                        print "Bullet impact angle " + str(angleOfImpact) + " rebounded to angle " + str(newAngle) + " on normal " + str(angleToNormal)
 
         if len(req[5]) > 0:
             for item in req[5]:

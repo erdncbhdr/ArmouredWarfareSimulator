@@ -9,7 +9,8 @@ class networkComms():
 
         try:
             self.sock = socket.create_connection((self.ip, self.port))
-        except Exception:
+        except Exception as ex:
+            print "Error whilst init netcomms: " + str(ex)
             raise NoConnectionException()
         self.last = 0
         self.retries = 0
