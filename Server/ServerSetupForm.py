@@ -130,6 +130,7 @@ class serverForm(ServerGui.Mainframe):
             print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
         conn.commit()
         conn.close()
+        os.remove("Stats.dat")
 app = wx.App(False)
 
 frame = serverForm(None)
