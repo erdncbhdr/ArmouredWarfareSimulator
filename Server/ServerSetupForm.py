@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding=utf-8
+
 import wx
 import threading
 import SocketServer
@@ -64,6 +67,7 @@ class serverForm(ServerGui.Mainframe):
         elif self.opSys == "Win":
             ints = [nic for nic in wmi.WMI ().Win32_NetworkAdapterConfiguration (IPEnabled=1)]
             self.ipBox.Value = ints[self.interfaceChoice.GetCurrentSelection()].IPAddress[0]
+
     def startServer(self,event):
         self.statusLab.SetLabel("Game instance is running")
         self.startServerThread()
@@ -98,18 +102,15 @@ class serverForm(ServerGui.Mainframe):
             self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
             self.endEvent = threading.Event()
             Server.TankServer.Event = self.endEvent
-            #monitorThread = threading.Thread(target=self.monitorTheServer)
-            #monitorThread.start()
             print ("Server running on "+str(HOST)+":"+str(PORT))
             serverThread = threading.Thread(target=self.beginTheSatanHailing)
-            serverThread.setDaemon(True)
+            #serverThread.setDaemon(False)
             serverThread.start()
-            while not Server.TankServer.toClose:
-                pass
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
+
 
     def processEndOfGame(self, stats):
         conn = sqlite3.Connection("LoginDatabase")
@@ -120,8 +121,10 @@ class serverForm(ServerGui.Mainframe):
             username = stats[-1]
             tankName = stats[-2]
             xpGained = stats[2]
+            print "Got stats needed"
             playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()[0]
             currentXp = int(cur.execute("SELECT "+tankName+" UserProgress WHERE UserId  = ?", [player]).fetchone()[0])
+            print "Init sql queries done"
             currentXp += xpGained
             cur.execute("UPDATE UserProgress SET "+tankName+" = ? WHERE UserId = ?", [currentXp, playerId])
             print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
