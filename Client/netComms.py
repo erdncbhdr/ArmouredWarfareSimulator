@@ -17,12 +17,12 @@ class networkComms():
         self.lastRetries = 0
 
     def send(self, message):
+        """Dial the 9th circle of hell and ask for lucifer to process our request"""
+
         self.toSend = pickle.dumps(message)
         try:
             self.sock.sendall(self.toSend)
-            #print "SEND: " + str(message)
             self.recieved = pickle.loads(self.sock.recv(2048))
-            #print "RECV: " + str(self.recieved)
             if self.last != self.recieved:
                 self.last = self.recieved
             else:

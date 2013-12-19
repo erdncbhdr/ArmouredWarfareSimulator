@@ -89,3 +89,33 @@ class Mainframe ( wx.Frame ):
 		event.Skip()
 	
 
+###########################################################################
+## Class FillerFrame
+###########################################################################
+
+class FillerFrame ( wx.Frame ):
+	
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 200,100 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		
+		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		
+		bSizer2 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.qwqq = wx.StaticText( self, wx.ID_ANY, u"There is a game in progress", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.qwqq.Wrap( -1 )
+		bSizer2.Add( self.qwqq, 0, wx.ALL, 5 )
+		
+		self.stopGame = wx.Button( self, wx.ID_ANY, u"STOP THE GAME!!", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer2.Add( self.stopGame, 0, wx.ALL, 5 )
+		
+		
+		self.SetSizer( bSizer2 )
+		self.Layout()
+		
+		self.Centre( wx.BOTH )
+	
+	def __del__( self ):
+		pass
+	
+
