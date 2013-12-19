@@ -258,7 +258,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 angleOfBullet = bid[11]
                 anglePointingAway = (angleOfBullet + 180) % 360
                 angleToNormal = (angleOfNormal - anglePointingAway) % 360
-                newAngle = (angleOfNormal + angleToNormal) % 360
+                newAngle = (20 + angleOfNormal + angleToNormal) % 360
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b

@@ -10,7 +10,6 @@ import Server
 import loginServer
 import os
 import sys
-
 sys.path.append(os.getcwd())
 try:
     import wmi
@@ -24,6 +23,15 @@ from Errors import *
 import messages
 import sqlite3
 import pickle
+
+class inProgress(ServerGui.FillerFrame):
+    def __init__(self, parent):
+        ServerGui.FillerFrame.__init__(self, parent)
+
+    def stopEvent( self, event ):
+        raise AHHHHHHHHHHH("NOOOOOOO")
+        self.Show(False)
+
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -71,20 +79,24 @@ class serverForm(ServerGui.Mainframe):
     def startServer(self,event):
         self.statusLab.SetLabel("Game instance is running")
         self.startServerThread()
-        f = open("Stats.dat", "r")
-        ex = pickle.load(f)
-        messages.Info(self.parent, "Game has finished")
-        self.statusLab.SetLabel("No game instance running")
         try:
-            self.processEndOfGame(ex)
-        except Exception as ex:
-            #No stats to process
-            print "Error processing: " + str(ex)
+            f = open("Stats.dat", "r")
+            ex = pickle.load(f)
+            messages.Info(self.parent, "Game has finished")
+            self.statusLab.SetLabel("No game instance running")
+            try:
+                self.processEndOfGame(ex)
+            except Exception as ex:
+                #No stats to process
+                print "Error processing: " + str(ex)
+        except IOError:
+            # No file
+            pass
         
     def stopServer(self,event):
         self.statusLab.SetLabel("No game instance running")
         try:
-            self.server.shutdown()
+            del self.server
             print("Server shutdown")
         except Exception:
             print ("Server not running")
@@ -106,10 +118,29 @@ class serverForm(ServerGui.Mainframe):
             serverThread = threading.Thread(target=self.beginTheSatanHailing)
             #serverThread.setDaemon(False)
             serverThread.start()
+            self.Show(False)
+            try:
+                messages.ServerRun(self.parent)
+                print "Closing server"
+                Server.TankServer.toClose = False
+                print "Set to close"
+                self.Show(True)
+                print "Shown"
+                print "Server stopped"
+            except Exception as ex:
+                messages.Info(self.parent, "SERVER CLOSING WITH MESSAGE: " + str(ex.message))
+                self.stopServer(None)
         except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
+
+    def filler(self):
+        app = wx.App(False)
+        self.frame = inProgress(None)
+        self.frame.Show(True)
+        print "Form init"
+        app.MainLoop()
 
 
     def processEndOfGame(self, stats):

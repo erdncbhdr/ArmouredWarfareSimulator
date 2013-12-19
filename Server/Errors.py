@@ -16,3 +16,7 @@ class NoConnectionException(Exception):
 class EndOfGame(Exception):
     def __init__(self, message):
         self.message = message
+
+class AHHHHHHHHHHH(Exception):
+    def __init__(self, message):
+        self.message = message

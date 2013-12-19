@@ -125,11 +125,15 @@ class LocalPlayer(games.Sprite):
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.userTag)
+        games.screen.add(self.reloadText)
         games.screen.add(self.nametag)
 
     def update(self):
         #Check for keyboard input
         if self.canMove:
+            self.last_x = self.x
+            self.last_y = self.y
+            self.last_a = self.angle
             if games.keyboard.is_pressed(games.K_w):
                 self.x += self.speed * math.cos(math.radians(self.angle))
                 self.y += self.speed * math.sin(math.radians(self.angle))
@@ -192,6 +196,7 @@ class LocalPlayer(games.Sprite):
             self.hp = 0
             self.canMove = False
             self.turret.canMove = False
+
 
     def getBulletValues(self):
         try:
@@ -402,6 +407,12 @@ class GameController(games.Sprite):
             self.connection.send("Disconnect")
             games.screen.quit()
             sys.exit([0])
+        p = self.client
+        for b in self.buildings:
+            if self.client in b.get_overlapping_sprites():
+                p.x = p.last_x
+                p.y = p.last_y
+                p.angle = p.last_a
         #Let's thread it ##Or not, that creates race conditions
         #Thread(target=self.doUpdating).start()
         self.doUpdating()

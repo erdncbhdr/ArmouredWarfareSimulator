@@ -7,6 +7,11 @@ def YesNo(parent, question, caption = 'Yes or no?'):
     dlg.Destroy()
     return result
 
+def ServerRun(parent):
+    dlg = wx.MessageDialog(parent, "Server Running. Press OK to close.", "Server running", wx.OK | wx.ICON_ASTERISK)
+    dlg.ShowModal()
+    dlg.Destroy()
+
 def Info(parent, message, caption = 'Insert program title'):
     dlg = wx.MessageDialog(parent, message, caption, wx.OK | wx.ICON_INFORMATION)
     dlg.ShowModal()

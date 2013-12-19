@@ -114,8 +114,16 @@ class FillerFrame ( wx.Frame ):
 		self.Layout()
 		
 		self.Centre( wx.BOTH )
+		
+		# Connect Events
+		self.stopGame.Bind( wx.EVT_BUTTON, self.stopEvent )
 	
 	def __del__( self ):
 		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def stopEvent( self, event ):
+		event.Skip()
 	
 
