@@ -133,6 +133,8 @@ class LocalPlayer(games.Sprite):
         if self.canMove:
             self.last_x = self.x
             self.last_y = self.y
+            self.turret.last_x = self.turret.x
+            self.turret.last_y = self.turret.y
             self.last_a = self.angle
             if games.keyboard.is_pressed(games.K_w):
                 self.x += self.speed * math.cos(math.radians(self.angle))
@@ -399,7 +401,6 @@ class GameController(games.Sprite):
     def close(self, exception):
         games.screen.clear()
         games.screen.quit()
-        quit()
         raise exception
 
     def update(self):
@@ -408,11 +409,15 @@ class GameController(games.Sprite):
             games.screen.quit()
             sys.exit([0])
         p = self.client
+        t = self.client.turret
         for b in self.buildings:
             if self.client in b.get_overlapping_sprites():
                 p.x = p.last_x
                 p.y = p.last_y
                 p.angle = p.last_a
+                t.x = t.last_x
+                t.y = t.last_y
+
         #Let's thread it ##Or not, that creates race conditions
         #Thread(target=self.doUpdating).start()
         self.doUpdating()

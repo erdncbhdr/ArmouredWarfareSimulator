@@ -102,7 +102,7 @@ class serverForm(ServerGui.Mainframe):
             print ("Server not running")
 
     def beginTheSatanHailing(self):
-        while True:
+        while not Server.TankServer.toClose:
                 a =self.server.handle_request()
                 #All glory to overlord satan
                 print str(a)
@@ -110,6 +110,7 @@ class serverForm(ServerGui.Mainframe):
     def startServerThread(self):
         HOST = self.ipBox.Value
         PORT = int(self.portBox.Value)
+        ### Goddammit this is hard to get right ###
         try:
             self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
             self.endEvent = threading.Event()
@@ -128,6 +129,7 @@ class serverForm(ServerGui.Mainframe):
                 print "Shown"
                 print "Server stopped"
             except Exception as ex:
+                print "ER ER ER " + str(ex)
                 messages.Info(self.parent, "SERVER CLOSING WITH MESSAGE: " + str(ex.message))
                 self.stopServer(None)
         except Exception as ex:
