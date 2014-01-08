@@ -83,6 +83,8 @@ class TankServer(SocketServer.BaseRequestHandler):
     Map = mapGen.generateMap(1024, 768)
     EndGameIds = []
     saidGoodbye = 0
+    finished = 0
+    connected = 0
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
@@ -129,7 +131,7 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def finish(self):
         print "FINISH"
-
+	TankServer.finished += 1
         return "TOPLEL"
 
     def getVictor(self):
@@ -149,7 +151,8 @@ class TankServer(SocketServer.BaseRequestHandler):
         """Takes a string and outputs accordingly"""
 
         if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
-            return self.doHandshake(req[1], req[2], req[3])
+            	TankServer.connected += 1
+		return self.doHandshake(req[1], req[2], req[3])
         elif TankServer.Countdown == 0:
             return [-1, -1, 0, -1]
         elif "Disconnect" in req[0]:

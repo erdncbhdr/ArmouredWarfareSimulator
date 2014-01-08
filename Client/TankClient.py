@@ -401,6 +401,7 @@ class GameController(games.Sprite):
     def close(self, exception):
         games.screen.clear()
         games.screen.quit()
+	quit()
         raise exception
 
     def update(self):

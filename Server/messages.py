@@ -8,7 +8,7 @@ def YesNo(parent, question, caption = 'Yes or no?'):
     return result
 
 def ServerRun(parent):
-    dlg = wx.MessageDialog(parent, "Server Running. Press OK to close.", "Server running", wx.OK | wx.ICON_ASTERISK)
+    dlg = wx.MessageDialog(parent, "Server about to start. Press OK. (Window will crash)", "Server running", wx.OK | wx.ICON_ASTERISK)
     dlg.ShowModal()
     dlg.Destroy()
 

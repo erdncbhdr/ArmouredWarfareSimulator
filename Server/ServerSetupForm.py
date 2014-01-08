@@ -106,22 +106,26 @@ class serverForm(ServerGui.Mainframe):
                 a =self.server.handle_request()
                 #All glory to overlord satan
                 print str(a)
+	return
+    def watchTheServerIntently(self, s):
+        while True:
+            if s.finished == s.connected:
+		s.toClose = True
         
     def startServerThread(self):
         HOST = self.ipBox.Value
         PORT = int(self.portBox.Value)
         ### Goddammit this is hard to get right ###
         try:
+            self.Show(False)
+            messages.ServerRun(self.parent)
             self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
             self.endEvent = threading.Event()
             Server.TankServer.Event = self.endEvent
             print ("Server running on "+str(HOST)+":"+str(PORT))
-            serverThread = threading.Thread(target=self.beginTheSatanHailing)
-            #serverThread.setDaemon(False)
-            serverThread.start()
-            self.Show(False)
+            self.beginTheSatanHailing()
             try:
-                messages.ServerRun(self.parent)
+                #messages.ServerRun(self.parent)
                 print "Closing server"
                 Server.TankServer.toClose = False
                 print "Set to close"
@@ -150,7 +154,7 @@ class serverForm(ServerGui.Mainframe):
         cur = conn.cursor()
         print "Running update on data: " + str(stats)
         for player in stats:
-            #print "Update info: " + str(player)
+            print "Update info: " + str(player)
             username = player[-1]
             tankName = player[-2]
             xpGained = player[2]
