@@ -48,6 +48,7 @@ class serverForm(ServerGui.Mainframe):
         self.parent = parent
         self.opSys = self.getOperatingSystem()
         self.loginThread()
+	self.toClose = False
 
     def loginThread(self):
         loginServer.main()
@@ -102,15 +103,23 @@ class serverForm(ServerGui.Mainframe):
             print ("Server not running")
 
     def beginTheSatanHailing(self):
-        while not Server.TankServer.toClose:
-                a =self.server.handle_request()
+	print "Beginning the server..."
+        while not self.toClose:
+		print self.toClose
+                a = self.server.handle_request()
                 #All glory to overlord satan
                 print str(a)
-	return
-    def watchTheServerIntently(self, s):
+	print "Eh closing server eh"
+	
+    
+    def watchTheServerIntently(self):
+	s = Server.TankServer
         while True:
-            if s.finished == s.connected:
-		s.toClose = True
+            if s.connected == 0:
+		print "ALL HAVE DISCONNECTED. \nPlan to close server."
+		self.toClose = True
+		break
+	print "Exiting monitor thread"
         
     def startServerThread(self):
         HOST = self.ipBox.Value
@@ -121,9 +130,14 @@ class serverForm(ServerGui.Mainframe):
             messages.ServerRun(self.parent)
             self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
             self.endEvent = threading.Event()
+	    self.server.timeout = 3
             Server.TankServer.Event = self.endEvent
             print ("Server running on "+str(HOST)+":"+str(PORT))
-            self.beginTheSatanHailing()
+            self.watch = threading.Thread(target=self.watchTheServerIntently)
+	    print "Created thread"
+	    self.watch.start()
+	    print "Started monitoring thread. Starting server."
+	    self.beginTheSatanHailing()
             try:
                 #messages.ServerRun(self.parent)
                 print "Closing server"
@@ -136,7 +150,7 @@ class serverForm(ServerGui.Mainframe):
                 print "ER ER ER " + str(ex)
                 messages.Info(self.parent, "SERVER CLOSING WITH MESSAGE: " + str(ex.message))
                 self.stopServer(None)
-        except Exception as ex:
+	except Exception as ex:
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))

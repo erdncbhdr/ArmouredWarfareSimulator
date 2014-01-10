@@ -84,12 +84,12 @@ class TankServer(SocketServer.BaseRequestHandler):
     EndGameIds = []
     saidGoodbye = 0
     finished = 0
-    connected = 0
+    connected = -1
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
         """Do something with the request"""
-        print "REQUEST RECIEVED"
+        print "New player has connected"
         while TankServer.GameInProgress:
             #print "HANDLING"
             #Get the data from the socket
@@ -99,6 +99,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 break
             #Check what sort of request it is
             if type(self.data[0]) == type("TopKek"):
+		print "Recieved string request. Processing..."
                 self.toSend = self.stringRequest(self.data)
             else:
                 self.toSend = self.listRequest(self.data)
@@ -123,15 +124,17 @@ class TankServer(SocketServer.BaseRequestHandler):
                 f.close()
                 print "FILE WRITTEN"
                 TankServer.toClose = True
-                a=threading.currentThread()
-                a._Thread__stop()
+		print "Set to close"
+                #a=threading.currentThread()
+                #a._Thread__stop()
         except Exception as ex:
             print str(ex)
 
 
     def finish(self):
         print "FINISH"
-	TankServer.finished += 1
+	TankServer.connected -= 1
+	print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
         return "TOPLEL"
 
     def getVictor(self):
@@ -151,7 +154,12 @@ class TankServer(SocketServer.BaseRequestHandler):
         """Takes a string and outputs accordingly"""
 
         if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
-            	TankServer.connected += 1
+		print "Recieved a new handshake"
+            	if TankServer.connected == -1:
+			TankServer.connected = 1
+		else:
+			TankServer.connected += 1
+		print "A new player has sent a handshake. \nNumber of connected players: " + str(TankServer.connected)
 		return self.doHandshake(req[1], req[2], req[3])
         elif TankServer.Countdown == 0:
             return [-1, -1, 0, -1]
@@ -159,6 +167,7 @@ class TankServer(SocketServer.BaseRequestHandler):
             for p in TankServer.Players:
                 if p.id == req[1]:
                     p.hp = 0
+		    TankServer.connected -= 1
                     p.username = "Disconnected"
             self.DeadPlayers += 1
             TankServer.EndGameIds.pop(TankServer.EndGameIds.index(req[1]))
