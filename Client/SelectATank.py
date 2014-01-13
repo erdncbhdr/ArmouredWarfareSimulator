@@ -77,6 +77,12 @@ class Buy(selectGui.TankBuy):
                 messages.Warn("Please select a tank first")
         else:
             messages.Warn(self.parent, "You do not have the XP to purchase this tank")
+	    self.owner.refresh(self.owner.username)
+	    self.Show(False)
+
+    def cancel(self, event):		
+		self.owner.refresh(self.owner.username)
+		self.Show(False)
 
 class Upgrade(selectGui.UpgradeForm):
     def __init__(self, parent, tank, xp, username, form):
@@ -113,49 +119,49 @@ class Upgrade(selectGui.UpgradeForm):
     def upHP( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.hp += 5
+            self.hp += int(1000/self.hp)
             self.populateBoxes()
 
     def upDam( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.damage += 5
+            self.damage += int(300/self.damage)
             self.populateBoxes()
 
     def upArm( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.armour += 3
+            self.armour += int(300/self.armour)
             self.populateBoxes()
 
     def upPen( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.penetration += 3
+            self.penetration += int(450/self.penetration)
             self.populateBoxes()
 
     def upHTr( self, event ):
         if self.xp >= 10:
-            self.hullTraverse += 0.2
+            self.hullTraverse += (5/self.hullTraverse)
             self.xp -= 10
             self.populateBoxes()
 
     def upTTra( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.turretTraverse += 0.2
+            self.turretTraverse += (5/self.turretTraverse)
             self.populateBoxes()
 
     def upRel( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.reload -= 3
+            self.reload -= int(self.reload/20)
             self.populateBoxes()
 
     def upSp( self, event ):
         if self.xp >= 10:
             self.xp -= 10
-            self.speed += 0.1
+            self.speed += int(3/self.speed)
             self.populateBoxes()
 
     def convertToString(self, lst):
@@ -185,7 +191,7 @@ class Upgrade(selectGui.UpgradeForm):
             messages.Info(self.parent, "Changes sent.")
             self.Show(False)
         else:
-            pass
+            print "Failed to update stats - is the loginserver running?" 
 
     def cancelEdit( self, event ):
         self.Show(False)
@@ -333,20 +339,28 @@ class Main(selectGui.MainFrame):
         upApp.MainLoop()
 
     def refresh(self, username):
-        #modify the client
+        #Pull up all known tanks
+        self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
+	#modify the client
         conn = netComms.networkComms(self.ipAddr, self.port)
         conn.send(["OWNED", self.username])
         self.owned = conn.recieved
+	#We only want the tanks that we own
+        for i in range(len(self.owned)-1, 0, -1):
+            if self.owned[i] == 0:
+                self.tanks.pop(i)
+	print "OWNED: " + str(self.owned)
         dataconn = sqlite3.Connection("TankStats.db")
         cur = dataconn.cursor()
         self.names = cur.execute("SELECT name FROM Tanks").fetchall()
-        self.names = [x[0] for x in self.owned]
+	print self.names
+        self.names = [x[0] for x in self.names]
         self.tankChoice.Clear()
         for x in range(len(self.owned)-1, 0, -1):
             if self.owned[x] == 0:
                 self.names.pop(x)
 
-        for i in self.owned:
+        for i in self.names:
             self.tankChoice.Append(i)
 
 def main(username, xp, owned):

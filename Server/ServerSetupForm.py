@@ -172,15 +172,15 @@ class serverForm(ServerGui.Mainframe):
             username = player[-1]
             tankName = player[-2]
             xpGained = player[2]
-            #print "Got stats needed"
+            print "Got stats needed"
             playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()
             playerId = playerId[0]
-            #print "Got playerId " + str(playerId)
+            print "Got playerId " + str(playerId)
             currentXp = int(cur.execute("SELECT "+tankName+" FROM UserProgress WHERE UserId  = ?", [playerId]).fetchone()[0])
-            #print "Init sql queries done"
+            print "Init sql queries done"
             currentXp += xpGained
             cur.execute("UPDATE UserProgress SET "+tankName+" = ? WHERE UserId = ?", [currentXp, playerId])
-            #print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
+            print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
         conn.commit()
         conn.close()
         os.remove("Stats.dat")
