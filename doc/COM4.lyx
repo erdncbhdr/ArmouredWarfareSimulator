@@ -1,0 +1,355 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+COMP4
+\end_layout
+
+\begin_layout Author
+Harry Ward
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analysis
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+In 2013, a study by The NPD group showed that 68% of all PC owners used
+ their computer for online gaming 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+, making it the largest userbase in the PC market.
+ The problem comes with the fact that high-powered gaming machines are costly,
+ and most users cannot play triple-A, high-fidelity releases on their home
+ PC.
+ This fact means that popular multiplayer games often leave some players
+ unable to join in.
+\end_layout
+
+\begin_layout Standard
+My user group is this section of people- those who cannot play the full
+ release of a game due to the machine specifications required to run it
+ at a reasonable frame per second count.
+ These potential consumers vary greatly in technical knowledge, from expert
+ to beginner, although all know how to use a basic program.
+\end_layout
+
+\begin_layout Subsection
+Investigation of User Needs and Acceptable Limitations
+\end_layout
+
+\begin_layout Standard
+Due to the nature of this problem there is no current system, as users cannot
+ run the games they wish to.
+\end_layout
+
+\begin_layout Subsubsection
+Questionnaire
+\end_layout
+
+\begin_layout Standard
+I asked various PC owners about their computer usage and specifications
+ of their machines.
+ This will help me set my limitations.
+ Due to my user group, some may have lower specifcation PCs than others;
+ In order to provide to all users, I will need to establish to lowest 
+\end_layout
+
+\begin_layout Standard
+[YYYYY] Do you own a PC? 
+\end_layout
+
+\begin_layout Standard
+[NYYYY] Do you play online games? 
+\end_layout
+
+\begin_layout Standard
+[-NNYN] Do you have a dedicated graphics card?
+\end_layout
+
+\begin_layout Standard
+[-YYYN] Can you play new releases?
+\end_layout
+
+\begin_layout Standard
+[----Y] If no to above, would you like to?
+\end_layout
+
+\begin_layout Standard
+[-NNNN] Is graphical fidelity a prerequisite for a multiplayer game?
+\end_layout
+
+\begin_layout Standard
+If no, please elaborate.
+\end_layout
+
+\begin_layout Standard
+[-, Win8, Win7, Win8, WinVista] What Operating System do you use? 
+\end_layout
+
+\begin_layout Subsubsection
+The Proposed New System Analysis
+\end_layout
+
+\begin_layout Standard
+Interview with Fuego Gitano, low-end PC user
+\end_layout
+
+\begin_layout Standard
+Q: What is most important to you in a multiplayer game?
+\end_layout
+
+\begin_layout Standard
+A: I want fun mechanics with a small-ish game size, also a reliable connection
+ - it's not fun having lots of lag.
+ There should be end-game content to keep players interested as well.
+\end_layout
+
+\begin_layout Standard
+Q: End-game content? What do you mean?
+\end_layout
+
+\begin_layout Standard
+A: I rather like progression, working up to gradually better things, but
+ once you reach the top there is nothing else to do.
+ More content when you reach this end keeps me interested and playing.
+\end_layout
+
+\begin_layout Standard
+Q: What graphics do you expect from a multiplayer game?
+\end_layout
+
+\begin_layout Standard
+A: From my machine, I expect at least a detailed 2d environment, 3d isn't
+ always reliable as my FPS can drop quite a bit.
+ Other than that, a simple style works quite well.
+\end_layout
+
+\begin_layout Standard
+Q:
+\emph on
+ 
+\emph default
+What genres of game do you think work well for multiplayer?
+\end_layout
+
+\begin_layout Standard
+A: I enjoy shooters and games involving individual skill.
+\end_layout
+
+\begin_layout Standard
+Q: Do you like luck being a mechanic of the game?
+\end_layout
+
+\begin_layout Standard
+A: No, that ruins it for me.
+ I like predictable gameplay .
+\end_layout
+
+\begin_layout Standard
+Q: Is there anything else you enjoy in multiplayer games?
+\end_layout
+
+\begin_layout Standard
+A: I enjoy an element of customisation, visual mainly.
+ I like hats.
+ Strategy is also fun, quick decisions leading to either victory or defeat
+ can be really good.
+ Also winning should be secondary to having fun, and the game should allow
+ for this by not focusing too much on victory.
+ That is everything, I think.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+DFD of Proposed new system
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Level 0 Data flow diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/harry/Lev0DFD.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Level 1 Data flow diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/harry/Lev1DFD.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+NPD Group study into PC Usage: URL: https://www.npd.com/wps/portal/npd/us/news/pre
+ss-releases/the-npd-group-report-shows-increased-number-of-online-gamers-and-hou
+rs-spent-gaming/
+\end_layout
+
+\end_body
+\end_document
