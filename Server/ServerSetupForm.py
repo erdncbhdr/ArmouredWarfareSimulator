@@ -105,21 +105,21 @@ class serverForm(ServerGui.Mainframe):
     def beginTheSatanHailing(self):
 	print "Beginning the server..."
         while not self.toClose:
-		print self.toClose
+		#print self.toClose
                 a = self.server.handle_request()
                 #All glory to overlord satan
-                print str(a)
-	print "Eh closing server eh"
+                #print str(a)
+	#print "Eh closing server eh"
 	
     
     def watchTheServerIntently(self):
 	s = Server.TankServer
         while True:
             if s.connected == 0:
-		print "ALL HAVE DISCONNECTED. \nPlan to close server."
+		#print "ALL HAVE DISCONNECTED. \nPlan to close server."
 		self.toClose = True
 		break
-	print "Exiting monitor thread"
+	#print "Exiting monitor thread"
         
     def startServerThread(self):
         HOST = self.ipBox.Value
@@ -134,18 +134,18 @@ class serverForm(ServerGui.Mainframe):
             Server.TankServer.Event = self.endEvent
             print ("Server running on "+str(HOST)+":"+str(PORT))
             self.watch = threading.Thread(target=self.watchTheServerIntently)
-	    print "Created thread"
+	    #print "Created thread"
 	    self.watch.start()
-	    print "Started monitoring thread. Starting server."
+	    #print "Started monitoring thread. Starting server."
 	    self.beginTheSatanHailing()
             try:
                 #messages.ServerRun(self.parent)
                 print "Closing server"
                 Server.TankServer.toClose = False
-                print "Set to close"
+                #print "Set to close"
                 self.Show(True)
-                print "Shown"
-                print "Server stopped"
+                #print "Shown"
+                #print "Server stopped"
             except Exception as ex:
                 print "ER ER ER " + str(ex)
                 messages.Info(self.parent, "SERVER CLOSING WITH MESSAGE: " + str(ex.message))
@@ -154,40 +154,42 @@ class serverForm(ServerGui.Mainframe):
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
+	    import sys
+	    sys.exit()
 
     def filler(self):
         app = wx.App(False)
         self.frame = inProgress(None)
         self.frame.Show(True)
-        print "Form init"
+        #print "Form init"
         app.MainLoop()
 
 
     def processEndOfGame(self, stats):
         conn = sqlite3.Connection("LoginDatabase")
         cur = conn.cursor()
-        print "Running update on data: " + str(stats)
+        #print "Running update on data: " + str(stats)
         for player in stats:
-            print "Update info: " + str(player)
+            #print "Update info: " + str(player)
             username = player[-1]
             tankName = player[-2]
             xpGained = player[2]
-            print "Got stats needed"
+            #print "Got stats needed"
             playerId = cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [username]).fetchone()
             playerId = playerId[0]
-            print "Got playerId " + str(playerId)
+            #print "Got playerId " + str(playerId)
             currentXp = int(cur.execute("SELECT "+tankName+" FROM UserProgress WHERE UserId  = ?", [playerId]).fetchone()[0])
-            print "Init sql queries done"
+            #print "Init sql queries done"
             currentXp += xpGained
             cur.execute("UPDATE UserProgress SET "+tankName+" = ? WHERE UserId = ?", [currentXp, playerId])
-            print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
+            #print "UPDATED ID "+str(playerId)+" TO XP "+str(currentXp)
         conn.commit()
         conn.close()
         os.remove("Stats.dat")
-app = wx.App(False)
 
-frame = serverForm(None)
 
-frame.Show(True)
-
-app.MainLoop()
+def main():
+	app = wx.App(False)
+	frame = serverForm(None)
+	frame.Show(True)
+	app.MainLoop()

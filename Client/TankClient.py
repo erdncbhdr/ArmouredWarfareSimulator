@@ -52,8 +52,8 @@ class Player(games.Sprite):
         self.maxHp = hp
         self.state = 0
         self.turret = turret
-        print "NAME: "+self.name
-        print "HP: "+str(self.hp)
+        #print "NAME: "+self.name
+        #print "HP: "+str(self.hp)
     def update(self):
         self.nametag.value = self.name + " " + str(int(self.hp))
         if int(self.hp) < int(self.maxHp) / 2 and self.state == 0:
@@ -121,7 +121,7 @@ class LocalPlayer(games.Sprite):
                                   y = y-70,
                                   color=colour.black,
                                   size=20)
-        self.reloadText = games.Text(value = "Reload in: " + str(self.reload_counter), x = 0, y = 0, color = colour.red, size = 30)
+        self.reloadText = games.Text(value = "Reload in: " + str(self.reload_counter), left = 10, top = 10, color = colour.red, size = 30)
         self.orig_height = self.height-30
         self.orig_width = self.width
         games.screen.add(self.userTag)

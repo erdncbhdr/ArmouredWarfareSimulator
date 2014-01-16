@@ -173,13 +173,20 @@ def start():
         server = SocketServer.TCPServer((ipAddr, int(port)), LogServer)
         print ("Login server running on "+str(ipAddr)+":"+str(port))
         server.serve_forever()
+    except IOException as ex:
+	print "Could not find login.conf"
     except Exception as ex:
         print ("Port is not free")
         print ("Technical information: "+str(ex))
 
 
 def main():
+    if getConfiguration("login.conf", "loginOnLaunch") == True:
+    	import threading
+    	a = threading.Thread(target=start)
+    	a.start()
+
+def superMain():
     import threading
     a = threading.Thread(target=start)
     a.start()
-

@@ -85,46 +85,49 @@ class TankServer(SocketServer.BaseRequestHandler):
     saidGoodbye = 0
     finished = 0
     connected = -1
+    killNextLoop = False
     def giveDatabaseConnection(self, cur):
         self.cur = cur
     def handle(self):
         """Do something with the request"""
-        print "New player has connected"
+        #print "New player has connected"
         while TankServer.GameInProgress:
             #print "HANDLING"
             #Get the data from the socket
             recv = self.request.recv(1024)
+	    if TankServer.killNextLoop:
+		self.endGame()
             self.data = pickle.loads(recv)
             if recv == "" or self.data == "":
                 break
             #Check what sort of request it is
             if type(self.data[0]) == type("TopKek"):
-		print "Recieved string request. Processing..."
+		#print "Recieved string request. Processing..."
                 self.toSend = self.stringRequest(self.data)
             else:
                 self.toSend = self.listRequest(self.data)
             self.request.sendall(pickle.dumps(self.toSend))
 
-        print "HANDLING"
+        #print "HANDLING"
         try:
             recv = pickle.loads(self.request.recv(1024))
-            print "RECV: "+str(recv)
+            #print "RECV: "+str(recv)
             if recv == "":
                 pass
             a = ["EndGame"]
             a.append(TankServer.EndGameMessage[recv[0]])
-            print "END OF GAME: "+str(a)
+            #print "END OF GAME: "+str(a)
             self.request.sendall(pickle.dumps(a))
             TankServer.EndGameIds.pop(TankServer.EndGameIds.index(recv[0]))
             self.request.close()
             if len(TankServer.EndGameIds) == 0:
-                print "Writing file"
+                #print "Writing file"
                 f = open("Stats.dat", "w")
                 pickle.dump(TankServer.EndGameMessage, f)
                 f.close()
-                print "FILE WRITTEN"
+                #print "FILE WRITTEN"
                 TankServer.toClose = True
-		print "Set to close"
+		#print "Set to close"
                 #a=threading.currentThread()
                 #a._Thread__stop()
         except Exception as ex:
@@ -132,10 +135,10 @@ class TankServer(SocketServer.BaseRequestHandler):
 
 
     def finish(self):
-        print "FINISH"
+        #print "FINISH"
 	TankServer.connected -= 1
-	print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
-        return "TOPLEL"
+	#print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
+        #return "TOPLEL"
 
     def getVictor(self):
         team0 = 0
@@ -154,12 +157,12 @@ class TankServer(SocketServer.BaseRequestHandler):
         """Takes a string and outputs accordingly"""
 
         if "handshake" in req[0] and (TankServer.Countdown > 0 or TankServer.Countdown == -1):
-		print "Recieved a new handshake"
+		#print "Recieved a new handshake"
             	if TankServer.connected == -1:
 			TankServer.connected = 1
 		else:
 			TankServer.connected += 1
-		print "A new player has sent a handshake. \nNumber of connected players: " + str(TankServer.connected)
+		#print "A new player has sent a handshake. \nNumber of connected players: " + str(TankServer.connected)
 		return self.doHandshake(req[1], req[2], req[3])
         elif TankServer.Countdown == 0:
             return [-1, -1, 0, -1]
@@ -191,10 +194,10 @@ class TankServer(SocketServer.BaseRequestHandler):
                 else:
                     team2Alive += 1
         if team1Alive == 0:
-            self.victor = 1
+            TankServer.victor = 1
             return  True
         if team2Alive == 0:
-            self.victor =  0
+            TankServer.victor = 0
             return True
         return False
 
@@ -239,7 +242,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         if TankServer.Players[req[0]].hp == 0:
             TankServer.DeadPlayers += 1
             if self.isEndOfGame():
-                self.endGame()
+                TankServer.killNextLoop=True
         #Update the bullets if ID 0 is connected
         for i in req[3]:
             for b in TankServer.Bullets:
@@ -275,7 +278,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                     if b.bulletID == id:
                         toEdit = b
                         toEdit.angle = newAngle
-                        print "Bullet impact angle " + str(angleOfImpact) + " rebounded to angle " + str(newAngle) + " on normal " + str(angleToNormal)
+                        #print "Bullet impact angle " + str(angleOfImpact) + " rebounded to angle " + str(newAngle) + " on normal " + str(angleToNormal)
 
         if len(req[5]) > 0:
             for item in req[5]:
@@ -300,7 +303,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         TankServer.Countdown = 3
         self.countdownThread = threading.Thread(target=self.countdown)
         self.countdownThread.start()
-        victor = self.victor
+        victor = TankServer.victor
         #Get a 1.5x XP boost if you win
         for p in TankServer.Players:
             if p.id == victor:
