@@ -181,10 +181,11 @@ class TankServer(SocketServer.BaseRequestHandler):
             
     def listRequest(self,  req):
         """Redirect method for requests in the form of a list"""
-
         return self.get(req)
 
     def isEndOfGame(self):
+	"""Looks at all players and decides if the game is over"""
+
         team1Alive = 0
         team2Alive = 0
         for p in TankServer.Players:
@@ -273,7 +274,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 angleOfBullet = bid[11]
                 anglePointingAway = (angleOfBullet + 180) % 360
                 angleToNormal = (angleOfNormal - anglePointingAway) % 360
-                newAngle = (20 + angleOfNormal + angleToNormal) % 360
+                newAngle = (anglePointingAway + (2*angleToNormal)) % 360
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b

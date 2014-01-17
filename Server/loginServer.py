@@ -8,31 +8,34 @@ class LogServer(SocketServer.BaseRequestHandler):
     conn = sqlite3.Connection("LoginDatabase", check_same_thread=False)
     cur = conn.cursor()
     def handle(self):
-        recv = self.request.recv(1024)
-        #print "Recieved: "+str(recv)
-        self.data = pickle.loads(recv)
-        #print "REQUEST: "+str(self.data[0])
-        if self.data[0] == "LOGIN":
-            self.login(self.data[1])
-        elif self.data[0] == "CREATE":
-            self.create(self.data[1])
-        elif self.data[0] == "Update":
-            self.update(self.data[1:])
-        elif self.data[0] == "GET":
-            self.get(self.data[1], self.data[2])
-        elif self.data[0] == "XP":
-            self.xp(self.data[1], self.data[2])
-        elif self.data[0] == "OWNED":
-            self.owned(self.data[1])
-        elif self.data[0] == "COSTS":
-            self.costs()
-        elif self.data[0] == "ALLXP":
-            self.allXP(self.data[1])
-        elif self.data[0] == "BUY":
-            self.buy(self.data[1], self.data[2], self.data[3])
-        else:
-            #print str(self.data)
-            self.request.sendall(pickle.dumps("UnknownRequestError"))
+	try:
+        	recv = self.request.recv(1024)
+        	#print "Recieved: "+str(recv)
+        	self.data = pickle.loads(recv)
+        	#print "REQUEST: "+str(self.data[0])
+        	if self.data[0] == "LOGIN":
+            		self.login(self.data[1])
+        	elif self.data[0] == "CREATE":
+            		self.create(self.data[1])
+        	elif self.data[0] == "Update":
+            		self.update(self.data[1:])
+        	elif self.data[0] == "GET":
+            		self.get(self.data[1], self.data[2])
+        	elif self.data[0] == "XP":
+            		self.xp(self.data[1], self.data[2])
+        	elif self.data[0] == "OWNED":
+            		self.owned(self.data[1])
+        	elif self.data[0] == "COSTS":
+            		self.costs()
+        	elif self.data[0] == "ALLXP":
+            		self.allXP(self.data[1])
+        	elif self.data[0] == "BUY":
+            		self.buy(self.data[1], self.data[2], self.data[3])
+        	else:
+            		#print str(self.data)
+            		self.request.sendall(pickle.dumps("UnknownRequestError"))
+	except Exception:
+		pass
 
     def buy(self, name, user, previousTank):
         id = LogServer.cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [user]).fetchone()
@@ -173,7 +176,7 @@ def start():
         server = SocketServer.TCPServer((ipAddr, int(port)), LogServer)
         print ("Login server running on "+str(ipAddr)+":"+str(port))
         server.serve_forever()
-    except IOException as ex:
+    except IOError as ex:
 	print "Could not find login.conf"
     except Exception as ex:
         print ("Port is not free")

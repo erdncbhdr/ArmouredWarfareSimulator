@@ -79,6 +79,9 @@ class Bullet(games.Sprite):
         self.ded = False
         self.penetration = penetration
 
+    def getBulletVector(self):
+        return Vector(self.x, self.y, self.x - math.cos(math.toRadians(self.angle))*3, self.y - math.sin(math.toRadians(self.angle))*3)
+
     def getx1x2(self):
         return self.x, self.y, self.x+5*math.cos(math.radians(self.angle)), self.y+5*math.sin(math.radians(self.angle))
 
@@ -199,6 +202,8 @@ class LocalPlayer(games.Sprite):
             self.canMove = False
             self.turret.canMove = False
 
+    def getBulletVector(self):
+	return Vector(self.x, self.y, self.x - math.cos(math.toRadians(self.angle))*3, self.y - math.sin(math.toRadians(self.angle))*3)
 
     def getBulletValues(self):
         try:
@@ -380,6 +385,7 @@ class GameController(games.Sprite):
             newBuilding = Building(toplefts_x[block[0]], toplefts_y[block[1]], block[2])
             self.buildings.append(newBuilding)
             games.screen.add(self.buildings[-1])
+	self.setBuildingVectors(self.buildings)
         return None
 
     def countingDown(self):
@@ -411,13 +417,26 @@ class GameController(games.Sprite):
             sys.exit([0])
         p = self.client
         t = self.client.turret
-        for b in self.buildings:
-            if self.client in b.get_overlapping_sprites():
-                p.x = p.last_x
-                p.y = p.last_y
-                p.angle = p.last_a
-                t.x = t.last_x
-                t.y = t.last_y
+        #Check for collision into buildings and enemy tanks
+	try:
+		for i in range(len(self.buildings)-1):
+			for v in self.vectors:
+				for a in self.buildingVectors[i]:
+					 if self.vectorsIntersect(a,v):
+            					p.x = p.last_x
+                				p.y = p.last_y
+                				#p.angle = p.last_a
+                				t.x = t.last_x
+                				t.y = t.last_y
+	except Exception:
+		pass
+
+	for b in self.serverInstances:
+		if self.client in b.get_overlapping_sprites():
+			p.x = p.last_x
+			p.y = p.last_y
+			t.x = t.last_x
+			t.y = t.last_y
 
         #Let's thread it ##Or not, that creates race conditions
         #Thread(target=self.doUpdating).start()
@@ -490,6 +509,15 @@ class GameController(games.Sprite):
         self.checkBulletCollisions() 
         
         #Ok we cool
+
+    def setBuildingVectors(self, buildings):
+	self.buildingVectors = []
+	for b in buildings:
+		left = Vector(b.x, b.y, b.x, b.y + b.height)
+		right = Vector(b.x + b.width, b.y, b.x + b.width, b.y + b.height)
+		top = Vector(b.x, b.y, b.x + b.width, b.y)
+		bottom = Vector(b.x, b.y + b.height, b.x + b.width, b.y + b.height)
+		self.buildingVectors.append([left, right, top, bottom])
 
     def doBulletSpawnDespawn(self,  server):
         """Main method to make the local bullets equal the server bullets"""
@@ -631,12 +659,15 @@ class GameController(games.Sprite):
 
     def checkBuildings(self, bul):
         for b in bul:
-            for a in self.buildings:
-                if a.overlaps(b):
-                    self.despawnToServer.append(b.bulletID)
+            a = b.getBulletVector()
+	    for c in self.buildingVectors:
+		for d in c:
+			if self.vectorsIntersect(a,d):
+                    		self.despawnToServer.append(b.bulletID)
 
     def endGame(self, stats):
         self.connection.close()
+	print "Connection to server closed"
         games.screen.clear()
         games.screen.quit()
         quit()

@@ -188,10 +188,13 @@ class Upgrade(selectGui.UpgradeForm):
         toSend.append(self.xp)
         if messages.YesNo(self.parent, "Confirm changes?"):
             conn.send(toSend)
+	    #print "Sent: " + str(toSend)
             messages.Info(self.parent, "Changes sent.")
+	    conn.close()
+	    print "Closed connection to loginserver"
             self.Show(False)
         else:
-            print "Failed to update stats - is the loginserver running?" 
+            pass 
 
     def cancelEdit( self, event ):
         self.Show(False)
@@ -275,6 +278,7 @@ class Main(selectGui.MainFrame):
             else:
                messages.Info(self.parent, "You have been defeated...\nYou recieved: "+str(xp)+" xp\nDamage dealt: "+str(damage)+" Kills: "+str(kills),
                               "DEFEAT")
+	    self.refresh(self.username)
         #except Exception as e:
         #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
         #    sys.exit()
@@ -333,23 +337,30 @@ class Main(selectGui.MainFrame):
         return conn.recieved
 
     def doUpgrade( self, event ):
-        upApp = wx.App(False)
-        upFrame = Upgrade(None, self.tank, self.getXP(self.tank[0]), self.username, self)
-        upFrame.Show(True)
-        upApp.MainLoop()
+	try:
+        	upApp = wx.App(False)
+        	upFrame = Upgrade(None, self.tank, self.getXP(self.tank[0]), self.username, self)
+        	upFrame.Show(True)
+        	upApp.MainLoop()
+	except AttributeError as ex:
+		Errors.warn("Please select a tank first")
 
     def refresh(self, username):
         #Pull up all known tanks
+	self.conn = sqlite3.Connection("TankStats.db")
+	self.cur = self.conn.cursor()
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
 	#modify the client
         conn = netComms.networkComms(self.ipAddr, self.port)
-        conn.send(["OWNED", self.username])
+        print "Connection to loginServer made on " + str(self.ipAddr) + ":" + str(self.port)
+	conn.send(["OWNED", self.username])
         self.owned = conn.recieved
 	#We only want the tanks that we own
         for i in range(len(self.owned)-1, 0, -1):
             if self.owned[i] == 0:
                 self.tanks.pop(i)
 	print "OWNED: " + str(self.owned)
+	conn.close()
         dataconn = sqlite3.Connection("TankStats.db")
         cur = dataconn.cursor()
         self.names = cur.execute("SELECT name FROM Tanks").fetchall()
