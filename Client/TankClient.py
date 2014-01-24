@@ -1,5 +1,6 @@
 from threading import Thread
 from pygame import *
+from pygame.locals import *
 import time
 import color as colour
 import games
@@ -80,7 +81,7 @@ class Bullet(games.Sprite):
         self.penetration = penetration
 
     def getBulletVector(self):
-        return Vector(self.x, self.y, self.x - math.cos(math.toRadians(self.angle))*3, self.y - math.sin(math.toRadians(self.angle))*3)
+        return Vector(self.x, self.y, self.x - math.cos(math.radians(self.angle))*3, self.y - math.sin(math.radians(self.angle))*3)
 
     def getx1x2(self):
         return self.x, self.y, self.x+5*math.cos(math.radians(self.angle)), self.y+5*math.sin(math.radians(self.angle))
@@ -507,17 +508,27 @@ class GameController(games.Sprite):
         
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions() 
-        
+        self.drawVectors()
         #Ok we cool
 
+    def drawVectors(self):
+        """For debugging, draws all vectors on screen"""
+        for v in self.vectors:
+            draw.line(games.screen._display, colour.red, [v.x1, v.y1], [v.x2, v.y2])
+
+        for b in self.buildingVectors:
+            for a in b:
+                draw.line(games.screen._display, colour.white, [a.x1, a.y1], [a.x2, a.y2])
+
     def setBuildingVectors(self, buildings):
-	self.buildingVectors = []
-	for b in buildings:
-		left = Vector(b.x, b.y, b.x, b.y + b.height)
-		right = Vector(b.x + b.width, b.y, b.x + b.width, b.y + b.height)
-		top = Vector(b.x, b.y, b.x + b.width, b.y)
-		bottom = Vector(b.x, b.y + b.height, b.x + b.width, b.y + b.height)
-		self.buildingVectors.append([left, right, top, bottom])
+	    self.buildingVectors = []
+	    for b in buildings:
+            print b.topleft
+		    left = Vector(b.x, b.y, b.x, b.y + b.height)
+		    right = Vector(b.x + b.width, b.y, b.x + b.width, b.y + b.height)
+		    top = Vector(b.x, b.y, b.x + b.width, b.y)
+		    bottom = Vector(b.x, b.y + b.height, b.x + b.width, b.y + b.height)
+		    self.buildingVectors.append([left, right, top, bottom])
 
     def doBulletSpawnDespawn(self,  server):
         """Main method to make the local bullets equal the server bullets"""
