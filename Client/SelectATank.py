@@ -306,6 +306,7 @@ class Main(selectGui.MainFrame):
         conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["GET", username, tankName])
         a = (conn.recieved)
+	conn.close()
         #print self.tankChoice.GetSelection()
         return a.split(":")
 
