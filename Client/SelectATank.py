@@ -37,7 +37,7 @@ class Buy(selectGui.TankBuy):
         self.ipAddr = getConfiguration(config, "ip_address")
         self.port = getConfiguration(config, "port")
         r.close()
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["OWNED", self.username])
         owned = conn.recieved
         conn.close()
@@ -47,7 +47,7 @@ class Buy(selectGui.TankBuy):
         tankname = cursor.execute("SELECT name FROM Tanks;").fetchall()
         tankname = [x[0] for x in tankname]
         dataconn.close()
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["COSTS"])
         self.costs = conn.recieved
         conn.close()
@@ -67,7 +67,7 @@ class Buy(selectGui.TankBuy):
             try:
             # buy the tank
                 assert (self.TankBox.GetSelection() >= 0)
-                conn = netComms.networkComms(self.ipAddr, self.port)
+                conn = netComms.networkComms(self.ipAddr, int(self.port))
                 pastTank = self.alltanks[self.alltanks.index(self.name) - 1]
                 conn.send(["BUY", self.name, self.username, pastTank])
                 a = conn.recieved
@@ -186,7 +186,7 @@ class Upgrade(selectGui.UpgradeForm):
         self.ipAddr = getConfiguration(config, "ip_address")
         self.port = getConfiguration(config, "port")
         r.close()
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         toSend = ["Update", self.username]
         toSend.append(self.getNewStats())
         toSend.append(self.xp)
@@ -225,7 +225,8 @@ class Main(selectGui.MainFrame):
         r.close()
         #Pull up all known tanks
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
-        #We only want the tanks that we own
+        self.allTanks = self.tanks
+	#We only want the tanks that we own
         for i in range(len(owned) - 1, 0, -1):
             if owned[i] == 0:
                 self.tanks.pop(i)
@@ -260,7 +261,7 @@ class Main(selectGui.MainFrame):
             assert (self.AddressBox.GetValue() != u"")
             assert (self.tankChoice.GetSelection() >= 0)
             instance = [self.username, self.toInt(self.stats), self.host, self.port]
-            self.Show(False)
+            #self.Show(False)
             try:
                 a = self.battleThread(instance)
             except error as e:
@@ -302,7 +303,7 @@ class Main(selectGui.MainFrame):
             pass
 
     def getStats(self, username, tankName):
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["GET", username, tankName])
         a = (conn.recieved)
         #print self.tankChoice.GetSelection()
@@ -310,10 +311,10 @@ class Main(selectGui.MainFrame):
 
 
     def doStats(self, event):
-        self.sel = self.tankChoice.GetCurrentSelection()
-        self.tank = self.tanks[self.sel]
-        self.stats = self.getStats(self.username, self.tank[0])
-        self.statsBox.Value = ("HP: " + str(self.tank[1]) +
+        self.sel = self.tankChoice.GetString(self.tankChoice.GetSelection())
+	#print "SEL " + self.sel
+        self.stats = self.getStats(self.username, self.sel)
+        self.statsBox.Value = ("HP: " + str(self.stats[1]) +
                                "\nDamage (HP average): " + str(self.stats[2]) +
                                "\nPenetration (mm): " + str(self.stats[3]) +
                                "\nReload (ticks): " + str(self.stats[4]) +
@@ -321,7 +322,7 @@ class Main(selectGui.MainFrame):
                                "\nHull Traverse Speed: " + str(self.stats[6]) +
                                "\nTurret Traverse Speed: " + str(self.stats[7]) +
                                "\nSpeed: " + str(self.stats[8]))
-        self.name = self.tanks[self.sel][1]
+        self.name = self.sel
 
     def getAllTanks(self):
         self.conn = sqlite3.Connection("TankStats.db")
@@ -337,7 +338,7 @@ class Main(selectGui.MainFrame):
         buyApp.MainLoop()
 
     def getAllXP(self):
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["ALLXP", self.username])
         return conn.recieved
 
@@ -364,7 +365,7 @@ class Main(selectGui.MainFrame):
 
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
         #modify the client
-        conn = netComms.networkComms(self.ipAddr, self.port)
+        conn = netComms.networkComms(self.ipAddr, int(self.port))
         print "Connection to loginServer made on " + str(self.ipAddr) + ":" + str(self.port)
         conn.send(["OWNED", self.username])
         self.owned = conn.recieved

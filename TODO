@@ -1,8 +1,9 @@
 1. Fix timer position - DONE
-2. Fix house collision model
+2. Fix house collision model - DONE
 3. Fix bullet ricochet angle
 4. Find cause of being unable to join second game
 5. Fix server output - DONE
 6. Fix bullets flying through tanks (Wat)
+	Likely to do with vector intersect methods
 7. Fix kill number - DONE
-8. Fix house alpha
+8. Fix house alpha - DONE

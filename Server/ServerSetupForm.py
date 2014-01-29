@@ -154,8 +154,8 @@ class serverForm(ServerGui.Mainframe):
             #This is literally the only error that appears here
             print ("Port is not free")
             print ("Technical information: "+str(ex))
-	    import sys
-	    sys.exit()
+	    self.Show(True)
+	    messages.Info(self.parent, "Port is not free, try again in a minute")
 
     def filler(self):
         app = wx.App(False)

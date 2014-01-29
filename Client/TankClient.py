@@ -9,13 +9,16 @@ from game_calcs import *
 from Errors import *
 
 try:
+    reload(games)
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
-except Exception:
+except Exception as ex:
+    print "Error in game init: " + str(ex)
     games.screen.quit()
     quit()
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
 def setupEnv():
+    reload(games)
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
 class superSquare(games.Sprite):
@@ -407,7 +410,7 @@ class GameController(games.Sprite):
 
     def close(self, exception):
         games.screen.clear()
-        games.screen.quit()
+        #games.screen.quit()
 	quit()
         raise exception
 
@@ -429,8 +432,8 @@ class GameController(games.Sprite):
                 				#p.angle = p.last_a
                 				t.x = t.last_x
                 				t.y = t.last_y
-	except Exception:
-		pass
+	except Exception as ex:
+		print "Error in game update: " + str(ex)
 
 	for b in self.serverInstances:
 		if self.client in b.get_overlapping_sprites():
@@ -520,15 +523,21 @@ class GameController(games.Sprite):
             for a in b:
                 draw.line(games.screen._display, colour.white, [a.x1, a.y1], [a.x2, a.y2])
 
+	for c in self.bullets:
+		q = c.getBulletVector()
+		draw.line(games.screen._display, colour.yellow, [q.x1, q.y1], [q.x2, q.y2])
+
     def setBuildingVectors(self, buildings):
 	    self.buildingVectors = []
 	    for b in buildings:
-            print b.topleft
-		    left = Vector(b.x, b.y, b.x, b.y + b.height)
-		    right = Vector(b.x + b.width, b.y, b.x + b.width, b.y + b.height)
-		    top = Vector(b.x, b.y, b.x + b.width, b.y)
-		    bottom = Vector(b.x, b.y + b.height, b.x + b.width, b.y + b.height)
-		    self.buildingVectors.append([left, right, top, bottom])
+		#Offset vectors by half height and half width
+            	hW = b.width / 2
+		hH = b.height / 2
+		left = Vector(b.x - hW, b.y - hH, b.x - hW, b.y + b.height - hH)
+		right = Vector(b.x + b.width - hW, b.y - hH, b.x + b.width - hW, b.y + b.height - hH)
+		top = Vector(b.x - hW, b.y - hH, b.x + b.width - hW, b.y - hH)
+		bottom = Vector(b.x - hW, b.y + b.height - hH, b.x + b.width - hW, b.y + b.height - hH)
+		self.buildingVectors.append([left, right, top, bottom])
 
     def doBulletSpawnDespawn(self,  server):
         """Main method to make the local bullets equal the server bullets"""
@@ -680,7 +689,7 @@ class GameController(games.Sprite):
         self.connection.close()
 	print "Connection to server closed"
         games.screen.clear()
-        games.screen.quit()
+        #games.screen.quit()
         quit()
         raise EndOfGame(str(stats))
 
@@ -688,8 +697,13 @@ def mainGame(instance):
     """Called to run the client, requires data for the tank and the host/port"""
 
     #Open the screen
+    reload(games)
+    games.screen.quit()
+    quit()
+    games.init(1024, 768, 30)
 
     try:
+	#reload(games)
         #This sets the initial conditions for the client
         username = instance[0]
         stats = instance[1]
@@ -706,7 +720,7 @@ def mainGame(instance):
 
         #Start the game
         games.screen.mainloop()
-
+	quit()	
     #Exceptions - can communicate with the login client
     except GameInProgressException as message:
         return message
