@@ -94,13 +94,14 @@ class TankServer(SocketServer.BaseRequestHandler):
         while TankServer.GameInProgress:
             #print "HANDLING"
             #Get the data from the socket
-            recv = self.request.recv(1024)
+            recv = self.request.recv(2048)
+	    print "RECV: " + str(recv)
 	    if TankServer.killNextLoop:
 		self.endGame()
-            self.data = pickle.loads(recv)
-            if recv == "" or self.data == "":
+            if recv == '':
                 break
-            #Check what sort of request it is
+            self.data = pickle.loads(recv)
+		#Check what sort of request it is
             if type(self.data[0]) == type("TopKek"):
 		#print "Recieved string request. Processing..."
                 self.toSend = self.stringRequest(self.data)

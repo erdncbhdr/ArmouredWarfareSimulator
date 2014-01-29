@@ -11,6 +11,7 @@ from Errors import *
 try:
     reload(games)
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
+    pass
 except Exception as ex:
     print "Error in game init: " + str(ex)
     games.screen.quit()
@@ -398,7 +399,11 @@ class GameController(games.Sprite):
             toPlay = self.moskau
         else:
             toPlay = random.choice(self.loadingSongs)
-        toPlay.play()
+        try:
+		toPlay.play()
+	except Exception as ex:
+		print str(ex)
+
         while self.countdown > 0:
             time.sleep(1)
             self.countdown -= 1
@@ -484,7 +489,6 @@ class GameController(games.Sprite):
                 games.screen.add(self.serverInstances[-1])
                 games.screen.add(self.serverInstancesTurret[-1])
                 self.recvPlayers.pop(-1)
-
             except IndexError as ex:
                 self.resyncClient()
 
@@ -511,7 +515,7 @@ class GameController(games.Sprite):
         
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions() 
-        self.drawVectors()
+        #self.drawVectors()
         #Ok we cool
 
     def drawVectors(self):
@@ -556,7 +560,11 @@ class GameController(games.Sprite):
         #Add new bullets
         for bullet in server:
             if bullet[6] not in currentIDs:
-                self.fire.play()
+		try:
+                	self.fire.play()
+		except Exception as ex:
+			print str(ex)
+
                 self.bullets.append(Bullet(bullet[0],  bullet[1],  bullet[2],  bullet[3],
                                            bullet[4],  bullet[6], bullet[7]))
                 games.screen.add(self.bullets[-1])
@@ -690,17 +698,17 @@ class GameController(games.Sprite):
 	print "Connection to server closed"
         games.screen.clear()
         #games.screen.quit()
-        quit()
+        #quit()
         raise EndOfGame(str(stats))
 
 def mainGame(instance):
     """Called to run the client, requires data for the tank and the host/port"""
 
     #Open the screen
-    reload(games)
-    games.screen.quit()
-    quit()
-    games.init(1024, 768, 30)
+    #reload(games)
+    #games.screen.quit()
+    #quit()
+    #games.init(1024, 768, 30)
 
     try:
 	#reload(games)
