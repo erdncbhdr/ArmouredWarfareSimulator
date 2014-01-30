@@ -95,3 +95,4 @@ def intersect(vectorA, vectorB):
         return False
     except Exception as ex:
         print "Exception in intersect: " + str(ex)
+

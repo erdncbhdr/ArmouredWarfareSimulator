@@ -22,6 +22,7 @@ def setupEnv():
     reload(games)
     games.init(screen_width = 1024, screen_height = 768, fps = 30)
 
+
 class superSquare(games.Sprite):
     def __init__(self, enemy, x, y):
         if enemy:
@@ -515,7 +516,7 @@ class GameController(games.Sprite):
         
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions() 
-        #self.drawVectors()
+        self.drawVectors()
         #Ok we cool
 
     def drawVectors(self):
@@ -527,9 +528,9 @@ class GameController(games.Sprite):
             for a in b:
                 draw.line(games.screen._display, colour.white, [a.x1, a.y1], [a.x2, a.y2])
 
-	for c in self.bullets:
-		q = c.getBulletVector()
-		draw.line(games.screen._display, colour.yellow, [q.x1, q.y1], [q.x2, q.y2])
+	    for c in self.bullets:
+		    q = c.getBulletVector()
+		    draw.line(games.screen._display, colour.yellow, [q.x1, q.y1], [q.x2, q.y2])
 
     def setBuildingVectors(self, buildings):
 	    self.buildingVectors = []
@@ -695,9 +696,9 @@ class GameController(games.Sprite):
 
     def endGame(self, stats):
         self.connection.close()
-	#print "Connection to server closed"
+	    #print "Connection to server closed"
         games.screen.clear()
-        #games.screen.quit()
+        games.screen.quit()
         #quit()
         raise EndOfGame(str(stats))
 
