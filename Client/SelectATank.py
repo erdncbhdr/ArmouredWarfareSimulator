@@ -195,7 +195,7 @@ class Upgrade(selectGui.UpgradeForm):
             #print "Sent: " + str(toSend)
             messages.Info(self.parent, "Changes sent.")
             conn.close()
-            print "Closed connection to loginserver"
+            #print "Closed connection to loginserver"
             self.Show(False)
         else:
             pass
@@ -273,7 +273,7 @@ class Main(selectGui.MainFrame):
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 
         except EndOfGame as ex:
-            print "EX:" + str(ex.message)
+            #print "EX:" + str(ex.message)
             ex = eval(ex.message)
             self.Show(True)
             win = ex[0]
@@ -367,21 +367,21 @@ class Main(selectGui.MainFrame):
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
         #modify the client
         conn = netComms.networkComms(self.ipAddr, int(self.port))
-        print "Connection to loginServer made on " + str(self.ipAddr) + ":" + str(self.port)
+        #print "Connection to loginServer made on " + str(self.ipAddr) + ":" + str(self.port)
         conn.send(["OWNED", self.username])
         self.owned = conn.recieved
-        print "From server: " + str(self.owned)
+        #print "From server: " + str(self.owned)
         conn.close()
         dataconn = sqlite3.Connection("TankStats.db")
         cur = dataconn.cursor()
         self.names = cur.execute("SELECT name FROM Tanks").fetchall()
         dataconn.close()
         self.names = [x[0] for x in self.names]
-        print "All names: " + str(self.names)
+        #print "All names: " + str(self.names)
         self.tankChoice.Clear()
         for x in range(len(self.owned) - 2, 1, -1):
             if self.owned[x] == 0:
-                print "Pop val is " + str(self.owned[x]) + " " + str(x-1) + ":" + str(self.names[x-1])
+                #print "Pop val is " + str(self.owned[x]) + " " + str(x-1) + ":" + str(self.names[x-1])
                 self.names.pop(x-1)
         for i in self.names:
             self.tankChoice.Append(i)

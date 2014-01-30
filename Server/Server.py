@@ -95,7 +95,7 @@ class TankServer(SocketServer.BaseRequestHandler):
             #print "HANDLING"
             #Get the data from the socket
             recv = self.request.recv(2048)
-	    print "RECV: " + str(recv)
+	    #print "RECV: " + str(recv)
 	    if TankServer.killNextLoop:
 		self.endGame()
             if recv == '':

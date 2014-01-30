@@ -177,7 +177,7 @@ def start():
         print ("Login server running on "+str(ipAddr)+":"+str(port))
         server.serve_forever()
     except IOError as ex:
-	print "Could not find login.conf"
+	print "Could not find login.conf\n" + str(ex)
     except Exception as ex:
         print ("Port is not free")
         print ("Technical information: "+str(ex))

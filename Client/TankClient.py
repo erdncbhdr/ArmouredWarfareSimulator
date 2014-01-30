@@ -377,11 +377,11 @@ class GameController(games.Sprite):
         #Ok we cool
 
     def drawMap(self, map):
-        print "MAP: "+str(map)
+        #print "MAP: "+str(map)
         width = games.screen.get_width()
         height = games.screen.get_height()
-        print "Width:"+str(width)
-        print "Height:"+str(height)
+        #print "Width:"+str(width)
+        #print "Height:"+str(height)
         #Split the screen into 50px blocks
         toplefts_x = [x for x in range(0, width+1, 100)]
         toplefts_y = [x for x in range(150, (height+1)-150, 100)]
@@ -695,7 +695,7 @@ class GameController(games.Sprite):
 
     def endGame(self, stats):
         self.connection.close()
-	print "Connection to server closed"
+	#print "Connection to server closed"
         games.screen.clear()
         #games.screen.quit()
         #quit()

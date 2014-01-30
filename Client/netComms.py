@@ -18,7 +18,7 @@ class networkComms():
 
     def send(self, message):
         """Dial the 9th circle of hell and ask for lucifer to process our request"""
-	print "SEND: " + message
+	#print "SEND: " + message
         self.toSend = pickle.dumps(message)
         try:
             self.sock.sendall(self.toSend)
@@ -40,6 +40,6 @@ class networkComms():
                 raise HostDisconnectedException()
 
     def close(self):
-        print "CLOSING CONNECTION"
+        #print "CLOSING CONNECTION"
         self.sock.close()
         del self.sock
