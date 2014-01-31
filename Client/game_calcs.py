@@ -72,7 +72,7 @@ def getAngleOfIntersection(vecA, vecB):
 
         #Angle is cos-1(A,B / |A||B|)
         ang = math.degrees(math.acos(num / denom))
-        if ang > 90:
+        if ang > 90 and ang <= 180:
             diff = ang - 90
             ang = 90 - diff
         return ang
@@ -85,7 +85,7 @@ def getPoints(x1, y1, x2, y2):
         angle = math.atan2(y2 - y1, x2 - x1)
         values = []
         for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 2):
-            values.append([math.floor(x1 + x * math.cos(angle)), math.floor(y1 + x * math.sin(angle))])
+            values.append([int(x1 + x * math.cos(angle)), int(y1 + x * math.sin(angle))])
         return values
     except Exception as ex:
         print "Exception in getpoints: " + str(ex)

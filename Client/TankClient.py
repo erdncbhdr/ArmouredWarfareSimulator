@@ -423,7 +423,7 @@ class GameController(games.Sprite):
         return None
 
     def countingDown(self):
-        import random
+        import random, time
 
         if self.client.name == "KV1" or self.client.name == "T34":
             toPlay = self.moskau
@@ -549,7 +549,7 @@ class GameController(games.Sprite):
 
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions()
-        #self.drawVectors()
+        self.drawVectors()
         #Ok we cool
 
 
@@ -674,9 +674,9 @@ class GameController(games.Sprite):
 
     def vectorsIntersect(self, vecA, vecB):
         """Checks if 2 vectors intersect, calls game_calcs"""
-
         if intersect(vecA, vecB):
-            return True
+            if vecA.add(vecB).getMagnitude() < vecA.getMagnitude():
+                return True
         return False
 
 
@@ -701,18 +701,20 @@ class GameController(games.Sprite):
         """Returns true if the bullet has enough penetration, false otherwise"""
 
         #This is the critical angle at which any bullet will auto-bounce
-        if angle < 50:
+        if angle < 50 or angle > 180:
             return False
 
         #Calculate effective armour via trigonometry.
         armourValue = self.client.armour
         effectiveArmour = armourValue / math.sin(math.radians(angle))
-
+        print "Effective armour at " + str(angle) + " is " + str(effectiveArmour)
         #Check if the bullet has enough penetration and return
         if bullet.penetration > effectiveArmour:
             self.damageDone.append([bullet.damage, bullet.ownerId])
+            print "Penetration"
             return True
         else:
+            print "Bounce"
             return False
 
 

@@ -274,11 +274,12 @@ class TankServer(SocketServer.BaseRequestHandler):
                 angleOfNormal = bid[2]
                 angleOfBullet = bid[11]
                 anglePointingAway = (angleOfBullet + 180) % 360
-                angleToNormal = (angleOfNormal - anglePointingAway) % 360
-                if angleOfNormal - angleOfBullet > 90:
-                    newAngle = (anglePointingAway + (2*angleToNormal)) % 360
-                else:
+                angleToNormal = math.fabs((angleOfNormal - anglePointingAway) % 360)
+                #If the vectors are pointing the same way, don't collide
+                if angleToNormal > 90:
                     newAngle = angleOfBullet
+                else:
+                    newAngle = (anglePointingAway + (2*angleToNormal)) % 360
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b

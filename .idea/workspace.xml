@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="Startin">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/harry.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/LoginDatabase" afterPath="$PROJECT_DIR$/Server/LoginDatabase" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Errors.py" afterPath="$PROJECT_DIR$/Client/Errors.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/color.py" afterPath="$PROJECT_DIR$/Client/color.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/encodings.xml" afterPath="$PROJECT_DIR$/Client/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/game_calcs.py" afterPath="$PROJECT_DIR$/Client/game_calcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/games.py" afterPath="$PROJECT_DIR$/Client/games.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/login.py" afterPath="$PROJECT_DIR$/Client/login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/loginGui.py" afterPath="$PROJECT_DIR$/Client/loginGui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/messages.py" afterPath="$PROJECT_DIR$/Client/messages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/misc.xml" afterPath="$PROJECT_DIR$/Client/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/modules.xml" afterPath="$PROJECT_DIR$/Client/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/netComms.py" afterPath="$PROJECT_DIR$/Client/netComms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/Client/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/selectGui.py" afterPath="$PROJECT_DIR$/Client/selectGui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/vcs.xml" afterPath="$PROJECT_DIR$/Client/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Client/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,10 +64,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Server.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="280" column="44" selection-start="9498" selection-end="9498" vertical-scroll-proportion="0.0" vertical-offset="4200" max-vertical-offset="4875">
+            <state line="281" column="20" selection-start="9510" selection-end="9510" vertical-scroll-proportion="0.7899628" vertical-offset="3670" max-vertical-offset="4770">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="1365">
               <folding />
             </state>
           </provider>
@@ -99,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TankClient.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="292" column="20" selection-start="11335" selection-end="11335" vertical-scroll-proportion="0.24356435" vertical-offset="4257" max-vertical-offset="11955">
+            <state line="703" column="36" selection-start="28416" selection-end="28416" vertical-scroll-proportion="-6.6666665" vertical-offset="10325" max-vertical-offset="11985">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -122,7 +114,7 @@
       <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="10" selection-start="88" selection-end="90" vertical-scroll-proportion="-2.7272727" vertical-offset="0" max-vertical-offset="1650">
+            <state line="70" column="30" selection-start="2032" selection-end="2032" vertical-scroll-proportion="-0.90909094" vertical-offset="1020" max-vertical-offset="1650">
               <folding />
             </state>
           </provider>
@@ -187,13 +179,13 @@
         <option value="$PROJECT_DIR$/Client/SelectATank.py" />
         <option value="$PROJECT_DIR$/Server/launchLoginServer.py" />
         <option value="$PROJECT_DIR$/Client/game_calcs.py" />
-        <option value="$PROJECT_DIR$/Server/Server.py" />
         <option value="$PROJECT_DIR$/Client/TankClient.py" />
+        <option value="$PROJECT_DIR$/Server/Server.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
+    <option name="width" value="1365" />
     <option name="height" value="736" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -252,20 +244,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -664,16 +642,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="736" extended-state="0" />
+    <frame x="0" y="0" width="1365" height="736" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19868036" sideWeight="0.5693069" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19882612" sideWeight="0.5693069" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19868036" sideWeight="0.4290429" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19882612" sideWeight="0.4290429" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29537955" sideWeight="0.35944363" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29581994" sideWeight="0.6405564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -748,11 +726,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Client/schema.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="27" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="714" />
@@ -822,13 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="280" column="44" selection-start="9498" selection-end="9498" vertical-scroll-proportion="0.0" vertical-offset="3945" max-vertical-offset="4755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/games.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="521" column="8" selection-start="17487" selection-end="17487" vertical-scroll-proportion="0.3321234" vertical-offset="7587" max-vertical-offset="13560">
@@ -836,19 +802,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="88" selection-end="90" vertical-scroll-proportion="-2.7272727" vertical-offset="0" max-vertical-offset="1650">
+        <state line="70" column="30" selection-start="2032" selection-end="2032" vertical-scroll-proportion="-0.90909094" vertical-offset="1020" max-vertical-offset="1650">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="20" selection-start="11335" selection-end="11335" vertical-scroll-proportion="0.24356435" vertical-offset="4257" max-vertical-offset="11955">
+        <state line="703" column="36" selection-start="28416" selection-end="28416" vertical-scroll-proportion="-6.6666665" vertical-offset="10325" max-vertical-offset="11985">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="281" column="20" selection-start="9510" selection-end="9510" vertical-scroll-proportion="0.7899628" vertical-offset="3670" max-vertical-offset="4770">
+          <folding />
         </state>
       </provider>
     </entry>
