@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-import wx
 import sqlite3
+
+import wx
+from pygame import *
+
 import selectGui
 import messages
 import Errors
 import netComms
-from pygame import *
 import games
-import threading
 from Errors import *
 
 
@@ -226,7 +227,7 @@ class Main(selectGui.MainFrame):
         #Pull up all known tanks
         self.tanks = self.cur.execute("SELECT * FROM Tanks;").fetchall()
         self.allTanks = self.tanks
-	#We only want the tanks that we own
+        #We only want the tanks that we own
         for i in range(len(owned) - 1, 0, -1):
             if owned[i] == 0:
                 self.tanks.pop(i)
@@ -306,14 +307,14 @@ class Main(selectGui.MainFrame):
         conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["GET", username, tankName])
         a = (conn.recieved)
-	conn.close()
+        conn.close()
         #print self.tankChoice.GetSelection()
         return a.split(":")
 
 
     def doStats(self, event):
         self.sel = self.tankChoice.GetString(self.tankChoice.GetSelection())
-	#print "SEL " + self.sel
+        #print "SEL " + self.sel
         self.stats = self.getStats(self.username, self.sel)
         self.statsBox.Value = ("HP: " + str(self.stats[1]) +
                                "\nDamage (HP average): " + str(self.stats[2]) +
@@ -382,9 +383,10 @@ class Main(selectGui.MainFrame):
         for x in range(len(self.owned) - 2, 1, -1):
             if self.owned[x] == 0:
                 #print "Pop val is " + str(self.owned[x]) + " " + str(x-1) + ":" + str(self.names[x-1])
-                self.names.pop(x-1)
+                self.names.pop(x - 1)
         for i in self.names:
             self.tankChoice.Append(i)
+
 
 def main(username, xp, owned):
     app = wx.App(False)

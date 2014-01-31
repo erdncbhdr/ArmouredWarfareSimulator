@@ -1,20 +1,22 @@
 __author__ = 'harry'
 import math
 
+
 class Point():
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
+
 class Vector():
-    def __init__(self,x1,y1,x2,y2):
+    def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
         self.x2 = x2
         self.y1 = y1
         self.y2 = y2
-        self.angle = math.degrees(math.atan2(y2-y1, x2-x1))
+        self.angle = math.degrees(math.atan2(y2 - y1, x2 - x1))
 
-    def update(self,x1,y1,x2,y2):
+    def update(self, x1, y1, x2, y2):
         self.x1 = x1
         self.x2 = x2
         self.y1 = y1
@@ -34,7 +36,7 @@ class Vector():
 
 
     def getMagnitude(self):
-        return math.sqrt((self.y2-self.y1)**2 + (self.x2-self.x1)**2)
+        return math.sqrt((self.y2 - self.y1) ** 2 + (self.x2 - self.x1) ** 2)
 
     def getDx(self):
         return math.fabs(self.x2 - self.x1)
@@ -43,7 +45,8 @@ class Vector():
         return math.fabs(self.y2 - self.y1)
 
     def dotProduct(self, vector):
-        return self.getDx()*vector.getDx() + self.getDy()*vector.getDy()
+        return self.getDx() * vector.getDx() + self.getDy() * vector.getDy()
+
 
 class Rectangle():
     def __init__(self, TopLeft, BottomLeft, BottomRight, TopRight):
@@ -59,6 +62,7 @@ class Rectangle():
                 return True
         return False
 
+
 def getAngleOfIntersection(vecA, vecB):
     """a dot b / mag(a) mag(b)"""
     try:
@@ -67,7 +71,7 @@ def getAngleOfIntersection(vecA, vecB):
         denom = vecA.getMagnitude() * vecB.getMagnitude()
 
         #Angle is cos-1(A,B / |A||B|)
-        ang =  math.degrees(math.acos(num/denom))
+        ang = math.degrees(math.acos(num / denom))
         if ang > 90:
             diff = ang - 90
             ang = 90 - diff
@@ -75,15 +79,17 @@ def getAngleOfIntersection(vecA, vecB):
     except Exception as ex:
         print "Exception in getangleofintersection: " + str(ex)
 
+
 def getPoints(x1, y1, x2, y2):
     try:
-        angle = math.atan2(y2-y1, x2-x1)
+        angle = math.atan2(y2 - y1, x2 - x1)
         values = []
-        for x in range(1,int(math.sqrt((y2-y1)**2 + (x2-x1)**2))+2):
-            values.append([math.floor(x1 + x*math.cos(angle)), math.floor(y1 + x*math.sin(angle))])
+        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 2):
+            values.append([math.floor(x1 + x * math.cos(angle)), math.floor(y1 + x * math.sin(angle))])
         return values
     except Exception as ex:
         print "Exception in getpoints: " + str(ex)
+
 
 def intersect(vectorA, vectorB):
     try:

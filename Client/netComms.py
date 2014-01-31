@@ -2,8 +2,9 @@ import socket
 import pickle
 from Errors import *
 
+
 class networkComms():
-    def __init__(self, ip,  port):
+    def __init__(self, ip, port):
         self.ip = ip
         self.port = port
 
@@ -18,7 +19,7 @@ class networkComms():
 
     def send(self, message):
         """Dial the 9th circle of hell and ask for lucifer to process our request"""
-	#print "SEND: " + message
+        #print "SEND: " + message
         self.toSend = pickle.dumps(message)
         try:
             self.sock.sendall(self.toSend)
