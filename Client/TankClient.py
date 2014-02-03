@@ -549,7 +549,7 @@ class GameController(games.Sprite):
 
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions()
-        self.drawVectors()
+        #self.drawVectors()
         #Ok we cool
 
 
