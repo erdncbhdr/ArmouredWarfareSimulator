@@ -72,9 +72,9 @@ def getAngleOfIntersection(vecA, vecB):
 
         #Angle is cos-1(A,B / |A||B|)
         ang = math.degrees(math.acos(num / denom))
-        if ang > 90 and ang <= 180:
-            diff = ang - 90
-            ang = 90 - diff
+        #if ang > 90 and ang <= 180:
+        #    diff = ang - 90
+        #    ang = 90 - diff
         return ang
     except Exception as ex:
         print "Exception in getangleofintersection: " + str(ex)

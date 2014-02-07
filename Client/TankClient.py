@@ -650,7 +650,6 @@ class GameController(games.Sprite):
                 noVectorIntersects = False
                 angle = getAngleOfIntersection(bullet.getVector(), v)
                 if self.doesPenetrate(angle, bullet):
-
                     #Damage tank accordingly and despawn the bullet
                     self.client.hp -= bullet.damage
                     self.despawnToServer.append(bullet.bulletID)
@@ -663,19 +662,19 @@ class GameController(games.Sprite):
 
         #BUG: Occasionally the bullet will just fly through the vector, this WILL penetrate as it needs to be at a very low angle
         overlaps = self.client.get_overlapping_sprites()
-        if bullet in overlaps and not noVectorIntersects:
+        #if bullet in overlaps and noVectorIntersects:
             #This means that the bullet is within the tank without colliding
             #We'll give it penetration
             #self.client.hp -= bullet.damage
             #self.despawnToServer.append(bullet.bulletID)
             #self.damageDone.append([bullet.damage, bullet.ownerId])
-            pass
+            #pass
 
 
     def vectorsIntersect(self, vecA, vecB):
         """Checks if 2 vectors intersect, calls game_calcs"""
         if intersect(vecA, vecB):
-            if vecA.add(vecB).getMagnitude() < vecA.getMagnitude():
+            if (vecA.add(vecB).getMagnitude() < vecA.getMagnitude()) or 1 == 1:
                 return True
         return False
 
