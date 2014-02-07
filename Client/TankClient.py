@@ -420,7 +420,6 @@ class GameController(games.Sprite):
             self.buildings.append(newBuilding)
             games.screen.add(self.buildings[-1])
         self.setBuildingVectors(self.buildings)
-        return None
 
     def countingDown(self):
         import random, time
@@ -454,29 +453,13 @@ class GameController(games.Sprite):
             self.connection.send("Disconnect")
             games.screen.quit()
             sys.exit([0])
-        p = self.client
-        t = self.client.turret
-        #Check for collision into buildings and enemy tanks
-        try:
-            for i in range(len(self.buildings) - 1):
-                for v in self.vectors:
-                    for a in self.buildingVectors[i]:
-                        if self.vectorsIntersect(a, v):
-                            p.x = p.last_x
-                            p.y = p.last_y
-                            p.angle = p.last_a
-                            t.x = t.last_x
-                            t.y = t.last_y
-
-        except Exception as ex:
-            print "Error in game update: " + str(ex)
 
         for b in self.serverInstances:
             if self.client in b.get_overlapping_sprites():
-                p.x = p.last_x
-                p.y = p.last_y
-                t.x = t.last_x
-                t.y = t.last_y
+                self.client.x = self.client.last_x
+                self.client.y = self.client.last_y
+                self.clientTurret.x = self.clientTurret.last_x
+                self.clientTurret.y = self.clientTurret.last_y
 
     #Let's thread it ##Or not, that creates race conditions
     #Thread(target=self.doUpdating).start()
@@ -546,6 +529,31 @@ class GameController(games.Sprite):
             except Exception as ex:
                 print "Exception in update: " + str(ex)
                 #self.resyncClient()
+
+        for b in self.buildings:
+            if b in self.client.get_overlapping_sprites():
+                self.client.x = self.client.last_x
+                self.client.y = self.client.last_y
+                self.client.angle = self.client.last_a
+                self.clientTurret.x = self.clientTurret.last_x
+                self.clientTurret.y = self.clientTurret.last_y
+
+        #Check for collision into buildings and enemy tanks
+        #try:
+        #    p = self.client
+        #    t = self.client.turret
+        #    for i in range(len(self.buildings) - 1):
+        #        for v in self.vectors:
+        #            for a in self.buildingVectors[i]:
+        #                if self.vectorsIntersect(a, v):
+        #                    p.x = p.last_x
+        #                    p.y = p.last_y
+        #                    p.angle = p.last_a
+        #                    t.x = t.last_x
+        #                    t.y = t.last_y
+
+        #except Exception as ex:
+        #    print "Error in game update: " + str(ex)
 
         self.doBulletSpawnDespawn(self.recvBullets)
         self.checkBulletCollisions()
@@ -649,15 +657,16 @@ class GameController(games.Sprite):
             if self.vectorsIntersect(v, bullet.getVector()):
                 noVectorIntersects = False
                 angle = getAngleOfIntersection(bullet.getVector(), v)
+                print "THE CLIENTSIDE AoI = " + str(angle)
                 if self.doesPenetrate(angle, bullet):
                     #Damage tank accordingly and despawn the bullet
                     self.client.hp -= bullet.damage
                     self.despawnToServer.append(bullet.bulletID)
                 else:
-                    b = bullet.getVector()
-                    self.toRebound.append(
-                        [bullet.bulletID, angle, v.angle - 90, b.x1, b.y1, b.x2, b.y2, v.x1, v.y1, v.x2, v.y2,
-                         bullet.angle])
+                    if angle < 180:
+                        b = bullet.getVector()
+                        self.toRebound.append(
+                            [bullet.bulletID, angle, v.angle - 90, b.x1, b.y1, b.x2, b.y2, v.x1, v.y1, v.x2, v.y2, bullet.angle])
             noVectorIntersects = True
 
         #BUG: Occasionally the bullet will just fly through the vector, this WILL penetrate as it needs to be at a very low angle

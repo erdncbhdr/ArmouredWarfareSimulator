@@ -39,13 +39,13 @@ class Vector():
         return math.sqrt((self.y2 - self.y1) ** 2 + (self.x2 - self.x1) ** 2)
 
     def getDx(self):
-        return math.fabs(self.x2 - self.x1)
+        return (self.x2 - self.x1)
 
     def getDy(self):
-        return math.fabs(self.y2 - self.y1)
+        return (self.y2 - self.y1)
 
     def dotProduct(self, vector):
-        return self.getDx() * vector.getDx() + self.getDy() * vector.getDy()
+        return (self.getDx() * vector.getDx()) + (self.getDy() * vector.getDy())
 
 
 class Rectangle():
@@ -68,10 +68,14 @@ def getAngleOfIntersection(vecA, vecB):
     try:
         #Set numerator and denom
         num = vecA.dotProduct(vecB)
-        denom = vecA.getMagnitude() * vecB.getMagnitude()
-
-        #Angle is cos-1(A,B / |A||B|)
-        ang = math.degrees(math.acos(num / denom))
+        if num < 0:
+            ang =  270
+        else:
+            denom = vecA.getMagnitude() * vecB.getMagnitude()
+            #Angle is cos-1(A,B / |A||B|)
+            ang = math.degrees(math.acos(num / denom))
+        print "NUM: " + str(num)
+        print "DENOM: " + str(denom)
         #if ang > 90 and ang <= 180:
         #    diff = ang - 90
         #    ang = 90 - diff
@@ -84,7 +88,7 @@ def getPoints(x1, y1, x2, y2):
     try:
         angle = math.atan2(y2 - y1, x2 - x1)
         values = []
-        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 2):
+        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 5):
             values.append([int(x1 + x * math.cos(angle)), int(y1 + x * math.sin(angle))])
         return values
     except Exception as ex:
