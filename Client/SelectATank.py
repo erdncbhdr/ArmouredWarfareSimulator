@@ -77,7 +77,7 @@ class Buy(selectGui.TankBuy):
                     messages.Info(self.parent, "Tank purchased!")
                     self.owner.refresh(self.owner.username)
             except AssertionError:
-                messages.Warn("Please select a tank first")
+                messages.Warn(self.parent, "Please select a tank first")
         else:
             messages.Warn(self.parent, "You do not have the XP to purchase this tank")
             self.owner.refresh(self.owner.username)
@@ -356,7 +356,7 @@ class Main(selectGui.MainFrame):
             upFrame.Show(True)
             upApp.MainLoop()
         except AttributeError as ex:
-            Errors.warn("Please select a tank first")
+            messages.Warn(self.parent, "Please select a tank first")
 
     def refresh(self, username):
         """Reloads all components"""

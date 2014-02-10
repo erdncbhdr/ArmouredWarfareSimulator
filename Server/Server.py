@@ -51,8 +51,8 @@ class Bullet():
         self.bulletID = bulletID
         self.penetration = penetration
     def update(self):
-        self.x += 6*math.cos(math.radians(self.angle))
-        self.y += 6*math.sin(math.radians(self.angle))
+        self.x += 2*math.cos(math.radians(self.angle))
+        self.y += 2*math.sin(math.radians(self.angle))
         if (self.x < -100 or
             self.y < -100 or
             self.x > 1124 or
@@ -137,7 +137,7 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def finish(self):
         #print "FINISH"
-	TankServer.connected -= 1
+	    TankServer.connected -= 1
 	#print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
         #return "TOPLEL"
 
@@ -250,14 +250,13 @@ class TankServer(SocketServer.BaseRequestHandler):
             for b in TankServer.Bullets:
                 if b.bulletID == i:
                     TankServer.Bullets.remove(b)
-        
-        if req[0] == 0:
-            for b in TankServer.Bullets:
-                if self.isCollidedWithMap(b):
-                    #b.ded = True
-                    None
-                else:
-                    b.update()
+
+        for b in TankServer.Bullets:
+            if self.isCollidedWithMap(b):
+                #b.ded = True
+                None
+            else:
+                b.update()
                 if b.ded:
                     TankServer.Bullets.remove(b)
        

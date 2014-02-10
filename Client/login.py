@@ -44,7 +44,7 @@ class NewAccountForm(loginGui.newAccount):
             messages.Warn(self.parent, "Passwords must be at least 5 characters long")
         elif self.userBox.Value != "" and self.passB.Value != "":
             conn = netComms.networkComms(self.ipAddr, self.port)
-            conn.send(["CREATE", [self.userBox.Value, hashlib.sha1(self.passB.Value).hexdigest()]])
+            conn.send(["CREATE", [self.userBox.Value.lower(), hashlib.sha1(self.passB.Value).hexdigest()]])
             self.process(conn.recieved)
             conn.close()
         else:
@@ -88,7 +88,7 @@ class LoginForm(loginGui.MainFrame):
     def suchSending(self, event):
         try:
             self.conn = netComms.networkComms(self.ipAddr, self.port)
-            self.conn.send(["LOGIN", [self.userBox.Value, hashlib.sha1(self.passBox.Value).hexdigest()]])
+            self.conn.send(["LOGIN", [self.userBox.Value.lower(), hashlib.sha1(self.passBox.Value).hexdigest()]])
 
         except NoConnectionException:
             thing = "Could not connect to login server at {0}".format(str(self.ipAddr) + ":" + str(self.port))
