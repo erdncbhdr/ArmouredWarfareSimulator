@@ -97,8 +97,8 @@ class Bullet(games.Sprite):
         self.penetration = penetration
 
     def getBulletVector(self):
-        return Vector(self.x, self.y, self.x - math.cos(math.radians(self.angle)) * 3,
-                      self.y - math.sin(math.radians(self.angle)) * 3)
+        return Vector(self.x, self.y, self.x + math.cos(math.radians(self.angle)) * 3,
+                      self.y + math.sin(math.radians(self.angle)) * 3)
 
     def getx1x2(self):
         return self.x, self.y, self.x + 5 * math.cos(math.radians(self.angle)), self.y + 5 * math.sin(
@@ -444,7 +444,7 @@ class GameController(games.Sprite):
 
     def close(self, exception):
         games.screen.clear()
-        #games.screen.quit()
+        games.screen.quit()
         quit()
         raise exception
 

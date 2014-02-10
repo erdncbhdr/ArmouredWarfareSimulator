@@ -88,7 +88,7 @@ def getPoints(x1, y1, x2, y2):
     try:
         angle = math.atan2(y2 - y1, x2 - x1)
         values = []
-        for x in range(1, int(math.sqrt((y2 - y1) ** 10 + (x2 - x1) ** 10)) + 5):
+        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 15):
             values.append([int(x1 + x * math.cos(angle)), int(y1 + x * math.sin(angle))])
         return values
     except Exception as ex:

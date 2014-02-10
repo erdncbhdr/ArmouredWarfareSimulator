@@ -70,6 +70,9 @@ def getAngleOfIntersection(vecA, vecB):
         ang = 90 - diff
     return ang
 
+def getDeltaT(time1, time2):
+    return time2 - time1
+
 def getPoints(x1, y1, x2, y2):
     angle = math.atan2(y2-y1, x2-x1)
     values = []

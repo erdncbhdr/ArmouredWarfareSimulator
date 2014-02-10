@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="Startin">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/#COMP4.lyx#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/LoginDatabase" afterPath="$PROJECT_DIR$/Server/LoginDatabase" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/game_calcs.py" afterPath="$PROJECT_DIR$/Client/game_calcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/login.py" afterPath="$PROJECT_DIR$/Client/login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/game_calcs.py" afterPath="$PROJECT_DIR$/Server/game_calcs.py" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,29 +29,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="19" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.45878136" vertical-offset="434" max-vertical-offset="4710">
-              <folding />
+            <state line="293" column="37" selection-start="10491" selection-end="10491" vertical-scroll-proportion="0.0" vertical-offset="3897" max-vertical-offset="4890">
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TankClient.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="12105">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="launchLoginServer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/launchLoginServer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="23" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="210">
-              <folding />
+            <state line="100" column="30" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.7714286" vertical-offset="1095" max-vertical-offset="12105">
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +54,25 @@
       <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="1710">
+            <state line="76" column="32" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1710">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="0" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectATank.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="267" column="30" selection-start="8661" selection-end="8661" vertical-scroll-proportion="0.0" vertical-offset="3854" max-vertical-offset="5940">
               <folding />
             </state>
           </provider>
@@ -121,13 +132,13 @@
         <option value="$PROJECT_DIR$/Server/Errors.py" />
         <option value="$PROJECT_DIR$/Server/messages.py" />
         <option value="$PROJECT_DIR$/Server/ServerSetupForm.py" />
-        <option value="$PROJECT_DIR$/Client/SelectATank.py" />
         <option value="$PROJECT_DIR$/Server/launchLoginServer.py" />
-        <option value="$PROJECT_DIR$/Server/game_calcs.py" />
-        <option value="$PROJECT_DIR$/Client/TankClient.py" />
-        <option value="$PROJECT_DIR$/Client/game_calcs.py" />
         <option value="$PROJECT_DIR$/Client/login.py" />
+        <option value="$PROJECT_DIR$/Client/game_calcs.py" />
+        <option value="$PROJECT_DIR$/Client/SelectATank.py" />
+        <option value="$PROJECT_DIR$/Server/game_calcs.py" />
         <option value="$PROJECT_DIR$/Server/Server.py" />
+        <option value="$PROJECT_DIR$/Client/TankClient.py" />
       </list>
     </option>
   </component>
@@ -192,7 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -595,44 +606,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19838946" sideWeight="0.56905156" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.56905156" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19838946" sideWeight="0.4292845" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29537955" sideWeight="0.35944363" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.4292845" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29537955" sideWeight="0.35944363" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29581994" sideWeight="0.6405564" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31672025" sideWeight="0.35871157" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24743778" sideWeight="0.68327975" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672025" sideWeight="0.64128846" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -702,33 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/games.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="521" column="8" selection-start="17487" selection-end="17487" vertical-scroll-proportion="0.3321234" vertical-offset="7587" max-vertical-offset="13560" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="16" selection-start="2070" selection-end="2070" vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/launchLoginServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="23" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="12105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="1710">
+        <state line="521" column="8" selection-start="17487" selection-end="17487" vertical-scroll-proportion="0.3321234" vertical-offset="7587" max-vertical-offset="13560">
           <folding />
         </state>
       </provider>
@@ -761,17 +726,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+    <entry file="file://$PROJECT_DIR$/Server/launchLoginServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="57" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.57793343" vertical-offset="555" max-vertical-offset="5880">
+        <state line="4" column="23" selection-start="66" selection-end="66" vertical-scroll-proportion="0.10507881" vertical-offset="0" max-vertical-offset="571">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="19" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.45878136" vertical-offset="434" max-vertical-offset="4710">
+        <state line="293" column="37" selection-start="10491" selection-end="10491" vertical-scroll-proportion="0.0" vertical-offset="3897" max-vertical-offset="4890">
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="267" column="30" selection-start="8661" selection-end="8661" vertical-scroll-proportion="0.0" vertical-offset="3854" max-vertical-offset="5940">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="32" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="30" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.7714286" vertical-offset="1095" max-vertical-offset="12105">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

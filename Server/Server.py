@@ -31,15 +31,15 @@ class Player():
         self.turret_angle = self.angle
     def returnValues(self):
         return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name, self.hp, self.username, self.team]
-    
+
     def set(self,  data):
         self.x = data[0]
         self.y = data[1]
         self.angle = data[2]
         self.turret_angle = data[3]
         self.hp = data[4]
-        
-    
+
+
 class Bullet():
     def __init__(self,  x,  y,  angle,  ownerId,  damage,  bulletID, penetration):
         self.x = x
@@ -50,16 +50,16 @@ class Bullet():
         self.damage = damage
         self.bulletID = bulletID
         self.penetration = penetration
-    def update(self):
-        self.x += 2*math.cos(math.radians(self.angle))
-        self.y += 2*math.sin(math.radians(self.angle))
+    def update(self, deltaT):
+        self.x += 6*math.cos(math.radians(self.angle))*deltaT
+        self.y += 6*math.sin(math.radians(self.angle))*deltaT
         if (self.x < -100 or
             self.y < -100 or
             self.x > 1124 or
             self.y > 880):
                 self.ded = True
-            
-        
+
+
     def returnValues(self):
         return [self.x,  self.y,  self.angle,  self.ownerId,  self.damage,  self.ded,  self.bulletID, self.penetration]
 
@@ -90,20 +90,25 @@ class TankServer(SocketServer.BaseRequestHandler):
         self.cur = cur
     def handle(self):
         """Do something with the request"""
+        try:
+            assert(TankServer.updating)
+        except AssertionError:
+            TankServer.updating = threading.Thread(target=TankServer.serverUpdatingThread()).start()
+            TankServer.lastTime = time.time()
         #print "New player has connected"
         while TankServer.GameInProgress:
             #print "HANDLING"
             #Get the data from the socket
             recv = self.request.recv(2048)
-	    #print "RECV: " + str(recv)
-	    if TankServer.killNextLoop:
-		self.endGame()
+            #print "RECV: " + str(recv)
+            if TankServer.killNextLoop:
+                self.endGame()
             if recv == '':
                 break
             self.data = pickle.loads(recv)
-		#Check what sort of request it is
+            #Check what sort of request it is
             if type(self.data[0]) == type("TopKek"):
-		#print "Recieved string request. Processing..."
+            #print "Recieved string request. Processing..."
                 self.toSend = self.stringRequest(self.data)
             else:
                 self.toSend = self.listRequest(self.data)
@@ -128,12 +133,21 @@ class TankServer(SocketServer.BaseRequestHandler):
                 f.close()
                 #print "FILE WRITTEN"
                 TankServer.toClose = True
-		#print "Set to close"
-                #a=threading.currentThread()
-                #a._Thread__stop()
         except Exception as ex:
             print str(ex)
 
+    def serverUpdatingThread(self):
+        while True:
+            for b in TankServer.Bullets:
+                if self.isCollidedWithMap(b):
+                    #b.ded = True
+                    None
+                else:
+                    b.update(getDeltaT(TankServer.lastTime, time.time()))
+                    if b.ded:
+                        TankServer.Bullets.remove(b)
+            TankServer.lastTime = time.time()
+            time.sleep(0.05)
 
     def finish(self):
         #print "FINISH"
@@ -179,7 +193,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                 self.endGame()
         else:
             return "InvalidCommand"
-            
+
     def listRequest(self,  req):
         """Redirect method for requests in the form of a list"""
         return self.get(req)
@@ -210,7 +224,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         self.v = [[x.returnValues() for x in TankServer.Players]]
         self.v.append([y.returnValues() for y in TankServer.Bullets])
         return self.v
-        
+
     def doHandshake(self,  name, hp, username):
         """Add the new player to arrays and get going"""
 
@@ -235,7 +249,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         """Initial return value"""
 
         return [x.returnValues() for x in TankServer.Players]
-        
+
     def get(self, req):
         """Acts as a 'getter', returns every other player's information and sends it in a handy list"""
 
@@ -251,15 +265,6 @@ class TankServer(SocketServer.BaseRequestHandler):
                 if b.bulletID == i:
                     TankServer.Bullets.remove(b)
 
-        for b in TankServer.Bullets:
-            if self.isCollidedWithMap(b):
-                #b.ded = True
-                None
-            else:
-                b.update()
-                if b.ded:
-                    TankServer.Bullets.remove(b)
-       
         #Create a new bullet from x, y, angle information
         if len(req[2]) > 0:
             TankServer.Bullets.append(Bullet(req[2][0],  req[2][1],  req[2][2],  req[2][3],  req[2][4],  TankServer.NextBulletId, req[2][5]))
@@ -294,8 +299,8 @@ class TankServer(SocketServer.BaseRequestHandler):
                         if newHp <= 0:
                             player.kills += 1
                             player.xpGained += 200
-        
-                
+
+
         return self.convertToList()
 
     def isCollidedWithMap(self, b):

@@ -268,8 +268,9 @@ class Main(selectGui.MainFrame):
             except error as e:
                 #TankClient.setupEnv()
                 print str(e)
-            except games.GamesError:
+            except games.GamesError as ex:
                 games.screen.quit()
+                print "Error with pygame: " + str(ex)
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 
@@ -291,6 +292,9 @@ class Main(selectGui.MainFrame):
                                   damage) + " Kills: " + str(kills),
                               "DEFEAT")
             self.Show = False
+            del(a)
+            quit()
+
             #except Exception as e:
             #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
             #    sys.exit()
