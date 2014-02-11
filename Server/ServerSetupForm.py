@@ -120,7 +120,16 @@ class serverForm(ServerGui.Mainframe):
 		self.toClose = True
 		break
 	#print "Exiting monitor thread"
-        
+
+    def updateTheBulletsThread(self):
+        import time
+        timeLast = time.time()
+        while True:
+            for b in Server.TankServer.Bullets:
+                b.update(time.time() - timeLast)
+            timeLast = time.time()
+            time.sleep(0.02)
+
     def startServerThread(self):
         HOST = self.ipBox.Value
         PORT = int(self.portBox.Value)
@@ -130,14 +139,16 @@ class serverForm(ServerGui.Mainframe):
             messages.ServerRun(self.parent)
             self.server = SocketServer.ThreadingTCPServer((HOST,PORT), Server.TankServer)
             self.endEvent = threading.Event()
-	    self.server.timeout = 3
+            self.server.timeout = 3
             Server.TankServer.Event = self.endEvent
             print ("Server running on "+str(HOST)+":"+str(PORT))
             self.watch = threading.Thread(target=self.watchTheServerIntently)
-	    #print "Created thread"
-	    self.watch.start()
-	    #print "Started monitoring thread. Starting server."
-	    self.beginTheSatanHailing()
+            self.updater = threading.Thread(target=self.updateTheBulletsThread)
+            #print "Created thread"
+            self.watch.start()
+            self.updater.start()
+            #print "Started monitoring thread. Starting server."
+            self.beginTheSatanHailing()
             try:
                 #messages.ServerRun(self.parent)
                 print "Closing server"

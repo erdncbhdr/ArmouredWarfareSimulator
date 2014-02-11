@@ -68,12 +68,9 @@ def getAngleOfIntersection(vecA, vecB):
     try:
         #Set numerator and denom
         num = vecA.dotProduct(vecB)
-        if num < 0:
-            ang =  270
-        else:
-            denom = vecA.getMagnitude() * vecB.getMagnitude()
-            #Angle is cos-1(A,B / |A||B|)
-            ang = math.degrees(math.acos(num / denom))
+        denom = vecA.getMagnitude() * vecB.getMagnitude()
+        #Angle is cos-1(A,B / |A||B|)
+        ang = math.degrees(math.acos(num / denom))
         print "NUM: " + str(num)
         print "DENOM: " + str(denom)
         #if ang > 90 and ang <= 180:
@@ -88,7 +85,7 @@ def getPoints(x1, y1, x2, y2):
     try:
         angle = math.atan2(y2 - y1, x2 - x1)
         values = []
-        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 15):
+        for x in range(1, int(math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)) + 5):
             values.append([int(x1 + x * math.cos(angle)), int(y1 + x * math.sin(angle))])
         return values
     except Exception as ex:
