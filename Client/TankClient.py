@@ -757,6 +757,7 @@ class GameController(games.Sprite):
             games.Screen.quit()
         except Exception:
             games.screen.quit()
+        games.screen.background = games.load_image("res/notinprogress.png")
         raise EndOfGame(str(stats))
 
 
