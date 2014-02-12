@@ -445,7 +445,6 @@ class GameController(games.Sprite):
     def close(self, exception):
         games.screen.clear()
         games.screen.quit()
-        quit()
         raise exception
 
     def update(self):
@@ -755,8 +754,10 @@ class GameController(games.Sprite):
         self.connection.close()
         #print "Connection to server closed"
         games.screen.clear()
-        games.screen.quit()
-        quit()
+        try:
+            games.Screen.quit()
+        except Exception:
+            games.screen.quit()
         raise EndOfGame(str(stats))
 
 
@@ -787,7 +788,6 @@ def mainGame(instance):
 
         #Start the game
         games.screen.mainloop()
-        quit()
     #Exceptions - can communicate with the login client
     except GameInProgressException as message:
         return message

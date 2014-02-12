@@ -292,8 +292,8 @@ class Main(selectGui.MainFrame):
                                   damage) + " Kills: " + str(kills),
                               "DEFEAT")
             self.Show = False
-            del(a)
-            quit()
+            #del(a)
+            #quit()
 
             #except Exception as e:
             #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))

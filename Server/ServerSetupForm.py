@@ -128,7 +128,7 @@ class serverForm(ServerGui.Mainframe):
             for b in Server.TankServer.Bullets:
                 b.update(time.time() - timeLast)
             timeLast = time.time()
-            time.sleep(0.02)
+            time.sleep(0.05)
 
     def startServerThread(self):
         HOST = self.ipBox.Value

@@ -332,7 +332,8 @@ class Screen(object):
             self.handle_events()
 
             # Throw away any pending events.
-        pygame.event.get()
+            pygame.event.get()
+        pygame.quit()
 
     def _wait_frame(self):
         "Wait for the correct fps time to expire"
