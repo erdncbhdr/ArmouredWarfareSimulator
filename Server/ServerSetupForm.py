@@ -154,6 +154,7 @@ class serverForm(ServerGui.Mainframe):
                 print "Closing server"
                 Server.TankServer.toClose = False
                 #print "Set to close"
+                self.toClose = False
                 self.Show(True)
                 #print "Shown"
                 #print "Server stopped"

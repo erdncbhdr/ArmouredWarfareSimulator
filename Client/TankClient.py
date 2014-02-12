@@ -226,8 +226,8 @@ class LocalPlayer(games.Sprite):
             self.turret.canMove = False
 
     def getBulletVector(self):
-        return Vector(self.x, self.y, self.x - math.cos(math.toRadians(self.angle)) * 5,
-                      self.y - math.sin(math.toRadians(self.angle)) * 5)
+        return Vector(self.x, self.y, self.x + math.cos(math.toRadians(self.angle)) * 5,
+                      self.y + math.sin(math.toRadians(self.angle)) * 5)
 
 
     def getBulletValues(self):
@@ -656,7 +656,6 @@ class GameController(games.Sprite):
             if self.vectorsIntersect(v, bullet.getVector()):
                 noVectorIntersects = False
                 angle = getAngleOfIntersection(bullet.getVector(), v)
-                print "THE CLIENTSIDE AoI = " + str(angle)
                 if self.doesPenetrate(angle, bullet):
                     #Damage tank accordingly and despawn the bullet
                     self.client.hp -= bullet.damage
