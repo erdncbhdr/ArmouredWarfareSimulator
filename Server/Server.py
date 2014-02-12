@@ -147,7 +147,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     def finish(self):
         #print "FINISH"
 	    TankServer.connected -= 1
-	#print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
+        #print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
         #return "TOPLEL"
 
     def getVictor(self):
@@ -252,8 +252,8 @@ class TankServer(SocketServer.BaseRequestHandler):
         #Check if the player is dead
         if TankServer.Players[req[0]].hp == 0:
             TankServer.DeadPlayers += 1
-            if self.isEndOfGame():
-                TankServer.killNextLoop=True
+        if self.isEndOfGame() and TankServer.Countdown <= 0:
+            TankServer.killNextLoop=True
         #Update the bullets if ID 0 is connected
         for i in req[3]:
             for b in TankServer.Bullets:

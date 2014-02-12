@@ -291,7 +291,7 @@ class Main(selectGui.MainFrame):
                               "You have been defeated...\nYou recieved: " + str(xp) + " xp\nDamage dealt: " + str(
                                   damage) + " Kills: " + str(kills),
                               "DEFEAT")
-            self.Show = False
+            #self.Show(False)
             #del(a)
             #quit()
 
