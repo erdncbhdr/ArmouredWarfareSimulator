@@ -595,7 +595,7 @@ class GameController(games.Sprite):
         self.toRebound = []
 
         #Check for building collisions
-        self.checkBuildings(self.bullets)
+        #self.checkBuildings(self.bullets)
 
         #These are the bullets currently spawned by the server and their IDS
         currentIDs = [b.bulletID for b in self.bullets]

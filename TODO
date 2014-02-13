@@ -1,3 +1,4 @@
+========== FINISHED =============
 1. Fix timer position - DONE
 2. Fix house collision model - DONE
 3. Fix bullet ricochet angle - DONE
@@ -7,5 +8,11 @@
 	Likely to do with vector intersect methods
 7. Fix kill number - DONE
 8. Fix house alpha - DONE
-9. Add display to screen when not in game
-10. Fix "bool not callable" on self.Show(True)
+9. Add display to screen when not in game - DONE
+10. Fix "bool not callable" on self.Show(True) - DONE
+
+========= STILL TODO ==========
+
+11. Fix bullet lag on fire 
+(likely clientside loops) - FOUND 
+PLACE

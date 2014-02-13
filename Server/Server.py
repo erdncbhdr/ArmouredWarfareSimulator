@@ -58,8 +58,7 @@ class Bullet():
             self.x > 1124 or
             self.y > 880):
                 self.ded = True
-            
-        
+
     def returnValues(self):
         return [self.x,  self.y,  self.angle,  self.ownerId,  self.damage,  self.ded,  self.bulletID, self.penetration]
 
@@ -137,8 +136,7 @@ class TankServer(SocketServer.BaseRequestHandler):
     def serverUpdatingThread(self):
         for b in TankServer.Bullets:
             if self.isCollidedWithMap(b):
-                #b.ded = True
-                None
+                b.ded = True
             else:
                 b.update()
                 if b.ded:
@@ -298,9 +296,23 @@ class TankServer(SocketServer.BaseRequestHandler):
                 
         return self.convertToList()
 
+    def getBuildingRanges(self):
+        buildingRanges = []
+        map = TankServer.Map
+        for block in map:
+            yield [((block[0] * 100) - 100, (block[0] * 100), ((block[1] * 100) - 100, (block[1] * 100)]
+
+
     def isCollidedWithMap(self, b):
         """Self-explanatory, returns true if the bullet is collided with terrain"""
+        q = self.getBuildingRanges()
+        while True:
+            a = q.next()
+            if b.x > a[0][0] and b.x < a[0][1]:
+                if b.y > a[1][0] and b.y < a[1][1]:
+                    return True
         return False
+
 
     def endGame(self):
         TankServer.Countdown = 3
