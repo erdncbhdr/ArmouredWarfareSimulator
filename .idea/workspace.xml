@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2f20ff-9a59-41ea-ae5e-e39f86205b6b" name="Default" comment="Startin">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/LoginDatabase" afterPath="$PROJECT_DIR$/Server/LoginDatabase" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="103" selection-start="10869" selection-end="10869" vertical-scroll-proportion="0.242" vertical-offset="4409" max-vertical-offset="5010">
+            <state line="302" column="105" selection-start="10871" selection-end="10871" vertical-scroll-proportion="0.17073171" vertical-offset="4439" max-vertical-offset="5010">
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -42,7 +41,7 @@
       <file leaf-file-name="mapGen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="630">
+            <state line="36" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -51,7 +50,7 @@
       <file leaf-file-name="ServerSetupForm.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="27" selection-start="5923" selection-end="5923" vertical-scroll-proportion="0.0" vertical-offset="2529" max-vertical-offset="3075">
+            <state line="181" column="27" selection-start="5923" selection-end="5923" vertical-scroll-proportion="0.0" vertical-offset="2715" max-vertical-offset="3195">
               <folding />
             </state>
           </provider>
@@ -60,7 +59,7 @@
       <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="597" column="9" selection-start="24070" selection-end="24070" vertical-scroll-proportion="-5.030303" vertical-offset="8639" max-vertical-offset="11955">
+            <state line="597" column="9" selection-start="24070" selection-end="24070" vertical-scroll-proportion="0.0" vertical-offset="8955" max-vertical-offset="12105">
               <folding />
             </state>
           </provider>
@@ -87,7 +86,7 @@
       <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1410">
+            <state line="43" column="0" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1410">
               <folding />
             </state>
           </provider>
@@ -237,12 +236,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -627,13 +626,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1368" height="731" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.56905156" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.56905156" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.4292845" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29450914" sideWeight="0.35944363" order="8" side_tool="true" content_ui="tabs" />
@@ -774,14 +773,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="597" column="9" selection-start="24070" selection-end="24070" vertical-scroll-proportion="-5.030303" vertical-offset="8639" max-vertical-offset="11955">
+        <state line="597" column="9" selection-start="24070" selection-end="24070" vertical-scroll-proportion="0.0" vertical-offset="8955" max-vertical-offset="12105">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="103" selection-start="10869" selection-end="10869" vertical-scroll-proportion="0.242" vertical-offset="4409" max-vertical-offset="5010">
+        <state line="302" column="105" selection-start="10871" selection-end="10871" vertical-scroll-proportion="0.17073171" vertical-offset="4439" max-vertical-offset="5010">
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

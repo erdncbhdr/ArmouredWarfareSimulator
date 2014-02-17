@@ -300,7 +300,7 @@ class TankServer(SocketServer.BaseRequestHandler):
         buildingRanges = []
         map = TankServer.Map
         for block in map:
-            yield [((block[0] * 100) - 100, (block[0] * 100), ((block[1] * 100) - 100, (block[1] * 100)]
+            yield [((block[0] * 100) - 100, (block[0] * 100)), ((block[1] * 100) - 100, (block[1] * 100))]
 
 
     def isCollidedWithMap(self, b):
