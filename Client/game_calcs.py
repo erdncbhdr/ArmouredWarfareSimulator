@@ -3,12 +3,14 @@ import math
 
 
 class Point():
+    """A class to define a point in 2D space"""
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
 
 class Vector():
+    """A class to define a vector using 2 points"""
     def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
         self.x2 = x2
@@ -71,11 +73,6 @@ def getAngleOfIntersection(vecA, vecB):
         denom = vecA.getMagnitude() * vecB.getMagnitude()
         #Angle is cos-1(A,B / |A||B|)
         ang = math.degrees(math.acos(num / denom))
-        print "NUM: " + str(num)
-        print "DENOM: " + str(denom)
-        #if ang > 90 and ang <= 180:
-        #    diff = ang - 90
-        #    ang = 90 - diff
         return ang
     except Exception as ex:
         print "Exception in getangleofintersection: " + str(ex)

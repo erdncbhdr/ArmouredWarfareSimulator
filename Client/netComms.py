@@ -5,6 +5,7 @@ from Errors import *
 
 class networkComms():
     def __init__(self, ip, port):
+	"""Open a connection with the server"""
         self.ip = ip
         self.port = port
 
@@ -18,7 +19,8 @@ class networkComms():
         self.lastRetries = 0
 
     def send(self, message):
-        """Dial the 9th circle of hell and ask for lucifer to process our request"""
+	"""Send a specified message to the server (pickled)"""
+        #"""Dial the 9th circle of hell and ask for lucifer to process our request"""
         #print "SEND: " + message
         self.toSend = pickle.dumps(message)
         try:
@@ -41,6 +43,7 @@ class networkComms():
                 raise HostDisconnectedException()
 
     def close(self):
+	"""Close the active connection"""
         #print "CLOSING CONNECTION"
         self.sock.close()
         del self.sock

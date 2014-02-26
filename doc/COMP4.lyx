@@ -3192,6 +3192,12 @@ A large part of my game revolves around armour penetration mechanics, I.E
 \end_layout
 
 \begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def2.1"
+
+\end_inset
+
 Henceforth, 
 \series bold
 A.B 
@@ -4037,7 +4043,130 @@ updateAllSettings.py
 \end_layout
 
 \begin_layout Standard
-The data in my system is stored in a sqlite3 database - the 
+The data in my system is stored in 2 sqlite3 databases, one is clientside
+ and holds the base tank statistics and the other is serverside, holding
+ all user information and progress made.
+\end_layout
+
+\begin_layout Subsection
+A sample algorithm
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def getAngleOfIntersection(vecA, vecB):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """a dot b / mag(a) mag(b)"""
+\end_layout
+
+\begin_layout Plain Layout
+
+    try:
+\end_layout
+
+\begin_layout Plain Layout
+
+        # Set numerator and denom
+\end_layout
+
+\begin_layout Plain Layout
+
+        num = vecA.dotProduct(vecB) 
+\end_layout
+
+\begin_layout Plain Layout
+
+        denom = vecA.getMagnitude() * vecB.getMagnitude()
+\end_layout
+
+\begin_layout Plain Layout
+
+        # Angle is cos-1(A,B / |A||B|)
+\end_layout
+
+\begin_layout Plain Layout
+
+        ang = math.degrees(math.acos(num / denom))
+\end_layout
+
+\begin_layout Plain Layout
+
+        return ang
+\end_layout
+
+\begin_layout Plain Layout
+
+    except Exception as ex:
+\end_layout
+
+\begin_layout Plain Layout
+
+        print "Exception in getangleofintersection: " + str(ex)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Line by line explanation of the algorithm
+\end_layout
+
+\begin_layout Standard
+1.
+ Define algorithm getAngleOfIntersection, taking parameters vector A and
+ vector B
+\end_layout
+
+\begin_layout Standard
+2.
+ The documentation for the algorithm, describes the use.
+\end_layout
+
+\begin_layout Standard
+3.
+ Try the below code and check for errors
+\end_layout
+
+\begin_layout Standard
+4.
+ Set num to be the dot product of vector A and vector B (See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Def2.1"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+5.
+ Set denom to be the magnitude of A multiplied by the magnitude of B
+\end_layout
+
+\begin_layout Standard
+6.
+ Comment explaining that the angle is the inverse cosine of num/denom
+\end_layout
+
+\begin_layout Standard
+7.
+ Calculate the angle of intersection
+\end_layout
+
+\begin_layout Standard
+8.
+ Return the result.
 \end_layout
 
 \begin_layout Bibliography

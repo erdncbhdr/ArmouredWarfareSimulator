@@ -22,12 +22,8 @@ except Exception as ex:
     games.init(screen_width=1024, screen_height=768, fps=30)
 
 
-def setupEnv():
-    reload(games)
-    games.init(screen_width=1024, screen_height=768, fps=30)
-
-
 class superSquare(games.Sprite):
+    """A generic square class"""
     def __init__(self, enemy, x, y):
         if enemy:
             image = games.load_image("res/Enemy.png")
@@ -69,6 +65,7 @@ class Player(games.Sprite):
         #print "HP: "+str(self.hp)
 
     def update(self):
+	"""A method to update the tank"""
         self.nametag.value = self.name + " " + str(int(self.hp))
         if int(self.hp) < int(self.maxHp) / 2 and self.state == 0:
             self.image = games.load_image("res/" + self.name + "_body_damaged.png")
@@ -79,6 +76,7 @@ class Player(games.Sprite):
 
 
 class Turret(games.Sprite):
+    """A class to create a turret"""
     def __init__(self, x, y, angle, name):
         image = games.load_image("res/" + name + "_turret.png")
         super(Turret, self).__init__(image=image, x=x, y=y, angle=angle)
@@ -86,6 +84,7 @@ class Turret(games.Sprite):
 
 
 class Bullet(games.Sprite):
+   """A class to create a bullet"""
     image = games.load_image("res/Bullet_Sprite.png")
 
     def __init__(self, x, y, angle, ownerId, damage, bulletID, penetration):
@@ -97,22 +96,27 @@ class Bullet(games.Sprite):
         self.penetration = penetration
 
     def getBulletVector(self):
+        """Returns the ballistic vector for this bullet"""
         return Vector(self.x, self.y, self.x + math.cos(math.radians(self.angle)) * 3,
                       self.y + math.sin(math.radians(self.angle)) * 3)
 
     def getx1x2(self):
+	"""Returns the endpoints of the vector"""
         return self.x, self.y, self.x + 5 * math.cos(math.radians(self.angle)), self.y + 5 * math.sin(
             math.radians(self.angle))
 
     def returnValues(self):
+	"""Returns the attributes of the bullet"""
         return [self.x, self.y, self.angle, self.ownerId, self.damage, self.bulletID, self.penetration]
 
     def getVector(self):
+	"""Another method to get the ballistic vector"""
         x1, y1, x2, y2 = self.getx1x2()
         return Vector(x1, y1, x2, y2)
 
 
 class LocalPlayer(games.Sprite):
+    """A class to handle the users tank - takes key input"""
     def __init__(self, x, y, angle, turret, speed, hull_traverse, hp, reload, armour, name, id, damage, penetration,
                  username, team):
         image = games.load_image("res/" + str(name) + "_body.png")
@@ -154,6 +158,7 @@ class LocalPlayer(games.Sprite):
         games.screen.add(self.nametag)
 
     def update(self):
+	"""Checks for user input and updates the client"""
         #Check for keyboard input
         if self.canMove:
             self.last_x = self.x
@@ -231,6 +236,7 @@ class LocalPlayer(games.Sprite):
 
 
     def getBulletValues(self):
+	"""Returns the values of the bullet to spawn"""
         try:
             #print "bullets: "+str(self.newBullets)
             self.va = [self.newBullets.x, self.newBullets.y, self.newBullets.angle, self.newBullets.ownerId,
@@ -242,13 +248,16 @@ class LocalPlayer(games.Sprite):
             return []
 
     def getBulletOffsetX(self):
+	"""Get the offset for the bullet, making it spawn at the gun muzzle"""
         return ((0.5 * self.turret.get_width()) * math.cos(math.radians(self.turret.angle)))
 
     def getBulletOffsetY(self):
+	"""Get the offset for the bullet, making it spawn at the gun muzzle"""
         return ((0.5 * self.turret.get_height()) * math.sin(math.radians(self.turret.angle)))
 
 
 class LocalTurret(games.Sprite):
+    """A class to handle the local turrets rotation"""
     def __init__(self, x, y, angle, turret_traverse, name):
         image = games.load_image("res/" + name + "_turret.png")
         super(LocalTurret, self).__init__(image=image, x=x, y=y, angle=angle)
@@ -257,6 +266,7 @@ class LocalTurret(games.Sprite):
         self.turret_traverse = turret_traverse
 
     def update(self):
+	"""Checks user input and rotates"""
         if self.canMove:
             if games.keyboard.is_pressed(games.K_LEFT):
                 self.angle -= self.turret_traverse
@@ -266,6 +276,7 @@ class LocalTurret(games.Sprite):
 
 
 class Building(games.Sprite):
+    """A class to handle the on-screen buildings and collisions with them"""
     def __init__(self, x, y, size):
         if size == 1:
             image = games.load_image("res/singleBuilding.png")
@@ -275,6 +286,7 @@ class Building(games.Sprite):
         self.setBounds(x, y, self.get_width(), self.get_height())
 
     def setBounds(self, x, y, width, height):
+	"""Sets the bounding vectors of the building"""
         TopLeft = [self.x, self.y]
         TopRight = [self.x + width, self.y]
         BottomLeft = [self.x, self.y + height]
@@ -286,6 +298,7 @@ class Building(games.Sprite):
         self.myVectors = [TopSide, LeftSide, RightSide, BottomSide]
 
     def isCollided(self, b):
+	"""Checks if a vector collides with this building"""
         vec = b.getVector()
         for v in self.myVectors:
             if intersect(v, vec):
@@ -294,12 +307,16 @@ class Building(games.Sprite):
 
 
 class GameController(games.Sprite):
-    """This is the main class-  it will col all network comms and update the players as required"""
+    """This is the main class-  it will control all network comms and update the players as required"""
 
     image = games.load_image("res/conn.jpg")
 
     def __init__(self, stats, host, port, username):
         super(GameController, self).__init__(image=GameController.image, x=0, y=0, angle=0)
+	self.setupGame(stats, host, port, username)
+
+    def setupGame(self,stats, host, port, username):
+	"""A method to load in all resources and set the game in motion"""
         #Create a connection
         self.connection = netComms.networkComms(host, int(port))
         self.stats = stats
@@ -406,6 +423,7 @@ class GameController(games.Sprite):
             #Ok we cool
 
     def drawMap(self, map):
+	"""Read in the map and render buildings"""
         #print "MAP: "+str(map)
         width = games.screen.get_width()
         height = games.screen.get_height()
@@ -422,6 +440,7 @@ class GameController(games.Sprite):
         self.setBuildingVectors(self.buildings)
 
     def countingDown(self):
+	"""Start the pre-match countdown on-screen"""
         import random, time
 
         if self.client.name == "KV1" or self.client.name == "T34":
@@ -443,11 +462,13 @@ class GameController(games.Sprite):
         self.client.turret.canMove = True
 
     def close(self, exception):
+	"""Close the game"""
         games.screen.clear()
         games.screen.quit()
         raise exception
 
     def update(self):
+	"""Updates all local entities"""
         if games.keyboard.is_pressed(games.K_ESCAPE):
             self.connection.send("Disconnect")
             games.screen.quit()
@@ -466,7 +487,7 @@ class GameController(games.Sprite):
 
 
     def doUpdating(self):
-        #This occurs on every gameloop, gonna update the local client and send some data
+        """This occurs on every gameloop, updates the local client and sends data to server"""
         #Give the server my position
         try:
             self.connection.send([self.id,
@@ -575,6 +596,7 @@ class GameController(games.Sprite):
 
 
     def setBuildingVectors(self, buildings):
+	"""resets all building bounding vectors"""
         self.buildingVectors = []
         for b in buildings:
             #Offset vectors by half height and half width
@@ -628,13 +650,14 @@ class GameController(games.Sprite):
 
 
     def dotProduct(self, vA, vB):
+	"""Works out the scalar product of 2 vectors"""
         xComp = vA[0] * vB[0]
         yComp = vA[1] * vB[1]
         return xComp + yComp
 
 
     def checkBulletCollisions(self):
-        """A generic bullet collision method. Calls about a million other things"""
+        """A general bullet collision method to check vector intersection"""
 
         #Update the client's vectors
         self.setVectors()
@@ -687,7 +710,7 @@ class GameController(games.Sprite):
 
 
     def setVectors(self):
-        #This sets vectors around the edge of the image
+        """This sets vectors around the edge of the image"""
         ###DO NOT EDIT, MAGIC BE HERE###
         angle = math.radians(self.client.angle + 45)
         rect = self.client._rect
@@ -725,6 +748,7 @@ class GameController(games.Sprite):
 
 
     def resyncClient(self):
+	"""Reload all serverside variables"""
         games.screen.clear()
         games.screen.add(self.client)
         games.screen.add(self.clientTurret)
@@ -741,6 +765,7 @@ class GameController(games.Sprite):
 
 
     def checkBuildings(self, bul):
+	"""Check if the tank is collided with any buildings"""
         for b in bul:
             a = b.getBulletVector()
             for c in self.buildingVectors:
@@ -750,6 +775,7 @@ class GameController(games.Sprite):
 
 
     def endGame(self, stats):
+	"""Close the server connection and return to the tank selection screen"""
         self.connection.close()
         #print "Connection to server closed"
         games.screen.clear()

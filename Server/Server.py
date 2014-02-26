@@ -2,15 +2,14 @@ import SocketServer
 import pickle
 import threading
 import time
-import os
 
 from game_calcs import *
-from Errors import *
 import mapGen
 
 
 #Create a class to make things easier
 class Player():
+    """A class to easily track player instances"""
     def __init__(self,  x,  y,  id,  name,  hp, username):
         self.x = x
         self.y = y
@@ -30,9 +29,11 @@ class Player():
             self.team = 1
         self.turret_angle = self.angle
     def returnValues(self):
+        """Return player values in a list"""
         return [self.x,  self.y,  self.angle,  self.turret_angle,  self.name, self.hp, self.username, self.team]
     
     def set(self,  data):
+	"""Set all the players data"""
         self.x = data[0]
         self.y = data[1]
         self.angle = data[2]
@@ -41,6 +42,7 @@ class Player():
         
     
 class Bullet():
+    """A class to deal with tracking the bullets"""
     def __init__(self,  x,  y,  angle,  ownerId,  damage,  bulletID, penetration):
         self.x = x
         self.y =y
@@ -51,6 +53,7 @@ class Bullet():
         self.bulletID = bulletID
         self.penetration = penetration
     def update(self, deltaT):
+        """Update the bullet based on a time difference"""
         self.x += 120*math.cos(math.radians(self.angle))*deltaT
         self.y += 120*math.sin(math.radians(self.angle))*deltaT
         if (self.x < -100 or
@@ -63,8 +66,7 @@ class Bullet():
         return [self.x,  self.y,  self.angle,  self.ownerId,  self.damage,  self.ded,  self.bulletID, self.penetration]
 
 class TankServer(SocketServer.BaseRequestHandler):
-    """The main game server, executes requests given in string form and
-        responds with data or confirmation"""
+    """The main game server, executes requests given in string form and responds with data or confirmation"""
     #Temporary starting positions
     allow_reuse_address=True
     Event = None
@@ -134,6 +136,7 @@ class TankServer(SocketServer.BaseRequestHandler):
             print str(ex)
 
     def serverUpdatingThread(self):
+	"""A thread to keep the server up-to-date"""
         for b in TankServer.Bullets:
             if self.isCollidedWithMap(b):
                 b.ded = True
@@ -143,12 +146,14 @@ class TankServer(SocketServer.BaseRequestHandler):
                     TankServer.Bullets.remove(b)
 
     def finish(self):
+	"""End the request process"""
         #print "FINISH"
 	    TankServer.connected -= 1
         #print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
         #return "TOPLEL"
 
     def getVictor(self):
+	"""Count the players and see who won the game"""
         team0 = 0
         team1 = 0
         for p in TankServer.Players:
@@ -272,15 +277,12 @@ class TankServer(SocketServer.BaseRequestHandler):
                 angleOfBullet = bid[11]
                 anglePointingAway = (angleOfBullet + 180) % 360
                 angleToNormal = math.fabs((angleOfNormal - anglePointingAway) % 360)
-                #If the vectors are pointing the same way, don't collide
                 newAngle = (anglePointingAway + (2*angleToNormal)) % 360
                 for b in TankServer.Bullets:
                     if b.bulletID == id:
                         toEdit = b
                         toEdit.angle = newAngle
-                        #print "Bullet impact angle " + str(angleOfImpact) + " rebounded to angle " + str(newAngle) + " on nomal " + str(angleToNormal)
-                        print "BULLET IMPACT.\nImpact at: "+str(angleOfImpact)+"\nNew angle: "+str(newAngle)+"\nNormal was at: "+str(angleOfNormal)
-                        print "The angle to the normal was: "+str(angleToNormal)+"\nWith bullet angle "+str(angleOfBullet) +"("+str(anglePointingAway)+")"
+
         if len(req[5]) > 0:
             for item in req[5]:
                 newHp = req[1][4]

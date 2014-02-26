@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-import wx
 import threading
 import SocketServer
+import os
 import sys
+
+import wx
+
 import ServerGui
 import Server
 import loginServer
-import os
-import sys
+
 sys.path.append(os.getcwd())
 try:
     import wmi
@@ -25,16 +27,19 @@ import sqlite3
 import pickle
 
 class inProgress(ServerGui.FillerFrame):
+    """A window to appear to tell the user that the game is in progress"""
     def __init__(self, parent):
         ServerGui.FillerFrame.__init__(self, parent)
 
     def stopEvent( self, event ):
+	"""In case the user wants to cancel the startup at the last moment"""
         raise AHHHHHHHHHHH("NOOOOOOO")
         self.Show(False)
 
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+    """A wrapper to make the server thread"""
     pass
             
 class serverForm(ServerGui.Mainframe):
@@ -51,9 +56,11 @@ class serverForm(ServerGui.Mainframe):
 	self.toClose = False
 
     def loginThread(self):
+	"""A thread to start the login server"""
         loginServer.main()
 
     def getOperatingSystem(self):
+	"""Gets the OS of the server machine to bind to IP address"""
         try:
             self.testval = sys.winver
             #No exception thrown, we must be on windows
@@ -65,7 +72,10 @@ class serverForm(ServerGui.Mainframe):
             for ifaceName in netifaces.interfaces():
                 self.interfaceChoice.Append(ifaceName)
             return "Unix"
+
     def changeInterface(self,event):
+	"""Gets the IP of interface (i.e. wlan, ethernet etc)"""
+
         if self.opSys ==  "Unix":
             ints = netifaces.interfaces()
             selected_int = ints[self.interfaceChoice.GetCurrentSelection()]
@@ -78,6 +88,7 @@ class serverForm(ServerGui.Mainframe):
             self.ipBox.Value = ints[self.interfaceChoice.GetCurrentSelection()].IPAddress[0]
 
     def startServer(self,event):
+	"""Button press event to start the server"""
         self.statusLab.SetLabel("Game instance is running")
         self.startServerThread()
         try:
@@ -95,6 +106,7 @@ class serverForm(ServerGui.Mainframe):
             pass
         
     def stopServer(self,event):
+	"""Button press event to stop the server"""
         self.statusLab.SetLabel("No game instance running")
         try:
             del self.server
@@ -103,6 +115,7 @@ class serverForm(ServerGui.Mainframe):
             print ("Server not running")
 
     def beginTheSatanHailing(self):
+	"""Begin to handle requests"""
 	print "Beginning the server..."
         while not self.toClose:
 		#print self.toClose
@@ -113,6 +126,7 @@ class serverForm(ServerGui.Mainframe):
 	
     
     def watchTheServerIntently(self):
+	"""A thread to say if the server should stop"""
 	s = Server.TankServer
         while True:
             if s.connected == 0:
@@ -122,6 +136,7 @@ class serverForm(ServerGui.Mainframe):
 	#print "Exiting monitor thread"
 
     def updateTheBulletsThread(self):
+	"""A thread that will update all bullets every 0.05 seconds"""
         import time
         timeLast = time.time()
         while True:
@@ -131,6 +146,7 @@ class serverForm(ServerGui.Mainframe):
             time.sleep(0.05)
 
     def startServerThread(self):
+	"""A thread to handle the server"""
         HOST = self.ipBox.Value
         PORT = int(self.portBox.Value)
         ### Goddammit this is hard to get right ###
@@ -170,6 +186,7 @@ class serverForm(ServerGui.Mainframe):
 	    messages.Info(self.parent, "Port is not free, try again in a minute")
 
     def filler(self):
+	"""Confirm the start of the server"""
         app = wx.App(False)
         self.frame = inProgress(None)
         self.frame.Show(True)
@@ -178,6 +195,7 @@ class serverForm(ServerGui.Mainframe):
 
 
     def processEndOfGame(self, stats):
+	"""Take the end of game results and process them, send to main login server"""
         conn = sqlite3.Connection("LoginDatabase")
         cur = conn.cursor()
         #print "Running update on data: " + str(stats)
@@ -199,8 +217,8 @@ class serverForm(ServerGui.Mainframe):
         conn.close()
         os.remove("Stats.dat")
 
-
 def main():
+	"""Main method to run the server"""
 	app = wx.App(False)
 	frame = serverForm(None)
 	frame.Show(True)

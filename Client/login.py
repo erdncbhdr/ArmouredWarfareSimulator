@@ -21,11 +21,13 @@ def getConfiguration(conf, keyword):
 
 
 class NewAccountForm(loginGui.newAccount):
+    """A class to handle the account creation screen"""
     def __init__(self, parent):
         loginGui.newAccount.__init__(self, parent)
         self.parent = parent
 
     def createAccount(self, event):
+        """Asks the login server to add the account"""
         #Open the config
         try:
             r = open("login.conf", "r")
@@ -52,6 +54,7 @@ class NewAccountForm(loginGui.newAccount):
             messages.Warn(self.parent, "Please enter both a username and password to create an account")
 
     def process(self, message):
+	"""Processes the server response"""
         if message == "UsernameException":
             messages.Info(self.parent, "That username is in use. Please choose another.")
         if message == "LoginFailure":
@@ -64,6 +67,7 @@ class NewAccountForm(loginGui.newAccount):
 
 
 class LoginForm(loginGui.MainFrame):
+    """A class to handle the main login GUI"""
     def __init__(self, parent):
         loginGui.MainFrame.__init__(self, parent)
         self.parent = parent
@@ -72,7 +76,9 @@ class LoginForm(loginGui.MainFrame):
         self.a.play()
 
     def readConfig(self):
-        #the client will provide a configuration file
+	"""Reads the configuration file for ip address and port"""
+        
+	#the client will provide a configuration file
         try:
             r = open("login.conf", "r")
         except IOError:
@@ -86,6 +92,7 @@ class LoginForm(loginGui.MainFrame):
         r.close()
 
     def suchSending(self, event):
+	"""Send the login credentials to the server"""
         try:
             self.conn = netComms.networkComms(self.ipAddr, self.port)
             self.conn.send(["LOGIN", [self.userBox.Value.lower(), hashlib.sha1(self.passBox.Value).hexdigest()]])
@@ -99,6 +106,7 @@ class LoginForm(loginGui.MainFrame):
         self.process(recv)
 
     def soClear(self, event):
+	"""Clear the username/password boxes"""
         self.userBox.Value = ""
         self.passBox.Value = ""
 
@@ -121,6 +129,7 @@ class LoginForm(loginGui.MainFrame):
             self.loginComplete(message)
 
     def loginComplete(self, message):
+	"""Server has logged us in, proceed to next screen"""
         username = str(message[0])
         progressXPs = message[2:9]
         owned = message[10:]
@@ -137,6 +146,7 @@ class LoginForm(loginGui.MainFrame):
 
 
 def startLogin():
+    """The main method for starting the GUI"""
     app = wx.App(False)
     frame = LoginForm(None)
     frame.Show(True)

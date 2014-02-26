@@ -5,6 +5,7 @@ import sqlite3
 
 
 class LogServer(SocketServer.BaseRequestHandler):
+    """The main login server - handles all user account requests"""
     conn = sqlite3.Connection("LoginDatabase", check_same_thread=False)
     cur = conn.cursor()
     def handle(self):
@@ -38,7 +39,8 @@ class LogServer(SocketServer.BaseRequestHandler):
 		pass
 
     def buy(self, name, user, previousTank):
-        id = LogServer.cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [user]).fetchone()
+        """Add a tank to the users account"""
+	id = LogServer.cur.execute("SELECT UserId FROM UserInfo WHERE Username = ?", [user]).fetchone()
         #print "ID: "+str(id)
         LogServer.cur.execute("UPDATE UserOwned SET "+name+" = 1 WHERE UserId = ?", [id[0]])
         cost = LogServer.cur.execute("SELECT Cost FROM TankPrices WHERE TankName = ?", [name]).fetchone()
@@ -52,17 +54,20 @@ class LogServer(SocketServer.BaseRequestHandler):
         self.request.sendall(pickle.dumps("DONE"))
 
     def allXP(self, username):
+	"""Returns the amount of XP the user has earned on each tank"""
         xp = LogServer.cur.execute("SELECT * FROM UserProgress INNER JOIN UserInfo ON UserInfo.UserId = UserProgress.UserId WHERE"
                                    " UserInfo.Username = ?", [username]).fetchone()[1:]
         self.request.sendall(pickle.dumps(xp))
 
     def costs(self):
+	"""Return the amount that each tank costs"""
         cost = LogServer.cur.execute("SELECT Cost FROM TankPrices").fetchall()
         #print "cost: "+str(cost)
         cost = [x[0] for x in cost]
         self.request.sendall(pickle.dumps(cost))
 
     def login(self, dat):
+	"""Compare the users credentials to the database and login if they match"""
         #Check if these credentials are in the database
         if len(LogServer.cur.execute("""SELECT  UserInfo.UserName FROM UserInfo
                                         INNER JOIN UserPass ON UserInfo.UserId=UserPass.UserId
@@ -79,7 +84,8 @@ class LogServer(SocketServer.BaseRequestHandler):
             self.request.sendall(pickle.dumps("LoginFailure"))
         
     def create(self, dat):
-        print "DATA RECIEVED"
+	"""Add a new user to the database"""
+        #print "DATA RECIEVED"
         nextId = len(LogServer.cur.execute("SELECT Username FROM UserInfo").fetchall())+1
         if len(LogServer.cur.execute("SELECT * FROM UserInfo WHERE Username = ?", [dat[0]]).fetchall()) > 0:
             self.request.sendall(pickle.dumps("UsernameException"))
@@ -89,6 +95,7 @@ class LogServer(SocketServer.BaseRequestHandler):
             self.createNewAccount(dat)
 
     def get(self, username, tankname):
+	"""Get the stats on the tank requested by the user"""
         values = [username]
         #print "VALS: "+str(values)
         a = LogServer.cur.execute("""SELECT """+tankname+""" FROM UserUpgrades INNER JOIN UserInfo ON UserUpgrades.UserId = UserInfo.UserId
@@ -97,12 +104,14 @@ class LogServer(SocketServer.BaseRequestHandler):
         self.request.sendall(pickle.dumps(a[0][0][:-1]))
 
     def convertToString(self, lst):
+	"""Self-explanatory, converts a list to a string"""
         #print "LIST: "+str(lst)
         a = ""
         for b in lst:
             a += str(b) + ":"
         return a
     def createNewAccount(self, data):
+	"""insert all data into the database"""
         #Here be dragons
         self.openCloseConn()
         LogServer.cur.execute("INSERT INTO UserInfo VALUES (?, ?);", [data[2], data[0]])
@@ -124,21 +133,25 @@ class LogServer(SocketServer.BaseRequestHandler):
         self.request.sendall(pickle.dumps("COMPLETE"))
 
     def xp(self, user, tank):
+	"""Gets the users XP"""
         a = LogServer.cur.execute("""SELECT """+tank+ """ FROM UserProgress INNER JOIN UserInfo ON UserProgress.UserId =
                                     UserInfo.UserId WHERE UserInfo.Username=?""", [user]).fetchone()[0]
         #print str(a)
         self.request.sendall(pickle.dumps(a))
 
     def makeListSane(self, lst):
+	"""Make the list how I need it - all strings"""
         for i in range(len(lst)):
             lst[i] = str(lst[i][0])
 
     def openCloseConn(self):
+	"""Close and reopen the database connection"""
         LogServer.conn.close()
         LogServer.conn = sqlite3.Connection("LoginDatabase")
         LogServer.cur = LogServer.conn.cursor()
 
     def update(self, data):
+	"""Update all of the data in the database"""
         user = data[0]
         stats = data[1]
         newXp = data[2]
@@ -153,6 +166,7 @@ class LogServer(SocketServer.BaseRequestHandler):
         self.openCloseConn()
 
     def owned(self, username):
+	"""Return the tanks owned by the user"""
         owned = LogServer.cur.execute("SELECT * FROM UserOwned INNER JOIN UserInfo ON UserOwned.UserId = UserInfo.UserId WHERE "
                                       "UserInfo.Username = ?", [username]).fetchone()
         #print "OWNED: "+str(owned)
@@ -160,6 +174,7 @@ class LogServer(SocketServer.BaseRequestHandler):
 
 
 def getConfiguration(conf, keyword):
+    """Read the config and return the option asked for"""
     for a in conf:
         if keyword in a and "#" not in a:
             toRet = a.split("=")
@@ -167,6 +182,7 @@ def getConfiguration(conf, keyword):
             return toRet[1]
 
 def start():
+    """Start the login server"""
     try:
         r = open("login.conf", "r")
         config = r.read().split("\n")
@@ -184,12 +200,14 @@ def start():
 
 
 def main():
+    """Run this server from another file"""
     if getConfiguration("login.conf", "loginOnLaunch") == True:
     	import threading
     	a = threading.Thread(target=start)
     	a.start()
 
 def superMain():
+    """Run this server without checking the login server"""
     import threading
     a = threading.Thread(target=start)
     a.start()

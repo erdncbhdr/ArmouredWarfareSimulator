@@ -2276,6 +2276,16 @@ I have chosen to use Python with PyGame for the client and pure Python for
 Design
 \end_layout
 
+\begin_layout Standard
+In this section I shall outline my proposed system and its components, and
+ explain how I shall implement each part of the solution.
+\end_layout
+
+\begin_layout Standard
+I shall start with an overall system overview, then go into more depth on
+ the different parts of the system.
+\end_layout
+
 \begin_layout Subsection
 Overall System Design
 \end_layout
@@ -3182,6 +3192,12 @@ A large part of my game revolves around armour penetration mechanics, I.E
 \end_layout
 
 \begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def2.1"
+
+\end_inset
+
 Henceforth, 
 \series bold
 A.B 
@@ -3831,12 +3847,6 @@ Description of measures planned for systems security
 \end_layout
 
 \begin_layout Standard
-//Note: I'm assuming this is making the system only available to those who
- should have access to it.
- No idea what the textbook says.
-\end_layout
-
-\begin_layout Standard
 The client has specified that they would like user accounts, and as such
  these must be secure to avoid tampering.
  The user database will be stored on a central server with passwords hashed
@@ -3856,7 +3866,7 @@ s, meaning that any modification of local code will not affect the game
 Overall Test Strategy
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3992,6 +4002,151 @@ Client draws the game correctly - do the graphics appear the same on all
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+System Maintainance Document
+\end_layout
+
+\begin_layout Standard
+In this section I will overview how my system works, first generally, then
+ per-algorithm.
+\end_layout
+
+\begin_layout Subsection
+System Overview
+\end_layout
+
+\begin_layout Standard
+Armoured Warfare Simulator 2014 is an online multiplayer game that takes
+ simple shooting mechanics and turns them into a strategic game of angles.
+ It is run over a peer-to-peer network with anyone able to host a server
+ and start playing with their accounts which are handled on a unified login
+ server, keeping track of progress on each account.
+\end_layout
+
+\begin_layout Standard
+I have designed the system to only have trivial tasks for the end-user,
+ as this allows anyone to use the system.
+ The only non-trivial task in my program is the 
+\begin_inset Quotes eld
+\end_inset
+
+updateAllSettings.py
+\begin_inset Quotes erd
+\end_inset
+
+ script for moving login server location.
+ The client/server settings can be updated by entering the new login server
+ IP address (string) and the port (integer) into the terminal.
+ 
+\end_layout
+
+\begin_layout Standard
+The data in my system is stored in 2 sqlite3 databases, one is clientside
+ and holds the base tank statistics and the other is serverside, holding
+ all user information and progress made.
+\end_layout
+
+\begin_layout Subsection
+A sample algorithm
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def getAngleOfIntersection(vecA, vecB):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """a dot b / mag(a) mag(b)"""
+\end_layout
+
+\begin_layout Plain Layout
+
+    try:
+\end_layout
+
+\begin_layout Plain Layout
+
+        # Set numerator and denom
+\end_layout
+
+\begin_layout Plain Layout
+
+        num = vecA.dotProduct(vecB) 
+\end_layout
+
+\begin_layout Plain Layout
+
+        denom = vecA.getMagnitude() * vecB.getMagnitude()
+\end_layout
+
+\begin_layout Plain Layout
+
+        # Angle is cos-1(A,B / |A||B|)
+\end_layout
+
+\begin_layout Plain Layout
+
+        ang = math.degrees(math.acos(num / denom))
+\end_layout
+
+\begin_layout Plain Layout
+
+        return ang
+\end_layout
+
+\begin_layout Plain Layout
+
+    except Exception as ex:
+\end_layout
+
+\begin_layout Plain Layout
+
+        print "Exception in getangleofintersection: " + str(ex)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Line by line explanation of the algorithm
+\end_layout
+
+\begin_layout Standard
+1.
+ Define algorithm getAngleOfIntersection, taking parameters vector A and
+ vector B
+\end_layout
+
+\begin_layout Standard
+2.
+ The documentation for the algorithm, describes the use.
+\end_layout
+
+\begin_layout Standard
+3.
+ Try the below code and check for errors
+\end_layout
+
+\begin_layout Standard
+4.
+ Set num to be the dot product of vector A and vector B (See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Def2.1"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Bibliography
