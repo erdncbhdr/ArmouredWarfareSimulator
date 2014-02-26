@@ -1,0 +1,177 @@
+Functions in Client/Errors.py
+Functions in Client/game_calcs.py
+"""A class to define a point in 2D space"""
+"""A class to define a vector using 2 points"""
+def update(self, x1, y1, x2, y2):
+def useAngle(self, x1, y1, mag, angle):
+def add(self, vector):
+def getMagnitude(self):
+def getDx(self):
+def getDy(self):
+def dotProduct(self, vector):
+def collides(self, vector):
+getAngleOfIntersection(vecA, vecB):
+    """a dot b / mag(a) mag(b)"""
+getPoints(x1, y1, x2, y2):
+intersect(vectorA, vectorB):
+Functions in Client/login.py
+getConfiguration(conf, keyword):
+def createAccount(self, event):
+        """Asks the login server to add the account"""
+def process(self, message):
+	"""Processes the server response"""
+def readConfig(self):
+	"""Reads the configuration file for ip address and port"""
+def suchSending(self, event):
+	"""Send the login credentials to the server"""
+def soClear(self, event):
+	"""Clear the username/password boxes"""
+def doCreate(self, event):
+        """Start the creation window"""
+def process(self, message):
+	"""Processes the server response"""
+def loginComplete(self, message):
+	"""Server has logged us in, proceed to next screen"""
+startLogin():
+    """The main method for starting the GUI"""
+Functions in Client/main.py
+Functions in Client/messages.py
+YesNo(parent, question, caption='Yes or no?'):
+    """Brings up a simple yes or no dialog"""
+Info(parent, message, caption='Info'):
+    """Brings up an information box"""
+Warn(parent, message, caption='Warning!'):
+    """Brings up a warning box"""
+Functions in Client/netComms.py
+def send(self, message):
+	"""Send a specified message to the server (pickled)"""
+def close(self):
+	"""Close the active connection"""
+Functions in Client/SelectATank.py
+getConfiguration(conf, keyword):
+    """Read the config file and get the specified option"""
+def populate(self):
+	"""Put the tank names into the list"""
+def changeTankPrice(self, event):
+	"""Show the correct price of the selected tank"""
+def buyTank(self, event):
+	"""Button press event to send the command to buy the tank"""
+def cancel(self, event):
+	"""Close the GUI"""
+def populateBoxes(self):
+	"""Put the selected tank stats into the boxes"""
+def upHP(self, event):
+	"""Button press event to upgrade HP"""
+def upDam(self, event):
+	"""Button press event to upgrade damage"""
+def upArm(self, event):
+	"""Button press event to upgrade armour"""
+def upPen(self, event):
+	"""Button press event to upgrade penetration"""
+def upHTr(self, event):
+	"""Button press event to upgrade hull traverse"""
+def upTTra(self, event):
+	"""Button press event to upgrade turret traverse"""
+def upRel(self, event):
+	"""Button press event to upgrade reload"""
+def upSp(self, event):
+	"""Button press event to upgrade speed"""
+def convertToString(self, lst):
+	"""Convert a list of stats into a string"""
+def getNewStats(self):
+	"""Put the upgraded stats into a server-readable format"""
+def confirmEdit(self, event):
+	"""Ask the user if they are really sure they want to upgrade"""
+def cancelEdit(self, event):
+	"""Close the GUI without changing anything"""
+def toInt(self, lst):
+	"""Convert a list of floats to ints"""
+def battleThread(self, instance):
+	"""Start the main battle thread"""
+def goToBattle(self, event):
+	"""Set up the client to launch the game engine and then run the game"""
+                          "You have been defeated...\nYou recieved: " + str(xp) + " xp\nDamage dealt: " + str(
+def setHost(self, event):
+	"""Take the user input of the host and store it""" 
+def getStats(self, username, tankName):
+	"""Get the users stats for that specific tank"""
+def doStats(self, event):
+	"""Update the text box with the tanks stats"""
+def getAllTanks(self):
+	"""Return all possible tanks"""
+def doBuy(self, event):
+	"""Open the tank purchase GUI"""
+def getAllXP(self):
+	"""Get the users progress on all tanks from the server"""
+def getXP(self, name):
+	"""Get the users progress on one specific tank from the server"""
+def doUpgrade(self, event):
+	"""Open the upgrade GUI"""
+def refresh(self, username):
+        """Reloads all components"""
+main(username, xp, owned):
+    """Main method to open the GUI"""
+Functions in Client/TankClient.py
+def updatePos(self, x, y):
+def update(self):
+	"""A method to update the tank"""
+def getBulletVector(self):
+        """Returns the ballistic vector for this bullet"""
+def getx1x2(self):
+	"""Returns the endpoints of the vector"""
+def returnValues(self):
+	"""Returns the attributes of the bullet"""
+def getVector(self):
+	"""Another method to get the ballistic vector"""
+def update(self):
+	"""A method to update the tank"""
+def getBulletVector(self):
+        """Returns the ballistic vector for this bullet"""
+def getBulletValues(self):
+	"""Returns the values of the bullet to spawn"""
+def getBulletOffsetX(self):
+	"""Get the offset for the bullet, making it spawn at the gun muzzle"""
+def getBulletOffsetY(self):
+	"""Get the offset for the bullet, making it spawn at the gun muzzle"""
+def update(self):
+	"""A method to update the tank"""
+def setBounds(self, x, y, width, height):
+	"""Sets the bounding vectors of the building"""
+def isCollided(self, b):
+	"""Checks if a vector collides with this building"""
+def setupGame(self,stats, host, port, username):
+	"""A method to load in all resources and set the game in motion"""
+def drawMap(self, map):
+	"""Read in the map and render buildings"""
+def countingDown(self):
+	"""Start the pre-match countdown on-screen"""
+def close(self, exception):
+	"""Close the game"""
+def update(self):
+	"""A method to update the tank"""
+def doUpdating(self):
+        """This occurs on every gameloop, updates the local client and sends data to server"""
+def drawVectors(self):
+        """For debugging, draws all vectors on screen"""
+def setBuildingVectors(self, buildings):
+	"""resets all building bounding vectors"""
+def doBulletSpawnDespawn(self, server):
+        """Main method to make the local bullets equal the server bullets"""
+def dotProduct(self, vA, vB):
+	"""Works out the scalar product of 2 vectors"""
+def checkBulletCollisions(self):
+        """A general bullet collision method to check vector intersection"""
+def vectorsIntersect(self, vecA, vecB):
+        """Checks if 2 vectors intersect, calls game_calcs"""
+def setVectors(self):
+        """This sets vectors around the edge of the image"""
+def doesPenetrate(self, angle, bullet):
+        """Returns true if the bullet has enough penetration, false otherwise"""
+def resyncClient(self):
+	"""Reload all serverside variables"""
+def checkBuildings(self, bul):
+	"""Check if the tank is collided with any buildings"""
+def endGame(self, stats):
+	"""Close the server connection and return to the tank selection screen"""
+mainGame(instance):
+    """Called to run the client, requires data for the tank and the host/port"""

@@ -1,0 +1,137 @@
+Functions in Server/Errors.py
+Functions in Server/game_calcs.py
+def update(self,x1,y1,x2,y2):
+	"""Reset the vector to a new point"""
+def useAngle(self, x1, y1, mag, angle):
+	"""Init a vector with a magnitude and angle"""
+def add(self, vector):
+	"""Returns the resultant vector of the addition of this and another vector"""
+def getMagnitude(self):
+	"""Returns the length of this vector"""
+def getDx(self):
+	"""Returns the x-length of the vector"""
+def getDy(self):
+	"""Returns the y-length of the vector"""
+def dotProduct(self, vector):
+	"""Returns the scalar product of this vector and another"""
+def collides(self, vector):
+        """Checks whether a vector intersects with the rectangle"""
+getAngleOfIntersection(vecA, vecB):
+    """a dot b / mag(a) mag(b)"""
+getDeltaT(time1, time2):
+    """Returns the difference between 2 time.time instances"""
+getPoints(x1, y1, x2, y2):
+    """Returns a list of pixels on the line joining (x1,y1) to (x2, y2)"""
+intersect(vectorA, vectorB):
+    """Checks whether two vectors intersect"""
+Functions in Server/launchGameServer.py
+Functions in Server/launchLoginServer.py
+Functions in Server/loginServer.py
+def handle(self):
+def buy(self, name, user, previousTank):
+        """Add a tank to the users account"""
+def allXP(self, username):
+	"""Returns the amount of XP the user has earned on each tank"""
+def costs(self):
+	"""Return the amount that each tank costs"""
+def login(self, dat):
+	"""Compare the users credentials to the database and login if they match"""
+def create(self, dat):
+	"""Add a new user to the database"""
+def get(self, username, tankname):
+	"""Get the stats on the tank requested by the user"""
+def convertToString(self, lst):
+	"""Self-explanatory, converts a list to a string"""
+def createNewAccount(self, data):
+	"""insert all data into the database"""
+def xp(self, user, tank):
+	"""Gets the users XP"""
+def makeListSane(self, lst):
+	"""Make the list how I need it - all strings"""
+def openCloseConn(self):
+	"""Close and reopen the database connection"""
+def update(self, data):
+	"""Update all of the data in the database"""
+def owned(self, username):
+	"""Return the tanks owned by the user"""
+getConfiguration(conf, keyword):
+    """Read the config and return the option asked for"""
+start():
+    """Start the login server"""
+main():
+    """Run this server from another file"""
+superMain():
+    """Run this server without checking the login server"""
+Functions in Server/mapGen.py
+generateMap(width, height):
+    """Generate an array that represent a map"""
+Functions in Server/messages.py
+YesNo(parent, question, caption = 'Yes or no?'):
+ServerRun(parent):
+Info(parent, message, caption = 'Insert program title'):
+Warn(parent, message, caption = 'Warning!'):
+Functions in Server/Server.py
+def returnValues(self):
+        """Return player values in a list"""
+def set(self,  data):
+	"""Set all the players data"""
+def update(self, deltaT):
+        """Update the bullet based on a time difference"""
+def returnValues(self):
+        """Return player values in a list"""
+def giveDatabaseConnection(self, cur):
+def handle(self):
+        """Do something with the request"""
+def serverUpdatingThread(self):
+	"""A thread to keep the server up-to-date"""
+def finish(self):
+	"""End the request process"""
+def getVictor(self):
+	"""Count the players and see who won the game"""
+def stringRequest(self,  req):
+        """Takes a string and outputs accordingly"""
+def listRequest(self,  req):
+        """Redirect method for requests in the form of a list"""
+def isEndOfGame(self):
+	"""Looks at all players and decides if the game is over"""
+def convertToList(self):
+        """This will take Player objects and shove the x,y,angle,turret angle data into a list"""
+def doHandshake(self,  name, hp, username):
+        """Add the new player to arrays and get going"""
+def countdown(self):
+        """Create a 30 second timer at the start of the game"""
+def convertToListHandShake(self):
+        """Initial return value"""
+def get(self, req):
+        """Acts as a 'getter', returns every other player's information and sends it in a handy list"""
+def getBuildingRanges(self):
+def isCollidedWithMap(self, b):
+        """Self-explanatory, returns true if the bullet is collided with terrain"""
+def endGame(self):
+Functions in Server/ServerSetupForm.py
+def stopEvent( self, event ):
+	"""In case the user wants to cancel the startup at the last moment"""
+def loginThread(self):
+	"""A thread to start the login server"""
+def getOperatingSystem(self):
+	"""Gets the OS of the server machine to bind to IP address"""
+def changeInterface(self,event):
+	"""Gets the IP of interface (i.e. wlan, ethernet etc)"""
+def startServer(self,event):
+	"""Button press event to start the server"""
+def stopServer(self,event):
+	"""Button press event to stop the server"""
+def beginTheSatanHailing(self):
+	"""Begin to handle requests"""
+def watchTheServerIntently(self):
+	"""A thread to say if the server should stop"""
+def updateTheBulletsThread(self):
+	"""A thread that will update all bullets every 0.05 seconds"""
+def startServerThread(self):
+	"""A thread to handle the server"""
+def filler(self):
+	"""Confirm the start of the server"""
+def processEndOfGame(self, stats):
+	"""Take the end of game results and process them, send to main login server"""
+main():
+	"""Main method to run the server"""

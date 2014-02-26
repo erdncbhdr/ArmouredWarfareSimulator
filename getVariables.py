@@ -2,7 +2,8 @@ import sys
 import os
 
 #print "Getting variables for " + str( sys.argv[1] )
-
+def doThing():
+	pass
 
 try:
 	afile = open(sys.argv[1])
