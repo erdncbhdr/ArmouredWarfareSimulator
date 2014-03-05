@@ -7,7 +7,6 @@ from pygame import *
 
 import selectGui
 import messages
-import Errors
 import netComms
 import games
 from Errors import *
@@ -23,6 +22,7 @@ def getConfiguration(conf, keyword):
 
 class Buy(selectGui.TankBuy):
     """A class to handle the tank purchase GUI"""
+
     def __init__(self, parent, username, xp, alltanks, owner):
         selectGui.TankBuy.__init__(self, parent)
         self.username = username
@@ -33,7 +33,7 @@ class Buy(selectGui.TankBuy):
         self.owner = owner
 
     def populate(self):
-	"""Put the tank names into the list"""
+        """Put the tank names into the list"""
         self.xpBox.SetValue("Select a tank to see XP")
         self.TankBox.SetValue("Select a tank")
         r = open("login.conf", "r")
@@ -61,14 +61,14 @@ class Buy(selectGui.TankBuy):
                 self.TankBox.Append(str(tankname[i]))
 
     def changeTankPrice(self, event):
-	"""Show the correct price of the selected tank"""
+        """Show the correct price of the selected tank"""
         self.name = self.TankBox.GetValue()
         tankvalue = self.alltanks.index(self.name)
         self.xpBox.SetValue(str(self.xp[tankvalue - 1]))
         self.priceBox.SetValue(str(self.costs[tankvalue]))
 
     def buyTank(self, event):
-	"""Button press event to send the command to buy the tank"""
+        """Button press event to send the command to buy the tank"""
         if int(self.xpBox.Value) >= int(self.priceBox.Value):
             try:
             # buy the tank
@@ -89,13 +89,14 @@ class Buy(selectGui.TankBuy):
             self.Show(False)
 
     def cancel(self, event):
-	"""Close the GUI"""
+        """Close the GUI"""
         self.owner.refresh(self.owner.username)
         self.Show(False)
 
 
 class Upgrade(selectGui.UpgradeForm):
     """A class to handle the tank upgrade GUI"""
+
     def __init__(self, parent, tank, xp, username, form):
         selectGui.UpgradeForm.__init__(self, parent)
         #For reference
@@ -103,21 +104,22 @@ class Upgrade(selectGui.UpgradeForm):
         self.username = username
         self.parent = parent
         self.name = tank[0]
-        self.hp = tank[1]
-        self.damage = tank[2]
-        self.penetration = tank[3]
-        self.reload = tank[4]
-        self.armour = tank[5]
-        self.hullTraverse = tank[6]
-        self.turretTraverse = tank[7]
-        self.speed = tank[8]
+        tank = [int(x) for x in tank[1:]]
+        self.hp = tank[0]
+        self.damage = tank[1]
+        self.penetration = tank[2]
+        self.reload = tank[3]
+        self.armour = tank[4]
+        self.hullTraverse = tank[5]
+        self.turretTraverse = tank[6]
+        self.speed = tank[7]
         #Progress is in form XP for each tank
         self.xp = int(xp)
 
         self.populateBoxes()
 
     def populateBoxes(self):
-	"""Put the selected tank stats into the boxes"""
+        """Put the selected tank stats into the boxes"""
         self.tankL.SetLabel(self.name)
         self.xpL.SetLabel("XP to spend: " + str(self.xp))
         self.curHP.SetValue(str(self.hp))
@@ -130,77 +132,77 @@ class Upgrade(selectGui.UpgradeForm):
         self.curRel.SetValue(str(self.reload))
 
     def upHP(self, event):
-	"""Button press event to upgrade HP"""
+        """Button press event to upgrade HP"""
         if self.xp >= 10:
             self.xp -= 10
-            self.hp += int(1000 / self.hp)
+            self.hp += int(1000 / int(self.hp))
             self.populateBoxes()
 
     def upDam(self, event):
-	"""Button press event to upgrade damage"""
+        """Button press event to upgrade damage"""
         if self.xp >= 10:
             self.xp -= 10
-            self.damage += int(300 / self.damage)
+            self.damage += int(300 / (self.damage))
             self.populateBoxes()
 
     def upArm(self, event):
-	"""Button press event to upgrade armour"""
+        """Button press event to upgrade armour"""
         if self.xp >= 10:
             self.xp -= 10
-            self.armour += int(300 / self.armour)
+            self.armour += int(300 / (self.armour))
             self.populateBoxes()
 
     def upPen(self, event):
-	"""Button press event to upgrade penetration"""
+        """Button press event to upgrade penetration"""
         if self.xp >= 10:
             self.xp -= 10
-            self.penetration += int(450 / self.penetration)
+            self.penetration += int(450 / (self.penetration))
             self.populateBoxes()
 
     def upHTr(self, event):
-	"""Button press event to upgrade hull traverse"""
+        """Button press event to upgrade hull traverse"""
         if self.xp >= 10:
-            self.hullTraverse += (5 / self.hullTraverse)
+            self.hullTraverse += (5 / (self.hullTraverse))
             self.xp -= 10
             self.populateBoxes()
 
     def upTTra(self, event):
-	"""Button press event to upgrade turret traverse"""
+        """Button press event to upgrade turret traverse"""
         if self.xp >= 10:
             self.xp -= 10
-            self.turretTraverse += (5 / self.turretTraverse)
+            self.turretTraverse += (5 / (self.turretTraverse))
             self.populateBoxes()
 
     def upRel(self, event):
-	"""Button press event to upgrade reload"""
+        """Button press event to upgrade reload"""
         if self.xp >= 10:
             self.xp -= 10
-            self.reload -= int(self.reload / 20)
+            self.reload -= int((self.reload) / 20)
             self.populateBoxes()
 
     def upSp(self, event):
-	"""Button press event to upgrade speed"""
+        """Button press event to upgrade speed"""
         if self.xp >= 10:
             self.xp -= 10
-            self.speed += int(3 / self.speed)
+            self.speed += int(3 / (self.speed))
             self.populateBoxes()
 
     def convertToString(self, lst):
-	"""Convert a list of stats into a string"""
+        """Convert a list of stats into a string"""
         a = ""
         for b in lst:
             a += str(b) + ":"
         return a
 
     def getNewStats(self):
-	"""Put the upgraded stats into a server-readable format"""
+        """Put the upgraded stats into a server-readable format"""
         statList = [self.name, self.hp, self.damage, self.penetration, self.reload,
                     self.armour, self.hullTraverse, self.turretTraverse, self.speed]
         a = self.convertToString(statList)
         return a
 
     def confirmEdit(self, event):
-	"""Ask the user if they are really sure they want to upgrade"""
+        """Ask the user if they are really sure they want to upgrade"""
         r = open("login.conf", "r")
         config = r.read().split("\n")
         self.ipAddr = getConfiguration(config, "ip_address")
@@ -221,12 +223,13 @@ class Upgrade(selectGui.UpgradeForm):
             pass
 
     def cancelEdit(self, event):
-	"""Close the GUI without changing anything"""
+        """Close the GUI without changing anything"""
         self.Show(False)
 
 
 class Main(selectGui.MainFrame):
     """A class to handle the tank selection GUI"""
+
     def __init__(self, parent, username, xp, owned):
         selectGui.MainFrame.__init__(self, parent)
         self.a = games.load_sound("res/Sounds/WoT-Garage.ogg")
@@ -261,7 +264,7 @@ class Main(selectGui.MainFrame):
             self.refresh(self.username)
 
     def toInt(self, lst):
-	"""Convert a list of floats to ints"""
+        """Convert a list of floats to ints"""
         for i in range(len(lst)):
             try:
                 lst[i] = float(lst[i])
@@ -270,14 +273,14 @@ class Main(selectGui.MainFrame):
         return lst
 
     def battleThread(self, instance):
-	"""Start the main battle thread"""
+        """Start the main battle thread"""
         import TankClient
         #TankClient.setupEnv()
         a = TankClient.mainGame(instance)
         return a
 
     def goToBattle(self, event):
-	"""Set up the client to launch the game engine and then run the game"""
+        """Set up the client to launch the game engine and then run the game"""
         try:
             self.a.stop()
         except Exception:
@@ -315,15 +318,15 @@ class Main(selectGui.MainFrame):
                               "You have been defeated...\nYou recieved: " + str(xp) + " xp\nDamage dealt: " + str(
                                   damage) + " Kills: " + str(kills),
                               "DEFEAT")
-            #self.Show(False)
-            #del(a)
-            #quit()
-            #except Exception as e:
-            #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
-            #    sys.exit()
+                #self.Show(False)
+                #del(a)
+                #quit()
+                #except Exception as e:
+                #    messages.Warn(self.parent, "Something went wrong. Exiting.\nError: "+str(e))
+                #    sys.exit()
 
     def setHost(self, event):
-	"""Take the user input of the host and store it""" 
+        """Take the user input of the host and store it"""
         try:
             hostPort = self.AddressBox.Value.split(":")
             self.host = hostPort[0]
@@ -332,7 +335,7 @@ class Main(selectGui.MainFrame):
             pass
 
     def getStats(self, username, tankName):
-	"""Get the users stats for that specific tank"""
+        """Get the users stats for that specific tank"""
         conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["GET", username, tankName])
         a = (conn.recieved)
@@ -342,7 +345,7 @@ class Main(selectGui.MainFrame):
 
 
     def doStats(self, event):
-	"""Update the text box with the tanks stats"""
+        """Update the text box with the tanks stats"""
         self.sel = self.tankChoice.GetString(self.tankChoice.GetSelection())
         #print "SEL " + self.sel
         self.stats = self.getStats(self.username, self.sel)
@@ -357,7 +360,7 @@ class Main(selectGui.MainFrame):
         self.name = self.sel
 
     def getAllTanks(self):
-	"""Return all possible tanks"""
+        """Return all possible tanks"""
         self.conn = sqlite3.Connection("TankStats.db")
         self.cur = self.conn.cursor()
         a = self.cur.execute("SELECT name FROM Tanks").fetchall()
@@ -365,32 +368,33 @@ class Main(selectGui.MainFrame):
         return a
 
     def doBuy(self, event):
-	"""Open the tank purchase GUI"""
+        """Open the tank purchase GUI"""
         buyApp = wx.App(False)
         buyFrame = Buy(None, self.username, self.getAllXP(), self.getAllTanks(), self)
         buyFrame.Show(True)
         buyApp.MainLoop()
 
     def getAllXP(self):
-	"""Get the users progress on all tanks from the server"""
+        """Get the users progress on all tanks from the server"""
         conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["ALLXP", self.username])
         return conn.recieved
 
     def getXP(self, name):
-	"""Get the users progress on one specific tank from the server"""
+        """Get the users progress on one specific tank from the server"""
         conn = netComms.networkComms(self.ipAddr, int(self.port))
         conn.send(["XP", str(self.username), str(name)])
         return conn.recieved
 
     def doUpgrade(self, event):
-	"""Open the upgrade GUI"""
+        """Open the upgrade GUI"""
         try:
             upApp = wx.App(False)
-            upFrame = Upgrade(None, self.tank, self.getXP(self.tank[0]), self.username, self)
+            upFrame = Upgrade(None, self.getStats(self.username, self.sel), self.getXP(self.sel), self.username, self)
             upFrame.Show(True)
             upApp.MainLoop()
         except AttributeError as ex:
+            print "ERROR: " + str(ex)
             messages.Warn(self.parent, "Please select a tank first")
 
     def refresh(self, username):

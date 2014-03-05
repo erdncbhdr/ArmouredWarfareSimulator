@@ -16,12 +16,12 @@ def getConfiguration(conf, keyword):
     for a in conf:
         if keyword in a and "#" not in a:
             toRet = a.split("=")
-            print toRet
             return toRet[1]
 
 
 class NewAccountForm(loginGui.newAccount):
     """A class to handle the account creation screen"""
+
     def __init__(self, parent):
         loginGui.newAccount.__init__(self, parent)
         self.parent = parent
@@ -54,7 +54,7 @@ class NewAccountForm(loginGui.newAccount):
             messages.Warn(self.parent, "Please enter both a username and password to create an account")
 
     def process(self, message):
-	"""Processes the server response"""
+        """Processes the server response"""
         if message == "UsernameException":
             messages.Info(self.parent, "That username is in use. Please choose another.")
         if message == "LoginFailure":
@@ -68,6 +68,7 @@ class NewAccountForm(loginGui.newAccount):
 
 class LoginForm(loginGui.MainFrame):
     """A class to handle the main login GUI"""
+
     def __init__(self, parent):
         loginGui.MainFrame.__init__(self, parent)
         self.parent = parent
@@ -76,9 +77,9 @@ class LoginForm(loginGui.MainFrame):
         self.a.play()
 
     def readConfig(self):
-	"""Reads the configuration file for ip address and port"""
-        
-	#the client will provide a configuration file
+        """Reads the configuration file for ip address and port"""
+
+        #the client will provide a configuration file
         try:
             r = open("login.conf", "r")
         except IOError:
@@ -92,7 +93,7 @@ class LoginForm(loginGui.MainFrame):
         r.close()
 
     def suchSending(self, event):
-	"""Send the login credentials to the server"""
+        """Send the login credentials to the server"""
         try:
             self.conn = netComms.networkComms(self.ipAddr, self.port)
             self.conn.send(["LOGIN", [self.userBox.Value.lower(), hashlib.sha1(self.passBox.Value).hexdigest()]])
@@ -106,7 +107,7 @@ class LoginForm(loginGui.MainFrame):
         self.process(recv)
 
     def soClear(self, event):
-	"""Clear the username/password boxes"""
+        """Clear the username/password boxes"""
         self.userBox.Value = ""
         self.passBox.Value = ""
 
@@ -129,7 +130,7 @@ class LoginForm(loginGui.MainFrame):
             self.loginComplete(message)
 
     def loginComplete(self, message):
-	"""Server has logged us in, proceed to next screen"""
+        """Server has logged us in, proceed to next screen"""
         username = str(message[0])
         progressXPs = message[2:9]
         owned = message[10:]
@@ -140,8 +141,6 @@ class LoginForm(loginGui.MainFrame):
                 SelectATank.main(username, progressXPs, owned)
             except Exception as ex:
                 import sys
-
-                print "exiting because " + str(ex)
                 sys.exit()
 
 

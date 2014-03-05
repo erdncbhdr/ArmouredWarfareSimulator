@@ -146,7 +146,7 @@ class TankServer(SocketServer.BaseRequestHandler):
                     TankServer.Bullets.remove(b)
 
     def finish(self):
-	"""End the request process"""
+	    """End the request process"""
         #print "FINISH"
 	    TankServer.connected -= 1
         #print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
