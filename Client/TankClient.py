@@ -84,7 +84,7 @@ class Turret(games.Sprite):
 
 
 class Bullet(games.Sprite):
-   """A class to create a bullet"""
+    """A class to create a bullet"""
     image = games.load_image("res/Bullet_Sprite.png")
 
     def __init__(self, x, y, angle, ownerId, damage, bulletID, penetration):

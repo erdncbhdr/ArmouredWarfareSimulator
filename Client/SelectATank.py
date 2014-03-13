@@ -298,6 +298,10 @@ class Main(selectGui.MainFrame):
         except AssertionError:
             messages.Warn(self.parent, "Please select a tank and enter a host:port combo")
 
+        except NoConnectionException:
+            messages.Warn(self.parent, "There is no server on this port, please double check and try again.")
+            self.Show(True)
+
         except EndOfGame as ex:
             #print "EX:" + str(ex.message)
             ex = eval(ex.message)

@@ -147,10 +147,10 @@ class TankServer(SocketServer.BaseRequestHandler):
 
     def finish(self):
 	"""End the request process"""
-        #print "FINISH"
-	    TankServer.connected -= 1
-        #print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
-        #return "TOPLEL"
+    #print "FINISH"
+	TankServer.connected -= 1
+    #print "Disconnected. Players left to disconnect: " + str(TankServer.connected)
+    #return "TOPLEL"
 
     def getVictor(self):
 	"""Count the players and see who won the game"""
