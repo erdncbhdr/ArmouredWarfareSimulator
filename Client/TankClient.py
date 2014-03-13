@@ -795,7 +795,15 @@ class GameController(games.Sprite):
 
 def mainGame(instance):
     """Called to run the client, requires data for the tank and the host/port"""
+
+    #Open the screen
+    #reload(games)
+    #games.screen.quit()
+    #quit()
+    #games.init(1024, 768, 30)
+
     try:
+        #reload(games)
         #This sets the initial conditions for the client
         username = instance[0]
         stats = instance[1]
