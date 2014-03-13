@@ -55,7 +55,7 @@
 #
 #Modified by Harry Ward
 #    Revised Screen class
-#        -Made screen not flash on refresh  (Fills screen with colour between ticks)
+#        -Made screen not flash on tick
 ###############################################################################
 
 import pygame

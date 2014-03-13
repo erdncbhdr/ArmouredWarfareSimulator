@@ -4,7 +4,6 @@ import math
 
 class Point():
     """A class to define a point in 2D space"""
-
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -12,7 +11,6 @@ class Point():
 
 class Vector():
     """A class to define a vector using 2 points"""
-
     def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
         self.x2 = x2

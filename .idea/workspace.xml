@@ -7,11 +7,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/COMP4.lyx" afterPath="$PROJECT_DIR$/doc/COMP4.lyx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ServerSetupForm.py" afterPath="$PROJECT_DIR$/Server/ServerSetupForm.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/game_calcs.py" afterPath="$PROJECT_DIR$/Client/game_calcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/games.py" afterPath="$PROJECT_DIR$/Client/games.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/login.py" afterPath="$PROJECT_DIR$/Client/login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/netComms.py" afterPath="$PROJECT_DIR$/Client/netComms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.conf" afterPath="$PROJECT_DIR$/login.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/login.conf" afterPath="$PROJECT_DIR$/Client/login.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/login.conf" afterPath="$PROJECT_DIR$/Server/login.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/updateAllSettings.py" afterPath="$PROJECT_DIR$/updateAllSettings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
@@ -38,7 +39,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="25" selection-start="5378" selection-end="5378" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="4950">
+            <state line="277" column="0" selection-start="9564" selection-end="9564" vertical-scroll-proportion="0.0" vertical-offset="3855" max-vertical-offset="4935">
               <folding />
             </state>
           </provider>
@@ -47,43 +48,18 @@
       <file leaf-file-name="mapGen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+            <state line="36" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectGui.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/selectGui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5145">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerSetupForm.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ServerSetupForm.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="47" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="3465">
+            <state line="128" column="13" selection-start="3741" selection-end="3741" vertical-scroll-proportion="0.25091577" vertical-offset="1783" max-vertical-offset="3315">
               <folding>
-                <marker date="1393448147354" expanded="true" signature="423:753" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="530:583" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="618:753" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="834:889" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="941:7587" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="1025:1311" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="1339:1408" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="1443:1990" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="2028:2644" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="2678:3273" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="3314:3564" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="3601:3875" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="3920:4166" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="4205:4501" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="4535:6256" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="6279:6464" placeholder="..." />
-                <marker date="1393448147354" expanded="true" signature="6505:7587" placeholder="..." />
+                <element signature="e#38#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,7 +68,16 @@
       <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="30" selection-start="3090" selection-end="3090" vertical-scroll-proportion="-7.757576" vertical-offset="1049" max-vertical-offset="12465">
+            <state line="626" column="45" selection-start="25192" selection-end="25192" vertical-scroll-proportion="-45.363636" vertical-offset="7743" max-vertical-offset="11955">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="50" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1590">
               <folding />
             </state>
           </provider>
@@ -101,25 +86,16 @@
       <file leaf-file-name="games.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/games.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="79" selection-start="2705" selection-end="2705" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="14205">
+            <state line="335" column="21" selection-start="10931" selection-end="10931" vertical-scroll-proportion="0.0" vertical-offset="5025" max-vertical-offset="14325">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Client/login.py">
+      <file leaf-file-name="game_calcs.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="12" selection-start="4687" selection-end="4687" vertical-scroll-proportion="0.32748538" vertical-offset="1692" max-vertical-offset="2205">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginGui.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/loginGui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="8" selection-start="2729" selection-end="2729" vertical-scroll-proportion="0.0" vertical-offset="808" max-vertical-offset="2220">
+            <state line="43" column="0" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1410">
               <folding />
             </state>
           </provider>
@@ -128,16 +104,16 @@
       <file leaf-file-name="SelectATank.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="358" column="63" selection-start="12808" selection-end="12808" vertical-scroll-proportion="0.0" vertical-offset="4989" max-vertical-offset="6495">
+            <state line="304" column="17" selection-start="10111" selection-end="10111" vertical-scroll-proportion="0.0" vertical-offset="3894" max-vertical-offset="6030">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="launchGameServer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/launchGameServer.py">
+      <file leaf-file-name="updateAllSettings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/updateAllSettings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state line="13" column="73" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -195,15 +171,15 @@
         <option value="$PROJECT_DIR$/Server/Errors.py" />
         <option value="$PROJECT_DIR$/Server/messages.py" />
         <option value="$PROJECT_DIR$/Server/launchLoginServer.py" />
+        <option value="$PROJECT_DIR$/Client/login.py" />
         <option value="$PROJECT_DIR$/Server/game_calcs.py" />
+        <option value="$PROJECT_DIR$/Client/games.py" />
+        <option value="$PROJECT_DIR$/Client/TankClient.py" />
+        <option value="$PROJECT_DIR$/Server/Server.py" />
         <option value="$PROJECT_DIR$/Client/game_calcs.py" />
         <option value="$PROJECT_DIR$/updateAllSettings.py" />
-        <option value="$PROJECT_DIR$/Server/ServerSetupForm.py" />
         <option value="$PROJECT_DIR$/Client/SelectATank.py" />
-        <option value="$PROJECT_DIR$/Server/Server.py" />
-        <option value="$PROJECT_DIR$/Client/TankClient.py" />
-        <option value="$PROJECT_DIR$/Client/games.py" />
-        <option value="$PROJECT_DIR$/Client/login.py" />
+        <option value="$PROJECT_DIR$/Server/ServerSetupForm.py" />
       </list>
     </option>
   </component>
@@ -239,6 +215,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,37 +234,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ArmouredWarfareSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -682,14 +630,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1368" height="731" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.56905156" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933443" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19985358" sideWeight="0.4292845" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29450914" sideWeight="0.35944363" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29581994" sideWeight="0.6405564" order="2" side_tool="false" content_ui="tabs" />
@@ -697,11 +647,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933443" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -741,10 +689,30 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="14" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Client/Errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="35" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="30" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="60" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.33333334" vertical-offset="354" max-vertical-offset="2070" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/messages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="17" selection-start="426" selection-end="426" vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="546" />
@@ -760,9 +728,30 @@
         <state line="4" column="23" selection-start="66" selection-end="66" vertical-scroll-proportion="0.10507881" vertical-offset="0" max-vertical-offset="571" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/games.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="335" column="21" selection-start="10931" selection-end="10931" vertical-scroll-proportion="0.0" vertical-offset="5025" max-vertical-offset="14325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1695">
+        <state line="43" column="0" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="277" column="0" selection-start="9564" selection-end="9564" vertical-scroll-proportion="0.0" vertical-offset="3855" max-vertical-offset="4935">
           <folding />
         </state>
       </provider>
@@ -776,96 +765,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/game_calcs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="50" selection-start="2234" selection-end="2234" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="47" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="3465">
-          <folding>
-            <marker date="1393448147354" expanded="true" signature="423:753" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="530:583" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="618:753" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="834:889" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="941:7587" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="1025:1311" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="1339:1408" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="1443:1990" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="2028:2644" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="2678:3273" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="3314:3564" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="3601:3875" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="3920:4166" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="4205:4501" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="4535:6256" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="6279:6464" placeholder="..." />
-            <marker date="1393448147354" expanded="true" signature="6505:7587" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/launchGameServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="25" selection-start="5378" selection-end="5378" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="4950">
+        <state line="72" column="50" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1590">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="30" selection-start="3090" selection-end="3090" vertical-scroll-proportion="-7.757576" vertical-offset="1049" max-vertical-offset="12465">
+        <state line="626" column="45" selection-start="25192" selection-end="25192" vertical-scroll-proportion="-45.363636" vertical-offset="7743" max-vertical-offset="11955">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="358" column="63" selection-start="12808" selection-end="12808" vertical-scroll-proportion="0.0" vertical-offset="4989" max-vertical-offset="6495">
+        <state line="304" column="17" selection-start="10111" selection-end="10111" vertical-scroll-proportion="0.0" vertical-offset="3894" max-vertical-offset="6030">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/mapGen.py">
+    <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/selectGui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5145">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/games.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="79" selection-start="2705" selection-end="2705" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="14205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/loginGui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="8" selection-start="2729" selection-end="2729" vertical-scroll-proportion="0.0" vertical-offset="808" max-vertical-offset="2220">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="12" selection-start="4687" selection-end="4687" vertical-scroll-proportion="0.32748538" vertical-offset="1692" max-vertical-offset="2205">
-          <folding />
+        <state line="128" column="13" selection-start="3741" selection-end="3741" vertical-scroll-proportion="0.25091577" vertical-offset="1783" max-vertical-offset="3315">
+          <folding>
+            <element signature="e#38#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
