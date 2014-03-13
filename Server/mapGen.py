@@ -6,8 +6,8 @@ import random
 def generateMap(width, height):
     """Generate an array that represent a map"""
     #Split the screen into 50px blocks
-    toplefts_x = [x for x in range(0, width+1, 100)]
-    toplefts_y = [x for x in range(150, (height+1)-150, 100)]
+    toplefts_x = [x for x in range(0, width + 1, 100)]
+    toplefts_y = [x for x in range(150, (height + 1) - 150, 100)]
     numX = len(toplefts_x)
     numY = len(toplefts_y)
     #Initialise map array
@@ -22,7 +22,7 @@ def generateMap(width, height):
     possibleBlocks = len(toplefts_x)
     for i in range(possibleBlocks):
         #Random number generator picks the fill for the block
-        toSpawn = random.randint(0,60)
+        toSpawn = random.randint(0, 60)
         #Add a single building
         if toSpawn > 50:
             xPos = i % numX
