@@ -311,9 +311,13 @@ class GameController(games.Sprite):
 
     image = games.load_image("res/conn.jpg")
 
-    def __init__(self, stats, host, port, username):
+    def __init__(self, stats, host, port, username, amTesting):
         super(GameController, self).__init__(image=GameController.image, x=0, y=0, angle=0)
-	self.setupGame(stats, host, port, username)
+        if not amTesting:
+            self.setupGame(stats, host, port, username)
+        else:
+            #Probably running tests
+            pass
 
     def setupGame(self,stats, host, port, username):
 	"""A method to load in all resources and set the game in motion"""
@@ -679,7 +683,7 @@ class GameController(games.Sprite):
             if self.vectorsIntersect(v, bullet.getVector()):
                 noVectorIntersects = False
                 angle = getAngleOfIntersection(bullet.getVector(), v)
-                if self.doesPenetrate(angle, bullet):
+                if self.doesPenetrate(angle, bullet, self.client.armour):
                     #Damage tank accordingly and despawn the bullet
                     self.client.hp -= bullet.damage
                     self.despawnToServer.append(bullet.bulletID)
@@ -726,24 +730,27 @@ class GameController(games.Sprite):
                         Vector(corner2X, corner2Y, corner4X, corner4Y)]
 
 
-    def doesPenetrate(self, angle, bullet):
+    def doesPenetrate(self, angle, bullet, armourValue):
         """Returns true if the bullet has enough penetration, false otherwise"""
 
         #This is the critical angle at which any bullet will auto-bounce
-        if angle < 50 or angle > 180:
+        if angle < 30 or angle > 180:
             return False
 
         #Calculate effective armour via trigonometry.
-        armourValue = self.client.armour
         effectiveArmour = armourValue / math.sin(math.radians(angle))
-        print "Effective armour at " + str(angle) + " is " + str(effectiveArmour)
+        #print "Effective armour at " + str(angle) + " is " + str(effectiveArmour)
         #Check if the bullet has enough penetration and return
-        if bullet.penetration > effectiveArmour:
-            self.damageDone.append([bullet.damage, bullet.ownerId])
-            print "Penetration"
+        if bullet.penetration >= effectiveArmour:
+            try:
+                self.damageDone.append([bullet.damage, bullet.ownerId])
+            except Exception:
+                #More test cases
+                pass
+            #print "Penetration"
             return True
         else:
-            print "Bounce"
+            #print "Bounce"
             return False
 
 
@@ -809,7 +816,7 @@ def mainGame(instance):
         games.screen.background = back
 
         #Set up the game controller and feed it the conditions
-        fat_controller = GameController(stats, host, port, username)
+        fat_controller = GameController(stats, host, port, username, False)
         games.screen.add(fat_controller)
 
         #Start the game
