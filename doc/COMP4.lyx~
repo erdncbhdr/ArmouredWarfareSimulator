@@ -47,7 +47,7 @@ theorems-sec-bytype
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
+\leftmargin 1cm
 \topmargin 2cm
 \rightmargin 2cm
 \bottommargin 2cm
@@ -3727,8 +3727,9 @@ Class definitions
 \end_layout
 
 \begin_layout Standard
-I probably need these.
- What exactly are they? 
+//TODO.
+ Tried to access intranet to find the ebook, was down.
+ Plan to do by march 10th.
 \end_layout
 
 \begin_layout Subsection
@@ -4173,9 +4174,6 @@ reference "Def2.1"
  Return the result.
 \end_layout
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \begin_layout Subsubsection
 Login Procedure
 \end_layout
@@ -11311,7 +11309,7 @@ Test Plan
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="15" columns="7">
+<lyxtabular version="3" rows="11" columns="7">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -11442,7 +11440,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11471,6 +11469,40 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
+Test login server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Give Incorrect Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+testacount/password
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+login failed
+\begin_inset Quotes erd
+\end_inset
+
 
 \end_layout
 
@@ -11480,34 +11512,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11536,7 +11541,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Test Tank Selection
 \end_layout
 
 \end_inset
@@ -11545,7 +11550,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Select a tank
 \end_layout
 
 \end_inset
@@ -11554,7 +11559,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Panzer IV
 \end_layout
 
 \end_inset
@@ -11563,7 +11568,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Stats appear
 \end_layout
 
 \end_inset
@@ -11572,7 +11577,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11601,6 +11606,40 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
+Test Tank Selection
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No tank selected
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[No data]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Please select a tank
+\begin_inset Quotes erd
+\end_inset
+
 
 \end_layout
 
@@ -11610,34 +11649,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11666,6 +11678,40 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
+Test Tank purchase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Have enough XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maus/5000XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Tank purchased
+\begin_inset Quotes erd
+\end_inset
+
 
 \end_layout
 
@@ -11675,34 +11721,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11731,6 +11750,40 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
+Test Tank Purchase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Just enough XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maus/300XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Tank purchased
+\begin_inset Quotes erd
+\end_inset
+
 
 \end_layout
 
@@ -11740,34 +11793,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11796,6 +11822,40 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
+Test Tank Purchase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not enough XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maus/0XP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+You need more XP
+\begin_inset Quotes erd
+\end_inset
+
 
 \end_layout
 
@@ -11805,34 +11865,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11861,7 +11894,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Test Server Connection
 \end_layout
 
 \end_inset
@@ -11870,7 +11903,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Give correct Host/Port
 \end_layout
 
 \end_inset
@@ -11879,7 +11912,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+localhost:9999
 \end_layout
 
 \end_inset
@@ -11888,7 +11921,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Connection
 \end_layout
 
 \end_inset
@@ -11897,7 +11930,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -11926,7 +11959,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Test Server Connection
 \end_layout
 
 \end_inset
@@ -11935,7 +11968,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Give incorrect port
 \end_layout
 
 \end_inset
@@ -11944,7 +11977,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+localhost:9998
 \end_layout
 
 \end_inset
@@ -11953,7 +11986,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Error window appears
 \end_layout
 
 \end_inset
@@ -11962,7 +11995,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Fail
 \end_layout
 
 \end_inset
@@ -11978,7 +12011,7 @@ login succesful
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11987,262 +12020,11 @@ login succesful
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-11
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-12
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-13
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-14
+Test Server Connection
 \end_layout
 
 \end_inset
@@ -12251,7 +12033,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Give no information
 \end_layout
 
 \end_inset
@@ -12260,7 +12042,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+[blank]
 \end_layout
 
 \end_inset
@@ -12269,7 +12051,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Error window appears
 \end_layout
 
 \end_inset
@@ -12278,16 +12060,7 @@ login succesful
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Pass
 \end_layout
 
 \end_inset
@@ -12309,12 +12082,101 @@ login succesful
 
 \end_layout
 
-=======
->>>>>>> parent of 7d41794... Reformatted tabs/spaces
-=======
->>>>>>> parent of 7d41794... Reformatted tabs/spaces
-=======
->>>>>>> parent of 7d41794... Reformatted tabs/spaces
+\begin_layout Subsection
+Evidence
+\end_layout
+
+\begin_layout Subsubsection
+Test 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginSuccesful.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Test 2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginFailed.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Test 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename statsAppear.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Error Log
+\end_layout
+
+\begin_layout Subsubsection
+Incorrect port given
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ConnectionErrror.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This screenshot is the python output if you try and connect where there
+ is no server.
+\end_layout
+
+\begin_layout Standard
+This was an easy one to fix.
+ I simply appended this to the game launch method:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+except NoConnectionException:
+\end_layout
+
+\begin_layout Plain Layout
+
+	messages.Warn(self.parent, "There is no server on this port, please double
+ check and try again.")            self.Show(True)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It works just fine.
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem

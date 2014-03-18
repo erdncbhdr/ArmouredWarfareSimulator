@@ -3727,9 +3727,24 @@ Class definitions
 \end_layout
 
 \begin_layout Standard
-//TODO.
- Tried to access intranet to find the ebook, was down.
- Plan to do by march 10th.
+In this section I will use diagrams to explain my planned class structures.
+\end_layout
+
+\begin_layout Subsubsection
+Sprite Classes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename spriteClasses.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
@@ -11487,7 +11502,7 @@ Give Incorrect Data
 \begin_inset Text
 
 \begin_layout Plain Layout
-testaccount/pasword
+testacount/password
 \end_layout
 
 \end_inset
@@ -12076,6 +12091,49 @@ Pass
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evidence
+\end_layout
+
+\begin_layout Subsubsection
+Test 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginSuccesful.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Test 2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginFailed.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Test 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename statsAppear.png
 
 \end_inset
 

@@ -5,10 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/COMP4.pdf" afterPath="$PROJECT_DIR$/doc/COMP4.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/LoginDatabase" afterPath="$PROJECT_DIR$/Server/LoginDatabase" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/COMP4.lyx" afterPath="$PROJECT_DIR$/doc/COMP4.lyx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/SelectATank.py" afterPath="$PROJECT_DIR$/Client/SelectATank.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.py" afterPath="$PROJECT_DIR$/Server/Server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/TankClient.py" afterPath="$PROJECT_DIR$/Client/TankClient.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ArmouredWarfareSimulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +30,7 @@
       <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="48" selection-start="4609" selection-end="4609" vertical-scroll-proportion="0.0" vertical-offset="1978" max-vertical-offset="4950">
+            <state line="138" column="48" selection-start="4609" selection-end="4609" vertical-scroll-proportion="0.0" vertical-offset="2070" max-vertical-offset="5040">
               <folding />
             </state>
           </provider>
@@ -53,17 +49,15 @@
         <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="159" column="32" selection-start="5038" selection-end="5038" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="3465">
-              <folding>
-                <element signature="e#38#54#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TankClient.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TankClient.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="360" column="8" selection-start="14511" selection-end="14511" vertical-scroll-proportion="0.0" vertical-offset="5621" max-vertical-offset="12345">
+            <state line="357" column="35" selection-start="14411" selection-end="14411" vertical-scroll-proportion="7.3958726" vertical-offset="1263" max-vertical-offset="12345">
               <folding />
             </state>
           </provider>
@@ -96,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SelectATank.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SelectATank.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="300" column="8" selection-start="10162" selection-end="10329" vertical-scroll-proportion="0.41391942" vertical-offset="4124" max-vertical-offset="6480">
+            <state line="273" column="25" selection-start="9214" selection-end="9214" vertical-scroll-proportion="0.0" vertical-offset="3900" max-vertical-offset="6480">
               <folding />
             </state>
           </provider>
@@ -210,6 +204,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,17 +225,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -761,9 +755,7 @@
     <entry file="file://$PROJECT_DIR$/Server/ServerSetupForm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="159" column="32" selection-start="5038" selection-end="5038" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="3465">
-          <folding>
-            <element signature="e#38#54#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -774,16 +766,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
+    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="360" column="8" selection-start="14511" selection-end="14511" vertical-scroll-proportion="0.0" vertical-offset="5621" max-vertical-offset="12345">
+        <state line="273" column="25" selection-start="9214" selection-end="9214" vertical-scroll-proportion="0.0" vertical-offset="3900" max-vertical-offset="6480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/SelectATank.py">
+    <entry file="file://$PROJECT_DIR$/Client/TankClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="8" selection-start="10162" selection-end="10329" vertical-scroll-proportion="0.41391942" vertical-offset="4124" max-vertical-offset="6480">
+        <state line="357" column="35" selection-start="14411" selection-end="14411" vertical-scroll-proportion="7.3958726" vertical-offset="1263" max-vertical-offset="12345">
           <folding />
         </state>
       </provider>
