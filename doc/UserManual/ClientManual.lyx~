@@ -1,0 +1,676 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Armoured Warfare Simulator 2014
+\end_layout
+
+\begin_layout Title
+Client User Manual
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Thank you for picking up a copy of Armoured Warfare Simulator 2014, an online,
+ multiplayer game where blowing up as many tanks as possible is your ultimate
+ goal.
+\end_layout
+
+\begin_layout Standard
+This client is the game end of the system, you boot up 
+\series bold
+aws.py 
+\series default
+and have fun racking up damage against friends or people online.
+\end_layout
+
+\begin_layout Section
+Installation Instructions
+\end_layout
+
+\begin_layout Subsection
+Installation for UNIX-like Systems
+\end_layout
+
+\begin_layout Standard
+All this game requires is a sane python 2.7 environment, test this by entering
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python -V
+\end_layout
+
+\end_inset
+
+into your terminal.
+ If it returns 
+\begin_inset Quotes eld
+\end_inset
+
+Python 2.7.[anything]
+\begin_inset Quotes erd
+\end_inset
+
+ you are good to run this game without installation.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If not, use your package manager to install python 2.7 and continue.
+\end_layout
+
+\begin_layout Standard
+You can now use the following commands to run the game:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ tar vxf AWS-x.x.x.tar.gz
+\end_layout
+
+\begin_layout Plain Layout
+
+$ cd /path/to/game/directory/
+\end_layout
+
+\begin_layout Plain Layout
+
+$ python aws.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This will start up the game, follow the on-screen instructions to continue.
+\end_layout
+
+\begin_layout Subsection
+Installation for MS Windows Systems
+\end_layout
+
+\begin_layout Standard
+Simply run the .exe that came with the zip file and follow the on-screen
+ instructions.
+\end_layout
+
+\begin_layout Section
+Using the System
+\end_layout
+
+\begin_layout Subsection
+Logging in
+\end_layout
+
+\begin_layout Standard
+After booting up the client, you will be presented with a login screen.
+ If you have an account already, skip to 3.1.2, else go to 3.1.1
+\end_layout
+
+\begin_layout Subsubsection
+Creating an account
+\end_layout
+
+\begin_layout Standard
+Once the login screen has appeared, click the 
+\begin_inset Quotes eld
+\end_inset
+
+Create an account
+\begin_inset Quotes erd
+\end_inset
+
+ button on the bottom of the form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginCreateAccount.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A new screen will appear, asking you for a new username and password.
+ Make sure you pick a memorable password at least 5 characters long, you'll
+ need it every time you log in.
+\end_layout
+
+\begin_layout Standard
+Once you've picked a username and password, click 
+\begin_inset Quotes eld
+\end_inset
+
+Create Account
+\begin_inset Quotes erd
+\end_inset
+
+, the system will alert you on creation success.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename CreateAccount.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Logging into an existing account
+\end_layout
+
+\begin_layout Standard
+Once you have a username and password, go ahead and type them into the login
+ screen, then hit submit.
+ You'll be taken to the tank selection screen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename loginWithUsername.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Tank Selection Screen
+\end_layout
+
+\begin_layout Standard
+This is the main screen outside of the game, it is where you will pick the
+ vehicle you will fight in, as well as upgrade it and buy new tanks.
+\end_layout
+
+\begin_layout Subsubsection
+Selecting a tank
+\end_layout
+
+\begin_layout Standard
+Simply click the drop-down arrow on the 
+\begin_inset Quotes eld
+\end_inset
+
+select a tank
+\begin_inset Quotes erd
+\end_inset
+
+ section and choose from the 4 default tanks, including:
+\end_layout
+
+\begin_layout Standard
+The German Panzer IV, long-serving member of the panzerwaffe
+\end_layout
+
+\begin_layout Standard
+The British Crusader, famed for combat against Erwin Rommel's forces in
+ north Africa
+\end_layout
+
+\begin_layout Standard
+The Soviet T-34, the most recognisable tank of the war, mass produced by
+ the USSR to overrun the germans
+\end_layout
+
+\begin_layout Standard
+The M4 Sherman, America's answer to the new German Panther tanks.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename selectTank.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Viewing Stats
+\end_layout
+
+\begin_layout Standard
+Once you have picked a tank, its statistics will appear in a box.
+ These are the values that will determine who comes out on top in the game
+ and who is left a smoking pile of scrap metal, so pay attention to each
+ vehicle's strengths and weaknesses.
+\end_layout
+
+\begin_layout Standard
+You can scroll through the stats with the bar on the right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename viewStats.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Upgrading your tanks
+\end_layout
+
+\begin_layout Standard
+If you have accumulated some experience (XP), you can use it to make your
+ war machine even more potent.
+ Open the upgrade screen by clicking 
+\begin_inset Quotes eld
+\end_inset
+
+Upgrade tank
+\begin_inset Quotes erd
+\end_inset
+
+ from the selection screen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename upgradeClick.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can now pick which stat to upgrade.
+ Choose carefully, because there is a maximum amount you can upgrade any
+ vehicle.
+\end_layout
+
+\begin_layout Standard
+Upgrade your selected stat by clicking the button next to the value.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename doUpgrade.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once you are happy with your new, bigger, badder war machine, click 
+\begin_inset Quotes eld
+\end_inset
+
+Confirm
+\begin_inset Quotes erd
+\end_inset
+
+ and the changes will be sent and applied.
+ Congratulations, you are now even more powerful!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Upgrade.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Purchasing a new Tank
+\end_layout
+
+\begin_layout Standard
+Have you been in the same tank for a while? Looking for some new armour?
+ It may be time to look into getting a new tank.
+ Be warned, these upgraded beasts aren't cheap, but they are exceptionally
+ powerful.
+\end_layout
+
+\begin_layout Standard
+Start by clicking 
+\begin_inset Quotes eld
+\end_inset
+
+Buy a tank
+\begin_inset Quotes erd
+\end_inset
+
+ from the selection screen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename buyTank.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A new screen will open, and you can scroll through the list of available
+ tanks.
+ Select one which looks good and the amount of XP needed will show.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename buyTank2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once you're happy, click 
+\begin_inset Quotes eld
+\end_inset
+
+Buy!
+\begin_inset Quotes erd
+\end_inset
+
+ and the tank will be delivered to your garage immediately.
+ Try it out and see just how powerful your new armour is!
+\end_layout
+
+\begin_layout Subsection
+Entering a Game
+\end_layout
+
+\begin_layout Subsubsection
+Finding a Server
+\end_layout
+
+\begin_layout Standard
+Joining a game is as easy as getting 2-8 people together, the server owner
+ will tell you their IP address and the server's port, you can type this
+ into the selection screen, hit 
+\begin_inset Quotes eld
+\end_inset
+
+Roll Out!
+\begin_inset Quotes erd
+\end_inset
+
+ and you will be connected to the server.
+\end_layout
+
+\begin_layout Standard
+Refer to the Server Manual for a tutorial on how to host your own server.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename enterAddress.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Make sure the Address is in the form [ip] : [port]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename rollOut.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Controlling the game
+\end_layout
+
+\begin_layout Standard
+Once you've connected to the server, the game screen will appear.
+ After a few seconds of loading, the map and tanks will be rendered on the
+ screen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Moving the tank:
+\end_layout
+
+\begin_layout Plain Layout
+
+	W - Move Forwards
+\end_layout
+
+\begin_layout Plain Layout
+
+	A - Turn Left
+\end_layout
+
+\begin_layout Plain Layout
+
+	S - Reverse
+\end_layout
+
+\begin_layout Plain Layout
+
+	D - Turn Right
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Moving the turret:
+\end_layout
+
+\begin_layout Plain Layout
+
+	Left Arrow - Turn turret left
+\end_layout
+
+\begin_layout Plain Layout
+
+	Right Arrow - Turn turret right
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Firing the gun:
+\end_layout
+
+\begin_layout Plain Layout
+
+	Space Bar - FIRE!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename inGame.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explaining the in-game screen:
+\end_layout
+
+\begin_layout Standard
+1.
+ The reload timer, when this hits 0, you can fire again.
+\end_layout
+
+\begin_layout Standard
+2.
+ A non-destructable building, use it to take cover from enemy fire
+\end_layout
+
+\begin_layout Standard
+3.
+ The user driving the tank
+\end_layout
+
+\begin_layout Standard
+4.
+ The tank's name and HP
+\end_layout
+
+\begin_layout Standard
+5.
+ An enemy tank
+\end_layout
+
+\begin_layout Section
+Other little bits of info
+\end_layout
+
+\begin_layout Standard
+A list of official servers can be found at http://www.slickmuffin.weebly.com/
+\end_layout
+
+\begin_layout Part*
+GOOD LUCK ON THE BATTLEFIELD!
+\end_layout
+
+\end_body
+\end_document

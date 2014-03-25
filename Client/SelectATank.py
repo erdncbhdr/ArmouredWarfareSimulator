@@ -103,14 +103,14 @@ class Upgrade(selectGui.UpgradeForm):
         self.username = username
         self.parent = parent
         self.name = tank[0]
-        self.hp = tank[1]
-        self.damage = tank[2]
-        self.penetration = tank[3]
-        self.reload = tank[4]
-        self.armour = tank[5]
-        self.hullTraverse = tank[6]
-        self.turretTraverse = tank[7]
-        self.speed = tank[8]
+        self.hp = int(tank[1])
+        self.damage = int(tank[2])
+        self.penetration = int(tank[3])
+        self.reload = int(tank[4])
+        self.armour = int(tank[5])
+        self.hullTraverse = float(tank[6])
+        self.turretTraverse = float(tank[7])
+        self.speed = float(tank[8])
         #Progress is in form XP for each tank
         self.xp = int(xp)
 
@@ -391,11 +391,12 @@ class Main(selectGui.MainFrame):
 	"""Open the upgrade GUI"""
         try:
             upApp = wx.App(False)
-            upFrame = Upgrade(None, self.tank, self.getXP(self.tank[0]), self.username, self)
+            upFrame = Upgrade(None, self.getStats(self.username, self.sel), self.getXP(self.sel), self.username, self)
             upFrame.Show(True)
             upApp.MainLoop()
-        except AttributeError as ex:
+        except Exception as ex:
             messages.Warn(self.parent, "Please select a tank first")
+            messages.Warn(self.parent, str(ex))
 
     def refresh(self, username):
         """Reloads all components"""

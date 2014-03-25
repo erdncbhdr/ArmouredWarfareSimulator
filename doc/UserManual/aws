@@ -1,0 +1,48 @@
+.TH aws 1
+.SH NAME
+aws \- Run the AWS main game
+.SH SYNOPSIS
+.B aws
+[\fB\-u --username\fR \fIUSERNAME\fR]
+[\fB\-p --password\fR \fIPASSWORD\fR] 
+.SH DESCRIPTION
+.B aws
+A fast-paced tank game. Boot up 
+.B aws_server
+and destroy all the enemy tanks before they get you!
+.SH CONTROLS
+.B Traverse (move) Hull:
+.RS
+.LP
+\fBW\fR Move Forwards
+.LP
+\fBA\fR Turn Left
+.LP
+\fBS\fR Reverse
+.LP
+\fBD\fR Turn Right
+.RE
+.B Turn Turret:
+.RS
+.LP
+\fB\<\- Left Arrow Key\fR Turn Turret Left
+.LP
+\fB\-\> Right Arrow Key\fR Turn Turret Right
+.RE
+.LP
+.B Other Controls:
+.RS
+.LP
+\fBSPACE\fR Fire The Gun!
+.LP
+.RS
+.SH OPTIONS
+.TP
+.BR \-u ", " \-\-username =\fIUSERNAME\fR
+If you want to login directly without a GUI, specify your username here. 
+No value here will open the GUI.
+.TP
+.BR \-p ", " \-\-password =\fIPASSWORD\fR
+If you wish, you may specify your password here. This is not required, the 
+program will ask if you do not enter a value. 
+
