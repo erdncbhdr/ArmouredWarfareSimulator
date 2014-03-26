@@ -1,2 +1,5 @@
 *.pyc
 *.dat
+\#*
+dist/*
+*_dist

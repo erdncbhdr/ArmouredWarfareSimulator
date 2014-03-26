@@ -1,0 +1,333 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Armoured Warfare Simulator 2014
+\end_layout
+
+\begin_layout Title
+Server User Manual
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+This is the manual for the AWS2014 server side, if you are reading this
+ you must be interested in hosting your own AWS server, and this manual
+ will show you how.
+\end_layout
+
+\begin_layout Section
+Installation 
+\end_layout
+
+\begin_layout Standard
+No installation is needed to run the AWS server, just a python environment
+ and a UNIX-like system.
+ 
+\end_layout
+
+\begin_layout Standard
+Make sure you have a python 2 environment by typing
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python -V
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If it comes back with
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Python 2.7.[Anything]
+\end_layout
+
+\end_inset
+
+ you have a good environment and are good to go.
+\end_layout
+
+\begin_layout Standard
+Simply start the server with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python aws_server.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Using the System
+\end_layout
+
+\begin_layout Standard
+Once the system is booted, you will be presented with a GUI with multiple
+ elements that will be explained below.
+\end_layout
+
+\begin_layout Subsection
+Selecting an Interface
+\end_layout
+
+\begin_layout Standard
+In order to host the server, you require a network interface to bind to.
+ This will vary from system to system, on UNIX systems you can use
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ip addr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+to check the connected interfaces (i.e.
+ WLAN, ethernet, etc).
+ You can select any interface from the list shown in the GUI.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename selectInterface.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Getting the relavent IP address
+\end_layout
+
+\begin_layout Standard
+Once you have selected an interface, the IP address associated with that
+ interface will appear in the 
+\begin_inset Quotes eld
+\end_inset
+
+IP Address
+\begin_inset Quotes erd
+\end_inset
+
+ box, take note of this as anyone that wants to play will require this address
+ to connect.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename getIPAddress.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Quotes eld
+\end_inset
+
+Not connected
+\begin_inset Quotes erd
+\end_inset
+
+ shows in the IP Address Field
+\end_layout
+
+\begin_layout Standard
+If you see the following message:
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename notConnected.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The selected interface (in this case, ethernet) is not connected to any
+ network.
+ Attempting to host a server on a non-connected address will not work.
+\end_layout
+
+\begin_layout Standard
+In the case of this message, please select another interface that is connected
+ to a network.
+\end_layout
+
+\begin_layout Subsection
+Setting a Port
+\end_layout
+
+\begin_layout Standard
+After you have selected an interface and got the IP address, you can select
+ a port.
+ This can really be anything you like, but with the following restrictions:
+\end_layout
+
+\begin_layout Enumerate
+Make the port number at least 1000, ports 0 - 999 are often used for system
+ internal processes.
+\end_layout
+
+\begin_layout Enumerate
+Use a port number less than 65535 - this is the maximum allowable port on
+ current systems.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename setPort.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Quotes eld
+\end_inset
+
+Port is in use
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Occasionally you may encounter the following error message:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename portInUse.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This means that the last server has not yet unbound from the port and a
+ new server cannot bind.
+ Usually leaving the program 2 minutes should give the server chance to
+ unbind and all should work again.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
