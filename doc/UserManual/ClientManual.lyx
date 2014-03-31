@@ -189,8 +189,82 @@ Installation for MS Windows Systems
 \end_layout
 
 \begin_layout Standard
-Simply run the .exe that came with the zip file and follow the on-screen
- instructions.
+For this you will require a python environment, this is not provided out-of-the-
+box with windows.
+\end_layout
+
+\begin_layout Enumerate
+Go to www.python.org and click on 
+\begin_inset Quotes eld
+\end_inset
+
+Downloads -> Python 2.7.[Something]
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let the file download
+\end_layout
+
+\begin_layout Enumerate
+Run the enclosed .exe file
+\end_layout
+
+\begin_layout Enumerate
+Open Control Panel
+\end_layout
+
+\begin_layout Enumerate
+Search for 
+\begin_inset Quotes eld
+\end_inset
+
+path
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Click on the 
+\begin_inset Quotes eld
+\end_inset
+
+System Environment Variables
+\begin_inset Quotes erd
+\end_inset
+
+ button and go to advanced.
+\end_layout
+
+\begin_layout Enumerate
+On the line that begins with 
+\begin_inset Quotes eld
+\end_inset
+
+Path
+\begin_inset Quotes erd
+\end_inset
+
+, add to the end 
+\begin_inset Quotes eld
+\end_inset
+
+C:
+\backslash
+Python27
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now go to the game directory and double-click aws.py
 \end_layout
 
 \begin_layout Section
