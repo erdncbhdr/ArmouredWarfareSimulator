@@ -47,7 +47,7 @@ theorems-sec-bytype
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 0.2cm
+\leftmargin 1cm
 \topmargin 2cm
 \rightmargin 2cm
 \bottommargin 1cm
@@ -60,7 +60,7 @@ theorems-sec-bytype
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -4229,40 +4229,75 @@ def login(self, dat):
 \begin_layout Plain Layout
 
 	if len(LogServer.cur.execute("""SELECT  UserInfo.UserName FROM UserInfo  
-                                     						   INNER JOIN UserPass ON UserInfo.Use
-rId=UserPass.UserId                                                     
- WHERE UserInfo.Username=? AND UserPass.HashPass=?""", dat).fetchall()) > 0:
-      	userId = LogServer.cur.execute("SELECT UserId FROM UserInfo 
+                                     	   INNER JOIN UserPass 
 \end_layout
 
 \begin_layout Plain Layout
 
-									  WHERE Username = ?;", [dat[0]]).fetchone()[0]         
+			ON UserInfo.UserId=UserPass.UserId
 \end_layout
 
 \begin_layout Plain Layout
 
-       print "ID LOGGING IN: " + str(userId)         
+            WHERE UserInfo.Username=?
 \end_layout
 
 \begin_layout Plain Layout
 
-      a = (LogServer.cur.execute("""SELECT UserInfo.Username, UserProgress.*,
- UserOwned.* From UserInfo                                      INNER JOIN
- UserProgress, UserOwned 
+            AND UserPass.HashPass=?""", dat).fetchall()) > 0:
 \end_layout
 
 \begin_layout Plain Layout
 
-                                ON UserInfo.UserId = UserProgress.UserId 
-                                                                    AND
- UserInfo.UserId = UserOwned.UserId 
+     	      userId = LogServer.cur.execute("
 \end_layout
 
 \begin_layout Plain Layout
 
-              				  WHERE UserInfo.Username = ?;""", [dat[0]]).fetchone())
+                    SELECT UserId FROM UserInfo 
+\end_layout
+
+\begin_layout Plain Layout
+
+                    WHERE Username = ?;", [dat[0]]).fetchone()[0]       
   
+\end_layout
+
+\begin_layout Plain Layout
+
+               print "ID LOGGING IN: " + str(userId)         
+\end_layout
+
+\begin_layout Plain Layout
+
+               a = (LogServer.cur.execute("""
+\end_layout
+
+\begin_layout Plain Layout
+
+                  SELECT UserInfo.Username, UserProgress.*, UserOwned.* 
+\end_layout
+
+\begin_layout Plain Layout
+
+                  From UserInfo
+\end_layout
+
+\begin_layout Plain Layout
+
+                  INNER JOIN UserProgress, UserOwned 
+\end_layout
+
+\begin_layout Plain Layout
+
+                  ON UserInfo.UserId = UserProgress.UserId               
+                                                      AND UserInfo.UserId
+ = UserOwned.UserId 
+\end_layout
+
+\begin_layout Plain Layout
+
+              	WHERE UserInfo.Username = ?;""", [dat[0]]).fetchone())  
 \end_layout
 
 \begin_layout Plain Layout
@@ -6857,7 +6892,7 @@ Serverside procedure list
 <lyxtabular version="3" rows="51" columns="2">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="10cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -10805,6 +10840,7 @@ This is the main screen of the game.
 \begin_layout Standard
 \begin_inset Graphics
 	filename tankgame.png
+	scale 50
 
 \end_inset
 
@@ -12638,6 +12674,7 @@ Test 8
 \begin_layout Standard
 \begin_inset Graphics
 	filename connectionYes.png
+	scale 50
 
 \end_inset
 
@@ -12664,6 +12701,7 @@ Test 10
 \begin_layout Standard
 \begin_inset Graphics
 	filename connectionNoPort.png
+	scale 50
 
 \end_inset
 
@@ -12677,6 +12715,7 @@ Tests 11-15
 \begin_layout Standard
 \begin_inset Graphics
 	filename penTests.png
+	scale 50
 
 \end_inset
 
@@ -12694,6 +12733,7 @@ Incorrect port given
 \begin_layout Standard
 \begin_inset Graphics
 	filename ConnectionErrror.png
+	scale 50
 
 \end_inset
 
@@ -12742,6 +12782,7 @@ Penetration Boundary Condition
 \begin_layout Standard
 \begin_inset Graphics
 	filename penFail.png
+	scale 50
 
 \end_inset
 
@@ -12871,6 +12912,557 @@ This has not been entirely achieved - the game is indeed supported on GNU/Linux
 
 \begin_layout Subsection
 User Feedback
+\end_layout
+
+\begin_layout Standard
+After this game was released on Slick Muffin's website (http://slickmuffin.weebly.
+com/1/post/2014/03/armwarsim-2014-released.html) I went to interview them
+ asking for feedback.
+\end_layout
+
+\begin_layout Standard
+They can be contacted at SlickMuffinGames@gmail.com
+\end_layout
+
+\begin_layout Standard
+Q: Do you think my solution fits the objectives we listed last time?
+\end_layout
+
+\begin_layout Standard
+A: In the most part, yes, which specific objectives do you want to know
+ about?
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: Number 1, 
+\begin_inset Quotes eld
+\end_inset
+
+By deadline day, my game client must be able to communicate across the network
+ with low latency.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A: After testing the game on our servers, I did not notice any lag or latency.
+ It all seems pretty stable on the network side of things, so I'd say that
+ you have succeeded in this objective.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: Next one - 
+\begin_inset Quotes eld
+\end_inset
+
+By deadline day, it must also be able to run on a low-power PC at more than
+ 30 Frames Per Second.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A: As far as I can see, the game is locked to 30fps and is constant in that.
+ I've never seen it drop in normal gameplay, although when 2 tanks collide
+ it does sometimes stutter slightly.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: And another; 
+\begin_inset Quotes eld
+\end_inset
+
+By deadline day, it must also have user accounts with progression.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A: This one is pretty clear-cut, there are indeed accounts that can improve
+ with time, so yes, this has most definately been done.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: 
+\begin_inset Quotes eld
+\end_inset
+
+By deadline day, it must also support up to 8 players.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A: Whilst the game does indeed support 8 players, the sprites seem a little
+ too large on the screen; there is little to no room to move the tank around,
+ which is a slight issue.
+ Also teams don't seem to have protection from allied shells, allowing a
+ player to shoot team mates and gain XP for it.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: Last one, 
+\begin_inset Quotes eld
+\end_inset
+
+By deadline day, it must also be supported on Windows and Linux with less
+ than a 5 minute installation time.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A: No, this one hasn't been done.
+ We can't ask our users to install python when they want to play.
+ It works nicely on linux, but on windows the EXE crashes when trying to
+ communicate over the network.
+ It'd be fantastic to have it work on windows, but I see the trouble with
+ compiling a python script.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: Does the system work as you expected it to?
+\end_layout
+
+\begin_layout Standard
+A: Yes, it's very intuitive, each button takes you where we'd expect it
+ to, and the in-game controls are easy to use once you get used to the turret
+ being seperate from the hull.
+ The login server handles all central user accounts, which is normal for
+ this sort of system as it stops users from cheating.
+ The central game server is easy enough to start up, the crashing window
+ is a little...
+ strange, although it does the job.
+ It closes when the game ends, it takes a while to unbind from the port
+ but overall it's pretty good.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: Is the system easy to use?
+\end_layout
+
+\begin_layout Standard
+A: Yes, very.
+ The client is all button-driven, so anyone can use it easily.
+ The server side doesn't require any prior knowledge of running a server
+ which is nice.
+ So yes, it is easy to use
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Q: How can I improve the system?
+\end_layout
+
+\begin_layout Standard
+A: There are a few things I've thought of.
+ Firstly, I'd like to see a central game server instead of peer-to-peer
+ servers; this is much easier from the user's perspective as they do not
+ have to find a group of friends, instead they can just connect to a server
+ and play with random people.
+ Also the map generation could be a bit better, the random generation is
+ nice, but it does not allow for consistant gameplay.
+ Talking of buildings, the hitboxes are a little off, it makes playing around
+ cover quite challenging.
+ That's all I can really think of.
+\end_layout
+
+\begin_layout Subsection
+Analysis of User Feedback
+\end_layout
+
+\begin_layout Standard
+Below I shall pick out points made by the user and comment on them.
+\end_layout
+
+\begin_layout Standard
+>when 2 tanks collide it does sometimes stutter slightly
+\end_layout
+
+\begin_layout Standard
+I do agree with this, the game's collision detection could be better.
+ With the bullet calculations needed, all collisions are done by vectors,
+ so they can be intensive when called often in the event of a tank collision.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>there is little to no room to move the tank around, which is a slight issue
+\end_layout
+
+\begin_layout Standard
+Yes, this is true.
+ The sprites are just a tiny bit big, but this can be remidied by scaling
+ them down a little.
+ This would improve user experience by making the game more fluid generally
+ as there is more room.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>teams don't seem to have protection from allied shells
+\end_layout
+
+\begin_layout Standard
+Again, true.
+ My implementation of team damage apparently didn't work on the XP side
+ of things.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>No, this one hasn't been done.
+ We can't ask our users to install python when they want to play.
+ It works nicely on linux, but on windows the EXE crashes when trying to
+ communicate over the network.
+\end_layout
+
+\begin_layout Standard
+This was mentioned in my own evaluation - the python-to-exe compilers do
+ not seem to like working over a network, and hence I had to abandon my
+ attempt to make the game work as-is on windows.
+ It does work well on linux though, so there is that.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>the crashing window is a little...
+ strange
+\end_layout
+
+\begin_layout Standard
+This is in reference to a popup that appears just before the server starts,
+ saying 
+\begin_inset Quotes eld
+\end_inset
+
+server is about to start (this window will crash).
+ My way of getting the server to stop at the end of a game included a while
+ loop.
+ This gets in the way of a GUI main loop and makes the window crash, so
+ I put a popup warning of the crash in there.
+ The system works, although this would be a nice thing to fix as it would
+ allow server configuration whilst a game is in progress.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>the client is all button-driven, so anyone can use it easily.
+ 
+\end_layout
+
+\begin_layout Standard
+This I agree with - as mentioned in the User Interface Rationale section,
+ I wanted to make the system as easy to understand as possible so that anyone
+ could use that.
+ I think I have achieved that and apparently so does the user.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Improvements and Extentions
+\end_layout
+
+\begin_layout Standard
+From my talk with the user, I have gained an idea of what I could improve
+ if I were to continue with this project.
+\end_layout
+
+\begin_layout Standard
+>central game server instead of peer-to-peer servers
+\end_layout
+
+\begin_layout Standard
+This is rather difficult to do - it requires access to a dedicated host
+ and the configuration of this server machine.
+ All users would have to connect to one central server which would require
+ scalability testing on most of the system designed to handle less than
+ 10 users at a time.
+ It would also require a matchmaker to set up games and reset them once
+ the game has finished.
+ This is notoriously difficult to do in online games, especially ones such
+ as this with no user statistics or vehicle 
+\begin_inset Quotes eld
+\end_inset
+
+levels
+\begin_inset Quotes erd
+\end_inset
+
+ per se.
+ It would be a good idea, although only if I had a very long time to research
+ and implement the features mentioned.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>the map generation could be a bit better
+\end_layout
+
+\begin_layout Standard
+This is perfectly doable, my current map generation is totally random and
+ is based on squares of map in which to place buildings.
+ It would be easy enough to create a town model and use that as the basis
+ for a whole section of the map.
+ This would be done by creating a class for a town, with pre-defined lengths
+ between buildings to allow for gameplay to happen in the area.
+ Also how many buildings/road to put in a specific area of the map.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+>the hitboxes are a little off, it makes playing around cover quite challenging
+\end_layout
+
+\begin_layout Standard
+This is most definately an improvement I could do, and one that would improve
+ the game by making it more tactical as cover would be more useful.
+ The current system uses sprite overlaps to determine whether a tank or
+ bullet has collided with a building.
+ Th
 \end_layout
 
 \begin_layout Section

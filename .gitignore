@@ -1,6 +1,7 @@
 *.pyc
 *.dat
-\#*
+#*
 dist/*
 *_dist
 *~
+doc/#COMP4.lyx#
